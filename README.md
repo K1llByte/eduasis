@@ -50,7 +50,13 @@ Esse utilizador que cria o post pode ser tanto um <ins>produtor</ins> qualquer c
 - Post
     - resource
     - comments: list[Comment]
-     
+
+### Routes
+
+GET /user
+GET /login
+GET /register
+
 ___
 ## Project Structure
 

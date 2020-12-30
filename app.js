@@ -6,9 +6,8 @@ const mongoose = require('mongoose');
 //const methodOverride = require('method-override');
 
 // Set up default mongoose connection
-const MONGODB_URL = 'mongodb://127.0.0.1/daw2020';
+const MONGODB_URL = 'mongodb://127.0.0.1/eduasis';
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
-
 // Get the default connection
 const db = mongoose.connection;
 
@@ -18,7 +17,7 @@ db.once('open', function() {
     console.log("Conexão ao MongoDB realizada com sucesso...")
 });
 
-var indexRouter = require('./routes/index');
+var index_router = require('./routes/index');
 
 var app = express();
 
@@ -32,7 +31,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// Routes
+app.use('/', index_router);
 
 
 // catch 404 and forward to error handler
