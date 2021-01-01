@@ -2,7 +2,7 @@
 
 A project dedicated for Web App Dev 
 
-A Educational platform to share serveral types of arquives such as books, essays, appointments, projects, etc... Users can get content or be a producer of content of an admin allows him to (Permission system).
+A Educational platform to share serveral types of arquives such as books, essays, appointments, projects, etc... Users can get content or be a producer of content. Administrators approve content submited by the producers.
 
 
 This platform will be a web application server made in `javascript` with `mongodb`.
@@ -28,14 +28,21 @@ Esse utilizador que cria o post pode ser tanto um <ins>produtor</ins> qualquer c
 
 ### Database
 
+Some usefull regular expressions:
+
+username_restrictions = 
+base64_match = ([a-zA-Z0-9+\\=]{4})+
+base64_pwhash_with_separator = ([a-zA-Z0-9+\\=]{4})+:([a-zA-Z0-9+\\=]{4})+
+
 - User
-    - username
-    - password_hash
-    - email
-    - affiliation (se é estudante, docente, curso, departamento, ...)
-    - permissions
-    - registration_date
-    - last_login_date
+    - username      -> String //
+    - nickname      -> String //
+    - password_hash -> String /base64_match:base64_match/
+    - email         -> String //
+    - affiliation   -> String /.{128}/
+    - permissions   -> Number
+    - registration_date -> Date
+    - last_login_date   -> Date
 
 
 - Resource
@@ -53,9 +60,11 @@ Esse utilizador que cria o post pode ser tanto um <ins>produtor</ins> qualquer c
 
 ### Routes
 
-GET /user
+GET /
 GET /login
 GET /register
+GET /post/:post_id
+GET /resource/:resource_id
 
 ___
 ## Project Structure

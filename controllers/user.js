@@ -1,6 +1,6 @@
 // Student controller
 
-var User = require('../models/user')
+const User = require('../models/user');
 
 // Returns student list
 module.exports.list = () => {
