@@ -13,7 +13,7 @@ const User = require('../models/user');
 module.exports.list_all = () => {
     return User
         .find()
-        //.sort({ username : 1 })
+        .sort({ username : 1 })
         .exec();
 }
 
@@ -23,10 +23,15 @@ module.exports.get = uname => {
         .exec();
 }
 
-module.exports.set = uname => {
+module.exports.set = userdata => {
     return User
-        .findOne({ username: uname })
+        .updateOne({username:userdata['username']},{$set : data})
         .exec();
+}
+
+module.exports.add = userdata => {
+    const new_user = new User(userdata)
+    return new_user.save();
 }
 
 module.exports.delete = uname => {

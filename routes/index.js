@@ -6,15 +6,14 @@ const router = express.Router();
 
 // GET home page
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home Page', data : [] });
 });
 
-router.get('/students', function(req, res) {
+router.get('/users', function(req, res) {
   // Data retrieve
-  User.list()
-    .then(data => {console.log("ok1"); res.render('index', { title: 'Ola mundo cruel' }); console.log("ok2");})
-    .catch(err => {console.log("ok3"); res.render('error', { error: err }); console.log("ok4"); });
-
+  User.get("user1")
+    .then(data => { console.log(data); res.render('index', { title:"Users Page", data: data }); })
+    .catch(err => { res.render('error', { error: err }); });
 });
 
 module.exports = router;
