@@ -8,6 +8,10 @@ Ha uma noção de:
 - Comentários nos recursos
 - Permissoes (Administrator, Producer, Consumer)
 
+## TODO
+
+configuration module (load from file)
+
 ## Duvidas
 
 1. Há criação de "recursos" e "posts".  

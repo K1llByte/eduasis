@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 //const methodOverride = require('method-override');
 
 // Set up default mongoose connection
@@ -30,6 +31,34 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req,res,next) => {
+    if(req.query.token)
+    {
+        console.log("Bearer Token:",req.query.token);
+        jwt.verify(req.query.token,'DAW2020', (e,payload) => {
+            if(e)
+            {
+                res.status(401).jsonp({ error : e });
+            }
+            else
+            {
+                req.user = { 
+                    lvl : payload.lvl,
+                    username : payload.username
+                };
+                next();
+            }
+        });
+        //// 401 Unauthorized
+        //next();
+    }
+    else
+    {
+        console.log("erro1");
+        res.status(401).jsonp({error: 'Invalid token or non-existing'});
+    }
+});
 
 // Routes
 app.use('/', index_router);
