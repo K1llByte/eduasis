@@ -65,12 +65,14 @@ A *json* API server with CRUD operations over the database
 
 #### Routes
 
+```
 GET /
 GET /login
 GET /register
 GET /user/:username
 GET /post/:post_id
 GET /resource/:resource_id
+```
 
 ### Database
 
