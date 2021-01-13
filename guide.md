@@ -31,7 +31,9 @@ Their dependencies from each other are:
 
 ### HTTP Server
 
-A http server to provide app view for the client using a browser. This component will only provide those views and redirect a corresponding request to the API server
+A http server to provide app view for the client using a browser. This component will only provide those views and redirect a corresponding request to the API server.
+
+This server might be isolated from the API (at the hardware level) so this will be hosteed in `domain.app`.
 
 ```
                DB
@@ -50,6 +52,8 @@ A http server to provide app view for the client using a browser. This component
 The core of the service, operates over data and controls the behavior of the system.
 
 A *json* API server with CRUD operations over the database
+
+This server might be isolated from the HTTP (at the hardware level) so this will be hosteed in `api.domain.app`.
 
 ```
                DB
