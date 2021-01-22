@@ -78,7 +78,7 @@ GET /post/:post_id
 GET /resource/:resource_id
 ```
 
-### Database
+### Database Server
 
 The database for the whole system, every user and global data will be stored here.
 
@@ -130,6 +130,7 @@ ___
 
 ### TODO
 
+- [ ] API Authentication
 - [ ] Configuration module (load from file to vars)
 
 ### Questions

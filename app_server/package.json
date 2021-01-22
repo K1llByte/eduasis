@@ -1,0 +1,31 @@
+{
+  "name": "eduasis",
+  "version": "1.0.0",
+  "description": "A Educational platform to share serveral types of arquives such as books, essays, appointments, projects, etc... Users can get content or be a producer of content. Administrators approve content submited by the producers.",
+  "main": "bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K1llByte/eduasis.git"
+  },
+  "keywords": [
+    "daw"
+  ],
+  "author": "KillByte, Trina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/K1llByte/eduasis/issues"
+  },
+  "homepage": "https://github.com/K1llByte/eduasis#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0"
+  }
+}
