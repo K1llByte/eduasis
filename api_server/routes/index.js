@@ -5,39 +5,61 @@ const router = express.Router();
 
 // ========= AUTH ========= //
 
+// TODO: PLACE ALL FORM OF CODE VALIDATION AND TOKEN GENERATION ON A SEPARATED MODULE
 function validate_auth(required_permission = undefined)
 {
+    
     if(required_permission == undefined)
-        return (req, res, next) => {};
+        return (req, res, next) => {
+            if(req.query.token /* == undefined */ )
+            {
+                console.log("Query Param Token:",req.query.token);
+
+                jwt.verify(req.query.token,'DAW2020', (e,payload) => {
+                    if(e /* == undefined */)
+                    {
+                        // 401 Unauthorized
+                        res.status(401).jsonp({ error : e });
+                    }
+                    else
+                    {
+                        if(required_permission == undefined)
+                        {
+                            req.user = { 
+                                perms : payload.perms,
+                                username : payload.username
+                            };
+                            next();
+                        }
+                        else if(payload.perms >= required_permission)
+                        {
+                            req.user = { 
+                                perms : payload.perms,
+                                username : payload.username
+                            };
+                            next();
+                        }
+                        else
+                        {
+                            // 403 Forbidden
+                            res.status(403).jsonp({error: 'Forbidden! Insufficient permissions'});
+                        }
+                    }
+                });
+            }
+            else
+            {
+                // 401  Unauthorized
+                res.status(401).jsonp({error: 'Invalid token or non-existing'});
+            }
+        };
     else
-        return (req, res, next) => {};
+        return (req, res, next) => {
+            
+        };
     
     // // req, res, next
-    // if(req.query.token)
-    // {
-    //     console.log("Bearer Token:",req.query.token);
-    //     jwt.verify(req.query.token,'DAW2020', (e,payload) => {
-    //         if(e)
-    //         {
-    //             res.status(401).jsonp({ error : e });
-    //         }
-    //         else
-    //         {
-    //             req.user = { 
-    //                 lvl : payload.lvl,
-    //                 username : payload.username
-    //             };
-    //             next();
-    //         }
-    //     });
-    //     //// 401 Unauthorized
-    //     //next();
-    // }
-    // else
-    // {
-    //     console.log("erro1");
-    //     res.status(401).jsonp({error: 'Invalid token or non-existing'});
-    // }
+    
 }
 
 // ========= ROUTES ========= //
