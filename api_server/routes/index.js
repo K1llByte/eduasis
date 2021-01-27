@@ -1,29 +1,54 @@
 const express = require('express');
 const User = require('../controllers/user');
 const auth = require('../controllers/auth');
+const { Blacklist } = require('../controllers/blacklist');
 //const passport = require('passport');
 
 const router = express.Router();
+var blacklist = new Blacklist();
 
 // ========= ROUTES ========= //
 
 
-router.get('/api/check_passwd/:password', (req, res) => {
+router.post('/api/login', (req, res) => {
 
-    var asd = User.verify_password('user1',req.params.password)
-        .then(data => {
-            res.json({ "then":data });
-        })
-        .catch(err => {
-            res.json({ "catch":false });
-        })
-   
+    User.verify_password(req.body.username,req.body.password)
+        .then(userdata => {
+            if(userdata != null)
+            {
+                const token = auth.gen_token(userdata);
+                res.json({ "TOKEN":token });
+            }
+            else
+            {
+                res.status(401).json({ "error":"Incorrect credentials" });
+            }
+        });
+});
+
+router.post('/api/logout', (req, res) => {
+
+    const token = auth.fetch_token(req);
+    if(token == null)
+    {
+        res.status(401).json({ "error" : "Not logged in" });
+    }
+    else if(blacklist.has(token))
+    {
+        res.status(401).json({ "error" : "Token already revoked" });
+    }
+    else
+    {
+        blacklist.add(token);
+        blacklist.clear();
+        res.json({ "success" : "Succsessfully revoked token" });
+    }
 });
 
 
-router.post('/api/login', (req,res) => {
-    res.json(req.body);
-})
+// router.post('/api/login', (req,res) => {
+//     res.json(req.body);
+// })
 
 
 router.post('/api/register', (req,res) => {

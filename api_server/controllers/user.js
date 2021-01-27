@@ -70,33 +70,23 @@ module.exports.verify_password = async (username,in_password) => {
 
     var userdata = await this.get(username)
 
-    const passwd_obj = this.parse_password_hash(userdata.password_hash);
-            
-    const in_pass_hash = crypto.createHash(passwd_obj.hash_algorithm)
-        .update(passwd_obj.salt + in_password)
-        .digest('base64');
-
-    console.log(`> in_pass_hash = ${in_pass_hash}`);
-
-    return (passwd_obj.password_hash === in_pass_hash);
-
-
-    // return this.get(username)
-    //     .then(userdata => {
-
-    //         const passwd_obj = this.parse_password_hash(userdata.password_hash);
-            
-    //         const in_pass_hash = crypto.createHash(passwd_obj.hash_algorithm)
-    //             .update(passwd_obj.salt + in_password)
-    //             .digest('base64');
-
-    //             console.log(`> in_pass_hash = ${in_pass_hash}`);
-
-    //         return (passwd_obj.password_hash === in_pass_hash);
-    //     })
-    //     .catch(err => {
-    //         return false;
-    //     })
+    if(userdata != null)
+    {
+        const passwd_obj = this.parse_password_hash(userdata.password_hash);
+                
+        const in_pass_hash = crypto.createHash(passwd_obj.hash_algorithm)
+            .update(passwd_obj.salt + in_password)
+            .digest('base64');
+    
+        return (passwd_obj.password_hash === in_pass_hash) ? 
+            userdata : 
+            null;
+    }
+    else
+    {
+        return null;
+    }
+    
 }
 
 

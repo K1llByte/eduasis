@@ -2,17 +2,28 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 
+var SECRET_KEY = 'DAW2020_EDUASIS'
 
-SECRET_KEY = 'DAW2020_EDUASIS'
+
+module.exports.fetch_token = (req) =>
+{
+    if(req.query.token /* == undefined */)
+        return req.query.token;
+
+    else if(req.headers['authorization'])    
+        return req.headers['authorization'].split(' ')[1];
+    
+    else
+        return undefined;
+}
 
 module.exports.authenticate = (required_permission = undefined) => {
     return (req, res, next) => {
-        if(req.query.token /* == undefined */ )
+        const token = this.fetch_token(req);
+        if(token != null)
         {
-            //console.log("Query Param Token:",req.query.token);
-
-            jwt.verify(req.query.token, SECRET_KEY, (e,payload) => {
-                //console.log("IN verify CALLBACK");
+            jwt.verify(token, SECRET_KEY, (e,payload) => {
+                
                 if(e /* == undefined */)
                 {
                     // 401 Unauthorized
@@ -39,7 +50,6 @@ module.exports.authenticate = (required_permission = undefined) => {
                     }
                     else
                     {
-                        //console.log("failed payload.perms:",payload.perms);
                         // 403 Forbidden
                         res.status(403).jsonp({error: 'Forbidden! Insufficient permissions'});
                     }
@@ -56,11 +66,11 @@ module.exports.authenticate = (required_permission = undefined) => {
 
 
 module.exports.gen_token = (data) => {
-    
+
     const token = jwt.sign({
         username: data.username, 
         perms: data.perms, 
-        expiresIn: '1d' 
+        exp: Math.floor(Date.now() / 1000) + (60*60*24) // Expire in a day
     } , SECRET_KEY);
 
     return token;
