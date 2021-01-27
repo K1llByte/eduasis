@@ -17,10 +17,10 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', index_router);
+app.use('/static',express.static(path.join(__dirname, 'static')));
 
 
 // catch 404 and forward to error handler

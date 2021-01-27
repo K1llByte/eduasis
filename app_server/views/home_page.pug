@@ -1,19 +1,19 @@
 head
-    link(rel='stylesheet' href='../css/style.css')
-    link(rel='stylesheet' href='../css/normalize.css')
-    link(rel='stylesheet' href='../css/w3.css')
+    link(rel='stylesheet' href='/static/css/style.css')
+    link(rel='stylesheet' href='/static/css/normalize.css')
+    link(rel='stylesheet' href='/static/css/w3.css')
     link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Muli')
-    link(rel='stylesheet' href='../css/materialize.css')
+    link(rel='stylesheet' href='/static/css/materialize.css')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
-    link(rel='icon' href='../images/logo.png' type='image/x-icon')
+    link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
     title Eduasis
 body
 // ---------------------- NAB BAR ----------------------------
 .topnav
     a.links(href='/eduasis')
-        img(src='../images/logo.png' style='width:13%;height:2%;')
+        img(src='/static/images/logo.png' style='width:13%;height:2%;')
         | Eduasis
     .topnav-right
         a.links(href='#news') New Resource
@@ -53,7 +53,7 @@ body
         .box-resource-post(data-place='buda')
             h4 Resource
             p
-                img(src='../images/Files_archive.png' width='100' height='100' style='float: right;')
+                img(src='/images/Files_archive.png' width='100' height='100' style='float: right;')
                 |                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
                 span.dots ... 
                 span.more(style='display: none;')
@@ -67,10 +67,10 @@ body
     
     .w3-container.comments
         .comment
-            img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px')
+            img.w3-left.w3-circle.w3-margin-right(src='/images/user.png' alt='Avatar' style='width:60px')
             p comentario numero 2 - bbbbbbbbbbbbbbbb bbbbbbbbbb
         .comment
-            img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px')
+            img.w3-left.w3-circle.w3-margin-right(src='/images/user.png' alt='Avatar' style='width:60px')
             p
                 | comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd
 script.
