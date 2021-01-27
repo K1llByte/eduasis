@@ -2,16 +2,17 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 
+
 SECRET_KEY = 'DAW2020_EDUASIS'
 
-module.exports.validate_auth = (required_permission = undefined) => {
+module.exports.authenticate = (required_permission = undefined) => {
     return (req, res, next) => {
         if(req.query.token /* == undefined */ )
         {
-            console.log("Query Param Token:",req.query.token);
+            //console.log("Query Param Token:",req.query.token);
 
             jwt.verify(req.query.token, SECRET_KEY, (e,payload) => {
-                console.log("IN verify CALLBACK");
+                //console.log("IN verify CALLBACK");
                 if(e /* == undefined */)
                 {
                     // 401 Unauthorized
@@ -38,7 +39,7 @@ module.exports.validate_auth = (required_permission = undefined) => {
                     }
                     else
                     {
-                        console.log("failed payload.perms:",payload.perms);
+                        //console.log("failed payload.perms:",payload.perms);
                         // 403 Forbidden
                         res.status(403).jsonp({error: 'Forbidden! Insufficient permissions'});
                     }

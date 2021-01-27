@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const crypto = require('crypto');
 
 // ===== CRUD Operations ===== //
 
@@ -37,4 +38,75 @@ module.exports.delete = (uname) => {
         .exec();
 }
 
+// Inserts a new user
+module.exports.insert = (userdata) => {
+    var new_user = new User(userdata);
+    new_user.save()
+    return ;
+}
+
 // =========================== //
+
+module.exports.parse_password_hash = (password) => {
+    const arr = password.split(':');
+    return {
+        "hash_algorithm" : arr[0],
+        "salt"           : arr[1],
+        "password_hash"  : arr[2]
+    };
+}
+
+module.exports.gen_password_hash = async (password) => {
+    const SALT_SIZE = 9;
+    const salt_bytes = (await crypto.randomBytes(SALT_SIZE)).toString('base64');
+    const passwd_hash = crypto.createHash('sha256')
+        .update(salt_bytes + password)
+        .digest('base64');
+    
+    return `sha256:${salt_bytes}:${passwd_hash}`;
+}
+
+module.exports.verify_password = async (username,in_password) => {
+
+    var userdata = await this.get(username)
+
+    const passwd_obj = this.parse_password_hash(userdata.password_hash);
+            
+    const in_pass_hash = crypto.createHash(passwd_obj.hash_algorithm)
+        .update(passwd_obj.salt + in_password)
+        .digest('base64');
+
+    console.log(`> in_pass_hash = ${in_pass_hash}`);
+
+    return (passwd_obj.password_hash === in_pass_hash);
+
+
+    // return this.get(username)
+    //     .then(userdata => {
+
+    //         const passwd_obj = this.parse_password_hash(userdata.password_hash);
+            
+    //         const in_pass_hash = crypto.createHash(passwd_obj.hash_algorithm)
+    //             .update(passwd_obj.salt + in_password)
+    //             .digest('base64');
+
+    //             console.log(`> in_pass_hash = ${in_pass_hash}`);
+
+    //         return (passwd_obj.password_hash === in_pass_hash);
+    //     })
+    //     .catch(err => {
+    //         return false;
+    //     })
+}
+
+
+// =========================== //
+  
+// Permissions Enum
+module.exports.Permissions = Object.freeze({
+    "Guest" :       0b00000000,
+    //"RegularUser" : 0b00000001,
+    "Consumer" :    0b00000001,
+    "Producer" :    0b00000010,
+    "Admin" :       0b10000000
+});
