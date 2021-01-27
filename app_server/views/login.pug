@@ -1,19 +1,17 @@
 head
-  link(rel='stylesheet' href='../stylesheets/style.css')
-  link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  // <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  link(rel='stylesheet' href='../css/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='icon' href='../images/logo.png')
   title Sign in
 .login
   p.sign(align='center') Sign in
   form.form1
     input.un(type='text' align='center' placeholder=' Email address' required='required')
     input#myInput.pass(type='password' align='center' placeholder=' Password' required='required')
-    i.fa.fa-eye(onclick='changeEye(this)')
+    i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this)')
     button.submit Sign in
     .forgot(align='center')
-      a(href='#') Register
+      a(href='/register') Register
 script.
   function changeEye(icon) {
   var x = document.getElementById("myInput");

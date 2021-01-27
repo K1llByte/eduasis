@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel = "icon" href="../images/logo.png"
+  type = "image/x-icon"> 
+  <title>New Resource</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="links" href="/eduasis"><img src="../images/eduasis.png" style="height: 100%;"></a>
+
+        <div class="topnav-right">
+            <a class="active" href="/profile">New Resource</a>
+            <a class="links" href="/profile">New Post</a>
+            <a class="links" href="/profile">Profile</a>
+        </div>
+    </div>
+
+    <div class="new-resource" >
+        <p class="register_sign">New Resource</p>
+        <form>
+            <div class="resource-form">
+                Title:    
+                <div class="new-resource-text">
+                    <input class="un " type="text" placeholder="Title" required="required"/> 
+                </div>
+            </div>
+
+            <div class="resource-form">
+                Description:
+                <div class="new-resource-text">
+                    <textarea class="un " type="text" placeholder="Description"></textarea> 
+                </div>
+            </div>
+
+            <div class="resource-form">
+                Choose File:
+                <div class="new-resource-text" align="center" style="margin-bottom: 15px;">
+                    <label for="myfile"><u>Select a file</u></label>
+                    <input type="file" id="myfile" name="myfile">
+                </div>
+            </div>
+
+            <button class="submit" align="center">Submit</button>
+        </form>            
+    </div>
+
+</body>
+
+</html>

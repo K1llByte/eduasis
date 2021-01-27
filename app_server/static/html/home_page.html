@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"/>
+    <link rel="stylesheet" href="../css/materialize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel = "icon" href="../images/logo.png"
+          type = "image/x-icon"> 
+   <title>Eduasis</title>
+</head>
+
+<body>
+<!-- ---------------------- NAB BAR ---------------------------- -->
+    <div class="topnav">
+        <a class="links" href="/eduasis"><img src="../images/eduasis.png" style="height: 100%;"></a>
+
+        <div class="topnav-right">
+            <a class="links" href="/profile">New Resource</a>
+            <a class="links" href="/profile">New Post</a>
+            <a class="links" href="/profile">Profile</a>
+        </div>
+    </div>
+
+<!-- ---------------------- RESOURCE ---------------------------- -->
+    <div class="caixinha w3-card-4">
+        <div class="topbar">
+            <div class="profile-topbar">
+                <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="" class="profile-picture">
+                <div class="profile-name">Kirubaito</div>
+            </div>
+            <div class="resource">Resource</div>
+        </div>
+
+        <div class="text-box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique inventore, at ipsa blanditiis, commodi modi obcaecati dolores sint nostrum autem accusamus! Voluptatibus pariatur, rerum placeat nam commodi necessitatibus inventore!
+        </div>
+        <div class="bottom-bar">
+            <div class="rate" >
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="5 stars">&#9733;</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="4 stars">&#9733;</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="3 stars">&#9733;</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="2 stars">&#9733;</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="1 star">&#9733;</label>
+            </div>
+        
+            <div class="bottom-buttons">
+                <button type="button" class="material-icons">reply</button>
+                <button type="button" class="material-icons">download</button>
+            </div>
+        </div>
+    </div>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- ------------------------ POST -------------------------------- -->
+    <div class="caixinha w3-card-4 ">
+        <div class="post">
+            <div class="topbar-post">
+                <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="" class="profile-picture">
+                <div class="profile-name">Jojo</div>
+            </div>
+            <div class="box-resource-post">
+                <h4>Resource</h4>                        
+                <p>  
+                    <img src="../images/Files_archive.png" width="100" height="100" style="float: right;"/>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">... </span><span id="more" style="display: none;">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. </span>
+
+                <a onclick="readMore()" id="myBtn"> <u>Read more</u></a>
+            </div>
+
+            <p>DESCRIÇAO DO POST:  Something somthing blablabla</p>
+
+            
+        </div>   
+        <button class="w3-button w3-block w3-dark-grey" onclick="addComment()"> <i class="fa fa-comment" aria-hidden="true"></i> Comment</button>
+
+       
+        <div class="w3-container comments">
+            
+            <span id="add-comment" style="display: none;">
+            <div class="add-comments">
+                <img src="../images/user.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <textarea class="add-comment " type="text" placeholder="add a comment"></textarea>
+            </div>
+            </span>
+
+            <div class="comment">
+                <img src="../images/user.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <p>comentario numero 2 - bbbbbbbbbbbbbbbb bbbbbbbbbb</p>
+            </div>
+            <div class="comment">
+                <img src="../images/user.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <p>comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd </p>
+            </div>
+            <div class="comment">
+                <img src="../images/user.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <p>comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd </p>
+            </div>
+        </div>
+        
+        
+    </div>         
+
+    <script>
+        function readMore() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display == "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "<u>Read more</u>";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "<u>Read less</u>";
+                moreText.style.display = "inline";
+            }
+        }
+
+        function addComment() {
+            var moreText = document.getElementById("add-comment");
+            if (moreText.style.display == "none") {
+                moreText.style.display = "inline";
+            }else{
+                moreText.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

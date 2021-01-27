@@ -1,0 +1,91 @@
+head
+    link(rel='stylesheet' href='../css/style.css')
+    link(rel='stylesheet' href='../css/normalize.css')
+    link(rel='stylesheet' href='../css/w3.css')
+    link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Muli')
+    link(rel='stylesheet' href='../css/materialize.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+    link(rel='icon' href='../images/logo.png' type='image/x-icon')
+    title Eduasis
+body
+// ---------------------- NAB BAR ----------------------------
+.topnav
+    a.links(href='/eduasis')
+        img(src='../images/logo.png' style='width:13%;height:2%;')
+        | Eduasis
+    .topnav-right
+        a.links(href='#news') New Resource
+        a.links(href='#contact') New Post
+        a.links(href='/profile') Profile
+// ---------------------- RESOURCE ----------------------------
+.caixinha.w3-card-4
+    .topbar
+        .profile-topbar
+            img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' alt='')
+            .profile-name #{data.resource.owner}
+        .resource #{data.resource.title}
+    .text-box
+        | #{data.resource.description}
+    .bottom-bar
+        .rate
+            input#star5(type='radio' name='rate' value='5')
+            label(for='star5' title='5 stars') &starf;
+            input#star4(type='radio' name='rate' value='4')
+            label(for='star4' title='4 stars') &starf;
+            input#star3(type='radio' name='rate' value='3')
+            label(for='star3' title='3 stars') &starf;
+            input#star2(type='radio' name='rate' value='2')
+            label(for='star2' title='2 stars') &starf;
+            input#star1(type='radio' name='rate' value='1')
+            label(for='star1' title='1 star') &starf;
+        .bottom-buttons
+            button.material-icons(type='button') reply
+            button.material-icons(type='button') download
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// ------------------------ POST --------------------------------
+.caixinha.w3-card-4
+    .post
+        .topbar-post
+                img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' alt='')
+                .profile-name #{data.post.owner}
+        .box-resource-post(data-place='buda')
+            h4 Resource
+            p
+                img(src='../images/Files_archive.png' width='100' height='100' style='float: right;')
+                |                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+                span.dots ... 
+                span.more(style='display: none;')
+                    | erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.
+                a.myBtn(onclick="readMore('buda')")
+                    u Read more
+        p #{data.post.description}
+    button.w3-button.w3-block.w3-dark-grey
+        i.fa.fa-comment(aria-hidden='true')
+        |  Comment
+    
+    .w3-container.comments
+        .comment
+            img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px')
+            p comentario numero 2 - bbbbbbbbbbbbbbbb bbbbbbbbbb
+        .comment
+            img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px')
+            p
+                | comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd
+script.
+    function readMore(place) {
+        let dots = document.querySelector(`.card[data-place="${place}"] .dots`);
+        let moreText = document.querySelector(`.card[data-place="${place}"] .more`);
+        let btnText = document.querySelector(`.card[data-place="${place}"] .myBtn`);
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = " <u>Read more</u>";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = " <u>Read less</u>";
+            moreText.style.display = "inline";
+        }
+    }

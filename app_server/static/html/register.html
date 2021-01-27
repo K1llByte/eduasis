@@ -1,11 +1,13 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel = "icon" href="../images/logo.png"
+  type = "image/x-icon"> 
   <title>Register</title>
 </head>
 
@@ -20,13 +22,14 @@
         <input class="un " type="text" align="center" placeholder="Email address" required="required"/>
 
         <div>
+            
             <input class="pass" type="password" align="center" placeholder="Password" required="required" id="pass"/> 
-            <i onclick="changeEye(this, 1)" class="fa fa-eye"></i>
+            <i onclick="changeEye(this, 1)" class="fa fa-eye fa-eye-slash"></i>
         </div>
 
         <div>
             <input class="pass" type="password" align="center" placeholder="Confirm password" required="required" id="repass"/> 
-            <i onclick="changeEye(this, 2)" class="fa fa-eye"></i>
+            <i onclick="changeEye(this, 2)" class="fa fa-eye fa-eye-slash"></i>
         </div>
 
         <button class="submit" align="center">Register</button>
@@ -34,8 +37,8 @@
     </div>
      
     <script>
-        function changeEye(id, icon) {
-            if(icon == 1)
+        function changeEye(icon, id) {
+            if(id == 1)
                 var x = document.getElementById("pass");
             else
                 var x = document.getElementById("repass");
