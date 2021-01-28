@@ -70,17 +70,24 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 #### Routes
 
 ```
-GET /
-GET /login
-GET /register
-GET /users/:username
-GET /post/:post_id
-GET /resource/:resource_id
 
+[Done] GET /login
+[Done] GET /logout
+[Done] GET /register
+
+[Done] GET /users
+[Done] GET /users/:username
+[Done] PUT /users/:username
+[Done] POST /users/:username/avatar
 
 
 GET /posts
+GET /posts/:post_id
 POST /posts
+
+[Done] GET /resources
+[Done] POST /resources
+[Done] GET /resources/:resource_id
 ```
 
 ### Database Server

@@ -7,11 +7,12 @@ const comment_schema = new mongoose.Schema({
 });
 
 const post_schema = new mongoose.Schema({
-    resource_id: String,
-    content:     String,
-    author:      String,
+    post_id:      String,
+    resource_id:  String,
+    content:      String,
+    author:       String,
     created_date: Date,
-    comments:    [comment_schema]
+    comments:     [comment_schema]
 },
 {
     versionKey: false,

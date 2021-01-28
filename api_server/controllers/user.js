@@ -21,15 +21,15 @@ module.exports.get = (uname) => {
 // Updated user data
 module.exports.set = (userdata) => {
     return User
-        .updateOne({username:userdata['username']},{$set : data})
+        .updateOne({username:userdata.username},{$set : userdata})
         .exec();
 }
 
-// Adds a new user data
-module.exports.add = (userdata) => {
-    const new_user = new User(userdata)
-    return new_user.save();
-}
+// // Adds a new user data
+// module.exports.add = (userdata) => {
+//     const new_user = new User(userdata)
+//     return new_user.save();
+// }
 
 // Deletes user by username
 module.exports.delete = (uname) => {
@@ -41,8 +41,7 @@ module.exports.delete = (uname) => {
 // Inserts a new user
 module.exports.insert = (userdata) => {
     var new_user = new User(userdata);
-    new_user.save()
-    return ;
+    return new_user.save()
 }
 
 // =========================== //
