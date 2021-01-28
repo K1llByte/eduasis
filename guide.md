@@ -112,16 +112,18 @@ base64_pwhash_with_separator = ([a-zA-Z0-9+\\=]{4})+:([a-zA-Z0-9+\\=]{4})+<br/>
 
 
 - Resource
+    - resource_id -> String
     - title       -> String
     - description -> String
-    - files: list[Files]
-    - datetime -> Date
+    - files       -> list[Files]
+    - create_date -> Date
+    - visibility  -> Number
     - rate
         - current_rate -> Number
         - num_rates    -> Number
 
 - Post
-    - resource
+    - resource_id
     - comments: list[Comment]
 
 
@@ -130,8 +132,18 @@ ___
 
 ### TODO
 
-- [ ] API Authentication
+- [x] API Authentication
 - [ ] Configuration module (load from file to vars)
+- [ ] All models
+    - [x] Resource model
+    - [x] Post model
+    - [ ] Resource controller
+    - [ ] Post controller
+    - [ ] Unapproved Resource model
+- [ ] All endpoints
+    - [ ] User admin CRUD endpoints
+    - [ ] Resource endpoints
+    - [ ] Post endpoints
 
 ### Questions
 

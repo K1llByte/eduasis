@@ -106,8 +106,9 @@ router.post('/api/register', (req,res) => {
     }
 })
 
+// ========= DATA ENDPOINTS ========= //
 
-router.get('/api/users', (req, res) => {
+router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res) => {
     
     User.list_all()
         .then(data => { 
@@ -119,7 +120,7 @@ router.get('/api/users', (req, res) => {
 });
 
 
-router.get('/api/users/:username', auth.authenticate(User.Permissions.Guest), (req, res) => {
+router.get('/api/users/:username', auth.authenticate(User.Permissions.Consumer), (req, res) => {
 
     User.get(req.params.username)
         .then(data => { 

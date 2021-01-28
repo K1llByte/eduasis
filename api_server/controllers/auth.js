@@ -41,7 +41,6 @@ module.exports.authenticate = (required_permission = undefined) => {
                     }
                     else if(payload.perms >= required_permission)
                     {
-                        console.log("authorized payload.perms:",payload.perms);
                         req.user = { 
                             perms : payload.perms,
                             username : payload.username
@@ -50,6 +49,7 @@ module.exports.authenticate = (required_permission = undefined) => {
                     }
                     else
                     {
+                        console.log(payload.perms);
                         // 403 Forbidden
                         res.status(403).jsonp({error: 'Forbidden! Insufficient permissions'});
                     }
@@ -69,8 +69,8 @@ module.exports.gen_token = (data) => {
 
     const token = jwt.sign({
         username: data.username, 
-        perms: data.perms, 
-        exp: Math.floor(Date.now() / 1000) + (60*60*24) // Expire in a day
+        perms: data.permissions, 
+        exp: Math.floor(Date.now() / 1000) + (60*60*24*7) // Expire in a day
     } , SECRET_KEY);
 
     return token;
