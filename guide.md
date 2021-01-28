@@ -73,9 +73,14 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 GET /
 GET /login
 GET /register
-GET /user/:username
+GET /users/:username
 GET /post/:post_id
 GET /resource/:resource_id
+
+
+
+GET /posts
+POST /posts
 ```
 
 ### Database Server
@@ -144,6 +149,14 @@ ___
     - [ ] User admin CRUD endpoints
     - [ ] Resource endpoints
     - [ ] Post endpoints
+
+### Permission Table
+
+|                  | Guest | Consumer | Producer | Admin |
+|:----------------:|:-----:|:--------:|:--------:|:-----:| 
+| Add Posts        |       | X        | X        | X     |
+| Add Resources    |       |          | X        | X     |
+| Manage Resources |       |          |          | X     |
 
 ### Questions
 

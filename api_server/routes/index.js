@@ -1,7 +1,43 @@
 const express = require('express');
 const User = require('../controllers/user');
+const Resource = require('../controllers/resource');
 const auth = require('../controllers/auth');
 const { Blacklist } = require('../controllers/blacklist');
+const multer = require('multer');
+
+// ========================= //
+
+const storage = multer.diskStorage({
+    destination : (req, file, next) => {
+        next(null,'storage/avatars/');
+    },
+    filename : (req, file, next) => {
+        const tmp = file.originalname.split('.')
+        const ext = tmp[tmp.length-1];
+        next(null,`${req.user.username}.${ext}`);
+    }
+});
+
+const img_type_filter = (req,file,next) => {
+    
+    req.valid_img_type = (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png');
+    req.valid = (req.params.username == req.user.username) && 
+        req.valid_img_type;
+
+    if(req.valid)
+        next(null,true);
+    else
+        next(null,false);
+};
+
+const upload = multer({ 
+    storage: storage,
+    limits : {
+        fileSize : 1024 * 1024 * 5
+    },
+    fileFilter: img_type_filter
+});
+
 //const passport = require('passport');
 
 const router = express.Router();
@@ -123,6 +159,48 @@ router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res
 router.get('/api/users/:username', auth.authenticate(User.Permissions.Consumer), (req, res) => {
 
     User.get(req.params.username)
+        .then(data => { 
+            res.json(data);
+        })
+        .catch(err => { 
+            res.json('error', err);
+        });
+});
+
+
+router.post('/api/users/:username/avatar', auth.authenticate(User.Permissions.Consumer), upload.single('avatar_img'), (req, res) => {
+
+    if(req.valid)
+    {
+        res.json({"success":"Avatar changed successfully"});
+    }
+    else if(req.valid_img_type)
+    {
+        res.status(401).json({"error":"Forbidden!"});
+    }
+    else
+    {
+        res.status(422).json({"error":"Invalid image type (jpeg or png)!"});
+    }
+});
+
+
+router.get('/api/test', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+    
+    Resource.list_all()
+        .then(data => { 
+            res.json(data);
+        })
+        .catch(err => { 
+            res.json('error', err);
+        });
+});
+
+
+router.post('/api/post', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+    
+
+    Resource.list_all()
         .then(data => { 
             res.json(data);
         })

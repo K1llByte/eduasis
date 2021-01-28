@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
+const ResourceType = require('../controllers/resource_type');
 
-const rate_schema = new Schema({ 
+const rate_schema = new mongoose.Schema({ 
     current_rate: String,
     num_rates:    String
+},
+{
+    _id : false
 });
 
 const resource_schema = new mongoose.Schema({
     resource_id: String,
     type_id:     Number,
+    author:      String,
     title:       String,
     description: String,
     filename:    String,
@@ -21,3 +26,24 @@ const resource_schema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('resources', resource_schema);
+
+/* 
+
+{
+    "resource_id" : "1",
+    "type_id"     : 1,
+    "author"      : "test",
+    "title"       : "Test Resource",
+    "description" : "This is a test resource to provide funcionality to development branch of Eduasis",
+    "filename"    : "test.txt",
+    "create_date" : "1",
+    "visibility"  : 0,
+    "rate" : {
+        "current_rate" : 0,
+        "num_rates"    : 0
+    }
+}
+
+*/
+
+// ((current_rate * num_rates) + new_rate) / ( num_rates + 1 )

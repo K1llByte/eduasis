@@ -8,7 +8,8 @@ const user_schema = new mongoose.Schema({
     affiliation:       String,
     permissions:       Number,
     registration_date: Date,
-    last_login_date:   Date
+    last_login_date:   Date,
+    avatar_url:        String
 }, 
 {
     versionKey: false,
