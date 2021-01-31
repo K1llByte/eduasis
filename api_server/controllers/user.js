@@ -6,7 +6,7 @@ const crypto = require('crypto');
 // Returns all users list
 module.exports.list_all = () => {
     return User
-        .find({},{_id:0,password_hash:0})
+        .find({},{_id:0})
         //.sort({ username : 1 })
         .exec();
 }
@@ -14,7 +14,7 @@ module.exports.list_all = () => {
 // Returns a user by username
 module.exports.get = (uname) => {
     return User
-        .findOne({ username: uname },{_id:0,password_hash:0})
+        .findOne({ username: uname },{_id:0}) //,password_hash:0
         .exec();
 }
 

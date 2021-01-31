@@ -49,6 +49,7 @@ var blacklist = new Blacklist();
 
 router.post('/api/login', (req, res) => {
 
+    console.log(req.body);
     User.verify_password(req.body.username,req.body.password)
         .then(userdata => {
             if(userdata != null)
