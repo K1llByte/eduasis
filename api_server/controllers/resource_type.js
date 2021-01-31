@@ -6,12 +6,12 @@ const ResourceType = require('../models/resource_type');
 
 module.exports.list_all = () => {
     return ResourceType
-        .find()
+        .find({},{_id:0})
         .exec()
 }
 
 module.exports.get = (tid) => {
     return ResourceType
-        .findOne({type_id:tid})
+        .findOne({type_id:tid},{_id:0,type_id:0})
         .exec()
 }

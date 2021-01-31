@@ -324,6 +324,29 @@ router.post('/api/resources', auth.authenticate(User.Permissions.Producer), (req
 });
 
 
+
+router.get('/api/resource_types', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+
+    ResourceType.list_all()
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => { 
+            res.json('error', err);
+        });
+});
+
+router.get('/api/resource_types/:type_id', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+
+    ResourceType.get(req.params.type_id)
+        .then(data => { 
+            res.json(data);
+        })
+        .catch(err => { 
+            res.json('error', err);
+        });
+});
+
 // ========================= //
 
 router.get('/api/test', auth.authenticate(User.Permissions.Consumer), (req, res) => {

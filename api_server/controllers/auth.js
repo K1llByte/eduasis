@@ -70,7 +70,7 @@ module.exports.gen_token = (data) => {
     const token = jwt.sign({
         username: data.username, 
         perms: data.permissions, 
-        exp: Math.floor(Date.now() / 1000) + (60*60*24*7) // Expire in a day
+        exp: Math.floor(Date.now() / 1000) + (60*60*24*7) // Expire in a week
     } , SECRET_KEY);
 
     return token;

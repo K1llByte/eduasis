@@ -88,6 +88,10 @@ POST /posts
 [Done] GET /resources
 [Done] POST /resources
 [Done] GET /resources/:resource_id
+
+GET /resources_types/
+GET /resources_types/:type_id
+
 ```
 
 ### Database Server
@@ -127,7 +131,7 @@ base64_pwhash_with_separator = ([a-zA-Z0-9+\\=]{4})+:([a-zA-Z0-9+\\=]{4})+<br/>
     - resource_id -> String
     - title       -> String
     - description -> String
-    - files       -> list[Files]
+    - files       -> [String]
     - create_date -> Date
     - visibility  -> Number
     - rate
@@ -135,9 +139,16 @@ base64_pwhash_with_separator = ([a-zA-Z0-9+\\=]{4})+:([a-zA-Z0-9+\\=]{4})+<br/>
         - num_rates    -> Number
 
 - Post
-    - resource_id
-    - comments: list[Comment]
-
+    - post_id      -> String
+    - resource_id  -> String
+    - content      -> String
+    - author       -> String
+    - created_date -> Date
+    - comments     -> [
+        - message      -> String,
+        - created_date -> Date,
+        - author       -> String
+    ]
 
 ___
 ## Extra
