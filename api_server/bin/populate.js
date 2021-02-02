@@ -14,7 +14,7 @@ const Post = require('../controllers/post');
 const MONGODB_URL = 'mongodb://127.0.0.1/eduasis';
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const AFFILIATIONS =[ 
+const AFFILIATIONS = [ 
     "Universidade do Minho", 
     "Universidade do Porto", 
     "Universidade de Coimbra",
@@ -38,6 +38,8 @@ sleep = (ms) => {
 
 let users_success = 0;
 let users_error = 0;
+let rt_success = 0;
+let rt_error = 0;
 console.log("Preparing database populating ...");
 
 let users_to_insert = [
@@ -63,6 +65,14 @@ let users_to_insert = [
         "permissions":2
     }
 ]
+let rtypes_to_insert = [
+    { "type_id" : 1, "name" : "Monograph" },
+    { "type_id" : 2, "name" : "Book" },
+    { "type_id" : 3, "name" : "Article" },
+    { "type_id" : 4, "name" : "Project" },
+    { "type_id" : 5, "name" : "Application" },
+    { "type_id" : 6, "name" : "Other" }
+];
 
 function load_users_from_file(filename)
 {
@@ -99,7 +109,7 @@ async function add_user(userdata)
                 })
                 .catch(err => {
                     ++users_error;
-                })
+                });
                 
         });
     });
@@ -112,14 +122,34 @@ function populate_users(users_array)
     });
 }
 
+
+function populate_rtypes(rtypes)
+{
+    rtypes.forEach(rt => {
+        ResourceType.insert(rt)
+        .then(data => {
+            ++rt_success;
+        })
+        .catch(err => {
+            console.log(err);
+            ++rt_error;
+        });
+    });
+    
+}
+
+
 async function print_values()
 {
     await sleep(2000);
     console.log("Users: ",users_success,"Created",users_error,"Not created");
+    console.log("Resource Types: ",rt_success,"Created",rt_error,"Not created");
 }
 
 
-users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
+//users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
+//populate_users(users_to_insert);
 
-populate_users(users_to_insert);
+//populate_rtypes(rtypes_to_insert);
+
 print_values();
