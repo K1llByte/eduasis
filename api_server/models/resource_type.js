@@ -5,7 +5,6 @@ const resource_type_schema = new mongoose.Schema({
     name:        String
 }, 
 {
-    _id : false,
     versionKey: false,
     collection: 'resource_types'
 });

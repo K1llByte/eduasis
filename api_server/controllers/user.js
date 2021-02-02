@@ -4,19 +4,40 @@ const crypto = require('crypto');
 // ===== CRUD Operations ===== //
 
 // Returns all users list
-module.exports.list_all = () => {
-    return User
-        .find({},{_id:0})
+module.exports.list_all = (no_password=false) => {
+    if(no_password)
+    {
+        return User
+        .find({},{_id:0,password_hash:0})
         //.sort({ username : 1 })
         .exec();
+    }
+    else
+    {
+        return User
+            .find({},{_id:0})
+            //.sort({ username : 1 })
+            .exec();
+    }
 }
 
 // Returns a user by username
-module.exports.get = (uname) => {
-    return User
-        .findOne({ username: uname },{_id:0}) //,password_hash:0
-        .exec();
+module.exports.get = (uname,no_password=false) => {
+    if(no_password)
+    {
+        return User
+            .findOne({ username: uname },{_id:0,password_hash:0})
+            .exec();
+    }
+    else
+    {
+        return User
+            .findOne({ username: uname },{_id:0})
+            .exec();
+    }
+    
 }
+
 
 // Updated user data
 module.exports.set = (userdata) => {

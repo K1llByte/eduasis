@@ -16,9 +16,23 @@ const RESOURCE_PROJECTION = {
 
 // ===== CRUD Operations ===== //
 
-module.exports.list_all = () => {
+module.exports.list_all = (search_term=null,type_id=null) => {
+    let match = { "$match" : {} };
+    if(search_term != null)
+    {
+        match['$match'].title = { "$regex": search_term, "$options": 'i' };
+    }
+
+    if(type_id != null)
+    {
+        match['$match'].type_id = type_id;
+    }
+
+    console.log(match);
+    
     return Resource
         .aggregate([
+            match,
             {
               "$lookup":
                 {

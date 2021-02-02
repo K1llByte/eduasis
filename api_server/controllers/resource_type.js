@@ -15,3 +15,8 @@ module.exports.get = (tid) => {
         .findOne({type_id:tid},{_id:0,type_id:0})
         .exec()
 }
+
+module.exports.insert = (rt_data) => {
+    var new_rt = new ResourceType(rt_data);
+    return new_rt.save()
+}

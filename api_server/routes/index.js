@@ -25,10 +25,11 @@ const img_type_filter = (req,file,next) => {
     req.valid = (req.params.username == req.user.username) && 
         req.valid_img_type;
 
-    if(req.valid)
-        next(null,true);
-    else
-        next(null,false);
+    // if(req.valid)
+    //     next(null,true);
+    // else
+    //     next(null,false);
+    next(null,req.valid);
 };
 
 const upload = multer({ 
@@ -148,7 +149,7 @@ router.post('/api/register', (req,res) => {
 
 router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res) => {
     
-    User.list_all()
+    User.list_all(true)
         .then(data => { 
             res.json(data);
         })
@@ -161,7 +162,7 @@ router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res
 
 router.get('/api/users/:username', auth.authenticate(User.Permissions.Consumer), (req, res) => {
 
-    User.get(req.params.username)
+    User.get(req.params.username,true)
         .then(data => { 
             res.json(data);
         })
@@ -248,12 +249,31 @@ router.post('/api/users/:username/avatar', auth.authenticate(User.Permissions.Co
 
 router.get('/api/resources', auth.authenticate(User.Permissions.Consumer), (req, res) => {
 
-    Resource.list_all()
+    let search_term = null;
+    let type_id = null;
+    if(req.query.search != undefined)
+    {
+        // Escape all regex operators
+        search_term = req.query.search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    if(req.query.type_id != undefined)
+    {
+        type_id = Number(req.query.type_id);
+        if(isNaN(type_id))
+        {
+            res.status(400).json({'error': 'type_id is not a number'});
+            return;
+        }
+            
+    }
+
+    Resource.list_all(search_term,type_id)
         .then(data => { 
             res.json(data);
         })
         .catch(err => { 
-            res.json('error', err);
+            res.json({'error': err});
         });
 });
 
