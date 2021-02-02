@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
+const axios = require('axios');
+const fs = require('fs');
 // Import Models
 const User = require('../controllers/user');
 const Resource = require('../controllers/resource');
 const ResourceType = require('../controllers/resource_type');
 const Post = require('../controllers/post');
+
+
+
+
 
 const MONGODB_URL = 'mongodb://127.0.0.1/eduasis';
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -48,8 +54,21 @@ let users_to_insert = [
         "email":"jojo@mail.com",
         "affiliation": "Universidade do Minho",//rand_choice(AFFILIATIONS),
         "permissions":128
+    },
+    {
+        "username":"jcr",
+        "password":"a_password",
+        "email":"jcr@di.uminho.pt",
+        "affiliation": "Universidade do Minho",
+        "permissions":2
     }
 ]
+
+function load_users_from_file(filename)
+{
+    let rawdata = fs.readFileSync(filename);
+    return JSON.parse(rawdata);
+}
 
 async function add_user(userdata)
 {
@@ -59,7 +78,7 @@ async function add_user(userdata)
         {
             ++users_error;
             return;
-        } 
+        }
         User.gen_password_hash(userdata.password)
             .then(passwd_hash => {
 
@@ -99,6 +118,8 @@ async function print_values()
     console.log("Users: ",users_success,"Created",users_error,"Not created");
 }
 
+
+users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
 
 populate_users(users_to_insert);
 print_values();

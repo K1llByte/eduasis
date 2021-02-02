@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/K1llByte/eduasis#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
