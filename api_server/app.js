@@ -18,7 +18,10 @@ db.once('open', function() {
     console.log("Conexão ao MongoDB realizada com sucesso...")
 });
 
-var index_router = require('./routes/index');
+const index_router = require('./routes/index');
+const users_router = require('./routes/users');
+const resources_router = require('./routes/resources');
+const posts_router = require('./routes/posts');
 
 var app = express();
 
@@ -32,6 +35,9 @@ app.use('/storage',express.static(path.join(__dirname, 'storage')));
 
 // Routes
 app.use('/', index_router);
+app.use('/', users_router);
+app.use('/', resources_router);
+app.use('/', posts_router);
 
 
 // catch 404 and forward to error handler

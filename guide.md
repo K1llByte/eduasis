@@ -84,6 +84,10 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 GET /posts
 GET /posts/:post_id
 POST /posts
+POST /posts/:post_id/comments
+
+GET /admin/requests
+GET /admin/requests/:resource_id
 
 [Done] GET /resources
 [Done] POST /resources
@@ -171,14 +175,14 @@ ___
 - [ ] Posts endpoints get respective resource data (title and description)
 
 
-Database populate  
-File upload  
-Resource Search  
-    GET /api/resources?query=str  
+[In Progress] Database populate  
+Arquive upload  
+
 Admin overall management  
     Users,Posts,Resources unrestricted access  
 Admin resource panel
 Posts and Resources pagination
+
 
 
 

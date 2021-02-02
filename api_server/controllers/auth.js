@@ -2,7 +2,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 
-var SECRET_KEY = 'DAW2020_EDUASIS'
+const SECRET_KEY = 'DAW2020_EDUASIS';
 
 
 module.exports.fetch_token = (req) =>

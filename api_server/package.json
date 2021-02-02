@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/K1llByte/eduasis#readme",
   "dependencies": {
+    "adm-zip": "^0.5.2",
     "axios": "^0.21.1",
+    "bagit-fs": "^1.1.1",
     "express": "^4.17.1",
+    "extract-zip": "^2.0.1",
     "http-errors": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-blacklist": "^0.1.2",

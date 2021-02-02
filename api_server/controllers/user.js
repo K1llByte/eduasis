@@ -4,21 +4,12 @@ const crypto = require('crypto');
 // ===== CRUD Operations ===== //
 
 // Returns all users list
-module.exports.list_all = (no_password=false) => {
-    if(no_password)
-    {
-        return User
-        .find({},{_id:0,password_hash:0})
-        //.sort({ username : 1 })
+module.exports.list_all = (page_num,page_limit,no_password=false) => {
+    return User
+        .find({},{_id:0,password_hash:!no_password})
+        .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+        .limit(page_limit)
         .exec();
-    }
-    else
-    {
-        return User
-            .find({},{_id:0})
-            //.sort({ username : 1 })
-            .exec();
-    }
 }
 
 // Returns a user by username
@@ -63,6 +54,10 @@ module.exports.delete = (uname) => {
 module.exports.insert = (userdata) => {
     var new_user = new User(userdata);
     return new_user.save()
+}
+
+module.exports.total_users = () => {
+    return User.count().exec()
 }
 
 // =========================== //

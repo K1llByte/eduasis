@@ -16,8 +16,8 @@ const RESOURCE_PROJECTION = {
 
 // ===== CRUD Operations ===== //
 
-module.exports.list_all = (search_term=null,type_id=null) => {
-    let match = { "$match" : {} };
+module.exports.list_all = (page_num,page_limit,search_term=null,type_id=null) => {
+    let match = { "$match" : { "visibility" : 0 } };
     if(search_term != null)
     {
         match['$match'].title = { "$regex": search_term, "$options": 'i' };
@@ -27,8 +27,6 @@ module.exports.list_all = (search_term=null,type_id=null) => {
     {
         match['$match'].type_id = type_id;
     }
-
-    console.log(match);
     
     return Resource
         .aggregate([
@@ -46,13 +44,15 @@ module.exports.list_all = (search_term=null,type_id=null) => {
                 "$project" : RESOURCE_PROJECTION
            }
         ])
+        .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+        .limit(page_limit)
         .exec()
 }
 
 
 module.exports.get = (rid) => {
     return Resource
-        .find({ "resource_id": rid }, RESOURCE_PROJECTION)
+        .findOne({ "resource_id": rid }, RESOURCE_PROJECTION)
         .exec()
 }
 
