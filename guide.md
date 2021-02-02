@@ -89,8 +89,8 @@ POST /posts
 [Done] POST /resources
 [Done] GET /resources/:resource_id
 
-GET /resources_types/
-GET /resources_types/:type_id
+[Done] GET /resources_types/
+[Done] GET /resources_types/:type_id
 
 ```
 
@@ -167,6 +167,20 @@ ___
     - [ ] User admin CRUD endpoints
     - [ ] Resource endpoints
     - [ ] Post endpoints
+
+- [ ] Posts endpoints get respective resource data (title and description)
+
+
+Database populate  
+File upload  
+Resource Search  
+    GET /api/resources?query=str  
+Admin overall management  
+    Users,Posts,Resources unrestricted access  
+Admin resource panel
+Posts and Resources pagination
+
+
 
 ### Permission Table
 
