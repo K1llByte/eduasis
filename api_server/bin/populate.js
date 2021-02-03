@@ -150,6 +150,6 @@ async function print_values()
 //users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
 //populate_users(users_to_insert);
 
-//populate_rtypes(rtypes_to_insert);
+populate_rtypes(rtypes_to_insert);
 
 print_values();
