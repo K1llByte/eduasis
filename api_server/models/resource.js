@@ -10,8 +10,8 @@ const rates_schema = new mongoose.Schema({
 });
 
 const rate_schema = new mongoose.Schema({ 
-    current_rate: String,
-    num_rates:    String,
+    current_rate: Number,
+    num_rates:    Number,
     rates:        [rates_schema]
 },
 {

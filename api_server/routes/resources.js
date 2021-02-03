@@ -16,22 +16,84 @@ const resource_storage = multer.diskStorage({
         next(null,'storage/resources/');
     },
     filename : (req, file, next) => {
-        const tmp = file.originalname.split('.')
+        const tmp = file.originalname.split('.');
         const ext = tmp[tmp.length-1];
-        next(null,`${req.user.username}.${ext}`);
+        req.resource_id = Resource.gen_id();
+        next(null,`${req.resource_id}.${ext}`);
     }
 });
 
-const file_type_filter = (req,file,next) => {
-    
-    req.valid_file_type = (file.mimetype === 'application/zip' );
-    req.valid = (req.params.username === req.user.username) && 
-        req.valid_file_type;
 
-    // if(req.valid)
-    //     next(null,true);
-    // else
-    //     next(null,false);
+const data_process_filter = async (req) => {
+    const type_id = req.body.type_id;
+    const title = req.body.title;
+    const description = req.body.description;
+    const visibility = req.body.visibility;
+
+    try {
+        let type = await ResourceType.get(type_id);
+        if(type == null) 
+        {
+            req.error = 'Invalid type_id';
+            return;
+        }
+    }
+    catch { // TODO: Not sure about this, check later
+        req.error = 'Invalid type_id';
+        return;
+    }
+    
+    if(title == undefined)
+    {
+        req.error = 'Invalid title';
+        return;
+    }
+
+    if(description == undefined)
+    {
+        req.error = 'Invalid description';
+        return;
+    }
+
+    if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
+    {
+        req.error = 'Invalid visibility';
+        return;
+    }
+
+    req.resource_id = Resource.gen_id();
+    const new_resource = {
+        "type_id" : type_id,
+        "author" : req.user.username,
+        "title" : title,
+        "description" : description,
+        "filename" : `${req.resource_id}.zip`,
+        "create_date" : Date.now(),
+        "visibility" : visibility,
+        "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
+    };
+        
+    try {
+        await Resource.insert(new_resource);
+    }
+    catch(err) {
+        req.error = err.message;
+    }
+};
+
+const file_type_filter = async (req,file,next) => {
+
+    req.valid = (file.mimetype === 'application/zip');
+    if(req.valid)
+    {
+        await data_process_filter(req)
+        req.valid = req.valid && (req.error == undefined)
+    }
+    else
+    {
+        req.error = 'Invalid file type (zip with BagIt format)!';
+    }
+
     next(null,req.valid);
 };
 
@@ -111,59 +173,62 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
 });
 
 
-router.post('/api/resources', auth.authenticate(User.CPermissions.ap), (req, res) => {
+router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_upload.single('resource_data'), (req, res) => {
 
-    // type_id
-    // title
-    // description
-    // visibility
+    if(req.valid)
+    {
+        res.json({"success":"Resource created successfully"});
+    }
+    else 
+    {
+        res.status(400).json({"error":req.error});
+    }
+    
 
-    const type_id = req.body.type_id
-    const title = req.body.title
-    const description = req.body.description
-    const visibility = req.body.visibility
+    // const type_id = req.body.type_id
+    // const title = req.body.title
+    // const description = req.body.description
+    // const visibility = req.body.visibility
 
-    ResourceType.get(type_id)
-    .then(data => {
-        if(title == undefined)
-        {
-            res.status(400).json('error', "Invalid title");
-            return;
-        }
-        if(description == undefined)
-        {
-            res.status(400).json('error', "Invalid description");
-            return;
-        }
-        if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
-        {
-            res.status(400).json('error', "Invalid visibility");
-            return;
-        }
-        const new_resource = {
-            "type_id" : type_id,
-            "author" : req.user.username,
-            "title" : title,
-            "description" : description,
-            "filename" : "file.txt",
-            "create_date" : Date.now(),
-            "visibility" : visibility,
-            "rate" : { "current_rate":0, "num_rates":0 },
-        };
+    // ResourceType.get(type_id)
+    // .then(data => {
+    //     if(title == undefined)
+    //     {
+    //         res.status(400).json('error', "Invalid title");
+    //         return;
+    //     }
+    //     if(description == undefined)
+    //     {
+    //         res.status(400).json('error', "Invalid description");
+    //         return;
+    //     }
+    //     if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
+    //     {
+    //         res.status(400).json('error', "Invalid visibility");
+    //         return;
+    //     }
+    //     const new_resource = {
+    //         "type_id" : type_id,
+    //         "author" : req.user.username,
+    //         "title" : title,
+    //         "description" : description,
+    //         "filename" : "file.txt",
+    //         "create_date" : Date.now(),
+    //         "visibility" : visibility,
+    //         "rate" : { "current_rate":0, "num_rates":0 },
+    //     };
         
-        Resource.insert(new_resource)
-            .then(data => { 
-                res.json({ "success": "Resource created successfully" });
-            })
-            .catch(err => { 
-                res.status(400).json({'error': err.message});
-            });
-    })
-    .catch(err => {
-        res.status(400).json('error', "Invalid type_id");
-    })
-
-
+    //     Resource.insert(new_resource)
+    //         .then(data => { 
+    //             res.json({ "success": "Resource created successfully" });
+    //         })
+    //         .catch(err => { 
+    //             res.status(400).json({'error': err.message});
+    //         });
+    // })
+    // .catch(err => {
+    //     res.status(400).json('error', "Invalid type_id");
+    // })
 });
 
 
@@ -176,9 +241,11 @@ router.put('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissio
         return;
     }
 
-    Resource.rate(req.params.resource_id,req.user.username,value)
+    Resource.rate(req.params.resource_id, req.user.username, value)
         .then(data => {
-            res.json(data);
+            res.json({
+                "new_rate": data
+            });
         })
         .catch(err => { 
             res.status(400).json({'error': err.message});

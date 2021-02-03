@@ -1,5 +1,5 @@
-const Resource = require('../models/resource');
 const mongoose = require('mongoose');
+const Resource = require('../models/resource');
 
 const RESOURCE_PROJECTION = {
     "_id"         :0,
@@ -65,22 +65,35 @@ module.exports.insert = (resource_data) => {
 
 // =========================== //
 
+module.exports.gen_id = () => {
+    return mongoose.Types.ObjectId().toString('base64');
+}
+
 module.exports.rate = async (rid,username,value) => {
     
-    let res = await Resource.findOne(
+    var res = await Resource.findOne(
         {resource_id:rid},
-        {_id:0,current_rate:1,num_rates:1,rates:1}
-    ).exec()
-    console.log(res);
-    res.current_rate = (res.current_rate * res.num_rates + value) / (num_rates + 1);
-    res.num_rates = res.num_rates + 1;
-    res.rates.push({
+        {_id:0,"rate.current_rate":1,"rate.num_rates":1,"rate.rates":1}
+    ).exec();
+
+    res.rate.rates.forEach(r => {
+        if(r.username === username)
+            throw Error('User already rated this resource');
+    });
+
+    res.rate.current_rate = (res.rate.current_rate * res.rate.num_rates + value) / (res.rate.num_rates + 1);
+
+    res.rate.num_rates = res.rate.num_rates + 1;
+    res.rate.rates.push({
         "username": username,
         "rated": value
     });
 
-    return db.resources.updateOne(
+    Resource.updateOne(
             {"resource_id":rid},
             {$set : res
         }).exec();
+    
+    return res.rate.current_rate;
 }
+

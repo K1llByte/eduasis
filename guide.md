@@ -80,15 +80,10 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 [Done] PUT /users/:username
 [Done] POST /users/:username/avatar
 
-
 [Done] GET /posts
 [Done] GET /posts/:post_id
 [Done] POST /posts
 [Done] POST /posts/:post_id/comments
-
-GET /admin/requests
-GET /admin/requests/:resource_id
-PUT /admin/requests/:resource_id
 
 [Done] GET /resources
 [Done] POST /resources
