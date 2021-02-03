@@ -1,23 +1,99 @@
-head
+extends navbar.pug
+
+block title
   link(rel='stylesheet' href='/static/css/style.css')
-  link(rel='stylesheet' href='/static/css/normalize.css')
-  link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-  link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
   title Profile
-.topnav
-  a.links(href='/eduasis')
-    img(src='/static/images/logo.png' style='width:13%;height:2%;')
-    | Eduasis
-  .topnav-right
-    a.links(href='#news') New Resours
-    a.links(href='#contact') New Post
-    a.active(href='/profile') Profile
-.profile_pic
-  img(src='/static/images/user.png' style='width:160px;height:160px;')
-.profile_name
-  h1 #{user.nickname}
-  h3 #{user.username}
-  h4 #{user.email}
-hr
+
+block content
+  .doublebox-page-content
+    .doublebox-page-leftBox
+      .doublebox-page-leftBox-outerBox(style="max-height:40rem")
+        .doublebox-page-leftBox-innerbox(style="height:23rem")
+          img(src='/static/images/moky.png' style='width:160px;height:160px;')
+          div(style='justify-content:center; text-align: center;')
+            h2 Mae Joana
+            p Joaninha
+            p email@gmail.com
+        a.doublebox-page-leftBox-button(href='/logout')
+          .doublebox-page-leftBox-button-inner
+            | Logout
+        a.doublebox-page-leftBox-button(href='/profile_edit')
+          .doublebox-page-leftBox-button-inner
+            | Edit Profile
+    .doublebox-page-rightBox
+      .doublebox-page-rightBox-innerbox
+        .doublebox-page-rightBox-innerbox-title
+          h1 Feed
+        .doublebox-page-rightBox-innerbox-content
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply
+          .doublebox-page-rightBox-innerbox-content-activityContainer
+            .doublebox-page-rightBox-innerbox-content-activityBox
+              .doublebox-page-rightBox-innerbox-content-description
+                h3 Posted about resource &quot;XPTO&quot;
+              .doublebox-page-rightBox-innerbox-content-timeInfo
+                p 20 minutes ago
+              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
+                .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                  i.material-icons reply

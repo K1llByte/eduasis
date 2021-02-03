@@ -1,13 +1,63 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+
+
 const jwt = require('jsonwebtoken');
 //const methodOverride = require('method-override');
 
-var index_router = require('./routes/index');
+var { v4: uuidv4 } = require('uuid');
+var session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
+var passport = require('passport')
+var LocalStrategy = require('passport-local').Strategy
+var axios = require('axios')
+
+
+
+// Configuração da estratégia local
+passport.use(new LocalStrategy(
+  {usernameField: 'username'}, (user, pass, done) => {
+    axios.post('http://localhost:7700/api/login/',{username: user, password: pass})
+      .then(dados => done(null, dados.data)
+      )
+      .catch(erro => done(erro))
+    })
+)
+
+// Indica-se ao passport como serializar o utilizador
+passport.serializeUser((user,done) => {
+  console.log('Serielização, id: ' + user.id)
+  done(null, user)
+})
+  
+// Desserialização: a partir do id obtem-se a informação do utilizador
+passport.deserializeUser((user, done) => {
+  // console.log('Desserielização, id: ' + uid)
+  // axios.get('http://localhost:7700/api/users/' + uid)
+    // .then(dados => done(null, dados.data))
+    // .catch(erro => done(erro, false))
+    done(null, user)
+})
+
+
+var index_router = require('./routes/index');
 var app = express();
+
+app.use(session({
+  genid: req => {
+    return uuidv4()
+  },
+  store: new FileStore({logFn: function(){}}),
+  secret: 'O meu segredo',
+  resave: false,
+  saveUninitialized: false,
+  retries: 0
+}))
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,6 +67,17 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser('O meu segredo'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(req, res, next){
+  // console.log('Signed Cookies: ', JSON.stringify(req.signedCookies))
+  // console.log('Session: ', JSON.stringify(req.session))
+  next()
+})
 
 // Routes
 app.use('/', index_router);

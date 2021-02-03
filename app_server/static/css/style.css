@@ -30,7 +30,7 @@ body {
 .login {
     background-color: #FFFFFF;
     width: 400px;
-    height: 400px;
+    height: 390px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -39,7 +39,7 @@ body {
 .register {
     background-color: #FFFFFF;
     width: 400px;
-    height: 500px;
+    height: 520px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -152,20 +152,28 @@ form.form1 {
     padding-top: 10px;
     font-family: 'Ubuntu', sans-serif;
     margin-left: 35%;
+    margin-top: 10px;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 .forgot {
-    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #7BE495;
-	padding-top: 15px;
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #7BE495;
+	padding: 15px;
+}
+.forgot a:visited{
+  color:#7BE495;
 }
 
 a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     /* color: #7BE495; */
     text-decoration: none
+}
+
+a:link {
+  color: #5CD19F;
 }
 
 @media (max-width: 600px) {
@@ -207,9 +215,13 @@ display: none;
   /* display:inline-block; */
 }
 
+.topnav a:visited{
+  color: #f2f2f2;
+}
+
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  
   transition: 0.3s;
   color: #333333;
   display:inline-block;
@@ -221,6 +233,12 @@ display: none;
   color: black;
   display:inline-block;
 }
+
+.links:hover{
+  background-color: #ddd;
+}
+
+
 
 /* Right-aligned section inside the top navigation */
 .topnav-right {
@@ -295,6 +313,30 @@ display: none;
       margin-left: 35%;
       font-size: 13px;
       box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  .edit-form{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    justify-content: center;
+    /* margin-bottom: 50px; */
+    /* margin-left: 46px; */
+    text-align: center;
+    margin-left: 46px;
+    margin-right: 27px;
+    /* margin-bottom: 27px; */
+    /* font-family: 'Ubuntu', sans-serif, FontAwesome; */
+    align-self: center;
   }
 
   .align {
@@ -433,8 +475,13 @@ display: none;
   .caixinha{
     background: white;
     border-radius: 15px;
-    margin: 25px;
+    /* margin: 30px; */
+    margin-left: 10px auto;
+    margin-right: 10px auto;
+    margin: auto;
+    margin-top: 15px;
     margin-bottom: 30px; 
+    max-width: 1500px;
     display: flex;
     /* Aqui faz com que dentro da topbar as coisas estejam alinhadas em coluna */
     flex-direction: column; 
@@ -470,7 +517,7 @@ display: none;
 .profile-topbar {
   display: flex;
   flex-direction: row;
-
+  height: 100%;
   /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
   align-items: center;
   justify-content: center;
@@ -478,6 +525,7 @@ display: none;
   /* linha da direita */
   border-right: solid 2px rgb(172, 172, 172);
 }
+
 
 .profile-name{
   padding: 10px;
@@ -499,12 +547,71 @@ display: none;
   padding: 10px;
 }
 
+.profile-picture-comments {
+  /* Deixar a imagem redonda */
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+
+  /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.profile-pic-edit {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-pic-edit:hover {
+  background-color: rgba(0,0,0,.5);
+  z-index: 10000;
+  color: #fff;
+  transition: all .3s ease;
+  text-decoration: none;
+}
+
+.profile-pic-edit span {
+  display: inline-block;
+  padding-top: 2.5em;
+  /* padding-bottom: 4.5em; */
+}
+
+form input[type="file"] {
+  display: none;
+  cursor: pointer;
+}
+
 .resource {
   /* flex: 1 faz com que preencha os espaços vazios dentro do container que está em flex */
   flex: 1;
   padding: 10px;
   padding-left: 30px;
   text-align: center;
+}
+
+.resource1 {
+  /* flex: 1 faz com que preencha os espaços vazios dentro do container que está em flex */
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .text-box {
@@ -555,14 +662,17 @@ display: none;
 }
 
 .box-resource-post{
-  background: white;
-    margin: 25px;
-    margin-bottom: 30px; 
-    display: flex;
-    /* Aqui faz com que dentro da topbar as coisas estejam alinhadas em coluna */
-    flex-direction: column; 
-    padding: 10px; 
-    border-radius: 10px;
+  background: rgb(92, 209, 159, 0.25);
+  border-left: 10px solid #5CD19F;
+  margin: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 30px; 
+  display: flex;
+  /* Aqui faz com que dentro da topbar as coisas estejam alinhadas em coluna */
+  flex-direction: column; 
+  padding: 10px; 
+  /* border-radius: 10px; */
 }
 
 .comments{
@@ -610,14 +720,15 @@ display: none;
 
 }
 
-.pf-page-down-box {
+.doublebox-page-content {
   display:flex;
   justify-content:center;
   height:calc(100vh - 75px);
   width: 100%;
+  /* padding: 20px; */
 }
 
-.pf-page-pictureBigbox{
+.doublebox-page-leftBox{
   height:100%;
   flex-grow: 1;
   display: flex;
@@ -626,15 +737,15 @@ display: none;
   justify-content: space-around;
 }
 
-.pf-page-pictureBigbox-outerBox{
+.doublebox-page-leftBox-outerBox{
   max-height: 35rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.pf-page-pictureBigbox-innerbox{
+.doublebox-page-leftBox-innerbox{
   width: 25rem;
   height: 25rem;
   background-color: rgba(255, 255, 255, 0.75);
@@ -644,26 +755,36 @@ display: none;
   justify-content: space-evenly;
   border-color: white;
   border-width: 5px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   box-shadow:  10px 10px 10px 0px rgba(0, 0, 0, 0.15);
 }
+.doublebox-page-leftBox-innerbox>.something>h2{
+  font-size: 2.5em;
+}
+.doublebox-page-leftBox-innerbox>.something>h3{
+  font-size: 2em;
+}
+.doublebox-page-leftBox-innerbox>.something>p{
+  font-size: 1.5em;
+}
 
-.pf-page-pictureBigbox-innerbox img{
+.doublebox-page-leftBox-innerbox img{
   border-radius: 100px;
   box-shadow:  5px 5px 10px 0px rgba(0, 0, 0, 0.11);
 }
 
-.pf-page-pictureBigbox-editButton {
+.doublebox-page-leftBox-button {
   display: block;
   background-color:  #92d3c7;
   height: 5rem;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   transition: 0.2s;
   box-shadow:  5px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  /* display:none; */
 }
 
-.pf-page-pictureBigbox-editButton:hover{
+.doublebox-page-leftBox-button:hover{
   cursor: pointer;
   background-color: transparent;
   color:white;
@@ -672,7 +793,7 @@ display: none;
 
 
 
-.pf-page-pictureBigbox-editButton-inner {
+.doublebox-page-leftBox-button-inner {
   width: 100%;
   height: 100%;
   display: grid;
@@ -682,7 +803,38 @@ display: none;
   font-weight: 600;
 }
 
-.pf-page-infoBigbox{
+.accept-button {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  /* background-color: rgb(0, 130, 0); */
+  background-color: #b3ffb3;
+  color:#333;
+}
+
+.deny-button {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  /* background-color: rgb(180, 0, 0); */
+  background-color: #ffccf2;
+  color: #333;
+}
+
+.admin-buttons{
+  display: inline;
+  margin-bottom: 20px;
+}
+
+.doublebox-page-rightBox{
   height:100%;
   flex-grow: 1;
   display: flex;
@@ -691,7 +843,7 @@ display: none;
   justify-content: space-around;
 }
 
-.pf-page-infoBigbox-innerbox{
+.doublebox-page-rightBox-innerbox{
   width: 70rem;
   max-height: 40rem;
   height: 100%;
@@ -707,7 +859,110 @@ display: none;
   overflow: auto;
 }
 
-.pf-page-infoBigbox-innerbox-section-box {
+.doublebox-page-rightBox-innerbox-title {
+  /* display: grid; */
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: #333333;
+  box-shadow:  0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.doublebox-page-rightBox-innerbox-title>button{
+  margin:15px;
+  color: #DDDDDD;
+  margin-left: 50px;
+  margin-right: 15px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+
+.doublebox-page-rightBox-innerbox-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100% - 80px);
+  overflow: auto;
+}
+
+.doublebox-page-rightBox-innerbox-content-activityContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  width: 100%;
+}
+
+.doublebox-page-rightBox-innerbox-content-activityBox{
+  width: 90%;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #A1E0C4;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: 15px 15px 10fr 1fr;
+  grid-template-rows: 60% 40%;
+  grid-template-areas: 
+    ". description description linkButton"
+    ". . timeInfo linkButton";
+}
+.doublebox-page-rightBox-innerbox-content-linkButtonContainer{
+  grid-area: linkButton;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.3s;
+}
+.doublebox-page-rightBox-innerbox-content-linkButtonContainer:hover{
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.246);
+}
+
+.doublebox-page-rightBox-innerbox-content-linkIconContainer{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.doublebox-page-rightBox-innerbox-content-linkIconContainer i{
+  font-size: 50px;
+  transform: scaleX(-1);
+}
+
+.doublebox-page-rightBox-innerbox-content-description{
+  grid-area: description;
+  display: grid;
+  align-items: center;
+}
+.doublebox-page-rightBox-innerbox-content-timeInfo{
+  grid-area: timeInfo;
+}
+
+.doublebox-page-rightBox-innerbox-content-activityBox h3,
+.doublebox-page-rightBox-innerbox-content-activityBox p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.doublebox-page-rightBox-innerbox-content-activityBox h3{
+  font-size: 25;
+  color: black;
+}
+
+.doublebox-page-rightBox-innerbox-content-activityBox p{
+  font-size: 16;
+  color: #4A4A4A;
+}
+
+
+
+.doublebox-page-rightBox-innerbox-section-box {
   width: 100%;
   height:6rem;
   margin-top: 1.5rem ;
@@ -716,7 +971,7 @@ display: none;
   align-items: flex-start;
   justify-content: stretch;
 }
-.pf-page-infoBigbox-innerbox-section-box>h1, .pf-page-infoBigbox-innerbox-section-box>h3 {
+.doublebox-page-rightBox-innerbox-section-box>h1, .doublebox-page-rightBox-innerbox-section-box>h3 {
   height: 50%;
   margin: 10px;
   display: grid;
@@ -724,7 +979,7 @@ display: none;
   align-items: center;
 }
 
-.pf-page-infoBigbox-innerbox-section-box-editTitle {
+.doublebox-page-rightBox-innerbox-section-box-editTitle {
   display: flex;
   height: 50%;
   width: 100%;
@@ -732,7 +987,30 @@ display: none;
   justify-items: center;
 }
 
-.pf-page-infoBigbox-innerbox-section-box-editTitle h1{
+.savechangesbtn {
+  display: none;
+  width: 100%;
+  height: 4rem;
+  background-color: #92d3c7;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.savechangesbtn:hover{
+  cursor: pointer;
+  background-color: #A8DBD7;
+  color:white;
+  transition: 0.2s;
+}
+.centerStuff{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.doublebox-page-rightBox-innerbox-section-box-editTitle h1{
   margin: 0;
   margin-left: 3rem;
 }
@@ -765,7 +1043,7 @@ display: none;
   font-weight: 600;
 }
 
-.pf-page-infoBigbox-innerbox-section-box h3 {
+.doublebox-page-rightBox-innerbox-section-box h3 {
   font-weight: normal;
   margin-left: 4rem;
 }
@@ -781,13 +1059,20 @@ display: none;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   justify-content: space-between;
-
+  
 }
 
 .new-resource-text{
   justify-content: wrap-reverse;
   align-self: flex-end;
   width: 300px;
+}
+
+.new-resource-textbox{
+  justify-content: wrap-reverse;
+  align-self: flex-end;
+  /* width: 300px; */
+  height: 200px;
 }
 
 .resource-form {
@@ -805,38 +1090,228 @@ display: none;
 a:visited{
   color:black;
 }
+.shadows-and-round-corners{
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+}
 
-.profile-pic-edit {
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply;
-  vertical-align: middle;
+input[type="file"] { 
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+input:focus + label {
+  outline: 2px solid;
+}
+
+.error-box{
+  background: white;
+  border-radius: 15px;
+  /* margin: 40px; */
+  width: 500px;
+  height: 450px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  /* display:inline-flex; */
+  /* Aqui faz com que dentro da topbar as coisas estejam alinhadas em coluna */
+  /* flex-direction: flex;  */
+  justify-items: center;
+  justify-content: center;
+  text-justify: center;
+}
+
+.error-404 {
+  padding-top: 40px;
+  margin-bottom: 60px;
+  background: -webkit-linear-gradient(#A8DBD7, #5CD19F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Ubuntu', sans-serif;
+  /* font-weight: bold; */
+  font-size: 100px;
   text-align: center;
-  color: transparent;
-  transition: all .3s ease;
-  text-decoration: none;
+}
+
+.error-button{
   cursor: pointer;
-}
-
-.profile-pic-edit:hover {
-  background-color: rgba(0,0,0,.5);
-  z-index: 10000;
+  border-radius: 5em;
   color: #fff;
-  transition: all .3s ease;
-  text-decoration: none;
+  background: linear-gradient(to right,  #56c596, #7be495);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  margin-top: 35px;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  
 }
 
-.profile-pic-edit span {
-  display: inline-block;
-  padding-top: 2.5em;
-  /* padding-bottom: 4.5em; */
+.logo {
+  background: transparent;
+}
+.logo:hover{
+  background-color: rgba(255, 255, 255, 0.116);
 }
 
-form input[type="file"] {
-        display: none;
-        cursor: pointer;
+.resrsPage-Content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 75px);
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
 }
 
+.resources-box {
+  width: 80%;
+  margin-top: 1rem;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resource-box{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 75px;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 1rem;
+  position: relative;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.search-box{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1350px;
+  height: 75px;
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: bold;
+  margin: 1rem;
+  position: relative;
+  background-color: #FFFFFF;
+  /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.search{
+  /* display: inline; */
+  width: 75%;
+  border-radius: 20px;
+  margin: 10px;
+  margin-left: 10px;
+  border: solid #5CD19F;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-text{
+  /* align-items: center;
+  justify-content: center; */
+  width: 76%;
+	/* color: rgb(38, 50, 56); */
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 1px;
+	/* background: rgba(136, 126, 126, 0.04); */
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+	/* border: none; */
+	/* border-radius: 20px; */
+	/* outline: none; */
+	/* box-sizing: border-box; */
+	/* border: 2px solid rgba(0, 0, 0, 0.02); */
+	margin-bottom: 50px;
+	margin-left: 46px;
+	text-align: center;
+	/* margin-bottom: 27px; */
+	font-family: 'Ubuntu', sans-serif, FontAwesome;
+}
+
+.search-type{
+  /* width: 100%;
+  height: 100%;
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	margin-bottom: 50px;
+	margin-left: 46px;
+	text-align: center;
+  font-family: 'Ubuntu', sans-serif, FontAwesome; */
+  /* width: 25%; */
+  /* border-radius: 20px; */
+  margin: 10px;
+  margin-left: 10px;
+  background-color:#5CD19F;
+  /* border: solid #5CD19F; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-text:active{
+  border: none;
+}
+
+a:visited {
+  color: #000;
+}
+
+@media (max-width: 1650px) {
+  .doublebox-page-content{
+    height: auto;
+    flex-direction: column;
+    max-height: none;
+  }
+  .doublebox-page-leftBox{
+    width: 100%;
+    height: 40rem;
+  }
+  .doublebox-page-leftBox-outerBox{
+    width: 75%;
+  }
+  .doublebox-page-leftBox-innerBox{
+    width: 100%;
+  }
+  .doublebox-page-rightBox{
+    width: 100%;
+  }
+  .doublebox-page-rightBox-innerbox{
+    width: 75%;
+    margin-bottom: 50px;
+  }
+  .doublebox-page-rightBox-innerbox{
+    max-height: none;
+  }
+  .doublebox-page-rightBox-innerbox-content{
+    margin: 10px 0px;
+  }
+  .savechangesbtn {
+    display: flex;
+  }
+  .resources-box{
+    width: 100%;
+  }
+}

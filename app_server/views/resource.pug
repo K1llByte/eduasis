@@ -1,0 +1,41 @@
+head
+  link(rel='stylesheet' href='/static/css/style.css')
+  link(rel='stylesheet' href='/static/css/normalize.css')
+  link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  title Profile
+.topnav
+  a.links(href='/eduasis')
+    img(src='/static/images/eduasis.png' style='height: 100%;')
+  .topnav-right
+    a.links(href='/profile') New Resource
+    a.links(href='/profile') New Post
+    a.active(href='/profile') Profile
+.doublebox-page-content
+  .doublebox-page-leftBox
+    .doublebox-page-leftBox-outerBox
+      .doublebox-page-leftBox-innerbox
+        .something(style='justify-content:center; text-align: center;')
+          //
+            <h2>Mae Joana</h2>
+            <p>Joaninha</p>
+            <p>email@gmail.com</p>
+          h2 Resource title
+          h3 Killbyte
+          p Rate: 4.2
+          p DataTime: datime
+      a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        .doublebox-page-leftBox-button-inner
+          | Download
+  .doublebox-page-rightBox
+    .doublebox-page-rightBox-innerbox(style='display: block;')
+      div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
+        h1 Resource Title
+        h3 something something blablabla
+        h1 Files
+        h3
+          ul
+            li File 1
+            li File 2
+            li File 3
+      // <button><i class="fa fa-download" aria-hidden="true"></i> Download</button>

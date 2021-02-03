@@ -1,0 +1,55 @@
+extends navbar.pug
+
+block title
+  title Edit Profile
+  style.
+    @media (max-width: 1650px) {
+    .doublebox-page-leftBox-button{
+    display: none;
+    }
+    .doublebox-page-leftBox-innerBox{
+    justify-content: center;
+    height: 20rem;
+    }
+    .doublebox-page-leftBox{
+    height: 27rem;
+    }
+    }
+
+block content
+  .doublebox-page-content
+    .doublebox-page-leftBox
+      .doublebox-page-leftBox-outerBox
+        .doublebox-page-leftBox-innerbox
+          form(action='upload.php' method='post' enctype='multipart/form-data')
+            label(for='fileToUpload')
+              .profile-pic-edit(style="background-image: url('/static/images/pato.png')")
+                span.material-icons camera_alt
+                span Change Image
+            input#fileToUpload(type='File' name='fileToUpload')
+          h1 Mae Joana
+        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+          .doublebox-page-leftBox-button-inner
+            | Save changes
+    .doublebox-page-rightBox
+      .doublebox-page-rightBox-innerbox
+        .doublebox-page-rightBox-innerbox-section-box
+          .doublebox-page-rightBox-innerbox-section-box-editTitle
+            h1 Email
+            .flexFiller
+            input.edit-form(type='text' placeholder='email@mail.com')
+        .doublebox-page-rightBox-innerbox-section-box
+          .doublebox-page-rightBox-innerbox-section-box-editTitle
+            h1 Nickname
+            .flexFiller
+            input.edit-form(type='text' placeholder='joaninha')
+        .doublebox-page-rightBox-innerbox-section-box
+          .doublebox-page-rightBox-innerbox-section-box-editTitle
+            h1 Afiliation
+            .flexFiller
+            select#afilition.edit-form(name='afilition')
+              option(value='sudent') Student
+              option(value='professor') Professor
+        a.savechangesbtn(href='')
+          .centerStuff
+            h1 Save Changes

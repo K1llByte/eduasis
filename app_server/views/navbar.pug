@@ -1,0 +1,37 @@
+html
+    head
+        link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Muli')
+        link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+        link(rel='icon' href='/static/images/logo.png' type='image/x-icon')  
+        link(rel='stylesheet' href='/static/css/normalize.css')
+        link(rel='stylesheet' href='/static/css/style.css')
+        block title
+
+    body
+        // ---------------------- NAB BAR ----------------------------
+        -var link = active
+        .topnav
+            a.links.logo(href='/eduasis')
+                img(src='/static/images/eduasis.png' style='height: 100%;')
+            .topnav-right
+                if link == "resource"
+                    a.active(href='/eduasis') Resources
+                else 
+                    a.links(href='/eduasis') Resources
+                if link == "new_resource"
+                    a.active(href='/new_resource') New Resource
+                else
+                    a.links(href='/new_resource') New Resource
+                if link == "new_post"
+                    a.active(href='/new_post') New Post
+                else 
+                    a.links(href='/new_post') New Post
+                if link =="profile"
+                    a.active(href='/profile') Profile
+                else
+                    a.links(href='/profile') Profile
+
+        block content
