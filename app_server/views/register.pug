@@ -1,33 +1,36 @@
 head
-  link(rel='stylesheet' href='/static/css/style.css')
-  link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-  link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
-  title Register
+    link(rel='stylesheet' href='/static/css/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
+    title Register
 .register
   p.register_sign(align='center') Register
-  form
-    input.un(type='text' align='center' placeholder='Username' required='required')
-    input.un(type='text' align='center' placeholder='Nickname' required='required')
-    input.un(type='text' align='center' placeholder='Email address' required='required')
+  form(method="POST" action="/register")
+    input.un(type='text' align='center' placeholder='Username' required='required' name="username")
+    input.un(type='text' align='center' placeholder='Nickname' required='required' name="nickname")
+    input.un(type='text' align='center' placeholder='Email address' required='required' name="email")
     div
-      input#pass.pass(type='password' align='center' placeholder='Password' required='required')
-      i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 1)')
+        input#pass.pass(type='password' align='center' placeholder='Password' name="password" required='required')
+        i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 1)')
     div
-      input#repass.pass(type='password' align='center' placeholder='Confirm password' required='required')
-      i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 2)')
+        input#repass.pass(type='password' align='center' placeholder='Confirm password' required='required')
+        i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 2)')
     button.submit(align='center') Register
+    .forgot(align='center')
+            a(href='/login') Login
+
 script.
   function changeEye(icon, id) {
-  if(id == 1)
-  var x = document.getElementById("pass");
-  else
-  var x = document.getElementById("repass");
-  if (x.type === "password") {
-  x.type = "text";
-  } else {
-  x.type = "password";
-  }
-  icon.classList.toggle("fa-eye-slash");
+    if(id == 1)
+      var x = document.getElementById("pass");
+    else
+      var x = document.getElementById("repass");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+    icon.classList.toggle("fa-eye-slash");
   }

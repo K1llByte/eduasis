@@ -1,0 +1,69 @@
+extends navbar.pug
+
+block title
+  title New Resource
+
+
+block content
+  .new-resource
+    p.register_sign New Resource
+    form
+      .resource-form
+        | Title:    
+        .new-resource-text
+          input.un(type='text' placeholder='Title' required='required')
+      .resource-form(style='margin-bottom: 30px;')
+        | Type id:
+        .new-resource-text
+          select#afilition.edit-form(name='afilition')
+            option(value='1') Option 1
+            option(value='2') Option 2
+            option(value='3') Option 3
+            option(value='4') Option 4
+      .resource-form
+        | Description:
+        .new-resource-text
+          textarea.un.new-resource-textbox(type='text' placeholder='Description')
+      .resource-form(style='margin-bottom: 30px;')
+        | Visibility:
+        .new-resource-text
+          select#visibility.edit-form(name='visibility')
+            option(value='0') Private
+            option(value='1') Public
+      .resource-form
+        label(for='file-upload')
+          u Choose File:
+        input#file-upload(type='file' multiple='' required='')
+        .new-resource-text(align='center' style='margin-bottom: 15px;')
+          span#select-file Nothing selected
+          #file-upload-filename
+        span#clear(style='display: none;')
+          label.material-icons(for='clear_list') clear
+      button.submit(align='center') Submit
+  script.
+    var input = document.getElementById( 'file-upload' );
+    var infoArea = document.getElementById( 'file-upload-filename' );
+    input.addEventListener( 'change', showFileName );
+    var clear = document.getElementById( 'clear_list' );
+    clear.addEventListener( clear_list );
+    function showFileName( event ) {
+    // the change event gives us the input it occurred in
+    var input = event.srcElement;
+    var select = document.getElementById("select-file");
+    var clear = document.getElementById("clear");
+    select.style.display = "none";
+    clear.style.display = "inline";
+    // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+    var fileName = input.files[0].name;
+    // use fileName however fits your app best, i.e. add it into a div
+    // infoArea.textContent = 'File name: ' + fileName;
+    infoArea.textContent = fileName;
+    }
+    function clear_list() {
+    var select = document.getElementById("select-file");
+    var clear = document.getElementById("clear");
+    select.style.display = "inline";
+    clear.style.display = "none";
+    var fileName="";
+    infoArea.textContent = fileName;
+    }

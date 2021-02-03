@@ -1,4 +1,11 @@
-//- extends layout
-
-block content
-    h1 ERRO
+head
+  link(rel='stylesheet' href='/static/css/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='icon' href='/static/images/logo.png' type='image/x-icon')
+  title ERROR
+.error-box
+  p.error-404 #{err.status}
+  h1(align='center') OOPS!
+  p(align='center' style="width:90%; overflow-wrap:break-word; margin: 0; display: block; margin-left: 1.5em") #{err.message}
+  form(action='/eduasis')
+    button.error-button Return Home
