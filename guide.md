@@ -172,13 +172,11 @@ ___
 
 
 [In Progress] Database populate  
-BagIt Arquive upload  
+[In Progress] BagIt Arquive upload  
 
 Admin overall management  
     Users,Posts,Resources unrestricted access  
-Admin requests
 NOTICIAS
-Rate Resource
 
 
 
