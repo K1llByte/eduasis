@@ -10,7 +10,7 @@ const router = express.Router();
 
 // ========= POST ENDPOINTS ========= //
 
-router.get('/api/posts', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     let page_num = 0;
     let page_limit = 20;
@@ -39,7 +39,7 @@ router.get('/api/posts', auth.authenticate(User.Permissions.Consumer), (req, res
 });
 
 
-router.get('/api/posts/:post_id', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/posts/:post_id', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     Post.get(req.params.post_id)
         .then(data => {
@@ -51,7 +51,7 @@ router.get('/api/posts/:post_id', auth.authenticate(User.Permissions.Consumer), 
 });
 
 
-router.post('/api/posts', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.post('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     const resource_id = req.body.resource_id;
     const content = req.body.content;
@@ -98,7 +98,7 @@ router.post('/api/posts', auth.authenticate(User.Permissions.Consumer), (req, re
 });
 
 
-router.post('/api/posts/:post_id/comments', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.post('/api/posts/:post_id/comments', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     const MESSAGE_MAX_LENGTH = 1000;
     const message = req.body.message;

@@ -45,7 +45,7 @@ const resource_upload = multer({
 
 // ========= USER ENDPOINTS ========= //
 
-router.get('/api/resources', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     let search_term = null;
     let type_id = null;
@@ -92,7 +92,7 @@ router.get('/api/resources', auth.authenticate(User.Permissions.Consumer), (req,
 });
 
 
-router.get('/api/resources/:resource_id', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     Resource.get(req.params.resource_id)
         .then(data => {
@@ -111,7 +111,7 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.Permissions.Con
 });
 
 
-router.post('/api/resources', auth.authenticate(User.Permissions.Producer), (req, res) => {
+router.post('/api/resources', auth.authenticate(User.CPermissions.ap), (req, res) => {
 
     // type_id
     // title
@@ -167,7 +167,26 @@ router.post('/api/resources', auth.authenticate(User.Permissions.Producer), (req
 });
 
 
-router.get('/api/resource_types', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.put('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissions.apc), (req, res) => {
+
+    let value = Number(req.body.value);
+    if(req.body.value == undefined || !(value >= 0 && value <= 5 && Number.isInteger(value)))
+    {
+        res.status(400).json({'error': 'Invalid value'});
+        return;
+    }
+
+    Resource.rate(req.params.resource_id,req.user.username,value)
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => { 
+            res.status(400).json({'error': err.message});
+        });
+});
+
+
+router.get('/api/resource_types', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     ResourceType.list_all()
         .then(data => {
@@ -179,7 +198,7 @@ router.get('/api/resource_types', auth.authenticate(User.Permissions.Consumer), 
 });
 
 
-router.get('/api/resource_types/:type_id', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/resource_types/:type_id', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     ResourceType.get(req.params.type_id)
         .then(data => { 

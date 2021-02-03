@@ -109,9 +109,15 @@ module.exports.verify_password = async (username,in_password) => {
   
 // Permissions Enum
 module.exports.Permissions = Object.freeze({
-    "Guest" :       0b00000000,
-    //"RegularUser" : 0b00000001,
-    "Consumer" :    0b00000001,
-    "Producer" :    0b00000010,
-    "Admin" :       0b10000000
+    Guest :       0b00000000,
+    Consumer :    0b00000001,
+    Producer :    0b00000010,
+    Admin :       0b10000000
+});
+
+
+// Compound Permissions Enum
+module.exports.CPermissions = Object.freeze({
+    ap :  (this.Permissions.Admin | this.Permissions.Producer),
+    apc : (this.Permissions.Admin | this.Permissions.Producer | this.Permissions.Consumer)
 });

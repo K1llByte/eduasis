@@ -43,7 +43,7 @@ const avatar_upload = multer({
 
 // ========= USER ENDPOINTS ========= //
 
-router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/users', auth.authenticate(User.CPermissions.apc), (req, res) => {
     
     let page_num = 0;
     let page_limit = 20;
@@ -72,7 +72,7 @@ router.get('/api/users', auth.authenticate(User.Permissions.Consumer), (req, res
 });
 
 
-router.get('/api/users/:username', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.get('/api/users/:username', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     User.get(req.params.username,true)
         .then(data => { 
@@ -84,7 +84,7 @@ router.get('/api/users/:username', auth.authenticate(User.Permissions.Consumer),
 });
 
 
-router.put('/api/users/:username', auth.authenticate(User.Permissions.Consumer), (req, res) => {
+router.put('/api/users/:username', auth.authenticate(User.CPermissions.apc), (req, res) => {
     
     if(req.params.username == req.user.username)
     {
@@ -142,7 +142,7 @@ router.put('/api/users/:username', auth.authenticate(User.Permissions.Consumer),
 });
 
 
-router.post('/api/users/:username/avatar', auth.authenticate(User.Permissions.Consumer), avatar_upload.single('avatar_img'), (req, res) => {
+router.post('/api/users/:username/avatar', auth.authenticate(User.CPermissions.apc), avatar_upload.single('avatar_img'), (req, res) => {
 
     if(req.valid)
     {
@@ -158,5 +158,20 @@ router.post('/api/users/:username/avatar', auth.authenticate(User.Permissions.Co
     }
 });
 
+
+router.delete('/api/users/:username', auth.authenticate(User.Permissions.Admin), (req, res) => {
+
+    User.delete(req.params.username)
+    .then(data => {
+        console.log(data);
+        if(data.deletedCount != 0)
+            res.json({"success":"User deleted successfully"});
+        else 
+            res.status(400).json({"error":"User doesn't exist"});
+    })
+    .catch(err => {
+        res.status(400).json({"error":err.message});
+    });
+});
 
 module.exports = router;

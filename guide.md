@@ -71,9 +71,9 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 
 ```
 
-[Done] GET /login
-[Done] GET /logout
-[Done] GET /register
+[Done] POST /login
+[Done] POST /logout
+[Done] POST /register
 
 [Done] GET /users
 [Done] GET /users/:username
@@ -81,13 +81,14 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 [Done] POST /users/:username/avatar
 
 
-GET /posts
-GET /posts/:post_id
-POST /posts
-POST /posts/:post_id/comments
+[Done] GET /posts
+[Done] GET /posts/:post_id
+[Done] POST /posts
+[Done] POST /posts/:post_id/comments
 
 GET /admin/requests
 GET /admin/requests/:resource_id
+PUT /admin/requests/:resource_id
 
 [Done] GET /resources
 [Done] POST /resources
@@ -164,9 +165,9 @@ ___
 - [ ] All models
     - [x] Resource model
     - [x] Post model
-    - [ ] Resource controller
-    - [ ] Post controller
-    - [ ] Unapproved Resource model
+    - [x] Resource controller
+    - [x] Post controller
+    - [x] Requests Resource model
 - [ ] All endpoints
     - [ ] User admin CRUD endpoints
     - [ ] Resource endpoints
@@ -176,12 +177,13 @@ ___
 
 
 [In Progress] Database populate  
-Arquive upload  
+BagIt Arquive upload  
 
 Admin overall management  
     Users,Posts,Resources unrestricted access  
-Admin resource panel
-Posts and Resources pagination
+Admin requests
+NOTICIAS
+Rate Resource
 
 
 
@@ -214,3 +216,5 @@ Esse utilizador que cria o post pode ser tanto um <ins>produtor</ins> qualquer c
 - `models/` Javascript database schemes
 
 - `controllers/` Javascript model wrappers to provide data access abstraction
+
+- `storage/` Eduasis file storage

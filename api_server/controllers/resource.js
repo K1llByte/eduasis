@@ -49,14 +49,14 @@ module.exports.list_all = (page_num,page_limit,search_term=null,type_id=null) =>
         .exec()
 }
 
-
+// Get a resource
 module.exports.get = (rid) => {
     return Resource
         .findOne({ "resource_id": rid }, RESOURCE_PROJECTION)
         .exec()
 }
 
-// Inserts a new user
+// Inserts a new resource
 module.exports.insert = (resource_data) => {
     resource_data.resource_id = mongoose.Types.ObjectId().toString('base64');
     let new_resource = new Resource(resource_data);
@@ -64,3 +64,23 @@ module.exports.insert = (resource_data) => {
 }
 
 // =========================== //
+
+module.exports.rate = async (rid,username,value) => {
+    
+    let res = await Resource.findOne(
+        {resource_id:rid},
+        {_id:0,current_rate:1,num_rates:1,rates:1}
+    ).exec()
+    console.log(res);
+    res.current_rate = (res.current_rate * res.num_rates + value) / (num_rates + 1);
+    res.num_rates = res.num_rates + 1;
+    res.rates.push({
+        "username": username,
+        "rated": value
+    });
+
+    return db.resources.updateOne(
+            {"resource_id":rid},
+            {$set : res
+        }).exec();
+}

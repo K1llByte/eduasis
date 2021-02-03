@@ -1,9 +1,18 @@
 const mongoose = require('mongoose');
 const ResourceType = require('../controllers/resource_type');
 
+const rates_schema = new mongoose.Schema({ 
+    username: String,
+    rated:    Number
+},
+{
+    _id : false
+});
+
 const rate_schema = new mongoose.Schema({ 
     current_rate: String,
-    num_rates:    String
+    num_rates:    String,
+    rates:        [rates_schema]
 },
 {
     _id : false
