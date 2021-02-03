@@ -88,9 +88,9 @@ This server might be isolated from the HTTP (at the hardware level) so this will
 [Done] GET /resources
 [Done] POST /resources
 [Done] GET /resources/:resource_id
-
-[Done] GET /resources_types/
-[Done] GET /resources_types/:type_id
+[Done] GET /resources/:resource_id/rate
+[Done] GET /resource_types/
+[Done] GET /resource_types/:type_id
 
 ```
 

@@ -4,6 +4,7 @@ const User = require('../controllers/user');
 const Resource = require('../controllers/resource');
 const ResourceType = require('../controllers/resource_type');
 const multer = require('multer');
+const AdmZip = require('adm-zip');
 
 // ================================== //
 
