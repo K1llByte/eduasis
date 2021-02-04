@@ -23,6 +23,7 @@ passport.use(new LocalStrategy(
         .then(dados => {
             const decoded = jwt.decode(dados.data.TOKEN);
             
+            console.log(decoded);
             const user_data = {
                 "token" : dados.data.TOKEN,
                 "username" : decoded.username,

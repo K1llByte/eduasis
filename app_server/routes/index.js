@@ -12,7 +12,8 @@ function check_auth(req, res, next)
     if(req.isAuthenticated())
     {
         //req.isAuthenticated() will return true if user is logged in
-        const decoded = jwt.decode(req.user.TOKEN);
+        const decoded = jwt.decode(req.user.token);
+        console.log(decoded);
         req.user.username = decoded.username;
         req.user.perms = decoded.perms;
         next();
@@ -141,9 +142,8 @@ router.get('/profile_edit', check_auth, (req, res) => {
 router.get('/new_resource', check_auth, (req, res) => {
     // Data retrieve
     //types id
-    console.log("req.session.user",req.session.user);
     axios.get(`${API_URL}/resource_types/`,{
-        headers: { 'Authorization': 'Bearer ' + req.user.TOKEN }
+        headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resources_types=>{
         res.render('new_resource');
