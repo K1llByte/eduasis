@@ -3,8 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-
 const jwt = require('jsonwebtoken');
 //const methodOverride = require('method-override');
 
@@ -20,27 +18,39 @@ var axios = require('axios')
 
 // Configuração da estratégia local
 passport.use(new LocalStrategy(
-  {usernameField: 'username'}, (user, pass, done) => {
-    axios.post('http://localhost:7700/api/login/',{username: user, password: pass})
-      .then(dados => done(null, dados.data)
-      )
-      .catch(erro => done(erro))
+    { usernameField: 'username' }, (user, pass, done) => {
+        axios.post('http://localhost:7700/api/login/',{username: user, password: pass})
+        .then(dados => {
+            const decoded = jwt.decode(dados.data.TOKEN);
+            
+            const user_data = {
+                "token" : dados.data.TOKEN,
+                "username" : decoded.username,
+                "perms" : decoded.perms
+            }
+            done(null, user_data);
+        })
+        .catch(err => {
+            done(err);
+        });
     })
 )
 
 // Indica-se ao passport como serializar o utilizador
 passport.serializeUser((user,done) => {
-  console.log('Serielização, id: ' + user.id)
-  done(null, user)
+    //console.log('Serielização, id: ' + user.username)
+    done(null, user)
 })
   
 // Desserialização: a partir do id obtem-se a informação do utilizador
 passport.deserializeUser((user, done) => {
   // console.log('Desserielização, id: ' + uid)
-  // axios.get('http://localhost:7700/api/users/' + uid)
-    // .then(dados => done(null, dados.data))
-    // .catch(erro => done(erro, false))
-    done(null, user)
+    //axios.get('http://localhost:7700/api/users/' + user.username,{
+    //    headers: { 'Authorization': 'Bearer ' +  }
+    // })
+    //.then(dados => done(null, dados))
+    //.catch(erro => done(erro, false));
+    done(null, user);
 })
 
 
