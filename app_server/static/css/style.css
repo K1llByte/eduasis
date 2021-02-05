@@ -1229,6 +1229,7 @@ input:focus + label {
   /* align-items: center;
   justify-content: center; */
   display: inline;
+  width: 90%;
 	font-size: 14px;
 	text-align: center;
   font-family: 'Ubuntu', sans-serif, FontAwesome;

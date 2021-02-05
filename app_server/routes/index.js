@@ -74,6 +74,7 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
     // Data retrieve
+    console.log(req.body);
     axios.post(`${API_URL}/register`, {
         username: req.body.username,
         nickname: req.body.nickname,
@@ -129,7 +130,7 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
-        console.log(req.body);
+        console.log(req.body+"-------------------------------------");
         // let header_body = {
         //     headers: { 'Authorization': 'Bearer ' + token },
         //     body: {
@@ -144,7 +145,7 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
 
         // let user = (await user_p).data;
         res.render('profile_edit',{
-            'user': user,
+            'user': req.user,
             'active': 'profile'
         });
     }

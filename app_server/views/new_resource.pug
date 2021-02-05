@@ -7,11 +7,11 @@ block title
 block content
   .new-resource
     p.register_sign New Resource
-    form
+    form(action='/new_resource' method='post')
       .resource-form
         | Title:    
         .new-resource-text
-          input.un(type='text' placeholder='Title' required='required')
+          input.un(type='text' placeholder='Title' required='required' name="title")
       .resource-form(style='margin-bottom: 30px;')
         | Type:
         .new-resource-text
@@ -21,7 +21,7 @@ block content
       .resource-form
         | Description:
         .new-resource-text
-          textarea.un.new-resource-textbox(type='text' placeholder='Description')
+          textarea.un.new-resource-textbox(type='text' placeholder='Description' name="description")
       .resource-form(style='margin-bottom: 30px;')
         | Visibility:
         .new-resource-text
@@ -31,7 +31,7 @@ block content
       .resource-form
         label(for='file-upload')
           u Choose File:
-        input#file-upload(type='file' multiple='' accept=".zip,.rar,.7zip" required='required')
+        input#file-upload(type='file' multiple='' accept=".zip,.rar,.7zip" required='required' name="filename")
         .new-resource-text(align='center' style='margin-bottom: 15px;')
           span#select-file Nothing selected
           #file-upload-filename

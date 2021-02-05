@@ -18,45 +18,43 @@ block title
 
 block content
   .doublebox-page-content
-    .doublebox-page-leftBox
-      .doublebox-page-leftBox-outerBox
-        .doublebox-page-leftBox-innerbox
-          form(action=`/users/${user.username}/edit` method='post' enctype='multipart/form-data')
-            label(for='fileToUpload')
-              if user.avatar_url == ""
-                .profile-pic-edit(style=`background-image: url('http://localhost:7700/storage/avatars/default/default.png')`)
-                span.material-icons camera_alt
-                span Change Image
-              else
-                .profile-pic-edit(style=`background-image: url('${user.avatar_url}')`)
-                span.material-icons camera_alt
-                span Change Image
-            input#fileToUpload(type='File' name='avatar_url')
-          h1= `${user.username}`
-        a.doublebox-page-leftBox-button(type='submit')
-          .doublebox-page-leftBox-button-inner
-            | Save changes
-        
-    .doublebox-page-rightBox
-      .doublebox-page-rightBox-innerbox
-        .doublebox-page-rightBox-innerbox-section-box
-          .doublebox-page-rightBox-innerbox-section-box-editTitle
-            h1 Email
-            .flexFiller
-            input.edit-form(type='text' placeholder=`${user.email}` name='email')
-        .doublebox-page-rightBox-innerbox-section-box
-          .doublebox-page-rightBox-innerbox-section-box-editTitle
-            h1 Nickname
-            .flexFiller
-            input.edit-form(type='text' placeholder=`${user.nickname}` name='nickname')
-        .doublebox-page-rightBox-innerbox-section-box
-          .doublebox-page-rightBox-innerbox-section-box-editTitle
-            h1 Affiliation
-            .flexFiller
-            input.edit-form(type='text' placeholder=`${user.affiliation}` name='affiliation')
-            //- select#afilition.edit-form(name='afilition')
-              option(value='student') Student
-              option(value='professor') Professor
-        a.savechangesbtn(href='')
-          .centerStuff
-            h1 Save Changes
+    form(action=`/users/${user.username}/edit` method='post' enctype='multipart/form-data')
+      .doublebox-page-leftBox
+        .doublebox-page-leftBox-outerBox
+          .doublebox-page-leftBox-innerbox
+            div
+              label(for='fileToUpload')
+                if user.avatar_url == ""
+                  .profile-pic-edit(style=`background-image: url('http://localhost:7700/storage/avatars/default/default.png')`)
+                    span.material-icons camera_alt
+                    span Change Image
+                else
+                  .profile-pic-edit(style=`background-image: url('${user.avatar_url}')`)
+                    span.material-icons camera_alt
+                    span Change Image
+              input#fileToUpload(type='File' name='avatar_url')
+            h1= `${user.username}`
+          button.doublebox-page-leftBox-button(type='submit')
+            .doublebox-page-leftBox-button-inner
+              | Save changes
+          
+      .doublebox-page-rightBox
+        .doublebox-page-rightBox-innerbox
+          .doublebox-page-rightBox-innerbox-section-box
+            .doublebox-page-rightBox-innerbox-section-box-editTitle
+              h1 Email
+              .flexFiller
+              input.edit-form(type='text' placeholder=`${user.email}` id='email' name='email')
+          .doublebox-page-rightBox-innerbox-section-box
+            .doublebox-page-rightBox-innerbox-section-box-editTitle
+              h1 Nickname
+              .flexFiller
+              input.edit-form(type='text' id='nickname' name='nickname' placeholder=`${user.nickname}`)
+          .doublebox-page-rightBox-innerbox-section-box
+            .doublebox-page-rightBox-innerbox-section-box-editTitle
+              h1 Affiliation
+              .flexFiller
+              input.edit-form(type='text' placeholder=`${user.affiliation}` id='affilitation' name='affiliation')
+          button.savechangesbtn(type='submit' value="submit")
+            .centerStuff
+              h1 Save Changes
