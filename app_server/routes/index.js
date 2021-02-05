@@ -11,7 +11,7 @@ function check_auth(req, res, next)
 {
     if(req.isAuthenticated())
     {
-        //req.isAuthenticated() will return true if user is logged in
+        // req.isAuthenticated() will return true if user is logged in
         const decoded = jwt.decode(req.user.token);
         console.log(decoded);
         req.user.username = decoded.username;
@@ -31,6 +31,10 @@ function auth_header(token)
     }
 }
 
+// ---------------------------------------------------------------
+//----------- PAGINAS NECESSITAM AUTENTICAÇAO --------------------
+// ---------------------------------------------------------------
+
 // GET home page
 router.get('/', (req, res, next) => {
   // res.render('index', { title: 'Express' });
@@ -45,8 +49,6 @@ router.get('/login', (req, res, next) => {
 router.post('/login', passport.authenticate('local'), (req, res) => {
     // Data retrieve
     res.redirect('/eduasis')
-    //console.log("user",req.user);
-    //console.log("passport",req.passport);
 });
 
 
@@ -70,7 +72,6 @@ router.get('/register', (req, res) => {
 
 router.post('/register', (req, res) => {
     // Data retrieve
-    // console.log(JSON.stringify(req.body))
     axios.post(`${API_URL}/register`, {
         username: req.body.username,
         nickname: req.body.nickname,
@@ -90,6 +91,9 @@ router.post('/register', (req, res) => {
     .catch(err => res.render('error', {error:err}));
 });
 
+// ---------------------------------------------------------------
+//----------- PAGINAS NECESSITAM AUTENTICAÇAO --------------------
+// ---------------------------------------------------------------
 
 router.get('/eduasis', check_auth, (req,res) => {
   // Data retrieve
@@ -136,13 +140,19 @@ router.get('/profile', check_auth, async (req, res) => {
 router.get('/profile/:username', check_auth, (req, res) => {
   // Data retrieve
   // utilizador, posts_do_utilizador, recursos_do_utilizador
-  axios.get(`${API_URL}/users/`+req.params.username)
+  axios.get(`${API_URL}/users/`+req.params.username,{
+    headers: { 'Authorization': 'Bearer ' + req.user.token }
+  })
     .then(user=>{
-      axios.get(`${API_URL}/posts/`)
+      axios.get(`${API_URL}/posts/`,{
+        headers: { 'Authorization': 'Bearer ' + req.user.token }
+      })
         .then(posts=>{
-          axios.get(`${API_URL}/resources/`)
+          axios.get(`${API_URL}/resources/`,{
+            headers: { 'Authorization': 'Bearer ' + req.user.token }
+          })
             .then(resources=>{
-              res.render('profile',{'user':user, 'posts':posts, 'resources':resources})
+              res.render('profile_user',{"active": "profile", 'user':user.data, 'posts':posts.data, 'resources':resources.data})
             })
             .catch(erro => {
               res.render('error',{err: erro})
@@ -157,6 +167,7 @@ router.get('/profile/:username', check_auth, (req, res) => {
     })
 });
 
+
 router.get('/profile_edit', check_auth, (req, res) => {
   // Data retrieve
   //user
@@ -168,17 +179,36 @@ router.get('/profile_edit', check_auth, (req, res) => {
 });
 });
 
+router.get('/profile_edit/:username', check_auth, (req, res) => {
+  // Data retrieve
+  axios.get(`${API_URL}/users/`+req.params.username,{
+    headers: { 'Authorization': 'Bearer ' + req.user.token }
+  })
+    .then(user=>
+              res.render('profile_edit',{"active": "profile", 'user':user.data}))
+    .catch(erro => {
+      res.render('error',{err: erro})
+    })
+});
+
 //POST edit avatar
+router.post('/profile_edit/:username', check_auth, (req, res) => {
+  // Data retrieve
+  axios.put(`${API_URL}/users/`+req.params.username, JSON.stringify(req.body))
+    .then(res.redirect('/profile_edit/'+req.params.username))
+    .catch(err => res.render('error', {err:err}));
+});
 
 
+//----------- PAGINAS NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
     // Data retrieve
-    //types id
     axios.get(`${API_URL}/resource_types/`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
-    .then(resources_types=>{
-        res.render('new_resource');
+    .then(resource_types=>{
+        // console.log(resources_types.data)
+        res.render('new_resource',{"active": "new_resource", "types":resource_types.data});
     })
     .catch(err => res.render('error', {err: err}))
 });
@@ -186,57 +216,102 @@ router.get('/new_resource', check_auth, (req, res) => {
 //POST new resource
 router.post('/new_resource', check_auth, (req, res) => {
   // Data retrieve
-  //types id
-  axios.post(`${API_URL}/resources`,{
-
-  })
+  console.log(JSON.stringify(req.body))
+  axios.post(`${API_URL}/resources`, JSON.stringify(req.body))
     .then(res.redirect('/eduasis'))
     .catch(err => res.render('error', {err:err}));
 });
 
-// router.post('/register', function(req, res) {
-//   // Data retrieve
-//   // console.log(JSON.stringify(req.body))
-//   axios.post(`${API_URL}/register`, {
-//     username: req.body.username,
-//     nickname: req.body.nickname,
-//     email: req.body.email,
-//     password: req.body.password
-//   })
-//   .then( dados => {
-//     console.log('status message:' + dados.status + 'message?' + dados.message)
-//     if(dados.status == "200")
-//       res.redirect('/login')
-//     else{
-//       console.log(dados.status)
-//       res.redirect('/register')
-//     }
-//   })
-//   .catch(err => res.render('error', {error:err}));
-// });
-
-
 router.get('/new_post', check_auth, (req, res) => {
   // Data retrieve
-  //resource_id
   res.render('new_post',{"active": "new_post"});
 });
 
+router.get('/new_post/:id', check_auth, (req, res) => {
+  // Data retrieve
+  res.render('new_post',{"active": "new_post", "resource_id": req.params.id});
+});
+
 //POST new post
+router.post('/new_post', check_auth, (req, res) => {
+  // Data retrieve
+  console.log(JSON.stringify(req.body))
+  axios.post(`${API_URL}/posts`, JSON.stringify(req.body))
+    .then(res.redirect('/eduasis'))
+    .catch(err => res.render('error', {err:err}));
+});
 
 
-router.get('/resource', check_auth, (req, res) => {
+
+//----------- PAGINAS RESORCES/POSTS --------------------
+
+// router.get('/resources', check_auth, (req, res) => {
+//   // Data retrieve
+//   axios.get(`${API_URL}/resource_types/`,{
+//     headers: { 'Authorization': 'Bearer ' + req.user.token }
+//   })
+//   .then(resource_types=>{
+//     res.render('resources');
+    // axios.get(`${API_URL}/resources/`,{
+    //   headers: { 'Authorization': 'Bearer ' + req.user.token }
+    // })
+    // .then(resources=>{
+    //     console.log(resource_types.data)
+    //     // res.render('resources');
+    //     // res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
+    // })
+    // .catch(err => res.render('error', {err: err}))
+    // res.render('resources');
+//   })
+//   .catch(err => res.render('error', {err: err}))
+//   res.render('resources');
+// });
+
+router.get('/resources', check_auth, (req, res) => {
+  // Data retrieve
+  axios.get(`${API_URL}/resource_types/`,{
+      headers: { 'Authorization': 'Bearer ' + req.user.token }
+  })
+  .then(resource_types=>{
+    axios.get(`${API_URL}/resources/`,{
+      headers: { 'Authorization': 'Bearer ' + req.user.token }
+    })
+    .then(resources=>{
+        res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
+  })
+  .catch(err => res.render('error', {err: err}))
+  })
+  .catch(err => res.render('error', {err: err}))
+});
+
+
+router.get('/posts', check_auth, (req, res) => {
+  // Data retrieve
+  //post_id
+  res.render('posts');
+});
+
+router.get('/resource/:id', check_auth, (req, res) => {
   // Data retrieve
   //resource_id
   res.render('resource');
 });
 
-router.get('/post', check_auth, (req, res) => {
+router.get('/resource/:id', check_auth, (req, res) => {
+  // Data retrieve
+  axios.get(`${API_URL}/resources/`+req.params.id,{
+      headers: { 'Authorization': 'Bearer ' + req.user.token }
+  })
+  .then(resource=>{
+      res.render('resource',{"resource":resource});
+  })
+  .catch(err => res.render('error', {err: err}))
+});
+
+
+router.get('/post/:id', check_auth, (req, res) => {
   // Data retrieve
   //post_id
   res.render('post');
 });
-
-
-
 module.exports = router;

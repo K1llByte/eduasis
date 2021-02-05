@@ -10,16 +10,13 @@ block content
         .doublebox-page-leftBox-innerbox(style='height:23rem')
           img(src='/static/images/pato.png' style='width:160px;height:160px;')
           div(style='justify-content:center; text-align: center;')
-            if user.nickname == ""
-              h2= `${user.username}`
-            else
-              h2= `${user.nickname}`
-              p= `${user.username}`
-            p= user.email
-        a.doublebox-page-leftBox-button(href='/logout')
+            h2= `${user.username}`
+            p= `${user.nickname}`
+            p= `${user.email}`
+        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
           .doublebox-page-leftBox-button-inner
             | Logout
-        a.doublebox-page-leftBox-button(href='/profile_edit')
+        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
           .doublebox-page-leftBox-button-inner
             | Edit Profile
     .doublebox-page-rightBox

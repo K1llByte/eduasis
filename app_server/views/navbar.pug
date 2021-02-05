@@ -17,21 +17,23 @@ html
             a.links.logo(href='/eduasis')
                 img(src='/static/images/eduasis.png' style='height: 100%;')
             .topnav-right
-                if link == "resource"
-                    a.active(href='/eduasis') Resources
+                if link == "resources"
+                    a.active(href='/resources') Resources
                 else 
-                    a.links(href='/eduasis') Resources
+                    a.links(href='/resources') Resources
+
                 if link == "new_resource"
                     a.active(href='/new_resource') New Resource
                 else
                     a.links(href='/new_resource') New Resource
+
                 if link == "new_post"
                     a.active(href='/new_post') New Post
                 else 
                     a.links(href='/new_post') New Post
+
                 if link =="profile"
                     a.active(href='/profile') Profile
                 else
                     a.links(href='/profile') Profile
-
         block content

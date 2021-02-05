@@ -21,13 +21,13 @@ block content
     .doublebox-page-leftBox
       .doublebox-page-leftBox-outerBox
         .doublebox-page-leftBox-innerbox
-          form(action='upload.php' method='post' enctype='multipart/form-data')
+          form(action='/profile_edit' method='post' enctype='multipart/form-data')
             label(for='fileToUpload')
               .profile-pic-edit(style="background-image: url('/static/images/pato.png')")
                 span.material-icons camera_alt
                 span Change Image
-            input#fileToUpload(type='File' name='fileToUpload')
-          h1 Mae Joana
+            input#fileToUpload(type='File' name='avatar_url')
+          h1= `${user.username}`
         a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
           .doublebox-page-leftBox-button-inner
             | Save changes
@@ -37,18 +37,19 @@ block content
           .doublebox-page-rightBox-innerbox-section-box-editTitle
             h1 Email
             .flexFiller
-            input.edit-form(type='text' placeholder='email@mail.com')
+            input.edit-form(type='text' placeholder=`${user.email}` name='email')
         .doublebox-page-rightBox-innerbox-section-box
           .doublebox-page-rightBox-innerbox-section-box-editTitle
             h1 Nickname
             .flexFiller
-            input.edit-form(type='text' placeholder='joaninha')
+            input.edit-form(type='text' placeholder=`${user.nickname}` name='nickname')
         .doublebox-page-rightBox-innerbox-section-box
           .doublebox-page-rightBox-innerbox-section-box-editTitle
             h1 Afiliation
             .flexFiller
-            select#afilition.edit-form(name='afilition')
-              option(value='sudent') Student
+            input.edit-form(type='text' placeholder=`${user.afilition}` name='afilition')
+            //- select#afilition.edit-form(name='afilition')
+              option(value='student') Student
               option(value='professor') Professor
         a.savechangesbtn(href='')
           .centerStuff
