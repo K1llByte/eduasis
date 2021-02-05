@@ -8,7 +8,10 @@ block content
     .doublebox-page-leftBox
       .doublebox-page-leftBox-outerBox(style='max-height:40rem')
         .doublebox-page-leftBox-innerbox(style='height:23rem')
-          img(src='/static/images/pato.png' style='width:160px;height:160px;')
+          if user.avatar_url == ""
+            img(src=`http://localhost:7700/storage/avatars/default/default.png` style='width:160px;height:160px;')
+          else
+            img(src=`${user.avatar_url}` style='width:160px;height:160px;')
           div(style='justify-content:center; text-align: center;')
             if user.nickname == ""
               h2= `${user.username}`
@@ -16,55 +19,44 @@ block content
               h2= `${user.nickname}`
               p= `${user.username}`
             p= user.email
-        a.doublebox-page-leftBox-button(href='/logout')
-          .doublebox-page-leftBox-button-inner
-            | Logout
-        a.doublebox-page-leftBox-button(href='/profile_edit')
-          .doublebox-page-leftBox-button-inner
-            | Edit Profile
+        if view_type == 'me'
+          a.doublebox-page-leftBox-button(href='/logout')
+            .doublebox-page-leftBox-button-inner
+              | Logout
+          a.doublebox-page-leftBox-button(href=`/users/${user.username}/edit`)
+            .doublebox-page-leftBox-button-inner
+              | Edit Profile
     .doublebox-page-rightBox
       .doublebox-page-rightBox-innerbox
         .doublebox-page-rightBox-innerbox-title
           button.tablinks(onclick="opentab(event, 'Post')") POSTS
           button.tablinks(onclick="opentab(event, 'Resource')") RESOURCES
         #Post.tabcontent.doublebox-page-rightBox-innerbox-content
-          .doublebox-page-rightBox-innerbox-content-activityContainer
-            .doublebox-page-rightBox-innerbox-content-activityBox
-              .doublebox-page-rightBox-innerbox-content-description
-                h3 Posted about resource &quot;XPTO&quot;
-              .doublebox-page-rightBox-innerbox-content-timeInfo
-                p 20 minutes ago
-              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
-                .doublebox-page-rightBox-innerbox-content-linkIconContainer
-                  i.material-icons reply
-          .doublebox-page-rightBox-innerbox-content-activityContainer
-            .doublebox-page-rightBox-innerbox-content-activityBox
-              .doublebox-page-rightBox-innerbox-content-description
-                h3 Posted about resource &quot;XPTO&quot;
-              .doublebox-page-rightBox-innerbox-content-timeInfo
-                p 20 minutes ago
-              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
-                .doublebox-page-rightBox-innerbox-content-linkIconContainer
-                  i.material-icons reply
+          each p in posts
+            .doublebox-page-rightBox-innerbox-content-activityContainer
+              .doublebox-page-rightBox-innerbox-content-activityBox
+                .doublebox-page-rightBox-innerbox-content-description
+                  h3= `Posted "${p.content.substr(0,30)}"`
+                .doublebox-page-rightBox-innerbox-content-timeInfo
+                  p= `${p.created_date}`
+                a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href=`/posts/${p.post_id}`)
+                  .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                    i.material-icons reply
+          //- else
+          //-   h3= `- This section is empty`
+
         #Resource.tabcontent.doublebox-page-rightBox-innerbox-content(style='display: none;')
-          .doublebox-page-rightBox-innerbox-content-activityContainer
-            .doublebox-page-rightBox-innerbox-content-activityBox
-              .doublebox-page-rightBox-innerbox-content-description
-                h3 Resource &quot;XPTO&quot;
-              .doublebox-page-rightBox-innerbox-content-timeInfo
-                p 20 minutes ago
-              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
-                .doublebox-page-rightBox-innerbox-content-linkIconContainer
-                  i.material-icons reply
-          .doublebox-page-rightBox-innerbox-content-activityContainer
-            .doublebox-page-rightBox-innerbox-content-activityBox
-              .doublebox-page-rightBox-innerbox-content-description
-                h3 Resource &quot;XPTO&quot;
-              .doublebox-page-rightBox-innerbox-content-timeInfo
-                p 20 minutes ago
-              a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href='')
-                .doublebox-page-rightBox-innerbox-content-linkIconContainer
-                  i.material-icons reply
+          each r in resources
+            .doublebox-page-rightBox-innerbox-content-activityContainer
+              .doublebox-page-rightBox-innerbox-content-activityBox
+                .doublebox-page-rightBox-innerbox-content-description
+                  h3= `${r.title}`
+                .doublebox-page-rightBox-innerbox-content-timeInfo
+                  p= `${r.create_date}`
+                a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href=`/resources/${r.resource_id}`)
+                  .doublebox-page-rightBox-innerbox-content-linkIconContainer
+                    i.material-icons reply
+          
   script.
     function opentab(evt, name) {
     // Declare all variables

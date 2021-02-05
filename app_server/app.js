@@ -22,7 +22,7 @@ passport.use(new LocalStrategy(
         axios.post('http://localhost:7700/api/login/',{username: user, password: pass})
         .then(dados => {
             const decoded = jwt.decode(dados.data.TOKEN);
-            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             
             const user_data = {
                 "token" : dados.data.TOKEN,
@@ -59,7 +59,7 @@ var index_router = require('./routes/index');
 var app = express();
 
 app.use(session({
-  genid: req => {
+  genid: (req) => {
     return uuidv4()
   },
   store: new FileStore({logFn: function(){}}),
