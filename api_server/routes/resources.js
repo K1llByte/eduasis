@@ -167,7 +167,7 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
     };
 
     Resource.list_all(options) 
-        .then(data => { 
+        .then(data => {
             res.json(data);
         })
         .catch(err => { 

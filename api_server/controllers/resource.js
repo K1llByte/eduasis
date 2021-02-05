@@ -23,7 +23,7 @@ module.exports.list_all = (options) => { // page_num=null,page_limit=null,search
     let search_term = options.search_term;
     let type_id = options.type_id;
 
-    let match = { "$match" : { "_id":0, "visibility" : 0 } };
+    let match = { "$match" : { "visibility" : 0 } };
     if(search_term != null)
     {
         match['$match'].title = { "$regex": search_term, "$options": 'i' };
@@ -38,7 +38,7 @@ module.exports.list_all = (options) => { // page_num=null,page_limit=null,search
     {
         match['$match'].author = author;
     }
-    
+
     return Resource
         .aggregate([
             match,

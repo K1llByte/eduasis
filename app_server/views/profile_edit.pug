@@ -21,16 +21,22 @@ block content
     .doublebox-page-leftBox
       .doublebox-page-leftBox-outerBox
         .doublebox-page-leftBox-innerbox
-          form(action='/profile_edit' method='post' enctype='multipart/form-data')
+          form(action=`/users/${user.username}/edit` method='post' enctype='multipart/form-data')
             label(for='fileToUpload')
-              .profile-pic-edit(style="background-image: url('/static/images/pato.png')")
+              if user.avatar_url == ""
+                .profile-pic-edit(style=`background-image: url('http://localhost:7700/storage/avatars/default/default.png')`)
+                span.material-icons camera_alt
+                span Change Image
+              else
+                .profile-pic-edit(style=`background-image: url('${user.avatar_url}')`)
                 span.material-icons camera_alt
                 span Change Image
             input#fileToUpload(type='File' name='avatar_url')
           h1= `${user.username}`
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        a.doublebox-page-leftBox-button(type='submit')
           .doublebox-page-leftBox-button-inner
             | Save changes
+        
     .doublebox-page-rightBox
       .doublebox-page-rightBox-innerbox
         .doublebox-page-rightBox-innerbox-section-box
@@ -45,9 +51,9 @@ block content
             input.edit-form(type='text' placeholder=`${user.nickname}` name='nickname')
         .doublebox-page-rightBox-innerbox-section-box
           .doublebox-page-rightBox-innerbox-section-box-editTitle
-            h1 Afiliation
+            h1 Affiliation
             .flexFiller
-            input.edit-form(type='text' placeholder=`${user.afilition}` name='afilition')
+            input.edit-form(type='text' placeholder=`${user.affiliation}` name='affiliation')
             //- select#afilition.edit-form(name='afilition')
               option(value='student') Student
               option(value='professor') Professor
