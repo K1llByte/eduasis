@@ -32,7 +32,7 @@ function auth_header(token)
 }
 
 // ---------------------------------------------------------------
-//----------- PAGINAS NECESSITAM AUTENTICAÇAO --------------------
+//----------- ROTAS NAO NECESSITAM AUTENTICAÇAO --------------------
 // ---------------------------------------------------------------
 
 // GET home page
@@ -92,7 +92,7 @@ router.post('/register', (req, res) => {
 });
 
 // ---------------------------------------------------------------
-//----------- PAGINAS NECESSITAM AUTENTICAÇAO --------------------
+//----------- ROTAS NECESSITAM AUTENTICAÇAO --------------------
 // ---------------------------------------------------------------
 
 router.get('/eduasis', check_auth, (req,res) => {
@@ -200,7 +200,7 @@ router.post('/profile_edit/:username', check_auth, (req, res) => {
 });
 
 
-//----------- PAGINAS NEW RESOURCE/POST --------------------
+//----------- ROTAS NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
     // Data retrieve
     axios.get(`${API_URL}/resource_types/`,{
@@ -243,29 +243,7 @@ router.post('/new_post', check_auth, (req, res) => {
 
 
 
-//----------- PAGINAS RESORCES/POSTS --------------------
-
-// router.get('/resources', check_auth, (req, res) => {
-//   // Data retrieve
-//   axios.get(`${API_URL}/resource_types/`,{
-//     headers: { 'Authorization': 'Bearer ' + req.user.token }
-//   })
-//   .then(resource_types=>{
-//     res.render('resources');
-    // axios.get(`${API_URL}/resources/`,{
-    //   headers: { 'Authorization': 'Bearer ' + req.user.token }
-    // })
-    // .then(resources=>{
-    //     console.log(resource_types.data)
-    //     // res.render('resources');
-    //     // res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
-    // })
-    // .catch(err => res.render('error', {err: err}))
-    // res.render('resources');
-//   })
-//   .catch(err => res.render('error', {err: err}))
-//   res.render('resources');
-// });
+//----------- ROTAS RESORCES/POSTS --------------------
 
 router.get('/resources', check_auth, (req, res) => {
   // Data retrieve
@@ -314,4 +292,19 @@ router.get('/post/:id', check_auth, (req, res) => {
   //post_id
   res.render('post');
 });
+
+//----------- ROTAS MANAGER --------------------
+
+router.get('/managment', check_auth, (req, res) => {
+  // Data retrieve
+  //post_id
+  res.render('managment');
+});
+
+router.post('/managment', check_auth, (req, res) => {
+  // Data retrieve
+  //post_id
+  res.render('managment');
+});
+
 module.exports = router;
