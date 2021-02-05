@@ -38,8 +38,9 @@ function auth_header(token)
 // GET home page
 router.get('/', (req, res, next) => {
   // res.render('index', { title: 'Express' });
-  res.render('login');
+  res.redirect('login');
 });
+
 
 router.get('/login', (req, res, next) => {
   res.render('login');
@@ -62,6 +63,7 @@ router.get('/logout', (req, res) => {
     }
   });
 });
+
 
 router.get('/register', (req, res) => {
   // Data retrieve
@@ -99,8 +101,8 @@ router.get('/eduasis', check_auth, (req,res) => {
   // Data retrieve
   // utilizador, recursos_recentes, posts_recentes
   res.render('home_page');
-
 });
+
 
 router.get('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
@@ -119,7 +121,7 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
     }
     else
     {
-        res.status(401).render('error',{"message":"Forbidden"});
+        res.status(401).render('error', {err:{"status":401 , "message":"Forbidden"}} );
     }
 });
 
@@ -127,7 +129,7 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
-        console.log(req.body)
+        console.log(req.body);
         // let header_body = {
         //     headers: { 'Authorization': 'Bearer ' + token },
         //     body: {
@@ -148,7 +150,7 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
     }
     else
     {
-        res.status(401).render('error',{"message":"Forbidden"});
+        res.status(401).render('error',{err:{"status":401 , "message":"Forbidden"}});
     }
 });
 
@@ -353,15 +355,15 @@ router.get('/resource/:id', check_auth, (req, res) => {
   res.render('resource');
 });
 
-router.get('/resource/:id', check_auth, (req, res) => {
-  // Data retrieve
-  axios.get(`${API_URL}/resources/`+req.params.id,{
-      headers: { 'Authorization': 'Bearer ' + req.user.token }
-  })
-  .then(resource=>{
-      res.render('resource',{"resource":resource});
-  })
-  .catch(err => res.render('error', {err: err}))
+router.get('/resource/:resource_id', check_auth, (req, res) => {
+    // Data retrieve
+    axios.get(`${API_URL}/resources/${req.params.resource_id}`,{
+        headers: { 'Authorization': 'Bearer ' + req.user.token }
+    })
+    .then(resource=>{
+        res.render('resource',{"resource":resource});
+    })
+    .catch(err => res.render('error', {err: err}))
 });
 
 
