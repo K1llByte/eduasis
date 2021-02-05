@@ -1214,7 +1214,7 @@ input:focus + label {
 
 .search{
   display: block;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 10px;
   padding: 10px;
   width: 60%;
@@ -1233,7 +1233,13 @@ input:focus + label {
 	font-size: 14px;
 	text-align: center;
   font-family: 'Ubuntu', sans-serif, FontAwesome;
-  border: none
+  border: 0px none;
+}
+
+.search-text:focus, :active{
+  border: 0px none;
+  outline: none;
+  border-color: transparent;
 }
 
 .search-type{
