@@ -7,11 +7,11 @@ block title
 block content
   .new-resource
     p.register_sign New Post
-    form
+    form(method="POST" action="/post")
       .resource-form
         | Id resource:    
         .new-resource-text
-          input.un(type='text' placeholder='Id_resource')
+          input.un(type='text' placeholder='Id_resource' value=resource_id)
       .resource-form
         | Description:
         .new-resource-text

@@ -13,13 +13,11 @@ block content
         .new-resource-text
           input.un(type='text' placeholder='Title' required='required')
       .resource-form(style='margin-bottom: 30px;')
-        | Type id:
+        | Type:
         .new-resource-text
           select#afilition.edit-form(name='afilition')
-            option(value='1') Option 1
-            option(value='2') Option 2
-            option(value='3') Option 3
-            option(value='4') Option 4
+            each t in types
+              option(value=t.type_id)= `${t.name}`
       .resource-form
         | Description:
         .new-resource-text
@@ -33,12 +31,12 @@ block content
       .resource-form
         label(for='file-upload')
           u Choose File:
-        input#file-upload(type='file' multiple='' required='')
+        input#file-upload(type='file' multiple='' accept=".zip,.rar,.7zip" required='required')
         .new-resource-text(align='center' style='margin-bottom: 15px;')
           span#select-file Nothing selected
           #file-upload-filename
-        span#clear(style='display: none;')
-          label.material-icons(for='clear_list') clear
+        //- span#clear(style='display: none;')
+          //- label.material-icons(for='clear_list') clear
       button.submit(align='center') Submit
   script.
     var input = document.getElementById( 'file-upload' );

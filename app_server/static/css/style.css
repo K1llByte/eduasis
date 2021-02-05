@@ -1198,27 +1198,27 @@ input:focus + label {
   display: flex;
   flex-direction: row;
   width: 90%;
-  max-width: 1350px;
-  height: 75px;
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   font-weight: bold;
   margin: 1rem;
-  position: relative;
+  /* padding: 10px; */
   background-color: #FFFFFF;
   /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 10px;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .search{
-  /* display: inline; */
-  width: 75%;
-  border-radius: 20px;
-  margin: 10px;
-  margin-left: 10px;
+  display: block;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+  width: 60%;
+  /* margin-left: 30px; */
   border: solid #5CD19F;
   align-items: center;
   justify-content: center;
@@ -1228,47 +1228,29 @@ input:focus + label {
 .search-text{
   /* align-items: center;
   justify-content: center; */
-  width: 76%;
-	/* color: rgb(38, 50, 56); */
-	font-weight: 700;
+  display: inline;
 	font-size: 14px;
-	letter-spacing: 1px;
-	/* background: rgba(136, 126, 126, 0.04); */
-  padding: 10px 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-	/* border: none; */
-	/* border-radius: 20px; */
-	/* outline: none; */
-	/* box-sizing: border-box; */
-	/* border: 2px solid rgba(0, 0, 0, 0.02); */
-	margin-bottom: 50px;
-	margin-left: 46px;
 	text-align: center;
-	/* margin-bottom: 27px; */
-	font-family: 'Ubuntu', sans-serif, FontAwesome;
+  font-family: 'Ubuntu', sans-serif, FontAwesome;
+  border: none
 }
 
 .search-type{
-  /* width: 100%;
-  height: 100%;
-	font-weight: 700;
-	font-size: 14px;
-	letter-spacing: 1px;
-	padding: 10px 20px;
-	margin-bottom: 50px;
-	margin-left: 46px;
-	text-align: center;
-  font-family: 'Ubuntu', sans-serif, FontAwesome; */
-  /* width: 25%; */
-  /* border-radius: 20px; */
-  margin: 10px;
+  /* width: auto; */
+  /* height: fit-content; */
+  width: 200px;
+  height: 40px;
+  margin: 20px;
   margin-left: 10px;
-  background-color:#5CD19F;
-  /* border: solid #5CD19F; */
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 22px;
+  /* background-color:#5CD19F; */
+  border: solid #5CD19F;
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: none;
 }
 
 .search-text:active{
