@@ -14,6 +14,7 @@ router.get('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =>
 
     let page_num = 0;
     let page_limit = 20;
+    let author = null;
 
     if(req.query.page_num != undefined)
     {
@@ -29,7 +30,20 @@ router.get('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =>
             res.status(400).json({'error': "Invalid page_limit param"});
     }
 
-    Post.list_all(page_num,page_limit)
+    if(req.query.author != undefined)
+    {
+        author = req.query.author;
+    }
+    
+
+    
+    const options = {
+        "page_num" : page_num,
+        "page_limit" : page_limit,
+        "author" : author
+    };
+
+    Post.list_all(options)
         .then(data => { 
             res.json(data);
         })

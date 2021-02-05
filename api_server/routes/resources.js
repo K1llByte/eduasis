@@ -112,6 +112,8 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
 
     let search_term = null;
     let type_id = null;
+    let author = null;
+
     if(req.query.search != undefined)
     {
         // Escape all regex operators
@@ -123,9 +125,14 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
         type_id = Number(req.query.type_id);
         if(isNaN(type_id))
         {
-            res.status(400).json({'error': 'type_id is not a number'});
+            res.status(400).json({'error': 'Invalid type_id param'});
             return;
         }
+    }
+
+    if(req.query.author != undefined)
+    {
+        author = req.query.author;
     }
 
     let page_num = 0;
@@ -135,17 +142,31 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
     {
         page_num = Number(req.query.page_num);
         if(isNaN(page_num))
+        {
             res.status(400).json({'error': "Invalid page_num param"});
+            return;
+        }
     }
 
     if(req.query.page_limit != undefined)
     {
         page_limit = Number(req.query.page_limit);
         if(isNaN(page_limit)) // || page_limit > 100
+        {
             res.status(400).json({'error': "Invalid page_limit param"});
+            return;
+        }
     }
 
-    Resource.list_all(page_num,page_limit,search_term,type_id)
+    const options = {
+        "search_term" : search_term,
+        "type_id" : type_id,
+        "author" : author,
+        "page_num" : page_num,
+        "page_limit" : page_limit
+    };
+
+    Resource.list_all(options) 
         .then(data => { 
             res.json(data);
         })

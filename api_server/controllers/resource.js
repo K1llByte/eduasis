@@ -16,8 +16,14 @@ const RESOURCE_PROJECTION = {
 
 // ===== CRUD Operations ===== //
 
-module.exports.list_all = (page_num,page_limit,search_term=null,type_id=null) => {
-    let match = { "$match" : { "visibility" : 0 } };
+module.exports.list_all = (options) => { // page_num=null,page_limit=null,search_term=null,type_id=null
+    let page_num = options.page_num;
+    let page_limit = options.page_limit;
+    let author = options.author;
+    let search_term = options.search_term;
+    let type_id = options.type_id;
+
+    let match = { "$match" : { "_id":0, "visibility" : 0 } };
     if(search_term != null)
     {
         match['$match'].title = { "$regex": search_term, "$options": 'i' };
@@ -26,6 +32,11 @@ module.exports.list_all = (page_num,page_limit,search_term=null,type_id=null) =>
     if(type_id != null)
     {
         match['$match'].type_id = type_id;
+    }
+
+    if(author != null)
+    {
+        match['$match'].author = author;
     }
     
     return Resource

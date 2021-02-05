@@ -3,15 +3,25 @@ const mongoose = require('mongoose');
 
 // ===== CRUD Operations ===== //
 
-module.exports.list_all = (page_num,page_limit) => {
+module.exports.list_all = (options) => {
+    let page_num = options.page_num;
+    let page_limit = options.page_limit;
+    let author = options.author;
     
+    let match = { };
+    if(author != null)
+    {
+        match.author = author;
+    }
+
     return Post
-        .find()
+        .find(match,{_id:0,"comments._id":0})
         .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
         .limit(page_limit)
         .exec()
 }
 
+// Get a post by post_id
 module.exports.get = (pid) => {
     return Post
         .findOne({post_id:pid})
