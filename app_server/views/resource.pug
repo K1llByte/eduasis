@@ -1,7 +1,7 @@
 extends navbar
 
 block title
-  title= #{resource.title}
+  title= `${resource.title}`
 
 block content
   .doublebox-page-content
@@ -9,18 +9,18 @@ block content
       .doublebox-page-leftBox-outerBox
         .doublebox-page-leftBox-innerbox
           .something(style='justify-content:center; text-align: center;')
-            h2= #{resource.title}
-            h3= #{resource.author}
-            p= Rate: #{resource.rate}
-            p= DataTime: #{resource.create_date}
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+            h2= `${resource.title}`
+            h3= `${resource.author}`
+            p= `Rate: ${resource.rate}`
+            p= `DataTime: ${resource.create_date}`
+        a.doublebox-page-leftBox-button(href=`http://locahost:7700/storage/resources/${resource.resource_id}.zip`)
           .doublebox-page-leftBox-button-inner
             | Download
     .doublebox-page-rightBox
       .doublebox-page-rightBox-innerbox(style='display: block;')
         div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
-          h1= #{resource.title}
-          h3= #{resource.descripton}
+          h1= `${resource.title}`
+          h3= `${resource.descripton}`
           h1 Files
           h3
             ul

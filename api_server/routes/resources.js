@@ -180,6 +180,7 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
 
     Resource.get(req.params.resource_id)
         .then(data => {
+            data = data[0];
             if(data.visibility === 0)
             {
                 res.json(data);

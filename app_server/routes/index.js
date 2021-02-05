@@ -316,8 +316,7 @@ router.get('/resources', check_auth, (req, res) => {
         res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
   })
   .catch(err => res.render('error', {err: err}))
-  })
-  .catch(err => res.render('error', {err: err}))
+  });
 });
 
 
@@ -327,21 +326,23 @@ router.get('/posts', check_auth, (req, res) => {
   res.render('posts');
 });
 
-router.get('/resource/:id', check_auth, (req, res) => {
-  // Data retrieve
-  //resource_id
-  res.render('resource');
-});
+// router.get('/resource/:id', check_auth, (req, res) => {
+//   // Data retrieve
+//   //resource_id
+//   res.render('resource');
+// });
 
-router.get('/resource/:resource_id', check_auth, (req, res) => {
+router.get('/resources/:resource_id', check_auth, (req, res) => {
     // Data retrieve
     axios.get(`${API_URL}/resources/${req.params.resource_id}`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
-    .then(resource=>{
-        res.render('resource',{"resource":resource});
+    .then(resource => {
+        res.render('resource',{"resource":resource.data});
     })
-    .catch(err => res.render('error', {err: err}))
+    .catch(err => {
+        res.render('error', {err: err})
+    });
 });
 
 

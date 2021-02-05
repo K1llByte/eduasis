@@ -168,6 +168,29 @@ router.put('/api/users/:username', auth.authenticate(User.CPermissions.apc), (re
 });
 
 
+router.get('/api/users/:username/avatar', (req, res) => {
+    
+    User.get(req.params.username)
+    .then(data => {
+        if(data != null)
+        {
+            if(data.avatar_url != '')
+                res.redirect(data.avatar_url);
+            else
+                res.redirect('/storage/avatars/default/default.png');
+        }
+        else
+            res.status(404).json({"error":'User not found'});
+        
+        
+    })
+    .catch(err => {
+        res.status(500).json({"error":err});
+    });
+    
+});
+
+
 router.post('/api/users/:username/avatar', auth.authenticate(User.CPermissions.apc), avatar_upload.single('avatar_img'), (req, res) => {
 
     if(req.valid)

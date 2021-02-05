@@ -63,7 +63,23 @@ module.exports.list_all = (options) => { // page_num=null,page_limit=null,search
 // Get a resource
 module.exports.get = (rid) => {
     return Resource
-        .findOne({ "resource_id": rid }, RESOURCE_PROJECTION)
+        .aggregate([
+            {
+                "$match" : { "resource_id": rid }
+            },
+            {
+              "$lookup":
+                {
+                  "from": "resource_types",
+                  "localField": "type_id",
+                  "foreignField": "type_id",
+                  "as": "type"
+                }
+           },
+           {
+                "$project" : RESOURCE_PROJECTION
+           }
+        ])
         .exec()
 }
 
