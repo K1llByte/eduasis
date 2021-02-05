@@ -22,8 +22,8 @@ passport.use(new LocalStrategy(
         axios.post('http://localhost:7700/api/login/',{username: user, password: pass})
         .then(dados => {
             const decoded = jwt.decode(dados.data.TOKEN);
+            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             
-            console.log(decoded);
             const user_data = {
                 "token" : dados.data.TOKEN,
                 "username" : decoded.username,

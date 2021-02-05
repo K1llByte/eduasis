@@ -60,6 +60,7 @@ router.get('/register', (req, res) => {
 
 });
 
+
 router.post('/register', (req, res) => {
     // Data retrieve
     // console.log(JSON.stringify(req.body))
@@ -90,16 +91,17 @@ router.get('/eduasis', check_auth, (req,res) => {
 
 });
 
+
 router.get('/profile', check_auth, (req, res) => {
-  // Data retrieve
-  // utilizador, posts_do_utilizador, recursos_do_utilizador
-  res.render('profile',{'user':{
-    "username": "killbyte",
-    "nickname": "Jojo",
-    "email": "somethingsomething@blabla.com",    
-  }, "active": "profile"
+    // utilizador, posts_do_utilizador, recursos_do_utilizador
+    res.render('profile',{'user':{
+          "username": "killbyte",
+          "nickname": "Jojo",
+          "email": "somethingsomething@blabla.com",    
+      }, "active": "profile"
+    });
 });
-});
+
 
 router.get('/profile/:username', check_auth, (req, res) => {
   // Data retrieve
