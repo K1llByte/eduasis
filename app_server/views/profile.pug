@@ -11,9 +11,12 @@ block content
         .doublebox-page-leftBox-innerbox(style="height:23rem")
           img(src='/static/images/moky.png' style='width:160px;height:160px;')
           div(style='justify-content:center; text-align: center;')
-            h2 Mae Joana
-            p Joaninha
-            p email@gmail.com
+            if user.nickname == ""
+              h2= `${user.username}`
+            else
+              h2= `${user.nickname}`
+              p= `${user.username}`
+            p= user.email
         a.doublebox-page-leftBox-button(href='/logout')
           .doublebox-page-leftBox-button-inner
             | Logout

@@ -24,6 +24,13 @@ function check_auth(req, res, next)
     }
 }
 
+function auth_header(token)
+{
+    return {
+        headers: { 'Authorization': 'Bearer ' + token }
+    }
+}
+
 // GET home page
 router.get('/', (req, res, next) => {
   // res.render('index', { title: 'Express' });
@@ -92,14 +99,37 @@ router.get('/eduasis', check_auth, (req,res) => {
 });
 
 
-router.get('/profile', check_auth, (req, res) => {
-    // utilizador, posts_do_utilizador, recursos_do_utilizador
-    res.render('profile',{'user':{
-          "username": "killbyte",
-          "nickname": "Jojo",
-          "email": "somethingsomething@blabla.com",    
-      }, "active": "profile"
-    });
+router.get('/profile', check_auth, async (req, res) => {
+    
+    // The _p at the end indicates that 
+    // this variable is a promise 
+    let user_p = axios.get(
+        `${API_URL}/users/@me`,
+        auth_header(req.user.token));
+
+    let resources_p = axios.get(
+        `${API_URL}/resources?author=${req.user.username}`,
+        auth_header(req.user.token));
+
+    let posts_p = axios.get(
+        `${API_URL}/posts/?author=${req.user.username}`,
+        auth_header(req.user.token));
+
+    try {
+        let user = (await user_p).data;
+        let resources = (await resources_p).data;
+        let posts = (await posts_p).data;
+
+        res.render('profile',{
+            "user": user,
+            'resources': await resources_p,
+            'posts': await posts_p,
+            active: 'profile'
+        });
+    }
+    catch(error) {
+        res.render('error',{err: error});
+    }
 });
 
 

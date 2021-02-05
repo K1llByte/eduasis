@@ -72,15 +72,41 @@ router.get('/api/users', auth.authenticate(User.CPermissions.apc), (req, res) =>
 });
 
 
+router.get('/api/users/@me', auth.authenticate(User.CPermissions.apc), (req, res) => {
+
+    User.get(req.user.username,true)
+    .then(data => { 
+        if(data != null)
+        {
+            res.json(data);
+        }
+        else // Probably impossible, unless the user is deleted
+        {
+            res.status(404).json({"error":"User not found"});
+        }
+    })
+    .catch(err => { 
+        res.json('error', err);
+    });
+});
+
+
 router.get('/api/users/:username', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     User.get(req.params.username,true)
-        .then(data => { 
+    .then(data => { 
+        if(data != null)
+        {
             res.json(data);
-        })
-        .catch(err => { 
-            res.json('error', err);
-        });
+        }
+        else
+        {
+            res.status(404).json({"error":"User not found"});
+        }
+    })
+    .catch(err => { 
+        res.json('error', err);
+    });
 });
 
 

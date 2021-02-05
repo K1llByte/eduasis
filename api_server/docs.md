@@ -33,6 +33,11 @@
 **GET /resource_types/:type_id**<br/>
 
 ___
+## `GET /users/:username`
+
+### **Notes**
+To get immediatly the information about you if you're logged in, you can access `/users/@me`
+___
 ## `GET /posts`
 
 ### **URL Params**
