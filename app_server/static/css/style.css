@@ -1214,8 +1214,8 @@ input:focus + label {
 
 .search{
   display: block;
-  border-radius: 10px;
-  margin: 15px;
+  border-radius: 20px;
+  margin: 10px;
   padding: 10px;
   width: 60%;
   /* margin-left: 30px; */
@@ -1251,6 +1251,47 @@ input:focus + label {
   justify-content: center;
   text-align: center;
   border: none;
+}
+
+.add-type{
+    cursor: pointer;
+    /* width: 400px; */
+    height: 40px;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(to right,  #56c596, #7be495);
+    /* border: 0; */
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding-bottom: 10px; */
+    /* padding-top: 10px; */
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    text-align: center;
+    margin-left: 20px;
+    /* margin-top: 10px; */
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.type-text{
+  width: 200px;
+	color: rgb(38, 50, 56);
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background: rgba(136, 126, 126, 0.04);
+	padding: 10px 10px;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	box-sizing: border-box;
+	border: 2px solid rgba(0, 0, 0, 0.02);
+	margin-bottom: 50px;
+	margin-left: 46px;
+	text-align: center;
+	margin-bottom: 27px;
+	font-family: 'Ubuntu', sans-serif, FontAwesome;
 }
 
 .search-text:active{

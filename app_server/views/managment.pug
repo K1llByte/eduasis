@@ -1,0 +1,22 @@
+head
+  link(rel='stylesheet' href='../css/style.css')
+  link(href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='../css/normalize.css')
+  link(rel='icon' href='../images/logo.png' type='image/x-icon')
+  title New Post
+.topnav
+  a.links(href='/eduasis')
+    img(src='../images/eduasis.png' style='height: 100%;')
+  .topnav-right
+    a.active(href='/managment') Managment
+    a.links(href='/resources') Resources
+    a.links(href='/new_resource') New Resource
+    a.links(href='/new_post') New Post
+    a.links(href='/profile') Profile
+.new-resource
+  p.register_sign Add a Resource Type
+  form
+    .resource-form(style='align-self:center; justify-content: space-around;')
+      input.type-text(type='text' placeholder='Type Name' value='')
+      button.add-type(align='center') Add Type
