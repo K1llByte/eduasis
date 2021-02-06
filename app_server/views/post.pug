@@ -10,55 +10,33 @@ block content
   .caixinha.w3-card-4
     .post
       .topbar-post
-        img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' alt='')
-        .profile-name Jojo
+        a(href=`/users/${post.author}`)
+          img.profile-picture(src=`http://localhost:7700/api/users/${post.author}/avatar` alt='')
+        .profile-name= `${post.author}`
+      
       .box-resource-post
         h4 
-          a(href="/resource") 
-            u Resource
-        p
+          a(href=`/resources/${resource.resource_id}`) 
+            u= `${resource.title}`
+        p #{resource.description}
           img(src='/static/images/Files_archive.png' width='100' height='100' style='float: right;')
-          |                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
-          span#dots ... 
-          span#more(style='display: none;')
-            | erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.
-          a#myBtn(onclick='readMore()')
-            u Read more
-      p DESCRI&Ccedil;AO DO POST:  Something somthing blablabla
+          
+          
+      p(style='font-size: xx-large;')= `${post.content}`
     button.w3-button.w3-block.w3-dark-grey(onclick='addComment()')
       i.fa.fa-comment(aria-hidden='true')
       |  Comment
     .w3-container.comments
       span#add-comment(style='display: none;')
         .add-comments
-          img.w3-left.profile-picture-comments.w3-margin-right(src='/static/images/moky.png' alt='Avatar')
-          textarea.add-comment(type='text' placeholder='add a comment')
-      .comment
-        img.w3-left.profile-picture-comments.w3-margin-right(src='/static/images/user.png' alt='Avatar' style='width:60px')
-        p comentario numero 2 - bbbbbbbbbbbbbbbb bbbbbbbbbb
-      .comment
-        img.w3-left.profile-picture-comments.w3-margin-right(src='/static/images/moky.png' alt='Avatar' style='width:60px')
-        p
-          | comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd
-      .comment
-        img.w3-left.profile-picture-comments.w3-margin-right(src='/static/images/user.png' alt='Avatar' style='width:60px')
-        p
-          | comentario numero 1 - bbbb aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbb bbbbbb rrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr  ffffffffffffffffffffffff fffffffffffffffff fffffffffffffffffff fbbbbbb  hhhhhhhh ccccccccccc ddddddddddddddd
+          img.w3-left.profile-picture-comments.w3-margin-right(src=`http://localhost:7700/api/users/${user.username}/avatar` alt='Avatar')
+          textarea.add-comment(type='text' placeholder='Add a comment')
+      each c in post.comments 
+        .comment
+          a(href=`/users/${c.author}`)
+            img.w3-left.profile-picture-comments.w3-margin-right(src=`http://localhost:7700/api/users/${c.author}/avatar` alt='Avatar' width='60' height='60' )
+          p= `${c.message}`
   script.
-    function readMore() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
-    if (dots.style.display == "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "<u>Read more</u>";
-    moreText.style.display = "none";
-    } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "<u>Read less</u>";
-    moreText.style.display = "inline";
-    }
-    }
     function addComment() {
     var moreText = document.getElementById("add-comment");
     if (moreText.style.display == "none") {

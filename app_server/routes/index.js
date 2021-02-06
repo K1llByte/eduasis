@@ -17,9 +17,7 @@ function check_auth(req, res, next)
 {
     if(req.isAuthenticated())
     {
-        // req.isAuthenticated() will return true if user is logged in
         const decoded = jwt.decode(req.user.token);
-        //console.log(decoded);
         req.user.username = decoded.username;
         req.user.perms = decoded.perms;
         next();
@@ -39,7 +37,6 @@ function auth_header(token)
 
 function time_difference(previous_str, current=Date.now()) 
 {
-    console.log(previous_str);
     let previous = Date.parse(previous_str);
     let ms_per_minute = 60 * 1000;
     let ms_per_hour = ms_per_minute * 60;
@@ -80,11 +77,9 @@ function time_difference(previous_str, current=Date.now())
 
 const storage = multer.diskStorage({
     destination : (req, file, next) => {
-        console.log("PASSOU POR AQUI");
         next(null,'tmp');
     },
     filename : (req, file, next) => {
-        console.log("PASSOU POR ACULA");
         req.file = file;
         next(null,`file.zip`);
     }
@@ -297,12 +292,11 @@ router.get('/users/:username', check_auth, async (req, res) => {
 //----------- ROUTES NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
 
-    console.log(req.body)
     axios.get(`${API_URL}/resource_types/`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resource_types=>{
-        // console.log(resources_types.data)
+        
         res.render('new_resource',{
             "active": "new_resource", 
             'user':req.user,
@@ -316,14 +310,12 @@ router.get('/new_resource', check_auth, (req, res) => {
 //POST new resource
 router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquive'),
 
-    //if(req.files == undefined)
-    //{
-    //    res.render('error',{"err":{"message":"No file provided"}});
-    //    return;
-    //}
+    if(req.files == undefined)
+    {
+        res.render('error',{"err":{"message":"No file provided"}});
+        return;
+    }
 
-    console.log("Content-Type",req.header("Content-Type"));
-    console.log("content-type",req.header("content-type"));
 
     let form = new FormData();
     form.append('resource_data', req.files.arquive.data,req.files.arquive.name);
@@ -340,7 +332,7 @@ router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquiv
         }
     })
     .then(data => {
-        console.log("data",data);
+        
         res.redirect('/resources');
     })
     .catch(err => {
@@ -369,11 +361,10 @@ router.get('/new_post', check_auth, (req, res) => {
 
 //POST new post
 router.post('/new_post', check_auth, (req, res) => {
-  // Data retrieve
-  console.log("req.body",req.body);
-  axios.post(`${API_URL}/posts`, req.body, auth_header(req.user.token))
-    .then(res.redirect('/eduasis'))
-    .catch(err => res.render('error', {err:err}));
+
+    axios.post(`${API_URL}/posts`, req.body, auth_header(req.user.token))
+        .then(res.redirect('/eduasis'))
+        .catch(err => res.render('error', {err:err}));
 });
 
 
@@ -410,11 +401,12 @@ router.get('/resources', check_auth, (req, res) => {
 });
 
 
-router.get('/posts', check_auth, (req, res) => {
-  // Data retrieve
-  //post_id
-  res.render('posts');
-});
+// LIsta de posts nao vai existir
+// router.get('/posts', check_auth, (req, res) => {
+//   // Data retrieve
+//   //post_id
+//   res.render('posts');
+// });
 
 
 router.get('/resources/:resource_id', check_auth, (req, res) => {
@@ -423,21 +415,42 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resource => {
-        console.log('resource.data',resource.data);
+        
         res.render('resource',{
             "resource":resource.data, 
             'time_difference': time_difference,
             'user':req.user});
     })
     .catch(err => {
-        res.render('error', {err: err})
+        res.status(err.status).render('error', {err: err});
     });
 });
 
 
 router.get('/posts/:post_id', check_auth, (req, res) => {
 
-    res.render('post', {'user':req.user});
+    axios.get(`${API_URL}/posts/${req.params.post_id}`,
+        auth_header(req.user.token))
+    .then(post_res => {
+
+        const post = post_res.data;
+        axios.get(`${API_URL}/resources/${post.resource_id}`,
+            auth_header(req.user.token))
+        .then(resource_res => {
+            
+            res.render('post', {
+                'user': req.user,
+                'post': post,
+                'resource': resource_res.data
+            });
+        })
+        .catch(err => {
+            res.status(err.status).render('error', {err: err});
+        });
+    })
+    .catch(err => {
+        res.status(err.status).render('error', {err: err});
+    });
 });
 
 //----------- ROTAS MANAGER --------------------
@@ -449,7 +462,6 @@ router.get('/management', check_auth, (req, res) => {
 
 router.post('/management', check_auth, (req, res) => {
 
-    console.log(req.body);
     axios.post(`${API_URL}/resource_types`,req.body,auth_header(req.user.token))
     .then(data => {
         res.render('management', {'user':req.user});
