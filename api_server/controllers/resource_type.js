@@ -20,3 +20,13 @@ module.exports.insert = (rt_data) => {
     var new_rt = new ResourceType(rt_data);
     return new_rt.save()
 }
+
+
+module.exports.next_id = async () => {
+    let v = await ResourceType
+        .find({},{_id:0,name:0})
+        .sort({type_id:-1})
+        .limit(1).exec();
+    
+    return v[0].type_id + 1;
+}

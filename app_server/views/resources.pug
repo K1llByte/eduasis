@@ -8,8 +8,9 @@ block content
     .resources-box
       form.search-box
         .search
-          input.search-text(type='text' placeholder=' Search...')
+          input.search-text(type='text', name='search_term', placeholder=' Search...')
         select#type_id.search-type(name='type_id')
+          option(value=0) All
           each t in types
             option(value=t.type_id)= `${t.name}`
         button.fa.fa-search(style='padding-right: 20px;')
@@ -18,6 +19,7 @@ block content
       each r in resources
         .resource-box
           .profile-topbar(style='height: 60px;')
-            img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
+            a(href=`/users/${r.author}`)
+              img.profile-picture(src=`http://localhost:7700/api/users/${r.author}/avatar`, style='height: 60px; width: 60px;')
             .profile-name(style='font-size: 20px;')= r.author
-          a.resource1(style='font-size: 30px;')= r.title
+          a.resource1(href=`/resources/${r.resource_id}`,style='font-size: 30px;')= r.title

@@ -15,7 +15,7 @@ block content
       .resource-form(style='margin-bottom: 30px;')
         | Type:
         .new-resource-text
-          select#afilition.edit-form(name='afilition')
+          select#afilition.edit-form(name='type_id')
             each t in types
               option(value=t.type_id)= `${t.name}`
       .resource-form
@@ -26,12 +26,13 @@ block content
         | Visibility:
         .new-resource-text
           select#visibility.edit-form(name='visibility')
-            option(value='0') Private
-            option(value='1') Public
+            option(value='0') Public
+            option(value='1') Private
       .resource-form
         label(for='file-upload')
           u Choose File:
-        input#file-upload(type='file' multiple='' accept=".zip,.rar,.7zip" required='required' name="filename")
+          //- required='required'
+        input#file-upload(type='file' multiple='' accept=".zip"  name="arquive") 
         .new-resource-text(align='center' style='margin-bottom: 15px;')
           span#select-file Nothing selected
           #file-upload-filename
