@@ -7,6 +7,10 @@ const jwt = require('jsonwebtoken');
 const FormData = require('form-data');
 const multer = require('multer');
 
+var bodyParser = require('body-parser')
+var jsonfile = require('jsonfile')
+var fs = require('fs')
+
 API_URL = 'http://localhost:7700/api'
 
 function check_auth(req, res, next)
@@ -302,12 +306,27 @@ router.get('/new_resource', check_auth, (req, res) => {
 
 
 //POST new resource
-router.post('/new_resource', check_auth, upload.single('arquive'), (req, res) => { //
+router.post('/new_resource', upload.single('arquive'), (req, res) => { //
     // Data retrieve
-    console.log("req.file",req.file);
+    console.log("req.file",req.files);
     console.log("req.arquive",req.arquive);
 
-    res.redirect('/eduasis');
+    // var fstream;
+    // req.pipe(req.busboy);
+    // console.log("req.busboy",req.busboy);
+    console.log("OVER");
+    res.redirect('/new_resource');
+    
+    // req.busboy.on('file', function (fieldname, file, filename) {
+    //     console.log("Uploading: " + filename); 
+    //     fstream = fs.createWriteStream(__dirname + '/files/' + filename);
+    //     file.pipe(fstream);
+    //     fstream.on('close', function () {
+    //         res.redirect('/eduasis');
+    //     });
+    // });
+
+    // res.redirect('/new_resource');
     //axios.post(`${API_URL}/resources`, JSON.stringify(req.body))
     //  .then(res.redirect('/eduasis'))
     //  .catch(err => res.render('error', {err:err}));
@@ -315,12 +334,12 @@ router.post('/new_resource', check_auth, upload.single('arquive'), (req, res) =>
 
 router.get('/new_post', check_auth, (req, res) => {
   // Data retrieve
-  res.render('new_post',{"active": "new_post"});
+    res.render('new_post',{"active": "new_post"});
 });
 
 router.get('/new_post/:id', check_auth, (req, res) => {
   // Data retrieve
-  res.render('new_post',{"active": "new_post", "resource_id": req.params.id});
+    res.render('new_post',{"active": "new_post", "resource_id": req.params.id});
 });
 
 //POST new post

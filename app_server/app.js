@@ -16,6 +16,10 @@ var LocalStrategy = require('passport-local').Strategy
 var axios = require('axios')
 
 
+var bodyParser = require('body-parser')
+// var jsonfile = require('jsonfile')
+// var fs = require('fs');
+
 
 // Configuração da estratégia local
 passport.use(new LocalStrategy(
@@ -92,6 +96,14 @@ app.use(function(req, res, next){
 })
 
 app.use(fileUpload( {createParentPath:true} ));
+// app.use(busboy())
+app.use(bodyParser.urlencoded({ extended: false}))
+//parse application/json
+app.use(bodyParser.json())
+
+// app.use(express.static('public'))
+
+
 
 
 // Routes

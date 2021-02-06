@@ -2,7 +2,7 @@ extends navbar
 
 block title
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-  title Profile
+  title= `${resource.title}`
   style.
     .checked {
     color: orange;
@@ -14,16 +14,16 @@ block content
       .doublebox-page-leftBox-outerBox
         .doublebox-page-leftBox-innerbox
           .something(style='justify-content:center; text-align: center;')
-            h2 Resource title
-            h3 Killbyte
-            p DataTime: datime
+            h2= `${resource.title}`
+            h3= `${resource.author}`
+            p DataTime: #{resource.create_date}
             div(style='font-size: large;')
               span.fa.fa-star.checked
               span.fa.fa-star.checked
               span.fa.fa-star.checked
               span.fa.fa-star.checked
               span.fa.fa-star
-              span(style='margin-left: 20px;')  4.2
+              span(style='margin-left: 20px;') #{resource.rate}
         a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
           .doublebox-page-leftBox-button-inner
             | Download
@@ -37,9 +37,9 @@ block content
           button.tablinks(onclick="opentab(event, 'Posts')") POSTS
         #Info.tabcontent.doublebox-page-rightBox-innerbox-content
           div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
-            h1 Resource Title
-            h3 Resourd Id: asdjnosan
-            h4 something something blablabla
+            h1 #{resource.title}
+            h3 Resourd Id: #{resource.resource_id}
+            h4 #{resource.description}
             h1 Files
             h3
               ul
