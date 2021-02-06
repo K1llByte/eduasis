@@ -7,25 +7,19 @@ block content
   h1.noticias  NEWS 
   .resrsPage-Content
     .resources-box
-      .resource-box
-        .profile-topbar(style='height: 60px;')
-          img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
-          .profile-name(style='font-size: 20px;') Kirubaito
-        .resource-post(style='height: 60px;')
-          .profile-name(style='font-size: 20px; margin-left: 20px;') Resource
-        a.resource1(style='font-size: 30px;') Resource title
-      .resource-box
-        .profile-topbar(style='height: 60px;')
-          img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
-          .profile-name(style='font-size: 20px;') Trina
-        .resource-post(style='height: 60px;')
-          .profile-name(style='font-size: 20px; margin-left: 20px;') Post
-        a.resource1(style='font-size: 15px; margin-left: 20px;')
-          | aaaaaaaa aaaaaaaaa aaaaaaa aaaaaa aa aaaaaaa aaaaa aaa aaaaaa aaaaa aaaaaaaaaa aaaaaa aaaaaa
-      .resource-box
-        .profile-topbar(style='height: 60px;')
-          img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
-          .profile-name(style='font-size: 20px;') Trina
-        .resource-post(style='height: 60px;')
-          .profile-name(style='font-size: 20px; margin-left: 20px;') Resource
-        a.resource1(style='font-size: 30px;') Resource title
+      each r in resources
+        .resource-box
+          a.profile-topbar(style='height: 60px;' href=`/users/${r.author}`)
+            img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
+            .profile-name(style='font-size: 20px;')= `${r.author}` 
+          .resource-post(style='height: 60px;')
+            .profile-name(style='font-size: 20px; margin-left: 20px;') Resource
+          a.resource1(style='font-size: 30px;' href=`/resources/${r.resource_id}`)= `${r.title}`
+      each p in posts  
+        .resource-box
+          a.profile-topbar(style='height: 60px;' href=`/users/${p.author}`)
+            img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
+            .profile-name(style='font-size: 20px;')= `${p.author}`
+          .resource-post(style='height: 60px;')
+            .profile-name(style='font-size: 20px; margin-left: 20px;') Post
+          a.resource1(style='font-size: 15px; text-align: center;' href=`/posts/${p.post_id}`)= `${p.content}`.substr(0, 250)

@@ -441,8 +441,7 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
 //POST rate resource
 router.post('/resources/:resource_id/rate', check_auth, (req, res) => {
     // Data retrieve
-    console.log("VALUE",req.body);
-
+    // console.log("VALUE",req.body);
     axios.put(`${API_URL}/resources/${req.params.resource_id}/rate`, {value: req.body.value}, auth_header(req.user.token))
     .then(res.redirect('/resources/'+req.params.resource_id))
     .catch(err => res.render('error', {err:err}));
