@@ -40,7 +40,8 @@ router.get('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =>
     const options = {
         "page_num" : page_num,
         "page_limit" : page_limit,
-        "author" : author
+        "author" : author,
+        "sorted" : -1
     };
 
     Post.list_all(options)

@@ -39,6 +39,7 @@ function auth_header(token)
 
 function time_difference(previous_str, current=Date.now()) 
 {
+    console.log(previous_str);
     let previous = Date.parse(previous_str);
     let ms_per_minute = 60 * 1000;
     let ms_per_hour = ms_per_minute * 60;
@@ -202,21 +203,9 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
-        console.log("req.body",req.body);
-        console.log("req.files",req.files);
-        
-        // let header_body = {
-        //     headers: { 'Authorization': 'Bearer ' + req.user.token },
-        //     data: {
-        //         nickname: (req.body.nickname == '') ? undefined :req.body.nickname,
-        //         affiliation: (req.body.affiliation == '') ? undefined :req.body.affiliation,
-        //         email: (req.body.email == '') ? undefined :req.body.email
-        //     }
-        // } ;
-        
         // The _p at the end indicates that 
         // this variable is a promise 
-        let user_p = axios.put(
+        let user_data_p = axios.put(
             `${API_URL}/users/${req.user.username}`,
             {
                 nickname: (req.body.nickname == '') ? undefined :req.body.nickname,
@@ -225,9 +214,25 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
             },
             auth_header(req.user.token));
 
-        
+        if(req.files != undefined)
+        {
+            let form = new FormData();
+            form.append('avatar_img', req.files.avatar_img.data,req.files.avatar_img.name);
+            var user_avatar_p = axios.put(
+                `${API_URL}/users/${req.user.username}/avatar`,
+                form,
+                {
+                    headers: { 
+                        'Authorization': 'Bearer ' + req.user.token,
+                        'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+                    }
+                });
+        }
+
         try {
-            let user = (await user_p).data;
+            await user_data_p;
+            if(req.files != undefined)
+                await user_avatar_p;
             res.redirect(`/users/${req.user.username}`);
         }
         catch(err) {
@@ -289,7 +294,7 @@ router.get('/users/:username', check_auth, async (req, res) => {
 });
 
 
-//----------- ROTAS NEW RESOURCE/POST --------------------
+//----------- ROUTES NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
 
     console.log(req.body)
@@ -317,27 +322,32 @@ router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquiv
     //    return;
     //}
 
+    console.log("Content-Type",req.header("Content-Type"));
+    console.log("content-type",req.header("content-type"));
+
     let form = new FormData();
-    //form.append('resource_data', req.files.arquive.data);
+    form.append('resource_data', req.files.arquive.data,req.files.arquive.name);
     form.append('type_id',req.body.type_id);
     form.append('title',req.body.title);
     form.append('description',req.body.description);
     form.append('visibility',req.body.visibility);
     
-    console.log(form.getAll('description'));
 
     axios.post(`${API_URL}/resources`,form,{
-        headers: { 'Authorization': 'Bearer ' + req.user.token },
-        data: form,
-        body: form
+        headers: { 
+            'Authorization': 'Bearer ' + req.user.token,
+            'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+        }
     })
     .then(data => {
-        res.redirect('/new_resource');
+        console.log("data",data);
+        res.redirect('/resources');
     })
     .catch(err => {
         res.render('error',{"err":err});
     });
 });
+
 
 router.get('/new_post', check_auth, (req, res) => {
     if(req.query.resource_id == undefined)
@@ -367,8 +377,7 @@ router.post('/new_post', check_auth, (req, res) => {
 });
 
 
-
-//----------- ROTAS RESORCES/POSTS --------------------
+//----------- ROUTES RESORCES/POSTS --------------------
 
 router.get('/resources', check_auth, (req, res) => {
     
@@ -407,18 +416,14 @@ router.get('/posts', check_auth, (req, res) => {
   res.render('posts');
 });
 
-// router.get('/resource/:id', check_auth, (req, res) => {
-//   // Data retrieve
-//   //resource_id
-//   res.render('resource');
-// });
 
 router.get('/resources/:resource_id', check_auth, (req, res) => {
-    // Data retrieve
+
     axios.get(`${API_URL}/resources/${req.params.resource_id}`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resource => {
+        console.log('resource.data',resource.data);
         res.render('resource',{
             "resource":resource.data, 
             'time_difference': time_difference,
@@ -430,10 +435,9 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
 });
 
 
-router.get('/post/:id', check_auth, (req, res) => {
-  // Data retrieve
-  //post_id
-  res.render('post', {'user':req.user});
+router.get('/posts/:post_id', check_auth, (req, res) => {
+
+    res.render('post', {'user':req.user});
 });
 
 //----------- ROTAS MANAGER --------------------

@@ -15,7 +15,7 @@
 **GET /users/:username**<br/>
 **PUT /users/:username**<br/>
 **GET /users/:username/avatar**<br/>
-**POST /users/:username/avatar**<br/>
+**PUT /users/:username/avatar**<br/>
 
 <ins>Posts</ins>
 
