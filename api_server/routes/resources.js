@@ -301,7 +301,7 @@ router.get('/api/resource_types/:type_id', auth.authenticate(User.CPermissions.a
 });
 
 
-router.post('/api/resource_types', auth.authenticate(User.CPermissions.apc), async (req, res) => {
+router.post('/api/resource_types', auth.authenticate(User.Permissions.Admin), async (req, res) => {
 
     let name = req.body.name;
     if(name == undefined)

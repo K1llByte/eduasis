@@ -120,10 +120,18 @@ router.post('/register', (req, res) => {
 // ------------- PAGINAS QUE NECESSITAM AUTENTICAÇAO -------------
 // ---------------------------------------------------------------
 
-router.get('/eduasis', check_auth, (req,res) => {
-  // Data retrieve
-  // utilizador, recursos_recentes, posts_recentes
-  res.render('home_page');
+router.get('/eduasis', check_auth, async (req,res) => {
+
+    let resources_p = await axios.get(`${API_URL}/resources`,auth_header(req.user.token));
+    let posts_p = await axios.get(`${API_URL}/posts`,auth_header(req.user.token));
+
+    let resources = resources_p.data;
+    let posts = posts_p.data;
+    
+    res.render('home_page',{
+        'posts': posts,
+        'resources': resources,
+    });
 });
 
 

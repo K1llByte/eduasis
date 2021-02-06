@@ -16,7 +16,8 @@ const avatar_storage = multer.diskStorage({
     filename : (req, file, next) => {
         const tmp = file.originalname.split('.')
         const ext = tmp[tmp.length-1];
-        next(null,`${req.user.username}.${ext}`);
+        req.new_filename = `${req.user.username}.${ext}`
+        next(null,req.new_filename);
     }
 });
 
@@ -195,7 +196,16 @@ router.post('/api/users/:username/avatar', auth.authenticate(User.CPermissions.a
 
     if(req.valid)
     {
-        res.json({"success":"Avatar changed successfully"});
+        User.set({ 
+            "username":req.params.username,
+            "avatar_url":`http://localhost:7700/storage/avatars/${req.new_filename}`})
+            .then(data => {
+                res.json({"success":"Avatar changed successfully"});
+            })
+            .catch(err => {
+                res.status(500).json({"error":err.message});
+            });
+        
     }
     else if(req.valid_img_type)
     {

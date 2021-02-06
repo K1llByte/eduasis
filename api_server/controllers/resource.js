@@ -16,7 +16,7 @@ const RESOURCE_PROJECTION = {
 
 // ===== CRUD Operations ===== //
 
-module.exports.list_all = (options) => { // page_num=null,page_limit=null,search_term=null,type_id=null
+module.exports.list_all = (options) => {
     let page_num = options.page_num;
     let page_limit = options.page_limit;
     let author = options.author;
