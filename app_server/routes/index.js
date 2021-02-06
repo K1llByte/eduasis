@@ -446,7 +446,9 @@ router.post('/resources/:resource_id/rate', check_auth, (req, res) => {
     .then(res.redirect('/resources/'+req.params.resource_id))
     .catch(err => res.render('error', {err:err}));
 
+});
 
+router.get('/posts/:post_id', check_auth, (req, res) => {
 
     axios.get(`${API_URL}/posts/${req.params.post_id}`,
         auth_header(req.user.token))
