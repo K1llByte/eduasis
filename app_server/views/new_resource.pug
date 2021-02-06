@@ -7,7 +7,7 @@ block title
 block content
   .new-resource
     p.register_sign New Resource
-    form(action='/new_resource' method='post')
+    form(action='/new_resource' method='post' enctype="multipart/form-data")
       .resource-form
         | Title:    
         .new-resource-text
