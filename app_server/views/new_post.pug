@@ -7,13 +7,13 @@ block title
 block content
   .new-resource
     p.register_sign New Post
-    form(method="POST" action="/post")
+    form(method="POST" action="/new_post")
       .resource-form
         | Id resource:    
         .new-resource-text
-          input.un(type='text' placeholder='Id_resource' value=resource_id)
+          input.un(type='text' name='resource_id' placeholder='ID Resource' value=resource_id)
       .resource-form
         | Description:
         .new-resource-text
-          textarea.un.new-resource-textbox(type='text' placeholder='Description')
+          textarea.un.new-resource-textbox(type='text' name='content' placeholder='Description')
       button.submit(align='center') Submit

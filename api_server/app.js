@@ -3,8 +3,10 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 //const jwt = require('jsonwebtoken');
 //const methodOverride = require('method-override');
+
 
 // Set up default mongoose connection
 const MONGODB_URL = 'mongodb://127.0.0.1/eduasis';
@@ -28,9 +30,11 @@ var app = express();
 
 //app.use(methodOverride('_method'));
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: false,parameterLimit: 1000000 }));
 app.use('/storage',express.static(path.join(__dirname, 'storage')));
+
+//parse application/json
 
 
 // Routes

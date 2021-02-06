@@ -32,7 +32,7 @@ block content
                   .profile-pic-edit(style=`background-image: url('${user.avatar_url}')`)
                     span.material-icons camera_alt
                     span Change Image
-              input#fileToUpload(type='File' name='avatar_url' accept="image/*")
+              input#fileToUpload(type='File' name='avatar_img' accept="image/*")
             h1= `${user.username}`
           button.doublebox-page-leftBox-button(type='submit')
             .doublebox-page-leftBox-button-inner
@@ -54,7 +54,7 @@ block content
             .doublebox-page-rightBox-innerbox-section-box-editTitle
               h1 Affiliation
               .flexFiller
-              input#affiliation.edit-form(type='text' placeholder=`${user.affiliation}`)
+              input#affiliation.edit-form(type='text' name='affiliation' placeholder=`${user.affiliation}`)
           button.savechangesbtn(type='submit' value="submit")
             .centerStuff
               h1 Save Changes

@@ -112,7 +112,7 @@ router.get('/api/users/:username', auth.authenticate(User.CPermissions.apc), (re
 
 
 router.put('/api/users/:username', auth.authenticate(User.CPermissions.apc), (req, res) => {
-    
+
     if(req.params.username == req.user.username)
     {
         const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -120,7 +120,7 @@ router.put('/api/users/:username', auth.authenticate(User.CPermissions.apc), (re
         const nickname = req.body.nickname;
         const email = req.body.email;
         const affiliation = req.body.affiliation;
-        let updated_fields = { "username": req.user.username }
+        let updated_fields = { "username": req.user.username };
 
         // INPUT VALIDATION
         if(nickname != undefined)

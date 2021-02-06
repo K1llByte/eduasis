@@ -24,10 +24,10 @@ block content
               span.fa.fa-star.checked
               span.fa.fa-star
               span(style='margin-left: 20px;') #{resource.rate}
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        a.doublebox-page-leftBox-button(href=`http://localhost:7700/storage/resources/${resource.resource_id}.zip`)
           .doublebox-page-leftBox-button-inner
             | Download
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        a.doublebox-page-leftBox-button(href=`/new_post?resource_id=${resource.resource_id}`)
           .doublebox-page-leftBox-button-inner
             | Post about this
     .doublebox-page-rightBox

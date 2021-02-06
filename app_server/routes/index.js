@@ -7,9 +7,9 @@ const jwt = require('jsonwebtoken');
 const FormData = require('form-data');
 const multer = require('multer');
 
-var bodyParser = require('body-parser')
-var jsonfile = require('jsonfile')
-var fs = require('fs')
+const bodyParser = require('body-parser');
+const jsonfile = require('jsonfile');
+const fs = require('fs');
 
 API_URL = 'http://localhost:7700/api'
 
@@ -165,20 +165,36 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
         console.log("req.body",req.body);
+        console.log("req.files",req.files);
+        
         // let header_body = {
-        //     headers: { 'Authorization': 'Bearer ' + token },
-        //     body: {
-
+        //     headers: { 'Authorization': 'Bearer ' + req.user.token },
+        //     data: {
+        //         nickname: (req.body.nickname == '') ? undefined :req.body.nickname,
+        //         affiliation: (req.body.affiliation == '') ? undefined :req.body.affiliation,
+        //         email: (req.body.email == '') ? undefined :req.body.email
         //     }
         // } ;
-        // // The _p at the end indicates that 
-        // // this variable is a promise 
-        // let user_p = axios.put(
-        //     `${API_URL}/users/${req.user.username}`,
-        //     auth_header(req.user.token));
+        
+        // The _p at the end indicates that 
+        // this variable is a promise 
+        let user_p = axios.put(
+            `${API_URL}/users/${req.user.username}`,
+            {
+                nickname: (req.body.nickname == '') ? undefined :req.body.nickname,
+                affiliation: (req.body.affiliation == '') ? undefined :req.body.affiliation,
+                email: (req.body.email == '') ? undefined :req.body.email
+            },
+            auth_header(req.user.token));
 
-        // let user = (await user_p).data;
-        res.redirect(`/users/${req.user.username}`);
+        
+        try {
+            let user = (await user_p).data;
+            res.redirect(`/users/${req.user.username}`);
+        }
+        catch(err) {
+            res.status(400).render('error',{"err":err});
+        }
     }
     else
     {
@@ -292,7 +308,7 @@ router.get('/users/:username', check_auth, async (req, res) => {
 
 //----------- ROTAS NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
-    // Data retrieve
+
     console.log(req.body)
     axios.get(`${API_URL}/resource_types/`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
@@ -306,47 +322,51 @@ router.get('/new_resource', check_auth, (req, res) => {
 
 
 //POST new resource
-router.post('/new_resource', upload.single('arquive'), (req, res) => { //
-    // Data retrieve
-    console.log("req.file",req.files);
-    console.log("req.arquive",req.arquive);
+router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquive'),
 
-    // var fstream;
-    // req.pipe(req.busboy);
-    // console.log("req.busboy",req.busboy);
-    console.log("OVER");
-    res.redirect('/new_resource');
+    //if(req.files == undefined)
+    //{
+    //    res.render('error',{"err":{"message":"No file provided"}});
+    //    return;
+    //}
+
+    let form = new FormData();
+    //form.append('resource_data', req.files.arquive.data);
+    form.append('type_id',req.body.type_id);
+    form.append('title',req.body.title);
+    form.append('description',req.body.description);
+    form.append('visibility',req.body.visibility);
     
-    // req.busboy.on('file', function (fieldname, file, filename) {
-    //     console.log("Uploading: " + filename); 
-    //     fstream = fs.createWriteStream(__dirname + '/files/' + filename);
-    //     file.pipe(fstream);
-    //     fstream.on('close', function () {
-    //         res.redirect('/eduasis');
-    //     });
-    // });
-
-    // res.redirect('/new_resource');
-    //axios.post(`${API_URL}/resources`, JSON.stringify(req.body))
-    //  .then(res.redirect('/eduasis'))
-    //  .catch(err => res.render('error', {err:err}));
+    axios.post(`${API_URL}/resources`,form,{
+        headers: { 'Authorization': 'Bearer ' + req.user.token },
+        data: form,
+        body: form
+    })
+    .then(data => {
+        res.redirect('/new_resource');
+    })
+    .catch(err => {
+        res.render('error',{"err":err});
+    });
 });
 
 router.get('/new_post', check_auth, (req, res) => {
-  // Data retrieve
-    res.render('new_post',{"active": "new_post"});
+    if(req.query.resource_id == undefined)
+    {
+        res.render('new_post',{"active": "new_post"});
+    }
+    else
+    {
+        res.render('new_post',{"active": "new_post", "resource_id": req.query.resource_id});
+    }
 });
 
-router.get('/new_post/:id', check_auth, (req, res) => {
-  // Data retrieve
-    res.render('new_post',{"active": "new_post", "resource_id": req.params.id});
-});
 
 //POST new post
 router.post('/new_post', check_auth, (req, res) => {
   // Data retrieve
-  console.log(JSON.stringify(req.body))
-  axios.post(`${API_URL}/posts`, JSON.stringify(req.body))
+  console.log("req.body",req.body);
+  axios.post(`${API_URL}/posts`, req.body, auth_header(req.user.token))
     .then(res.redirect('/eduasis'))
     .catch(err => res.render('error', {err:err}));
 });

@@ -138,7 +138,6 @@ function populate_rtypes(rtypes)
             ++rt_error;
         });
     });
-    
 }
 
 

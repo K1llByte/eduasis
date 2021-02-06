@@ -27,6 +27,7 @@ module.exports.authenticate = (required_permission = undefined) => {
                 if(e /* == undefined */)
                 {
                     // 401 Unauthorized
+                    console.log(e);
                     res.status(401).jsonp({ error : e });
                 }
                 else
@@ -59,6 +60,7 @@ module.exports.authenticate = (required_permission = undefined) => {
         else
         {
             // 401  Unauthorized
+            console.log('Invalid token or non-existing');
             res.status(401).jsonp({error: 'Invalid token or non-existing'});
         }
     };

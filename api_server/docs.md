@@ -30,6 +30,7 @@
 **POST /resources**<br/>
 **GET /resources/:resource_id**<br/>
 **PUT /resources/:resource_id/rate**<br/>
+**GET /resources/:resource_id/posts**<br/>
 **GET /resource_types**<br/>
 **POST /resource_types**<br/>
 **GET /resource_types/:type_id**<br/>

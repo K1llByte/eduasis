@@ -2,6 +2,7 @@ const express = require('express');
 const auth = require('../controllers/auth');
 const User = require('../controllers/user');
 const Resource = require('../controllers/resource');
+const Post = require('../controllers/post');
 const ResourceType = require('../controllers/resource_type');
 const multer = require('multer');
 const AdmZip = require('adm-zip');
@@ -14,9 +15,11 @@ const router = express.Router();
 
 const resource_storage = multer.diskStorage({
     destination : (req, file, next) => {
+        console.log("AQUI 1");
         next(null,'storage/resources/');
     },
     filename : (req, file, next) => {
+        console.log("AQUI 2");
         const tmp = file.originalname.split('.');
         const ext = tmp[tmp.length-1];
         req.resource_id = Resource.gen_id();
@@ -30,7 +33,7 @@ const data_process_filter = async (req) => {
     const title = req.body.title;
     const description = req.body.description;
     const visibility = req.body.visibility;
-
+    console.log("IM IN");
     try {
         let type = await ResourceType.get(type_id);
         if(type == null) 
@@ -84,6 +87,7 @@ const data_process_filter = async (req) => {
 
 const file_type_filter = async (req,file,next) => {
 
+    console.log("IM IN FILE TYPE FILTER");
     req.valid = (file.mimetype === 'application/zip');
     if(req.valid)
     {
@@ -101,7 +105,7 @@ const file_type_filter = async (req,file,next) => {
 const resource_upload = multer({ 
     storage: resource_storage,
     limits : {
-        fileSize : 1024 * 1024 * 5
+        fileSize : 1024 * 1024 * 1024 * 1024 * 1024
     },
     fileFilter: file_type_filter
 });
@@ -199,12 +203,15 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
 
 router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_upload.single('resource_data'), (req, res) => {
 
+    console.log("req.body",req.body);
+    console.log('valid',req.valid);
     if(req.valid)
     {
         res.json({"success":"Resource created successfully"});
     }
     else 
     {
+        console.log(req.error);
         res.status(400).json({"error":req.error});
     }
     
@@ -324,6 +331,54 @@ router.post('/api/resource_types', auth.authenticate(User.Permissions.Admin), as
 });
 
 
+router.get('/api/resources/:resource_id/posts', auth.authenticate(User.CPermissions.apc), (req, res) => {
+
+    let resource_id = null;
+    if(req.params.resource_id != undefined)
+    {
+        resource_id = req.params.resource_id;
+    }
+
+    // Pagination arguments //
+    let page_num = 0;
+    let page_limit = 20;
+
+    if(req.query.page_num != undefined)
+    {
+        page_num = Number(req.query.page_num);
+        if(isNaN(page_num))
+        {
+            res.status(400).json({'error': "Invalid page_num param"});
+            return;
+        }
+    }
+
+    if(req.query.page_limit != undefined)
+    {
+        page_limit = Number(req.query.page_limit);
+        if(isNaN(page_limit)) // || page_limit > 100
+        {
+            res.status(400).json({'error': "Invalid page_limit param"});
+            return;
+        }
+    }
+    // =================== //
+
+    const options = {
+        "resource_id" : resource_id,
+        "page_num" : page_num,
+        "page_limit" : page_limit
+    };
+
+    console.log("options",options);
+    Post.list_all(options) 
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => { 
+            res.json({'error': err});
+        });
+});
 
 
 module.exports = router;

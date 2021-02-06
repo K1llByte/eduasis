@@ -7,11 +7,17 @@ module.exports.list_all = (options) => {
     let page_num = options.page_num;
     let page_limit = options.page_limit;
     let author = options.author;
+    let resource_id = options.resource_id;
     
     let match = { };
     if(author != null)
     {
         match.author = author;
+    }
+
+    if(resource_id != null)
+    {
+        match.resource_id = resource_id;
     }
 
     return Post
