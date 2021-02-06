@@ -152,7 +152,11 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
+<<<<<<< HEAD
         console.log("req.body",req.body);
+=======
+        console.log(req.body);
+>>>>>>> fde6cd8b6e1e58d5298e1e12d384091f8c6aaba6
         // let header_body = {
         //     headers: { 'Authorization': 'Bearer ' + token },
         //     body: {
@@ -281,6 +285,7 @@ router.get('/users/:username', check_auth, async (req, res) => {
 //----------- ROTAS NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
     // Data retrieve
+    console.log(req.body)
     axios.get(`${API_URL}/resource_types/`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })

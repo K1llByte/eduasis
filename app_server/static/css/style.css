@@ -781,6 +781,7 @@ form input[type="file"] {
   border-radius: 0px 0px 10px 10px;
   transition: 0.2s;
   box-shadow:  5px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
   /* display:none; */
 }
 
@@ -801,6 +802,7 @@ form input[type="file"] {
   justify-content: center;
   font-size: 30px;
   font-weight: 600;
+  color: #000;
 }
 
 .accept-button {
@@ -1229,7 +1231,6 @@ input:focus + label {
   /* align-items: center;
   justify-content: center; */
   display: inline;
-  width: 90%;
 	font-size: 14px;
 	text-align: center;
   font-family: 'Ubuntu', sans-serif, FontAwesome;
@@ -1294,6 +1295,17 @@ input:focus + label {
 	margin-bottom: 27px;
 	font-family: 'Ubuntu', sans-serif, FontAwesome;
 }
+
+.posts-about-resource{
+  width: 90%;
+  /* height: 80px; */
+  border-radius: 10px;
+  background-color: #A1E0C4;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  padding: 20px;
+}
+
 
 .search-text:active{
   border: none;
