@@ -18,10 +18,10 @@ html
                 img(src='/static/images/eduasis.png' style='height: 100%;')
             .topnav-right
                 if user.perms == 128 || user.permissions == 128
-                    if link == "managment"
-                        a.active(href='/managment') Managment
+                    if link == "management"
+                        a.active(href='/management') Management
                     else 
-                        a.links(href='/managment') Managment
+                        a.links(href='/management') Management
 
                 if link == "resources"
                     a.active(href='/resources') Resources

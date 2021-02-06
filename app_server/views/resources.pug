@@ -18,7 +18,7 @@ block content
     .resources-box
       each r in resources
         .resource-box
-          a(href=`/users/${r.author}`).profile-topbar(style='height: 60px;')
+          a.profile-topbar(href=`/users/${r.author}`, style='height: 60px;')
             div
               img.profile-picture(src=`http://localhost:7700/api/users/${r.author}/avatar`, style='height: 60px; width: 60px;')
             .profile-name(style='font-size: 20px;')= r.author

@@ -16,7 +16,7 @@ block content
           .something(style='justify-content:center; text-align: center;')
             h2= `${resource.title}`
             h3= `${resource.author}`
-            p DataTime: #{resource.create_date}
+            p #{ time_difference(resource.create_date)}
             -var star = resource.rate
             div(style='font-size: large;')
               if star>=1

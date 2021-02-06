@@ -37,6 +37,44 @@ function auth_header(token)
     }
 }
 
+function time_difference(previous_str, current=Date.now()) 
+{
+    let previous = Date.parse(previous_str);
+    let ms_per_minute = 60 * 1000;
+    let ms_per_hour = ms_per_minute * 60;
+    let ms_per_day = ms_per_hour * 24;
+    let ms_per_month = ms_per_day * 30;
+    let ms_per_year = ms_per_day * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < ms_per_minute) 
+    {
+        return Math.round(elapsed/1000) + ' seconds ago';   
+    }
+    else if (elapsed < ms_per_hour) 
+    {
+        return Math.round(elapsed/ms_per_minute) + ' minutes ago';   
+    }
+
+    else if (elapsed < ms_per_day ) 
+    {
+        return Math.round(elapsed/ms_per_hour ) + ' hours ago';   
+    }
+    else if (elapsed < ms_per_month) 
+    {
+        return Math.round(elapsed/ms_per_day) + ' days ago';   
+    }
+    else if (elapsed < ms_per_year) 
+    {
+        return Math.round(elapsed/ms_per_month) + ' months ago';   
+    }
+    else 
+    {
+        return 'approximately ' + Math.round(elapsed/ms_per_year ) + ' years ago';   
+    }
+}
+
 // ========= TEMPORARY STORAGE ========= //
 
 const storage = multer.diskStorage({
@@ -241,6 +279,7 @@ router.get('/users/:username', check_auth, async (req, res) => {
             'resources': resources,
             'posts': posts,
             'view_type': view_type,
+            'time_difference':time_difference,
             'active': 'profile'
         });
     }
@@ -285,6 +324,8 @@ router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquiv
     form.append('description',req.body.description);
     form.append('visibility',req.body.visibility);
     
+    console.log(form.getAll('description'));
+
     axios.post(`${API_URL}/resources`,form,{
         headers: { 'Authorization': 'Bearer ' + req.user.token },
         data: form,
@@ -301,13 +342,16 @@ router.post('/new_resource', check_auth, (req, res) => { //upload.single('arquiv
 router.get('/new_post', check_auth, (req, res) => {
     if(req.query.resource_id == undefined)
     {
-        res.render('new_post',{"active": "new_post"});
+        res.render('new_post',{
+            "active": "new_post",
+            'user':req.user
+        });
     }
     else
     {
         res.render('new_post',{
             "active": "new_post", 
-            'user':req.user, 
+            'user':req.user,
             "resource_id": req.query.resource_id});
     }
 });
@@ -346,6 +390,7 @@ router.get('/resources', check_auth, (req, res) => {
                 "active": "resources", 
                 'user':req.user,
                 "types":resource_types.data,
+                'time_difference':time_difference,
                 "resources":resources.data});
         })
         .catch(err => res.render('error', {err: err}))
@@ -374,7 +419,10 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resource => {
-        res.render('resource',{"resource":resource.data, 'user':req.user});
+        res.render('resource',{
+            "resource":resource.data, 
+            'time_difference': time_difference,
+            'user':req.user});
     })
     .catch(err => {
         res.render('error', {err: err})
@@ -390,16 +438,22 @@ router.get('/post/:id', check_auth, (req, res) => {
 
 //----------- ROTAS MANAGER --------------------
 
-router.get('/managment', check_auth, (req, res) => {
-  // Data retrieve
-  //post_id
-  res.render('managment', {'user':req.user});
+router.get('/management', check_auth, (req, res) => {
+
+    res.render('management', {'user':req.user});
 });
 
-router.post('/managment', check_auth, (req, res) => {
-  // Data retrieve
-  //post_id
-  res.render('managment', {'user':req.user});
+router.post('/management', check_auth, (req, res) => {
+
+    console.log(req.body);
+    axios.post(`${API_URL}/resource_types`,req.body,auth_header(req.user.token))
+    .then(data => {
+        res.render('management', {'user':req.user});
+    })
+    .catch(err => {
+        res.status(400).render('error', {'err':err});
+    });
+    
 });
 
 module.exports = router;

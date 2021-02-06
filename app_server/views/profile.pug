@@ -38,7 +38,7 @@ block content
                 .doublebox-page-rightBox-innerbox-content-description
                   h3= `Posted "${p.content.substr(0,30)}"`
                 .doublebox-page-rightBox-innerbox-content-timeInfo
-                  p= `${p.created_date}`
+                  p= `${time_difference(p.created_date)}`
                 a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href=`/posts/${p.post_id}`)
                   .doublebox-page-rightBox-innerbox-content-linkIconContainer
                     i.material-icons reply
@@ -52,7 +52,7 @@ block content
                 .doublebox-page-rightBox-innerbox-content-description
                   h3= `${r.title}`
                 .doublebox-page-rightBox-innerbox-content-timeInfo
-                  p= `${r.create_date}`
+                  p= `${time_difference(r.create_date)}`
                 a.doublebox-page-rightBox-innerbox-content-linkButtonContainer(href=`/resources/${r.resource_id}`)
                   .doublebox-page-rightBox-innerbox-content-linkIconContainer
                     i.material-icons reply
