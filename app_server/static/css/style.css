@@ -353,6 +353,16 @@ display: none;
     height: 46px;
     padding: 0 10px;
 }
+
+.button-rate {
+  margin-left: 10px; 
+  font-size: larger; 
+  margin-bottom: 10px;
+  border: 2px solid rgb(172, 172, 172);
+  background-color: #CCC;
+  border-radius: 5px;
+}
+
 .rate:not(:checked) > input {
     position:absolute;
     top:-9999px;
@@ -633,6 +643,15 @@ form input[type="file"] {
   border-top: solid 1px rgb(212, 212, 212);
   margin-top: 10px;
   align-items: center;
+}
+
+.resource-rate {
+  display: inline-flex;
+  flex-direction: row;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
 }
 
 .bottom-buttons {
@@ -1332,6 +1351,7 @@ input:focus + label {
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 /* Change background color of buttons on hover */
@@ -1344,6 +1364,22 @@ input:focus + label {
   background-color: #ccc;
 }
 
+.noticias{
+  justify-content: center;
+  text-align: center;
+  text-shadow: 4px 2px #4A4A4A;
+}
+
+.setinha{
+  color: #000;
+}
+.setinha:link{
+  color: #000;
+}
+
+.pagination{
+  color: #999;
+}
 
 .search-text:active{
   border: none;

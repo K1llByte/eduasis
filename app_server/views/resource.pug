@@ -18,28 +18,22 @@ block content
             h3= `${resource.author}`
             p DataTime: #{resource.create_date}
             -var star = resource.rate
-            div(style='font-size: large;')
-              if star>=1
-                span.fa.fa-star.checked
-              else 
-                span.fa.fa-star
-              if star>=2
-                span.fa.fa-star.checked
-              else 
-                span.fa.fa-star
-              if star>=3
-                span.fa.fa-star.checked
-              else 
-                span.fa.fa-star
-              if star>=4
-                span.fa.fa-star.checked
-              else 
-                span.fa.fa-star
-              if star>=5
-                span.fa.fa-star.checked
-              else 
-                span.fa.fa-star
-              span(style='margin-left: 20px;') #{resource.rate}
+            form(method="POST" action='/resources/'+resource.resource_id+'/rate')
+              .resource-rate
+                .rate
+                  input#star5(type='radio' name='rate' value='5')
+                  label(for='star5' title='5 stars') &starf;
+                  input#star4(type='radio' name='rate' value='4')
+                  label(for='star4' title='4 stars') &starf;
+                  input#star3(type='radio' name='rate' value='3')
+                  label(for='star3' title='3 stars') &starf;
+                  input#star2(type='radio' name='rate' value='2')
+                  label(for='star2' title='2 stars') &starf;
+                  input#star1(type='radio' name='rate' value='1')
+                  label(for='star1' title='1 star') &starf;
+                span.button-rate 
+                  button send
+                span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
         a.doublebox-page-leftBox-button(href=`http://localhost:7700/storage/resources/${resource.resource_id}.zip`)
           .doublebox-page-leftBox-button-inner
             | Download
@@ -63,11 +57,12 @@ block content
                 li File 2
                 li File 3
         #Posts.tabcontent.doublebox-page-rightBox-innerbox-content(style='display: none;')
-          div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
-            .posts-about-resource
-              img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px; height: 60px;')
-              p(style='margin-left: 20px')
-                | Description xxxyyy blablabla aaaaaaaaaaa aaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaa
+          div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;') 
+            each post in posts
+              .posts-about-resource
+                img.w3-left.w3-circle.w3-margin-right(src='/static/images/user.png' alt='Avatar' style='width:60px; height: 60px;')
+                p(style='margin-left: 20px')= `${post.content}`
+
   script.
     function opentab(evt, name) {
     // Declare all variables

@@ -19,19 +19,20 @@ html
             .topnav-right
                 if user.perms == 128 || user.permissions == 128
                     if link == "managment"
-                        a.active(href='/managment') Managment
+                        a.active(href='/managment') Management
                     else 
-                        a.links(href='/managment') Managment
+                        a.links(href='/managment') Management
 
                 if link == "resources"
                     a.active(href='/resources') Resources
                 else 
                     a.links(href='/resources') Resources
 
-                if link == "new_resource"
-                    a.active(href='/new_resource') New Resource
-                else
-                    a.links(href='/new_resource') New Resource
+                if user.perms >=2 || user.permissions >= 2
+                    if link == "new_resource"
+                        a.active(href='/new_resource') New Resource
+                    else
+                        a.links(href='/new_resource') New Resource
 
                 if link == "new_post"
                     a.active(href='/new_post') New Post
