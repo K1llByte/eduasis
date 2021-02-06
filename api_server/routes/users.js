@@ -192,7 +192,7 @@ router.get('/api/users/:username/avatar', (req, res) => {
 });
 
 
-router.post('/api/users/:username/avatar', auth.authenticate(User.CPermissions.apc), avatar_upload.single('avatar_img'), (req, res) => {
+router.put('/api/users/:username/avatar', auth.authenticate(User.CPermissions.apc), avatar_upload.single('avatar_img'), (req, res) => {
 
     if(req.valid)
     {

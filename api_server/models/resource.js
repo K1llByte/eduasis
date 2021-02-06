@@ -25,7 +25,7 @@ const resource_schema = new mongoose.Schema({
     title:       String,
     description: String,
     filename:    String,
-    create_date: Date,
+    created_date: Date,
     visibility:  Number, // 0 public, 1 private
     rate :       rate_schema
 }, 
@@ -35,24 +35,3 @@ const resource_schema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('resources', resource_schema);
-
-/* 
-
-{
-    "resource_id" : "1",
-    "type_id"     : 1,
-    "author"      : "test",
-    "title"       : "Test Resource",
-    "description" : "This is a test resource to provide funcionality to development branch of Eduasis",
-    "filename"    : "test.txt",
-    "create_date" : "1",
-    "visibility"  : 0,
-    "rate" : {
-        "current_rate" : 0,
-        "num_rates"    : 0
-    }
-}
-
-*/
-
-// ((current_rate * num_rates) + new_rate) / ( num_rates + 1 )

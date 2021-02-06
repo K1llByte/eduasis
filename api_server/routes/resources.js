@@ -6,6 +6,7 @@ const Post = require('../controllers/post');
 const ResourceType = require('../controllers/resource_type');
 const multer = require('multer');
 const AdmZip = require('adm-zip');
+const fs = require('fs');
 
 // ================================== //
 
@@ -23,18 +24,22 @@ const resource_storage = multer.diskStorage({
         const tmp = file.originalname.split('.');
         const ext = tmp[tmp.length-1];
         req.resource_id = Resource.gen_id();
-        next(null,`${req.resource_id}.${ext}`);
+        req.new_filename = `${req.resource_id}.${ext}`;
+        next(null,req.new_filename);
     }
 });
 
 
 const data_process_filter = async (req) => {
-    const type_id = req.body.type_id;
+    console.log(req.body.type_id)
+    const type_id = new Number(req.body.type_id);
     const title = req.body.title;
     const description = req.body.description;
     const visibility = req.body.visibility;
     console.log("IM IN");
     try {
+        console.log("req.body.type_id",req.body.type_id);
+        console.log("type_id",type_id);
         let type = await ResourceType.get(type_id);
         if(type == null) 
         {
@@ -72,7 +77,7 @@ const data_process_filter = async (req) => {
         "title" : title,
         "description" : description,
         "filename" : `${req.resource_id}.zip`,
-        "create_date" : Date.now(),
+        "created_date" : Date.now(),
         "visibility" : visibility,
         "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
     };
@@ -89,15 +94,15 @@ const file_type_filter = async (req,file,next) => {
 
     console.log("IM IN FILE TYPE FILTER");
     req.valid = (file.mimetype === 'application/zip');
-    if(req.valid)
-    {
-        await data_process_filter(req)
-        req.valid = req.valid && (req.error == undefined)
-    }
-    else
-    {
-        req.error = 'Invalid file type (zip with BagIt format)!';
-    }
+    //if(req.valid)
+    //{
+    //    await data_process_filter(req)
+    //    req.valid = req.valid && (req.error == undefined)
+    //}
+    //else
+    //{
+    //    req.error = 'Invalid file type (zip with BagIt format)!';
+    //}
 
     next(null,req.valid);
 };
@@ -167,7 +172,8 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
         "type_id" : type_id,
         "author" : author,
         "page_num" : page_num,
-        "page_limit" : page_limit
+        "page_limit" : page_limit,
+        "sorted" : -1
     };
 
     console.log("options",options);
@@ -204,62 +210,89 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
 router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_upload.single('resource_data'), (req, res) => {
 
     console.log("req.body",req.body);
+    console.log("req.body.type_id",req.body.type_id);
     console.log('valid',req.valid);
+    console.log('files',req.files);
+    console.log('file',req.file);
+    
+    //if(req.valid)
+    //{
+    //    res.json({"success":"Resource created successfully"});
+    //}
+    //else 
+    //{
+    //    console.log(req.error);
+    //    res.status(400).json({"error":req.error});
+    //}
+
     if(req.valid)
     {
-        res.json({"success":"Resource created successfully"});
+        const type_id = Number(req.body.type_id);
+        const title = req.body.title;
+        const description = req.body.description;
+        const visibility = req.body.visibility;
+    
+        ResourceType.get(type_id)
+        .then(data => {
+            if(title == undefined)
+            {
+                console.log("Invalid title");
+                try { fs.unlinkSync(req.new_filename); }
+                catch {}
+                res.status(400).json({'error': "Invalid title"});
+                return;
+            }
+            if(description == undefined)
+            {
+                console.log("Invalid description");
+                try { fs.unlinkSync(req.new_filename); }
+                catch {}
+                res.status(400).json({'error': "Invalid description"});
+                return;
+            }
+            if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
+            {
+                console.log("Invalid visibility");
+                try { fs.unlinkSync(req.new_filename); }
+                catch {}
+                res.status(400).json({'error': "Invalid visibility"});
+                return;
+            }
+            const new_resource = {
+                "resource_id": req.resource_id,
+                "type_id" : type_id,
+                "author" : req.user.username,
+                "title" : title,
+                "description" : description,
+                "filename" : req.new_filename,
+                "created_date" : Date.now(),
+                "visibility" : visibility,
+                "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
+            };
+            
+            Resource.insert(new_resource)
+                .then(data => { 
+                    res.json({ "success": "Resource created successfully" });
+                })
+                .catch(err => { 
+                    console.log(err.message);
+                    try { fs.unlinkSync(req.new_filename); }
+                    catch {}
+                    res.status(400).json({'error': err.message});
+                });
+        })
+        .catch(err => {
+            console.log("Invalid type_id",err);
+            try { fs.unlinkSync(req.new_filename); }
+            catch {}
+            res.status(400).json({'error': "Invalid type_id"});
+        })
     }
-    else 
+    else
     {
-        console.log(req.error);
         res.status(400).json({"error":req.error});
     }
-    
 
-    // const type_id = req.body.type_id
-    // const title = req.body.title
-    // const description = req.body.description
-    // const visibility = req.body.visibility
-
-    // ResourceType.get(type_id)
-    // .then(data => {
-    //     if(title == undefined)
-    //     {
-    //         res.status(400).json('error', "Invalid title");
-    //         return;
-    //     }
-    //     if(description == undefined)
-    //     {
-    //         res.status(400).json('error', "Invalid description");
-    //         return;
-    //     }
-    //     if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
-    //     {
-    //         res.status(400).json('error', "Invalid visibility");
-    //         return;
-    //     }
-    //     const new_resource = {
-    //         "type_id" : type_id,
-    //         "author" : req.user.username,
-    //         "title" : title,
-    //         "description" : description,
-    //         "filename" : "file.txt",
-    //         "create_date" : Date.now(),
-    //         "visibility" : visibility,
-    //         "rate" : { "current_rate":0, "num_rates":0 },
-    //     };
-        
-    //     Resource.insert(new_resource)
-    //         .then(data => { 
-    //             res.json({ "success": "Resource created successfully" });
-    //         })
-    //         .catch(err => { 
-    //             res.status(400).json({'error': err.message});
-    //         });
-    // })
-    // .catch(err => {
-    //     res.status(400).json('error', "Invalid type_id");
-    // })
 });
 
 
@@ -367,7 +400,8 @@ router.get('/api/resources/:resource_id/posts', auth.authenticate(User.CPermissi
     const options = {
         "resource_id" : resource_id,
         "page_num" : page_num,
-        "page_limit" : page_limit
+        "page_limit" : page_limit,
+        "sorted" : -1
     };
 
     console.log("options",options);

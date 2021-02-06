@@ -8,6 +8,7 @@ module.exports.list_all = (options) => {
     let page_limit = options.page_limit;
     let author = options.author;
     let resource_id = options.resource_id;
+    let sorted = options.sorted;
     
     let match = { };
     if(author != null)
@@ -20,11 +21,24 @@ module.exports.list_all = (options) => {
         match.resource_id = resource_id;
     }
 
-    return Post
-        .find(match,{_id:0,"comments._id":0})
-        .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
-        .limit(page_limit)
-        .exec()
+    let query = Post
+        .find(match,{_id:0,"comments._id":0});
+
+
+    if(sorted != null)
+    {
+        return query.sort({created_date: 1})
+            .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+            .limit(page_limit)
+            .exec();
+    }
+    else
+    {
+        return query
+            .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+            .limit(page_limit)
+            .exec();
+    }
 }
 
 // Get a post by post_id

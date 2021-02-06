@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const Resource = require('../models/resource');
 
 const RESOURCE_PROJECTION = {
-    "_id"         :0,
-    "resource_id" :1,
+    "_id"          :0,
+    "resource_id"  :1,
     "type"   : { $arrayElemAt: [ "$type.name" , 0 ] },
-    "author"      :1,
-    "title"       :1,
-    "description" :1,
-    "filename"    :1,
-    "create_date" :1,
-    "visibility"  :1,
+    "author"       :1,
+    "title"        :1,
+    "description"  :1,
+    "filename"     :1,
+    "created_date" :1,
+    "visibility"   :1,
     "rate" : "$rate.current_rate"
 };
 
@@ -22,6 +22,7 @@ module.exports.list_all = (options) => {
     let author = options.author;
     let search_term = options.search_term;
     let type_id = options.type_id;
+    let sorted = options.sorted;
 
     let match = { "$match" : { "visibility" : 0 } };
     if(search_term != null)
@@ -39,7 +40,7 @@ module.exports.list_all = (options) => {
         match['$match'].author = author;
     }
 
-    return Resource
+    let query = Resource
         .aggregate([
             match,
             {
@@ -54,10 +55,24 @@ module.exports.list_all = (options) => {
            {
                 "$project" : RESOURCE_PROJECTION
            }
-        ])
-        .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
-        .limit(page_limit)
-        .exec()
+        ]);
+
+
+    if(sorted != null)
+    {
+        return query.sort({created_date: 1})
+            .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+            .limit(page_limit)
+            .exec();
+    }
+    else
+    {
+        return query
+            .skip(page_num > 0 ? ( ( page_num - 1 ) * page_limit ) : 0)
+            .limit(page_limit)
+            .exec();
+    }
+    
 }
 
 // Get a resource
@@ -85,7 +100,7 @@ module.exports.get = (rid) => {
 
 // Inserts a new resource
 module.exports.insert = (resource_data) => {
-    resource_data.resource_id = mongoose.Types.ObjectId().toString('base64');
+    resource_data._id = mongoose.Types.ObjectId(resource_data.resource_id);
     let new_resource = new Resource(resource_data);
     return new_resource.save()
 }
@@ -93,7 +108,7 @@ module.exports.insert = (resource_data) => {
 // =========================== //
 
 module.exports.gen_id = () => {
-    return mongoose.Types.ObjectId().toString('base64');
+    return mongoose.Types.ObjectId().toString('hex');
 }
 
 module.exports.rate = async (rid,username,value) => {
