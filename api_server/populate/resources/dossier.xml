@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dossier>
+    <disciplina>
+        <designacao>Processamento de Linguagens I</designacao>
+        <turmas>
+            <turma>
+                <curso>Licenciatura em Engenharia de Sistemas e Informática</curso>
+                <ano>3</ano>
+            </turma>
+            <turma>
+                <curso>Licenciatura em Matemática e Ciências da Computação</curso>
+                <ano>3</ano>
+            </turma>
+        </turmas>
+    </disciplina>
+    <equipa>
+        <docente id_docente="d1">
+            <nome>José Carlos Ramalho</nome>
+            <categoria>Professor Auxiliar</categoria>
+            <email>jcr@di.uminho.pt</email>
+            <url>http://www.di.uminho.pt/~jcr/</url>
+        </docente>
+        <docente id_docente="d2">
+            <nome>Pedro Rangel Henriques</nome>
+            <categoria>Professor Associado</categoria>
+            <email>prh@di.uminho.pt</email>
+            <url>http://www.di.uminho.pt/~prh/</url>
+        </docente>
+    </equipa>
+    <avaliacao>
+        <elemento-av>
+            <tipo>Teórico</tipo>
+            <peso>50</peso>
+        </elemento-av>
+        <elemento-av>
+            <tipo>Prático</tipo>
+            <peso>50</peso>
+        </elemento-av>
+        <criterio>Somatório</criterio>
+    </avaliacao>
+    <enquadramento>
+        <paragrafo>Esta disciplina surge, nos cursos a que se destina, no seguimento das várias disciplinas de métodos e paradigmas de programação.</paragrafo>
+        <paragrafo>A temática da disciplina é o desenvolvimento de processadores de linguagens aplicando os conhecimentos adequiridos nas disciplinas anteriores, nomedamente, algoritmos, estruturas de dados e desenvolvimento modular de programas.</paragrafo>
+    </enquadramento>
+    <programa>
+        <seccao ident="s1">
+            <titulo>Introdução ao conceito de Linguagem Formal</titulo>
+            <paragrafo>Definição de linguagens via gramáticas formais. A hierarquia gramatical de Chomsky e a sua relação com os algoritmos de verificação.</paragrafo>
+        </seccao>
+        <seccao ident="s2">
+            <titulo>Introdução ao conceito de Processador de Linguagem</titulo>
+            <paragrafo>Como se processa um programa/frase. As etapas no reconhecimento duma frase: análise léxica, análise sintáctica e análise semântica.</paragrafo>
+            <paragrafo>Caracterização dos vários tipos de processadores.</paragrafo>
+            <seccao ident="s21">
+                <titulo>Interpretador</titulo>
+                <paragrafo>O que é interpretar uma frase no contexto informático. Ilustração com alguns exemplos práticos.</paragrafo>
+            </seccao>
+            <seccao ident="s22">
+                <titulo>Compilador</titulo>
+                <paragrafo>A Compilação como o oposto da interpretação. Vantagens e desvantagens duma em relação à outra.</paragrafo>
+            </seccao>
+        </seccao>
+        <seccao ident="s3">
+            <titulo>Análise Léxica</titulo>
+            <paragrafo>A tarefa dum analisador léxico. Construção dum analisador léxico. Linguagens regulares e autómatos deterministas de estados finitos.</paragrafo>
+            <seccao ident="s31">
+                <titulo>Meta-autómatos</titulo>
+                <paragrafo>O conceito de meta-autómato ou autómatos a dois níveis. </paragrafo>
+                <paragrafo>Modelação de problemas com autómatos.</paragrafo>
+            </seccao>
+            <seccao ident="s32">
+                <titulo>Lex</titulo>
+                <paragrafo>A ferramenta lex como geradora de autómatos.</paragrafo>
+                <paragrafo>Geração de analisadores léxicos com o lex.</paragrafo>
+                <paragrafo>Utilização de condições de contexto para especificação de meta-autómatos.</paragrafo>
+            </seccao>
+        </seccao>
+        <seccao ident="s4">
+            <titulo>Análise Sintáctica</titulo>
+            <paragrafo>O problema da validação estrutural. As duas famílias tecnológias: parsing top-down e parsing bottom-up.</paragrafo>
+            <paragrafo>As várias abordagens Top-Down: o recursivo descendente e o Top-Down dirigido por tabela.</paragrafo>
+            <seccao ident="s41">
+                <titulo>Recursivo Descendente</titulo>
+                <paragrafo>Construção dum parser recursivo descendente.</paragrafo>
+                <paragrafo>Os conflitos na análise e a condição LL1.</paragrafo>
+                <paragrafo>Cálculo de Lookaheads: as funções lookahead, first, firstN e follow.</paragrafo>
+            </seccao>
+            <seccao ident="s42">
+                <titulo>Top-Down dirigido por Tabela</titulo>
+            </seccao>
+            <paragrafo>Correspondência entre o recursivo descendente e o Top-Down dirigido por tabela.</paragrafo>
+            <paragrafo>Construção da tabela a partir dos lookaheads.</paragrafo>
+            <paragrafo>O algoritmo cíclico com apoio da Stack de reconhecimento.</paragrafo>
+        </seccao>
+        <seccao ident="s5">
+            <titulo>Construção da Árvore de Sintaxe Abstracta</titulo>
+            <paragrafo>O conceito de gramática abstracta.</paragrafo>
+            <paragrafo>Regras para a extracção duma gramática abstracta duma gramática concreta.</paragrafo>
+            <seccao ident="s51">
+                <titulo>Implementação da ASA</titulo>
+                <paragrafo>Regras para a derivação dos tipos abstractos em C a partir da gramática abstracta.</paragrafo>
+                <paragrafo>Regras para a derivação dos construtores da ASA.</paragrafo>
+            </seccao>
+            <seccao ident="s52">
+                <titulo>Analisador Sintáctico com construção da ASA</titulo>
+                <paragrafo>Regras para a colocação das acções semânticas de construção da ASA no parser recursivo descendente.</paragrafo>
+            </seccao>
+        </seccao>
+        <seccao ident="s6">
+            <titulo>Geração de código</titulo>
+            <paragrafo>Implementação de travessias genéricas sobre a ASA.</paragrafo>
+            <paragrafo>A geração de código como uma travessia sobre a ASA.</paragrafo>
+        </seccao>
+        <seccao ident="s7">
+            <titulo>Análise Sintáctica Bottom-Up</titulo>
+            <paragrafo>Princípios gerais duma análise bottom-up: acções de "shift" e de "reduce".</paragrafo>
+            <paragrafo>Algoritmos de análise bottom-up: CKY, precedência de operadores, simples e fraca, LR.</paragrafo>
+            <seccao ident="s71">
+                <titulo>CKY</titulo>
+                <paragrafo>Regras gerais de funcionamento.</paragrafo>
+                <paragrafo>Construção da pirâmide de análise.</paragrafo>
+                <paragrafo>Vantagens e desvantagens do algoritmo: a exponencialidade em função do número de tokens à entrada.</paragrafo>
+            </seccao>
+            <seccao ident="s72">
+                <titulo>LR0</titulo>
+            </seccao>
+            <seccao ident="s73">
+                <titulo>SLR1</titulo>
+            </seccao>
+            <seccao ident="s74">
+                <titulo>YACC - um gerador de parsers LR</titulo>
+            </seccao>
+        </seccao>
+    </programa>
+    <sumarios>
+        <aula tipo="Text" ident="a1">
+            <data>1967-08-13</data>
+            <sumario>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+            </sumario>
+        </aula>
+        <aula tipo="Text" ident="a2">
+            <data>1967-08-13</data>
+            <sumario>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+            </sumario>
+        </aula>
+        <aula tipo="Text" ident="a3">
+            <data>1967-08-13</data>
+            <sumario>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+            </sumario>
+        </aula>
+        <aula tipo="Text" ident="a4">
+            <data>1967-08-13</data>
+            <sumario>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+            </sumario>
+        </aula>
+        <aula tipo="Text" ident="a5">
+            <data>1967-08-13</data>
+            <sumario>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+                <paragrafo>Text</paragrafo>
+            </sumario>
+        </aula>
+    </sumarios>
+</dossier>

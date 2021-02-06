@@ -1,0 +1,2537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alunos>
+    <aluno id="A1510">
+        <nome>ADEMAR FONTES DE MAGALHAES GONCALVES</nome>
+        <dataNasc>2003-1-3</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A32597">
+        <nome>ADERITO NELSON MIRANDA DE OLIVEIRA</nome>
+        <dataNasc>2000-4-5</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A36539">
+        <nome>ADMILSON CESAR ANDRADE RODRIGUES</nome>
+        <dataNasc>2001-10-24</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38165">
+        <nome>AFONSO DELERUE ARRIAGA</nome>
+        <dataNasc>1999-11-11</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38176">
+        <nome>AGOSTINHO MANUEL ALVES DA SILVA</nome>
+        <dataNasc>1998-1-4</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A38196">
+        <nome>ALEXANDRE COELHO CARVALHO</nome>
+        <dataNasc>2003-7-2</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A35271">
+        <nome>ALEXANDRE JORGE CAMELO FARIA</nome>
+        <dataNasc>1998-11-9</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38193">
+        <nome>ALEXANDRE MANUEL PEREIRA DE MIRANDA PINTO</nome>
+        <dataNasc>1997-10-7</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A18141">
+        <nome>ALEXANDRE MIGUEL DA COSTA FERREIRA DOS SANTOS</nome>
+        <dataNasc>2002-11-25</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A38218">
+        <nome>ALEXANDRINA MARIA FERREIRA LEMOS</nome>
+        <dataNasc>2000-12-2</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A36487">
+        <nome>ALI DOS REIS MOTA</nome>
+        <dataNasc>2000-1-24</dataNasc>
+        <curso>CS13</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A35272">
+        <nome>ANA LUISA PARREIRA NUNES</nome>
+        <dataNasc>2003-4-21</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A27589">
+        <nome>ANA MARGARIDA FIDALGO PINHEIRO</nome>
+        <dataNasc>2005-2-8</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A25073">
+        <nome>ANA MARGARIDA LIMA ALEM</nome>
+        <dataNasc>1997-6-7</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38169">
+        <nome>ANDRE ABILIO NUNES ROCHA RODRIGUES</nome>
+        <dataNasc>1998-2-19</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A33822">
+        <nome>ANDRE FERNANDES MARTINS</nome>
+        <dataNasc>2004-8-17</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38214">
+        <nome>ANDRE FILIPE DE SOUSA VIVEIROS</nome>
+        <dataNasc>2000-5-16</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A35274">
+        <nome>ANDRE FILIPE OLIVEIRA MARTINS</nome>
+        <dataNasc>2002-1-8</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A29871">
+        <nome>ANDRE LEITE FERREIRA</nome>
+        <dataNasc>2002-6-27</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38215">
+        <nome>ANDRE RIBEIRO RODRIGUES</nome>
+        <dataNasc>1999-2-5</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38117">
+        <nome>ANTONIO ANDRE MARQUES RIBEIRO</nome>
+        <dataNasc>2005-11-18</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A35277">
+        <nome>ANTONIO MANUEL MARTINS PINTO</nome>
+        <dataNasc>1998-6-19</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A35278">
+        <nome>ANTONIO MANUEL RODRIGUES FERNANDES</nome>
+        <dataNasc>1997-4-22</dataNasc>
+        <curso>CS15</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38138">
+        <nome>ANTONIO NUNO BACELAR MARTINS BARREIRO COVAS</nome>
+        <dataNasc>2002-5-15</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A35280">
+        <nome>ANTONIO RICARDO PEREIRA GONCALVES</nome>
+        <dataNasc>1999-8-6</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A33057">
+        <nome>ANTONIO RUI MIRANDA DE LEMOS</nome>
+        <dataNasc>2004-9-19</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A38143">
+        <nome>ANTONIO SERGIO MATOS SILVA</nome>
+        <dataNasc>1997-1-8</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A30166">
+        <nome>ANTONIO TIAGO MORGADO PEREIRA</nome>
+        <dataNasc>1999-1-3</dataNasc>
+        <curso>CS22</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A36971">
+        <nome>AUGUSTO JORGE PEREIRA DA COSTA</nome>
+        <dataNasc>2001-1-6</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38132">
+        <nome>AVELINO JOSE DA COSTA REGO</nome>
+        <dataNasc>2003-12-3</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A33140">
+        <nome>AVELINO RODRIGO ARAUJO SEMELHE DE SOUSA PINTO</nome>
+        <dataNasc>2004-8-15</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A33141">
+        <nome>BARBARA ALEXANDRA EUSEBIO FREITAS</nome>
+        <dataNasc>1996-12-20</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A33291">
+        <nome>BARBARA SOFIA ARAUJO DA SILVA</nome>
+        <dataNasc>1996-11-1</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A33142">
+        <nome>BRUNO CESAR PEREIRA DA SILVA</nome>
+        <dataNasc>2002-8-21</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A20044">
+        <nome>BRUNO DE ALMEIDA RAMOS PEREIRA</nome>
+        <dataNasc>2002-4-19</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A35283">
+        <nome>BRUNO EDGAR BERNARDO TEIXEIRA</nome>
+        <dataNasc>1999-7-14</dataNasc>
+        <curso>CS11</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35284">
+        <nome>BRUNO EMANUEL TEIXEIRA DE CASTRO ARAUJO</nome>
+        <dataNasc>1999-5-13</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38156">
+        <nome>BRUNO FILIPE DA COSTA HERMENEGILDO</nome>
+        <dataNasc>2000-12-12</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A35285">
+        <nome>BRUNO GABRIEL LEAL MACHADO DOS SANTOS</nome>
+        <dataNasc>2000-3-18</dataNasc>
+        <curso>CS11</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A36422">
+        <nome>BRUNO JOSE DE MACEDO SOARES AMOR</nome>
+        <dataNasc>1999-2-4</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A33143">
+        <nome>BRUNO MIGUEL CAMPOS RODRIGUES</nome>
+        <dataNasc>2002-9-6</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A33145">
+        <nome>BRUNO MIGUEL FLORES DIAMANTINO</nome>
+        <dataNasc>2003-9-5</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A33146">
+        <nome>BRUNO MIGUEL MAGALHAES AZEVEDO</nome>
+        <dataNasc>2005-8-16</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A33148">
+        <nome>BRUNO MIGUEL TEIXEIRA PAIVA DE FARIA</nome>
+        <dataNasc>1996-10-14</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38124">
+        <nome>BRUNO RICARDO CUNHA MAGALHAES</nome>
+        <dataNasc>1998-11-3</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A30176">
+        <nome>BRUNO RICARDO DUARTE MAGALHAES</nome>
+        <dataNasc>2001-2-14</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A35808">
+        <nome>CANDIDO MIGUEL REBELO BARROS</nome>
+        <dataNasc>2000-5-26</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38126">
+        <nome>CARLOS ALFREDO MACIEIRA DE FARIA</nome>
+        <dataNasc>2001-4-13</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A33689">
+        <nome>CARLOS ANDRE BRITO RIBEIRO</nome>
+        <dataNasc>2002-8-3</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A38125">
+        <nome>CARLOS CESAR MADUREIRA ROMANO</nome>
+        <dataNasc>2001-3-23</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A24654">
+        <nome>CARLOS DE SOUSA CABRAL BRANDAO</nome>
+        <dataNasc>2003-4-14</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A20021">
+        <nome>CARLOS JOSE DA CUNHA RIBEIRO</nome>
+        <dataNasc>2004-5-7</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A35291">
+        <nome>CARLOS MIGUEL TAVARES LOPES</nome>
+        <dataNasc>2000-10-14</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A34640">
+        <nome>CARLOS PRUDENCIO DO ESPIRITO CRISOSTOMO</nome>
+        <dataNasc>1997-11-19</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38207">
+        <nome>CATARINA ISABEL DE OLIVEIRA MATEUS</nome>
+        <dataNasc>1997-4-3</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A32010">
+        <nome>CATARINA SOFIA MARTINHO LUIS</nome>
+        <dataNasc>1996-11-19</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A35052">
+        <nome>CESAR FILIPE DA CRUZ GOMES</nome>
+        <dataNasc>1998-8-6</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A35440">
+        <nome>DANIEL BARBOSA ALVES</nome>
+        <dataNasc>1999-8-23</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A32648">
+        <nome>DANIEL FILIPE PERES FERREIRA</nome>
+        <dataNasc>2004-12-21</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A33152">
+        <nome>DANIEL RICARDO DE CASTRO MENDES</nome>
+        <dataNasc>1996-7-7</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A38211">
+        <nome>DANIEL TORRES GONCALVES</nome>
+        <dataNasc>2003-11-13</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A38210">
+        <nome>DANIELA CRISTINA GARCIA TEIXEIRA</nome>
+        <dataNasc>2005-12-1</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A22854">
+        <nome>DAVI CARNEIRO PEREIRA</nome>
+        <dataNasc>2005-11-12</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A35293">
+        <nome>DAVID DANIEL CARDOSO DE OLIVEIRA</nome>
+        <dataNasc>2003-6-9</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A35294">
+        <nome>DIAMANTINO JOSE MADEIRA ABOBELEIRA</nome>
+        <dataNasc>1998-6-28</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38166">
+        <nome>DIOGO FILIPE DA SILVA CARDOSO</nome>
+        <dataNasc>1999-2-10</dataNasc>
+        <curso>CS13</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A38164">
+        <nome>DIOGO PAULO DA FONTE LAPA</nome>
+        <dataNasc>2001-4-22</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A38167">
+        <nome>DUARTE ALEXANDRE DA CUNHA ALVES</nome>
+        <dataNasc>2005-11-2</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A33155">
+        <nome>DUARTE FILIPE AFONSO CHAVES</nome>
+        <dataNasc>2004-12-9</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A35298">
+        <nome>DUARTE NUNO MALHEIRO DE BARREIRO</nome>
+        <dataNasc>2005-1-17</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A38190">
+        <nome>ELISEU CARNEIRO DOS SANTOS ROCHA</nome>
+        <dataNasc>2001-7-3</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A35300">
+        <nome>EMANUEL CERDEIRA MESQUITA</nome>
+        <dataNasc>2004-11-21</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A30305">
+        <nome>EMANUEL JOSE ANTUNES FERNANDES</nome>
+        <dataNasc>2002-10-22</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A36757">
+        <nome>ERNESTO MANUEL DA SILVA LOPES</nome>
+        <dataNasc>2004-5-17</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A33157">
+        <nome>EURICO MANUEL FOLGADO AFONSO</nome>
+        <dataNasc>1996-10-9</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A27608">
+        <nome>EURICO MANUEL TELES MORAIS</nome>
+        <dataNasc>2000-4-1</dataNasc>
+        <curso>CS22</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A35302">
+        <nome>FABIO ROBERTO LEITE MATOS</nome>
+        <dataNasc>2002-7-6</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A33158">
+        <nome>FAUSTO MIGUEL PACHECO FARIA VIANA</nome>
+        <dataNasc>2003-8-2</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A35465">
+        <nome>FERNANDO ANTONIO ALVES LOPES</nome>
+        <dataNasc>2001-2-18</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A33858">
+        <nome>FERNANDO JORGE PINTO LIMA</nome>
+        <dataNasc>1999-2-24</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A26737">
+        <nome>FERNANDO MIGUEL SOUSA LISBOA</nome>
+        <dataNasc>1997-12-23</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A30187">
+        <nome>FERNANDO SERGIO MADALENO PEREIRA</nome>
+        <dataNasc>2004-12-17</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A35303">
+        <nome>FILIPE ANTONIO GONCALVES DA SILVA</nome>
+        <dataNasc>1998-6-14</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A36445">
+        <nome>FILIPE BARROSO DE OLIVEIRA</nome>
+        <dataNasc>2002-3-24</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38595">
+        <nome>FILIPE GONCALO GONCALVES DA COSTA</nome>
+        <dataNasc>2003-3-23</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38187">
+        <nome>FLAVIO MIGUEL XAVIER FERREIRA</nome>
+        <dataNasc>1999-8-18</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A36424">
+        <nome>FRANCISCO EURICO PINTO CORTEZ MARTINS LEITE</nome>
+        <dataNasc>2002-5-15</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A35308">
+        <nome>FRANCISCO JOSE MAIO LEITE</nome>
+        <dataNasc>2003-4-23</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35443">
+        <nome>FRANCISCO JOSE MARTINS GOMES</nome>
+        <dataNasc>2003-7-19</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A27616">
+        <nome>FRANCISCO JOSE PRATA DA PAZ</nome>
+        <dataNasc>2004-10-5</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A38163">
+        <nome>GASPAR AUGUSTO SIMOES CORREIA VIEIRA LEITE</nome>
+        <dataNasc>2004-6-20</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A39288">
+        <nome>GENILDO SOARES NEVES</nome>
+        <dataNasc>1997-12-12</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A33162">
+        <nome>GONCALO LEAL MACHADO RIBEIRO PINTO</nome>
+        <dataNasc>2005-7-16</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35311">
+        <nome>GONCALO LUIS MALHEIRO DE OLIVEIRA NOVAIS MACHADO</nome>
+        <dataNasc>2000-4-10</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A39508">
+        <nome>GONCALO MANUEL CORREIA CALHEIROS</nome>
+        <dataNasc>2000-12-7</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A33163">
+        <nome>GONCALO PAULO CUNHA CARDOSO FERREIRA</nome>
+        <dataNasc>1997-12-26</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38174">
+        <nome>GUILHERME REIS BARBOSA</nome>
+        <dataNasc>1999-3-5</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A33165">
+        <nome>HELDER ARTUR PEIXOTO MAGALHAES</nome>
+        <dataNasc>2005-3-25</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A35312">
+        <nome>HELDER FILIPE DE CASTRO MARQUES</nome>
+        <dataNasc>1996-5-16</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38185">
+        <nome>HELDER JOSE FERREIRA BARBOSA RIBEIRO</nome>
+        <dataNasc>2001-1-4</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A39503">
+        <nome>HELDER NUNO MARTINS DO VALE TOME</nome>
+        <dataNasc>2003-5-6</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A36758">
+        <nome>HUGO ALEXANDRE PEREIRA TRIUNFANTE MARTINS</nome>
+        <dataNasc>1999-3-14</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38197">
+        <nome>HUGO ALEXANDRE SOBREIRO DE SEIXAS</nome>
+        <dataNasc>1998-8-21</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A33272">
+        <nome>HUGO ANDRE PEIXOTO FREITAS PEREIRA</nome>
+        <dataNasc>2002-4-26</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35315">
+        <nome>HUGO EMANUEL QUEIROS TEIXEIRA DA SILVA</nome>
+        <dataNasc>2005-7-28</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A38202">
+        <nome>HUGO FILIPE NASCIMENTO PEREIRA</nome>
+        <dataNasc>2004-1-6</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A35316">
+        <nome>HUGO GUILHERME DOS SANTOS RIGOR</nome>
+        <dataNasc>2000-9-9</dataNasc>
+        <curso>CS15</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A35395">
+        <nome>HUGO JOSE FERNANDES CARVALHO</nome>
+        <dataNasc>2003-12-26</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38204">
+        <nome>HUGO JOSE PEREIRA PACHECO</nome>
+        <dataNasc>2000-6-24</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A26208">
+        <nome>IGOR MURILO DE ALMEIDA</nome>
+        <dataNasc>2001-10-3</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A33703">
+        <nome>ISABEL MARIA ROSENDO CARDOSO</nome>
+        <dataNasc>2003-5-25</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A38134">
+        <nome>IVO MANUEL DANTAS MONTEIRO</nome>
+        <dataNasc>1996-7-28</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A35318">
+        <nome>JASON PETER COSTA</nome>
+        <dataNasc>2005-9-6</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A33168">
+        <nome>JOANA SOUTO DE MIRANDA GONZALEZ</nome>
+        <dataNasc>2005-1-10</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A35319">
+        <nome>JOAO ALEXANDRE VAZ OLIVEIRA</nome>
+        <dataNasc>2001-4-21</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35320">
+        <nome>JOAO ANTONIO LAVRADOR VILANOVA</nome>
+        <dataNasc>2001-11-10</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A32753">
+        <nome>JOAO ARNALDO FREITAS DE ABREU</nome>
+        <dataNasc>2002-5-22</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A38180">
+        <nome>JOAO CARLOS AZEVEDO SALGADO GUIMARAES</nome>
+        <dataNasc>2002-7-18</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A35321">
+        <nome>JOAO FILIPE FONTES MACHADO</nome>
+        <dataNasc>1997-8-14</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A35322">
+        <nome>JOAO GILBERTO LAMARAO DA SILVA</nome>
+        <dataNasc>2004-4-24</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A38133">
+        <nome>JOAO GONCALO BOTICA RIBEIRO DA SILVA</nome>
+        <dataNasc>1996-9-12</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A30201">
+        <nome>JOAO GUILHERME RABACA CAMPOS</nome>
+        <dataNasc>2005-5-28</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38123">
+        <nome>JOAO MANUEL DA SILVA SANCHES</nome>
+        <dataNasc>1999-12-10</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A34935">
+        <nome>JOAO MANUEL DE CAMPOS GONCALVES</nome>
+        <dataNasc>2000-10-2</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A35323">
+        <nome>JOAO MARIO MENDES DE OLIVEIRA</nome>
+        <dataNasc>2004-3-1</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A33172">
+        <nome>JOAO MIGUEL RAPOSO DA SILVA MARQUES</nome>
+        <dataNasc>2004-2-25</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38191">
+        <nome>JOAO MIGUEL RODRIGUES BATISTA</nome>
+        <dataNasc>2005-9-1</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A38186">
+        <nome>JOAO NUNO MARQUES DOS SANTOS</nome>
+        <dataNasc>1997-4-26</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A39750">
+        <nome>JOAO PAULO BARBOSA OLIVEIRA</nome>
+        <dataNasc>2004-6-15</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A22662">
+        <nome>JOAO PAULO CARRAPATO ALMEIDA</nome>
+        <dataNasc>2005-9-8</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A35325">
+        <nome>JOAO PAULO COELHO GOMES TEIXEIRA E OLIVEIRA</nome>
+        <dataNasc>2002-11-28</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A17855">
+        <nome>JOAO PAULO DA SILVA CASTRO</nome>
+        <dataNasc>2001-7-10</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38175">
+        <nome>JOAO PAULO DA SILVA GOMES</nome>
+        <dataNasc>2002-5-26</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A33173">
+        <nome>JOAO PAULO MINHAVA PEIXOTO ASSIS CARDOSO</nome>
+        <dataNasc>2000-10-4</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A39622">
+        <nome>JOAO PAULO SILVA DE VASCONCELOS GUSMAO</nome>
+        <dataNasc>2003-3-10</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A33175">
+        <nome>JOAO PEDRO BACAO COELHO DE BARROS</nome>
+        <dataNasc>2004-3-4</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A18938">
+        <nome>JOAO PEDRO BRITO ANTUNES GUIMARAES</nome>
+        <dataNasc>2004-10-5</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A33176">
+        <nome>JOAO PEDRO GOMES FERNANDES</nome>
+        <dataNasc>1999-6-28</dataNasc>
+        <curso>CS16</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A35832">
+        <nome>JOAO PEDRO GONCALVES DE CARVALHO</nome>
+        <dataNasc>1997-5-8</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A38170">
+        <nome>JOAO PEDRO OLIVEIRA PEREIRA</nome>
+        <dataNasc>1996-7-24</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A36425">
+        <nome>JOAO PEDRO ROBALO ESPINHO PEREIRA DA SILVA</nome>
+        <dataNasc>2003-11-4</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A38212">
+        <nome>JOAO PEDRO SILVA ARAUJO</nome>
+        <dataNasc>2001-12-9</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A38220">
+        <nome>JOAO RAFAEL FERREIRA VELOSO</nome>
+        <dataNasc>2001-8-24</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A38199">
+        <nome>JOAO RICARDO DA SILVA CAMPOS</nome>
+        <dataNasc>1998-1-26</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A38198">
+        <nome>JOAQUIM MACHADO GONCALVES SAMPAIO</nome>
+        <dataNasc>2003-6-4</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A35328">
+        <nome>JOEL ARAUJO ROCHA</nome>
+        <dataNasc>1997-1-2</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38157">
+        <nome>JOEL HUMBERTO DA SILVA BEIRAO DO VALE CARVALHO</nome>
+        <dataNasc>2005-10-3</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A20464">
+        <nome>JOEL TITO DA CRUZ PINTO</nome>
+        <dataNasc>1997-9-23</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A38139">
+        <nome>JORGE ALBERTO FARIA MIRANDA</nome>
+        <dataNasc>2004-1-1</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A35330">
+        <nome>JORGE ANDRE ALVES DE MELO</nome>
+        <dataNasc>2000-12-26</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A16409">
+        <nome>JORGE MANUEL DE CASTRO MAIO GOMES DA COSTA</nome>
+        <dataNasc>2002-2-20</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A33709">
+        <nome>JORGE MANUEL VIANA RIBEIRO MARTINS FORTE</nome>
+        <dataNasc>1998-12-8</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A30209">
+        <nome>JORGE MIGUEL GONCALVES DA SILVA</nome>
+        <dataNasc>2000-3-23</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A21008">
+        <nome>JORGE MIGUEL SILVA MELO PEREIRA</nome>
+        <dataNasc>2002-10-1</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35331">
+        <nome>JOSE ALEXANDRE DE CARVALHO AMORIM</nome>
+        <dataNasc>2000-4-11</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A38189">
+        <nome>JOSE ANTONIO DA CUNHA E SILVA</nome>
+        <dataNasc>1997-11-28</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A19705">
+        <nome>JOSE ANTONIO PEREIRA CIBRAO</nome>
+        <dataNasc>1998-9-13</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A30211">
+        <nome>JOSE CARLOS CARVALHO DOS SANTOS</nome>
+        <dataNasc>2002-2-16</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A30212">
+        <nome>JOSE CARLOS DA ROCHA MACHADO</nome>
+        <dataNasc>2001-5-19</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A36960">
+        <nome>JOSE CARLOS DE FREITAS FONTAO</nome>
+        <dataNasc>2005-1-21</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A34434">
+        <nome>JOSE CARLOS MARQUES DIAS</nome>
+        <dataNasc>1996-5-24</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35332">
+        <nome>JOSE DIOGO RIBEIRO LIZ DE ALMEIDA</nome>
+        <dataNasc>2004-7-19</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A39506">
+        <nome>JOSE EDUARDO CORREIA CALHEIROS</nome>
+        <dataNasc>2005-1-11</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A36761">
+        <nome>JOSE EDUARDO TEIXEIRA RITO</nome>
+        <dataNasc>2005-1-5</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A38224">
+        <nome>JOSE FILIPE HENRIQUES VILAS BOAS</nome>
+        <dataNasc>2002-1-8</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A35333">
+        <nome>JOSE FILIPE QUEIJO FERNANDES</nome>
+        <dataNasc>1998-4-11</dataNasc>
+        <curso>CS22</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A23916">
+        <nome>JOSE GRACA DA NOBREGA</nome>
+        <dataNasc>2004-12-18</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A38222">
+        <nome>JOSE LUIS CARDOSO SILVA</nome>
+        <dataNasc>2000-7-27</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A38205">
+        <nome>JOSE LUIS LOPES DE ARAUJO</nome>
+        <dataNasc>2001-1-12</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A27629">
+        <nome>JOSE LUIS PINTO MONTEIRO ALVES</nome>
+        <dataNasc>2000-11-13</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38206">
+        <nome>JOSE MANUEL ARAUJO SOARES</nome>
+        <dataNasc>1999-3-11</dataNasc>
+        <curso>CS14</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A35398">
+        <nome>JOSE MANUEL ESTEVES</nome>
+        <dataNasc>2003-11-22</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A32480">
+        <nome>JOSE MANUEL LIMA GANDARELA</nome>
+        <dataNasc>2005-12-23</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A30213">
+        <nome>JOSE MANUEL LOUREIRO DE AZEVEDO TEIXEIRA</nome>
+        <dataNasc>1997-1-6</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A22670">
+        <nome>JOSE MANUEL TEIXEIRA FERNANDES</nome>
+        <dataNasc>2001-9-6</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A33182">
+        <nome>JOSE MIGUEL DOS SANTOS FERRAZ</nome>
+        <dataNasc>2002-5-16</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A28722">
+        <nome>JOSE MIGUEL FERREIRA PONTES</nome>
+        <dataNasc>2004-6-7</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38121">
+        <nome>JOSE MIGUEL RODRIGUES OLIVEIRA DA SILVA</nome>
+        <dataNasc>2003-12-25</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35334">
+        <nome>JOSE MIGUEL SILVA PEIXOTO DE CARVALHO</nome>
+        <dataNasc>2002-6-3</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A38136">
+        <nome>JOSE NUNO MARTINS PINTO FRAGA</nome>
+        <dataNasc>2003-9-5</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A35335">
+        <nome>JOSE PAULO CARNEIRO DE MELO MAMEDE</nome>
+        <dataNasc>1999-7-15</dataNasc>
+        <curso>CS11</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A35337">
+        <nome>JOSE PEDRO DOMINGUES</nome>
+        <dataNasc>1997-2-26</dataNasc>
+        <curso>CS16</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A38142">
+        <nome>JOSE PEDRO FARIA E VASCONCELOS CORREIA</nome>
+        <dataNasc>2005-8-19</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A38140">
+        <nome>JOSE PEDRO MACHADO GOMES</nome>
+        <dataNasc>2002-11-24</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A38137">
+        <nome>JOSE PEDRO RIBEIRO DA ARAUJO</nome>
+        <dataNasc>2005-4-23</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38128">
+        <nome>JOSE PEDRO RODRIGUES MAGALHAES</nome>
+        <dataNasc>2005-10-13</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A30214">
+        <nome>JOSE PEDRO SILVA DE OLIVEIRA CARVALHO</nome>
+        <dataNasc>1998-5-8</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A23508">
+        <nome>JOSE ROMEU FERNANDES PINTO</nome>
+        <dataNasc>2003-12-28</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38155">
+        <nome>JULIO ANDRE RODRIGUES ARAUJO</nome>
+        <dataNasc>1998-7-7</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A35843">
+        <nome>LARA SOFIA ALPOIM MIRANDA</nome>
+        <dataNasc>1997-7-16</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38150">
+        <nome>LEANDRO EMANUEL DA SILVA SALGADO BARBOSA</nome>
+        <dataNasc>2004-11-12</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A34035">
+        <nome>LEONOR ISABEL CONSTANTINO CAEIRO BOGA</nome>
+        <dataNasc>1997-8-21</dataNasc>
+        <curso>CS13</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A24839">
+        <nome>LEONOR ISABEL FERREIRA DE MELO OSORIO ARAUJO</nome>
+        <dataNasc>2000-10-1</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A35339">
+        <nome>LIDIA NOGUEIRA LARANJEIRA</nome>
+        <dataNasc>2004-7-15</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A35340">
+        <nome>LILIANA SOLANGE SEQUEIRA HENRIQUES DE MACEDO</nome>
+        <dataNasc>1997-2-22</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A33650">
+        <nome>LUIS ANDRE DA CUNHA MARQUES</nome>
+        <dataNasc>2000-6-15</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A35342">
+        <nome>LUIS CARLOS GONCALO LEONARDO</nome>
+        <dataNasc>2002-11-10</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A38223">
+        <nome>LUIS DIOGO MONTEIRO DUARTE COUTO</nome>
+        <dataNasc>1998-3-5</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A39341">
+        <nome>LUIS FERNANDO ROMANEL RODRIGUES</nome>
+        <dataNasc>2003-6-18</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A39408">
+        <nome>LUIS FILIPE FARIA MONTEIRO CAPELO</nome>
+        <dataNasc>1997-9-22</dataNasc>
+        <curso>CS16</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A33186">
+        <nome>LUIS FILIPE GAMA PAIS CABRAL</nome>
+        <dataNasc>2005-11-19</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A38219">
+        <nome>LUIS FILIPE PEREIRA GONCALVES</nome>
+        <dataNasc>2002-3-21</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A29631">
+        <nome>LUIS FILIPE RIBEIRO NOVAIS</nome>
+        <dataNasc>1997-10-3</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A39747">
+        <nome>LUIS PEDRO FERREIRA LEITE DOS SANTOS ALEIXO</nome>
+        <dataNasc>2002-10-1</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A33188">
+        <nome>LUIS PEDRO LOPES PEREIRA</nome>
+        <dataNasc>2004-8-9</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38172">
+        <nome>LUIS TIAGO AFONSO MASCARENHAS</nome>
+        <dataNasc>2001-8-3</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38168">
+        <nome>LUIZ ALBERTO DE CASTRO SANTOS</nome>
+        <dataNasc>2002-4-6</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A38254">
+        <nome>MANUEL DOMINGOS DE CARVALHO FELGUEIRAS DA SILVA SANTOS</nome>
+        <dataNasc>2000-11-7</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A30219">
+        <nome>MANUEL FERNANDO SOTO MAIOR FRANQUEIRA</nome>
+        <dataNasc>2000-5-22</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A35348">
+        <nome>MANUEL JOSE GOMES MEIRELES</nome>
+        <dataNasc>2001-2-21</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A27637">
+        <nome>MANUEL JOSE TORRES SOUSA DA CUNHA</nome>
+        <dataNasc>2001-5-15</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A29004">
+        <nome>MARANGAZE JOAQUIM MUNHEPE MULHANGA</nome>
+        <dataNasc>2005-6-13</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A35349">
+        <nome>MARCIA MARLENE DE ALMEIDA MARTINS</nome>
+        <dataNasc>2003-8-3</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A35350">
+        <nome>MARCIAL COELHO GOMES</nome>
+        <dataNasc>1997-6-22</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A39406">
+        <nome>MARCO ALEXANDRE AGUIAR VAZ</nome>
+        <dataNasc>2003-10-28</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A29011">
+        <nome>MARCO ALEXANDRE BARREIRA MEDEIROS TEIXEIRA</nome>
+        <dataNasc>2004-2-13</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A38178">
+        <nome>MARCO ALEXANDRE TEIXEIRA PALOS</nome>
+        <dataNasc>2000-2-5</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38152">
+        <nome>MARCO ANTONIO SAMPAIO FREITAS DE CASTRO</nome>
+        <dataNasc>2005-11-13</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38179">
+        <nome>MARCO ANTONIO TEIXEIRA MARTINS</nome>
+        <dataNasc>1998-3-14</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A22685">
+        <nome>MARCO FRANCISCO DA SILVA LIZARDO</nome>
+        <dataNasc>1999-6-17</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A22688">
+        <nome>MARCO RICARDO BARBOSA COELHO</nome>
+        <dataNasc>1998-11-18</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A36864">
+        <nome>MARIA BEATRIZ ALVES DE SA CAMPOS</nome>
+        <dataNasc>2005-2-16</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A38184">
+        <nome>MARIA CRISTINA CARNEIRO BARREIRA</nome>
+        <dataNasc>1998-10-24</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A12753">
+        <nome>MARIA LUISA VILLAVERDE MACHADO FERNANDES NOVAIS</nome>
+        <dataNasc>2004-5-17</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38161">
+        <nome>MARIANA PEREIRA NEVES</nome>
+        <dataNasc>2000-7-2</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38171">
+        <nome>MARIO ANDRE PATRICIO TEIXEIRA JULIO</nome>
+        <dataNasc>1998-4-9</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A38194">
+        <nome>MARIO DA FONTE LAMEIRAS</nome>
+        <dataNasc>1997-1-8</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A23544">
+        <nome>MARIO RUI ANUNCIACAO MONTEIRO</nome>
+        <dataNasc>2003-9-9</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A29048">
+        <nome>MARIO RUI RIBEIRO FIALHO DA CONCEICAO</nome>
+        <dataNasc>1996-7-25</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A36454">
+        <nome>MICHEL FERREIRA PINTO</nome>
+        <dataNasc>2001-9-12</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A35352">
+        <nome>MIGUEL AFONSO PIRES DA ROSA</nome>
+        <dataNasc>1998-8-18</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A38217">
+        <nome>MIGUEL ANGELO MARQUES DE MATOS</nome>
+        <dataNasc>2000-6-22</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A38209">
+        <nome>MIGUEL ANGELO PINTO MARQUES</nome>
+        <dataNasc>1997-11-10</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A30226">
+        <nome>MIGUEL ANGELO RIBEIRO DE SOUSA E SILVA</nome>
+        <dataNasc>2001-2-9</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38221">
+        <nome>MIGUEL ANGELO VIVAS GOMES ALVES</nome>
+        <dataNasc>1999-11-28</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A21432">
+        <nome>MIGUEL MANUEL GOMES RODRIGUES</nome>
+        <dataNasc>2005-11-15</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A39342">
+        <nome>MIGUEL PEDRO AMARAL FIGUEIREDO</nome>
+        <dataNasc>2002-8-18</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A32608">
+        <nome>MIGUEL PEDRO DE ALMEIDA FERREIRA CORREIA DOURADO</nome>
+        <dataNasc>1997-9-12</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A33195">
+        <nome>MIGUEL PINTO DE SOUSA MARQUES</nome>
+        <dataNasc>2003-1-11</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A22695">
+        <nome>NANCY DO SAMEIRO SILVERIO LAVANDEIRA</nome>
+        <dataNasc>1996-9-17</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38216">
+        <nome>NELSON DE SOUSA E SILVA</nome>
+        <dataNasc>1996-9-14</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A33196">
+        <nome>NELSON FILIPE COELHO DE MOURA SOUSA</nome>
+        <dataNasc>1998-12-23</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A33420">
+        <nome>NELSON LEANDRO BARBOSA CARNEIRO</nome>
+        <dataNasc>2004-5-1</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38195">
+        <nome>NELSON TAVARES CUNHA</nome>
+        <dataNasc>2005-7-9</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A33727">
+        <nome>NUNO FILIPE ANTUNES DA SILVA</nome>
+        <dataNasc>2003-2-13</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A33127">
+        <nome>NUNO FILIPE MAGALHAES SANTOS</nome>
+        <dataNasc>2004-3-25</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A24784">
+        <nome>NUNO FILIPE MARQUES MOREIRA RIBEIRO</nome>
+        <dataNasc>2000-6-7</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38208">
+        <nome>NUNO GONCALO BETTENCOURT DA CRUZ CORREIA</nome>
+        <dataNasc>1998-3-14</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38203">
+        <nome>NUNO JORGE FERREIRA GUIMARAES</nome>
+        <dataNasc>2004-10-11</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A15619">
+        <nome>NUNO MIGUEL AFONSO CARVALHO DE MOURA</nome>
+        <dataNasc>1996-11-23</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A35355">
+        <nome>NUNO MIGUEL MACHADO ALVES COSTA</nome>
+        <dataNasc>1998-2-9</dataNasc>
+        <curso>CS15</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A33437">
+        <nome>NUNO MIGUEL MARQUES GOMES</nome>
+        <dataNasc>2001-7-12</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A22701">
+        <nome>NUNO MIGUEL MARTINS CASANOVA</nome>
+        <dataNasc>2005-10-13</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A27645">
+        <nome>NUNO MIGUEL OLIVEIRA SILVA</nome>
+        <dataNasc>2005-5-25</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A29282">
+        <nome>NUNO VIRIATO MACEDO FERREIRA DE CARVALHO</nome>
+        <dataNasc>2004-3-6</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38120">
+        <nome>OCTAVIO DAVID DA CONCEICAO JACINTO</nome>
+        <dataNasc>2000-3-28</dataNasc>
+        <curso>CS6</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A14539">
+        <nome>ORLANDO JORGE GONCALVES PINTO</nome>
+        <dataNasc>1997-6-18</dataNasc>
+        <curso>CS11</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A33280">
+        <nome>PAULO BRUNO DA SILVA VIDES FERNANDES</nome>
+        <dataNasc>2004-1-18</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A34508">
+        <nome>PAULO CESAR ALMEIDA DE SA</nome>
+        <dataNasc>2002-3-5</dataNasc>
+        <curso>CB2</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A27577">
+        <nome>PAULO CESAR DE CARVALHO LOPES</nome>
+        <dataNasc>2004-12-20</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A39938">
+        <nome>PAULO CESAR ROMANEL RODRIGUES</nome>
+        <dataNasc>1996-8-18</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A33204">
+        <nome>PAULO EDUARDO MIRANDA CAMPOS</nome>
+        <dataNasc>2003-9-2</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A38122">
+        <nome>PAULO JORGE ASSIS DE SOUSA</nome>
+        <dataNasc>2002-11-13</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A35357">
+        <nome>PAULO JORGE FERNANDES DE SOUSA</nome>
+        <dataNasc>2001-2-12</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A30238">
+        <nome>PAULO JORGE SOARES MENDES</nome>
+        <dataNasc>2003-11-16</dataNasc>
+        <curso>CB22</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Bandolim</instrumento>
+    </aluno>
+    <aluno id="A39407">
+        <nome>PAULO MANUEL RIBEIRO NOVAIS</nome>
+        <dataNasc>2004-11-26</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A33209">
+        <nome>PAULO MIGUEL SA MORAIS PIRES</nome>
+        <dataNasc>1998-9-6</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A36476">
+        <nome>PEDRO ALEXANDRE FERREIRA VILACA</nome>
+        <dataNasc>1996-8-20</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A35360">
+        <nome>PEDRO DANIEL FERREIRA DE CARVALHO</nome>
+        <dataNasc>2002-9-9</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A21711">
+        <nome>PEDRO DAVID ALVES MARTINHO</nome>
+        <dataNasc>2003-9-1</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A32652">
+        <nome>PEDRO DUARTE CARDOSO LOPES</nome>
+        <dataNasc>1999-12-23</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A36969">
+        <nome>PEDRO EMANUEL FERNANDES LOPES</nome>
+        <dataNasc>2003-10-21</dataNasc>
+        <curso>CB14</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Saxofone</instrumento>
+    </aluno>
+    <aluno id="A33213">
+        <nome>PEDRO GUIMARAES DE FREITAS</nome>
+        <dataNasc>1999-11-3</dataNasc>
+        <curso>CS12</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A30241">
+        <nome>PEDRO HENRIQUE GONCALVES GERAZ RODRIGUES</nome>
+        <dataNasc>1996-7-14</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A33214">
+        <nome>PEDRO JORGE OSORIO MARINHO OLIVEIRA</nome>
+        <dataNasc>2004-6-8</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A38116">
+        <nome>PEDRO JOSE MARTINS FARIA</nome>
+        <dataNasc>1997-11-10</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A35144">
+        <nome>PEDRO MANUEL DE AMORIM MAGALHAES</nome>
+        <dataNasc>1999-7-26</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A38118">
+        <nome>PEDRO MANUEL LOPES PATRICIO</nome>
+        <dataNasc>2004-11-9</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A27658">
+        <nome>PEDRO MIGUEL ARAUJO MOTA LOPES</nome>
+        <dataNasc>2003-11-12</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A38159">
+        <nome>PEDRO MIGUEL AZEVEDO DE OLIVEIRA</nome>
+        <dataNasc>1998-11-26</dataNasc>
+        <curso>CS16</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A35363">
+        <nome>PEDRO MIGUEL DA SILVA ARAUJO</nome>
+        <dataNasc>2000-7-2</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A25383">
+        <nome>PEDRO MIGUEL MARTINS FERNANDES</nome>
+        <dataNasc>2002-11-16</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A35364">
+        <nome>PEDRO MIGUEL MEIRA DAS NEVES</nome>
+        <dataNasc>2001-5-18</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A33524">
+        <nome>PEDRO MIGUEL PAES MACHADO</nome>
+        <dataNasc>1997-4-10</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35855">
+        <nome>PEDRO MIGUEL PINTO RIBEIRO</nome>
+        <dataNasc>2004-2-21</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38147">
+        <nome>PEDRO MIGUEL RAMOS MADEIRA</nome>
+        <dataNasc>1997-6-22</dataNasc>
+        <curso>CS1</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A33281">
+        <nome>PEDRO MIGUEL SOARES PINTO</nome>
+        <dataNasc>1999-7-20</dataNasc>
+        <curso>CS11</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A30243">
+        <nome>PEDRO MIGUEL VEIGA DA SILVA</nome>
+        <dataNasc>1999-2-5</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38149">
+        <nome>PEDRO SILVESTRE MENESES MAGALHAES COELHO</nome>
+        <dataNasc>1998-6-15</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38160">
+        <nome>PEDRO TIAGO AMORIM DE BRITO</nome>
+        <dataNasc>2005-12-8</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A33082">
+        <nome>PEDRO TIAGO DIAS GONCALVES</nome>
+        <dataNasc>1997-2-14</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38154">
+        <nome>RAFAEL DE CASTRO CARREIRA</nome>
+        <dataNasc>1999-1-25</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A38158">
+        <nome>RAUL GRACIANO OLIVEIRA RODRIGUES</nome>
+        <dataNasc>1996-7-16</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A30015">
+        <nome>RENATO CESAR ALMEIDA FIGUEIREDO</nome>
+        <dataNasc>2003-2-5</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A39509">
+        <nome>RICARDO ANDRE RODRIGUES AFONSO</nome>
+        <dataNasc>1999-3-17</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A38153">
+        <nome>RICARDO ARAUJO CARVALHO VILACA MOREIRA</nome>
+        <dataNasc>2001-10-1</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A38151">
+        <nome>RICARDO FERNANDO LIRA DE MESQUITA LACHADO</nome>
+        <dataNasc>1999-12-9</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A38129">
+        <nome>RICARDO GOMES DE FARIA</nome>
+        <dataNasc>2003-4-24</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A33222">
+        <nome>RICARDO JORGE ALMEIDA DE MAGALHAES</nome>
+        <dataNasc>2004-8-1</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A38130">
+        <nome>RICARDO JORGE RODRIGUES SEPULVEDA MARQUES</nome>
+        <dataNasc>1996-3-15</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A34435">
+        <nome>RICARDO JOSE FERREIRA DIAS DE OLIVEIRA</nome>
+        <dataNasc>2001-7-10</dataNasc>
+        <curso>CB4</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A19550">
+        <nome>RICARDO MANUEL RODRIGUES DE OLIVEIRA DIMAS</nome>
+        <dataNasc>2000-9-7</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A35366">
+        <nome>RICARDO MANUEL VIANA MAGALHAES</nome>
+        <dataNasc>1999-10-15</dataNasc>
+        <curso>CS15</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A22721">
+        <nome>RICARDO NUNO MOREIRA CASTILHO FERREIRA LOPES</nome>
+        <dataNasc>1999-5-27</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A30254">
+        <nome>ROQUE MANUEL DE CARVALHO TEIXEIRA</nome>
+        <dataNasc>2000-2-17</dataNasc>
+        <curso>CS10</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A18770">
+        <nome>ROSA ALEXANDRA AZEVEDO GUIMARAES</nome>
+        <dataNasc>2005-6-21</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A38141">
+        <nome>RUBEN FILIPE CARDOSO DA FONSECA</nome>
+        <dataNasc>2005-1-8</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38200">
+        <nome>RUI ALEXANDRE SERRANO DE MOURA</nome>
+        <dataNasc>2002-9-28</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A36764">
+        <nome>RUI ANDRE FERREIRA SILVA</nome>
+        <dataNasc>2001-4-26</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38135">
+        <nome>RUI ANDRE LEITE RIBEIRO</nome>
+        <dataNasc>2001-5-9</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A39944">
+        <nome>RUI ANTONIO PEIXOTO DE ABREU</nome>
+        <dataNasc>1998-12-19</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A38148">
+        <nome>RUI DOMINGOS GUIMARAES SALGADO</nome>
+        <dataNasc>1997-10-24</dataNasc>
+        <curso>CS21</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A33228">
+        <nome>RUI FILIPE BARROS TAVARES</nome>
+        <dataNasc>2001-10-11</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A38146">
+        <nome>RUI FILIPE TORRES ALEXANDRE</nome>
+        <dataNasc>2002-6-22</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A38908">
+        <nome>RUI JORGE DE OLIVEIRA PEREIRA</nome>
+        <dataNasc>2004-1-17</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A35371">
+        <nome>RUI JORGE GUIMARAES MACHADO RODRIGUES VALENTE</nome>
+        <dataNasc>2001-5-14</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A24875">
+        <nome>RUI MANUEL COUTO DA SILVA</nome>
+        <dataNasc>1996-1-25</dataNasc>
+        <curso>CS16</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A37029">
+        <nome>RUI MANUEL DA SILVA PEREIRA NEIVA</nome>
+        <dataNasc>1998-11-20</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A33229">
+        <nome>RUI MANUEL SILVA OLIVEIRA</nome>
+        <dataNasc>2005-8-19</dataNasc>
+        <curso>CB8</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A38119">
+        <nome>RUI MIGUEL DA SILVA ABREU</nome>
+        <dataNasc>2003-12-24</dataNasc>
+        <curso>CB12</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Percussão</instrumento>
+    </aluno>
+    <aluno id="A24876">
+        <nome>RUI MIGUEL ESCUDEIRO DA COSTA AGUIAR</nome>
+        <dataNasc>1997-5-17</dataNasc>
+        <curso>CS17</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A29253">
+        <nome>RUI MIGUEL FERNANDES VARELA</nome>
+        <dataNasc>2003-4-15</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A25868">
+        <nome>RUI MIGUEL MORAIS LOPES</nome>
+        <dataNasc>2000-3-5</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A28735">
+        <nome>RUI MIGUEL NOVAIS CASTRO</nome>
+        <dataNasc>1996-7-25</dataNasc>
+        <curso>CS18</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A27673">
+        <nome>RUI MIGUEL PEREIRA OLIVEIRA</nome>
+        <dataNasc>2003-10-6</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35372">
+        <nome>RUI PEDRO ANDIAS DUARTE</nome>
+        <dataNasc>2001-2-3</dataNasc>
+        <curso>CB10</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Oboé</instrumento>
+    </aluno>
+    <aluno id="A33234">
+        <nome>SANDRA MARIA OLIVEIRA CARVALHO</nome>
+        <dataNasc>2002-8-1</dataNasc>
+        <curso>CB5</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A36765">
+        <nome>SANDRA MARIA TELES FEIO ALMEIDA FAZENDEIRO</nome>
+        <dataNasc>1997-11-18</dataNasc>
+        <curso>CS15</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38173">
+        <nome>SEBASTIAO MONTEIRO SIMOES</nome>
+        <dataNasc>2003-2-10</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38183">
+        <nome>SERGIO BRANCO AMORIM</nome>
+        <dataNasc>1999-12-26</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A33235">
+        <nome>SERGIO DE ALMEIDA PAIVA</nome>
+        <dataNasc>2001-11-16</dataNasc>
+        <curso>CB16</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Trompa</instrumento>
+    </aluno>
+    <aluno id="A39343">
+        <nome>SERGIO FELICIANO FERREIRA JACOME</nome>
+        <dataNasc>2002-4-11</dataNasc>
+        <curso>CB17</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trompete</instrumento>
+    </aluno>
+    <aluno id="A39410">
+        <nome>SERGIO FILIPE PEREIRA DA FELICIDADE</nome>
+        <dataNasc>1996-5-9</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="A35374">
+        <nome>SERGIO MANUEL PEREIRA BARREIRO</nome>
+        <dataNasc>2002-3-14</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A24885">
+        <nome>SERGIO MANUEL RUIVO CARDOSO</nome>
+        <dataNasc>2001-1-28</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A38177">
+        <nome>SERGIO NUNO CLARO GOMES</nome>
+        <dataNasc>1999-3-27</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A35375">
+        <nome>SERGIO RICARDO TEIXEIRA ANDIAS MIRANDA</nome>
+        <dataNasc>2002-10-9</dataNasc>
+        <curso>CB6</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Flauta</instrumento>
+    </aluno>
+    <aluno id="A38181">
+        <nome>SOFIA DA CONCEICAO ALVES MENDES</nome>
+        <dataNasc>2001-11-23</dataNasc>
+        <curso>CB21</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Viola de Arco</instrumento>
+    </aluno>
+    <aluno id="A33238">
+        <nome>SONIA ANDREA GARRIDO DE SA EIRAS</nome>
+        <dataNasc>2001-12-2</dataNasc>
+        <curso>CB18</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Tuba</instrumento>
+    </aluno>
+    <aluno id="A35376">
+        <nome>TELMA DE FATIMA PIRES DE SA</nome>
+        <dataNasc>2002-6-7</dataNasc>
+        <curso>CB3</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A38131">
+        <nome>TIAGO DANIEL CERQUEIRA BOTELHO DA SILVA</nome>
+        <dataNasc>1997-9-22</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A33240">
+        <nome>TIAGO JORGE GOMES DA SILVA ARAUJO</nome>
+        <dataNasc>2003-6-24</dataNasc>
+        <curso>CB15</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Trombone</instrumento>
+    </aluno>
+    <aluno id="A38144">
+        <nome>TIAGO LEANDRO DE CASTRO RIBEIRO</nome>
+        <dataNasc>1998-5-17</dataNasc>
+        <curso>CS13</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A38145">
+        <nome>TIAGO MIGUEL SOARES FERNANDES</nome>
+        <dataNasc>1996-2-15</dataNasc>
+        <curso>CS19</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A29254">
+        <nome>TITO JOSE FERREIRA DE SOUSA LOPES</nome>
+        <dataNasc>1997-5-2</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A35418">
+        <nome>VALTER MIGUEL OLIVEIRA VILAR</nome>
+        <dataNasc>1996-11-18</dataNasc>
+        <curso>CS7</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A38127">
+        <nome>VANESSA ALZIRA ABRUNHOSA CARNEIRO DE CASTRO FIDALGO</nome>
+        <dataNasc>1999-6-19</dataNasc>
+        <curso>CS4</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Eufónio</instrumento>
+    </aluno>
+    <aluno id="A33282">
+        <nome>VIRGILIO ABRANTES VINHA</nome>
+        <dataNasc>1998-11-2</dataNasc>
+        <curso>CS3</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Corne Inglês</instrumento>
+    </aluno>
+    <aluno id="A30266">
+        <nome>VITOR CARLOS TEIXEIRA PIMENTEL</nome>
+        <dataNasc>2004-5-26</dataNasc>
+        <curso>CB9</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="A35377">
+        <nome>VITOR DA COSTA PINHEIRO</nome>
+        <dataNasc>2001-6-3</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A38192">
+        <nome>VITOR HUGO DA SILVA NOGUEIRA</nome>
+        <dataNasc>1997-3-20</dataNasc>
+        <curso>CS5</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Fagote</instrumento>
+    </aluno>
+    <aluno id="A35378">
+        <nome>VITOR HUGO PEREIRA DA SILVA MOREIRA</nome>
+        <dataNasc>2004-4-8</dataNasc>
+        <curso>CB11</curso>
+        <anoCurso>3</anoCurso>
+        <instrumento>Orgão</instrumento>
+    </aluno>
+    <aluno id="A38182">
+        <nome>VITOR MANUEL ALVES DA ROCHA</nome>
+        <dataNasc>1998-11-28</dataNasc>
+        <curso>CS20</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="A36773">
+        <nome>VITOR MANUEL CARVALHO RODRIGUES</nome>
+        <dataNasc>2001-2-25</dataNasc>
+        <curso>CB13</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Piano</instrumento>
+    </aluno>
+    <aluno id="A39671">
+        <nome>VITOR MANUEL PINTO LOPES</nome>
+        <dataNasc>2000-5-19</dataNasc>
+        <curso>CS8</curso>
+        <anoCurso>8</anoCurso>
+        <instrumento>Guitarra</instrumento>
+    </aluno>
+    <aluno id="A27648">
+        <nome>NUNO RAMOS MATOS</nome>
+        <dataNasc>2001-11-3</dataNasc>
+        <curso>CB7</curso>
+        <anoCurso>1</anoCurso>
+        <instrumento>Fliscorne</instrumento>
+    </aluno>
+    <aluno id="A27620">
+        <nome>JOAO ANDRE FARIA LOPES</nome>
+        <dataNasc>2001-2-10</dataNasc>
+        <curso>CB19</curso>
+        <anoCurso>4</anoCurso>
+        <instrumento>Violoncelo</instrumento>
+    </aluno>
+    <aluno id="A33199">
+        <nome>NUNO FILIPE MENDES PEREIRA</nome>
+        <dataNasc>2004-1-14</dataNasc>
+        <curso>CB20</curso>
+        <anoCurso>5</anoCurso>
+        <instrumento>Violino</instrumento>
+    </aluno>
+    <aluno id="AE-939">
+        <nome>Jorge Gonzalez y Hurtado de Mendoza</nome>
+        <dataNasc>1999-10-10</dataNasc>
+        <curso>CS2</curso>
+        <anoCurso>6</anoCurso>
+        <instrumento>Contrabaixo</instrumento>
+    </aluno>
+    <aluno id="AE-922">
+        <nome>Brais Hernandez Facal</nome>
+        <dataNasc>1997-9-1</dataNasc>
+        <curso>CS9</curso>
+        <anoCurso>7</anoCurso>
+        <instrumento>Harpa</instrumento>
+    </aluno>
+    <aluno id="AE-907">
+        <nome>Oscar Lopez Garcia</nome>
+        <dataNasc>2004-12-9</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+    <aluno id="A1">
+        <nome>Eusébio da Silva Ferreira</nome>
+        <dataNasc>2001-9-13</dataNasc>
+        <curso>CB1</curso>
+        <anoCurso>2</anoCurso>
+        <instrumento>Clarinete</instrumento>
+    </aluno>
+</alunos>
