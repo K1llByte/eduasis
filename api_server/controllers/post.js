@@ -44,13 +44,14 @@ module.exports.list_all = (options) => {
 // Get a post by post_id
 module.exports.get = (pid) => {
     return Post
-        .findOne({post_id:pid})
+        .findOne({post_id:pid},{_id:0,"comments._id":0})
         .exec();
 }
 
 // Inserts a new post
 module.exports.insert = (post_data) => {
-    post_data.post_id = mongoose.Types.ObjectId().toString('base64');
+    post_data.post_id = mongoose.Types.ObjectId().toString('hex');
+    post_data._id = mongoose.Types.ObjectId(post_data.post_id);
     let new_post = new Post(post_data);
     return new_post.save();
 }

@@ -85,7 +85,7 @@ router.post('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =
 
     Resource.get(resource_id)
     .then(ctx_resource => {
-        console.log("ctx_resource:",ctx_resource);
+        //console.log("ctx_resource:",ctx_resource);
         if(ctx_resource != null)
         {
             Post.insert({
@@ -99,15 +99,21 @@ router.post('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =
                 res.json({ "success": "Post created successfully" });
             })
             .catch(err => {
+                console.log(err.message);
                 res.status(400).json({'error': err.message});
             });
         }
         else
         {
+            console.log("AAAAAAA1");
             res.status(400).json({'error': "Resource doesn't exist"});
         }
     })
     .catch(err => {
+        console.log("AAAAAAA2");
+        console.log("error",err.message);
+        console.log("resource_id",resource_id);
+        console.log("content",content);
         res.status(400).json({'error': err.message});
     });
 });
