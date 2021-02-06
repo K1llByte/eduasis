@@ -1,7 +1,12 @@
 extends navbar
 
 block title
-  title= `${resource.title}`
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  title Profile
+  style.
+    .checked {
+    color: orange;
+    }
 
 block content
   .doublebox-page-content
@@ -9,22 +14,59 @@ block content
       .doublebox-page-leftBox-outerBox
         .doublebox-page-leftBox-innerbox
           .something(style='justify-content:center; text-align: center;')
-            h2= `${resource.title}`
-            h3= `${resource.author}`
-            p= `Rate: ${resource.rate}`
-            p= `DataTime: ${resource.create_date}`
-        a.doublebox-page-leftBox-button(href=`http://locahost:7700/storage/resources/${resource.resource_id}.zip`)
+            h2 Resource title
+            h3 Killbyte
+            p DataTime: datime
+            div(style='font-size: large;')
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star
+              span(style='margin-left: 20px;')  4.2
+        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
           .doublebox-page-leftBox-button-inner
             | Download
+        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+          .doublebox-page-leftBox-button-inner
+            | Post about this
     .doublebox-page-rightBox
       .doublebox-page-rightBox-innerbox(style='display: block;')
-        div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
-          h1= `${resource.title}`
-          h3= `${resource.descripton}`
-          h1 Files
-          h3
-            ul
-              li File 1
-              li File 2
-              li File 3
-        // <button><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+        .doublebox-page-rightBox-innerbox-title
+          button.tablinks(onclick="opentab(event, 'Info')") INFO
+          button.tablinks(onclick="opentab(event, 'Posts')") POSTS
+        #Info.tabcontent.doublebox-page-rightBox-innerbox-content
+          div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
+            h1 Resource Title
+            h3 Resourd Id: asdjnosan
+            h4 something something blablabla
+            h1 Files
+            h3
+              ul
+                li File 1
+                li File 2
+                li File 3
+        #Posts.tabcontent.doublebox-page-rightBox-innerbox-content(style='display: none;')
+          div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
+            .posts-about-resource
+              img.w3-left.w3-circle.w3-margin-right(src='../images/user.png' alt='Avatar' style='width:60px; height: 60px;')
+              p(style='margin-left: 20px')
+                | Description xxxyyy blablabla aaaaaaaaaaa aaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaa
+  script.
+    function opentab(evt, name) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
