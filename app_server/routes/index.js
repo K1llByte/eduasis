@@ -198,6 +198,9 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
+        // console.log("req.body",req.body);
+        // console.log("req.files",req.files);
+        
         // The _p at the end indicates that 
         // this variable is a promise 
         let user_data_p = axios.put(
@@ -374,9 +377,9 @@ router.get('/resources', check_auth, (req, res) => {
     
     if(req.query.type_id === '0')
     {
-          delete req.query.type_id;
+        delete req.query.type_id;
     }
-
+    // console.log("PAGE NUM",req.query)
     axios.get(`${API_URL}/resource_types/`,{
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
@@ -390,8 +393,13 @@ router.get('/resources', check_auth, (req, res) => {
                 "active": "resources", 
                 'user':req.user,
                 "types":resource_types.data,
-                'time_difference':time_difference,
-                "resources":resources.data});
+                "resources":resources.data,
+                "time_difference":time_difference,
+                // "req_query": req.query,
+                "page": (req.query.page_num == undefined) ? 1 :req.query.page_num,
+                "search_term": (req.query.search_term == undefined) ? '' :req.query.search_term,
+                "type_id": (req.query.type_id == undefined) ? 0 :req.query.type_id
+            });
         })
         .catch(err => res.render('error', {err: err}))
     })
@@ -408,18 +416,20 @@ router.get('/resources', check_auth, (req, res) => {
 //   res.render('posts');
 // });
 
-
 router.get('/resources/:resource_id', check_auth, (req, res) => {
-
-    axios.get(`${API_URL}/resources/${req.params.resource_id}`,{
-        headers: { 'Authorization': 'Bearer ' + req.user.token }
-    })
+    axios.get(`${API_URL}/resources/${req.params.resource_id}`,auth_header(req.user.token))
     .then(resource => {
-        
-        res.render('resource',{
-            "resource":resource.data, 
+        axios.get(`${API_URL}/resources/${req.params.resource_id}/posts`,auth_header(req.user.token))
+        .then(posts => {
+            res.render('resource', {
+            'resource':resource.data, 
+            'user':req.user,
             'time_difference': time_difference,
-            'user':req.user});
+            'posts':posts.data
+        })})
+        .catch(err => {
+            res.render('error', {err: err})
+        })
     })
     .catch(err => {
         res.status(err.status).render('error', {err: err});
@@ -427,7 +437,16 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
 });
 
 
-router.get('/posts/:post_id', check_auth, (req, res) => {
+//POST rate resource
+router.post('/resources/:resource_id/rate', check_auth, (req, res) => {
+    // Data retrieve
+    console.log("VALUE",req.body);
+
+    axios.put(`${API_URL}/resources/${req.params.resource_id}/rate`, {value: req.body.value}, auth_header(req.user.token))
+    .then(res.redirect('/resources/'+req.params.resource_id))
+    .catch(err => res.render('error', {err:err}));
+
+
 
     axios.get(`${API_URL}/posts/${req.params.post_id}`,
         auth_header(req.user.token))

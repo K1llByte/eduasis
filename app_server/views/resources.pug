@@ -23,3 +23,15 @@ block content
               img.profile-picture(src=`http://localhost:7700/api/users/${r.author}/avatar`, style='height: 60px; width: 60px;')
             .profile-name(style='font-size: 20px;')= r.author
           a.resource1(href=`/resources/${r.resource_id}`,style='font-size: 30px;')= r.title
+    
+    -var p = page-1
+    -var n = p+2
+    span
+      if p < 1
+        a.pagination(class="fa fa-chevron-left" style="margin-right: 20px")
+      else 
+        a.setinha(class="fa fa-chevron-left" style="margin-right: 20px" href='/resources?page_num='+p+'&type_id='+type_id+'&search_term='+search_term)
+      if n > 20
+        a.pagination(class = "fa fa-chevron-right" style="margin-left: 20px")
+      else 
+        a.setinha(class = "fa fa-chevron-right" style="margin-left: 20px" href='/resources?page_num='+n+'&type_id='+type_id+'&search_term='+search_term)

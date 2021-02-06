@@ -28,10 +28,11 @@ html
                 else 
                     a.links(href='/resources') Resources
 
-                if link == "new_resource"
-                    a.active(href='/new_resource') New Resource
-                else
-                    a.links(href='/new_resource') New Resource
+                if user.perms >=2 || user.permissions >= 2
+                    if link == "new_resource"
+                        a.active(href='/new_resource') New Resource
+                    else
+                        a.links(href='/new_resource') New Resource
 
                 if link == "new_post"
                     a.active(href='/new_post') New Post
