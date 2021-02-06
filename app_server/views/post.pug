@@ -22,19 +22,22 @@ block content
           img(src='/static/images/Files_archive.png' width='100' height='100' style='float: right;')
           
           
-      p(style='font-size: xx-large;')= `${post.content}`
+      p(style='font-size: xx-large; margin-left: 50px; margin-right: 50px')= `${post.content}`
     button.w3-button.w3-block.w3-dark-grey(onclick='addComment()')
       i.fa.fa-comment(aria-hidden='true')
       |  Comment
     .w3-container.comments
       span#add-comment(style='display: none;')
-        .add-comments
-          img.w3-left.profile-picture-comments.w3-margin-right(src=`http://localhost:7700/api/users/${user.username}/avatar` alt='Avatar')
-          textarea.add-comment(type='text' placeholder='Add a comment')
+        form(method="post" action=`/posts/${post.post_id}/comments`)
+          .add-comments
+            img.w3-left.profile-picture-comments.w3-margin-right(src=`http://localhost:7700/api/users/${user.username}/avatar` alt='Avatar')
+            textarea.add-comment#content(type='text' placeholder='Add a comment' name="message")
+            button(class="fa fa-paper-plane" style="margin-left: 10px")
       each c in post.comments 
         .comment
           a(href=`/users/${c.author}`)
             img.w3-left.profile-picture-comments.w3-margin-right(src=`http://localhost:7700/api/users/${c.author}/avatar` alt='Avatar' width='60' height='60' )
+            .comment-author= `${c.author}`
           p= `${c.message}`
   script.
     function addComment() {
