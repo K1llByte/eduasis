@@ -14,6 +14,7 @@
 **GET /users**<br/>
 **GET /users/:username**<br/>
 **PUT /users/:username**<br/>
+**GET /users/:username/avatar**<br/>
 **POST /users/:username/avatar**<br/>
 
 <ins>Posts</ins>
@@ -28,8 +29,9 @@
 **GET /resources**<br/>
 **POST /resources**<br/>
 **GET /resources/:resource_id**<br/>
-**GET /resources/:resource_id/rate**<br/>
-**GET /resource_types/**<br/>
+**PUT /resources/:resource_id/rate**<br/>
+**GET /resource_types**<br/>
+**POST /resource_types**<br/>
 **GET /resource_types/:type_id**<br/>
 
 ___

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const jwt = require('jsonwebtoken');
+const fileUpload = require('express-fileupload');
 //const methodOverride = require('method-override');
 
 var { v4: uuidv4 } = require('uuid');
@@ -89,6 +90,9 @@ app.use(function(req, res, next){
   // console.log('Session: ', JSON.stringify(req.session))
   next()
 })
+
+app.use(fileUpload( {createParentPath:true} ));
+
 
 // Routes
 app.use('/', index_router);

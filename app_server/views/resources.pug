@@ -8,8 +8,9 @@ block content
     .resources-box
       form.search-box
         .search
-          input.search-text(type='text' placeholder=' Search...')
+          input.search-text(type='text', name='search_term', placeholder=' Search...')
         select#type_id.search-type(name='type_id')
+          option(value=0) All
           each t in types
             option(value=t.type_id)= `${t.name}`
         button.fa.fa-search(style='padding-right: 20px;')

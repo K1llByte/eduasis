@@ -4,6 +4,8 @@ const router = express.Router();
 const passport = require('passport');
 const { post } = require('../app');
 const jwt = require('jsonwebtoken');
+const FormData = require('form-data');
+const multer = require('multer');
 
 API_URL = 'http://localhost:7700/api'
 
@@ -30,6 +32,26 @@ function auth_header(token)
         headers: { 'Authorization': 'Bearer ' + token }
     }
 }
+
+// ========= TEMPORARY STORAGE ========= //
+
+const storage = multer.diskStorage({
+    destination : (req, file, next) => {
+        console.log("PASSOU POR AQUI");
+        next(null,'tmp/');
+    },
+    filename : (req, file, next) => {
+        console.log("PASSOU POR ACULA");
+        req.file = file;
+        next(null,`file.zip`);
+    }
+});
+
+const upload = multer({ 
+    "storage": storage
+});
+
+// ===================================== //
 
 // ---------------------------------------------------------------
 //----------- ROTAS NAO NECESSITAM AUTENTICAÇAO ------------------
@@ -130,7 +152,7 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
-        console.log(req.body+"-------------------------------------");
+        console.log("req.body",req.body);
         // let header_body = {
         //     headers: { 'Authorization': 'Bearer ' + token },
         //     body: {
@@ -144,10 +166,7 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
         //     auth_header(req.user.token));
 
         // let user = (await user_p).data;
-        res.render('profile_edit',{
-            'user': req.user,
-            'active': 'profile'
-        });
+        res.redirect(`/users/${req.user.username}`);
     }
     else
     {
@@ -272,13 +291,17 @@ router.get('/new_resource', check_auth, (req, res) => {
     .catch(err => res.render('error', {err: err}))
 });
 
+
 //POST new resource
-router.post('/new_resource', check_auth, (req, res) => {
-  // Data retrieve
-  console.log(JSON.stringify(req.body))
-  axios.post(`${API_URL}/resources`, JSON.stringify(req.body))
-    .then(res.redirect('/eduasis'))
-    .catch(err => res.render('error', {err:err}));
+router.post('/new_resource', check_auth, upload.single('arquive'), (req, res) => { //
+    // Data retrieve
+    console.log("req.file",req.file);
+    console.log("req.arquive",req.arquive);
+
+    res.redirect('/eduasis');
+    //axios.post(`${API_URL}/resources`, JSON.stringify(req.body))
+    //  .then(res.redirect('/eduasis'))
+    //  .catch(err => res.render('error', {err:err}));
 });
 
 router.get('/new_post', check_auth, (req, res) => {
@@ -305,19 +328,28 @@ router.post('/new_post', check_auth, (req, res) => {
 //----------- ROTAS RESORCES/POSTS --------------------
 
 router.get('/resources', check_auth, (req, res) => {
-  // Data retrieve
-  axios.get(`${API_URL}/resource_types/`,{
-      headers: { 'Authorization': 'Bearer ' + req.user.token }
-  })
-  .then(resource_types=>{
-    axios.get(`${API_URL}/resources/`,{
-      headers: { 'Authorization': 'Bearer ' + req.user.token }
+    
+    if(req.query.type_id === '0')
+    {
+          delete req.query.type_id;
+    }
+
+    axios.get(`${API_URL}/resource_types/`,{
+        headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
-    .then(resources=>{
-        res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
-  })
-  .catch(err => res.render('error', {err: err}))
-  });
+    .then(resource_types => {
+        axios.get(`${API_URL}/resources/`,{
+            headers: { 'Authorization': 'Bearer ' + req.user.token },
+            params: req.query
+        })
+        .then(resources=>{
+            res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
+        })
+        .catch(err => res.render('error', {err: err}))
+    })
+    .catch(error => {
+        res.render("error",{"err":error});
+    });
 });
 
 

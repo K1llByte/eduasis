@@ -114,10 +114,10 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
     let type_id = null;
     let author = null;
 
-    if(req.query.search != undefined)
+    if(req.query.search_term != undefined)
     {
         // Escape all regex operators
-        search_term = req.query.search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        search_term = req.query.search_term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
     if(req.query.type_id != undefined)
@@ -166,6 +166,7 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
         "page_limit" : page_limit
     };
 
+    console.log("options",options);
     Resource.list_all(options) 
         .then(data => {
             res.json(data);
@@ -298,6 +299,31 @@ router.get('/api/resource_types/:type_id', auth.authenticate(User.CPermissions.a
             res.json('error', err);
         });
 });
+
+
+router.post('/api/resource_types', auth.authenticate(User.CPermissions.apc), async (req, res) => {
+
+    let name = req.body.name;
+    if(name == undefined)
+    {
+        res.status(400).json({'error': 'Invalid name'});
+        return;
+    }
+
+    let type_id = await ResourceType.next_id();
+    ResourceType.insert({
+        "type_id": type_id,
+        "name": name,
+    })
+    .then(data => {
+        res.json({"success":"Resource type added successfully"});
+    })
+    .catch(err => {
+        res.json({'error': err});
+    });
+});
+
+
 
 
 module.exports = router;
