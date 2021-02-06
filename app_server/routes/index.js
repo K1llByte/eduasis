@@ -131,10 +131,10 @@ router.get('/eduasis', check_auth, async (req,res) => {
 
     let resources = resources_p.data;
     let posts = posts_p.data;
-    
     res.render('home_page',{
         'posts': posts,
         'resources': resources,
+        'user':req.user
     });
 });
 
@@ -202,7 +202,6 @@ router.post('/users/:username/edit', check_auth, async (req, res) => {
     }
 });
 
-
 router.get('/users/@me', check_auth, async (req, res) => {
     res.redirect(`/users/${req.user.username}`);
 });
@@ -251,61 +250,6 @@ router.get('/users/:username', check_auth, async (req, res) => {
 });
 
 
-//router.get('/profile/:username', check_auth, (req, res) => {
-//  // Data retrieve
-//  // utilizador, posts_do_utilizador, recursos_do_utilizador
-//  axios.get(`${API_URL}/users/`+req.params.username,{
-//    headers: { 'Authorization': 'Bearer ' + req.user.token }
-//  })
-//    .then(user=>{
-//      axios.get(`${API_URL}/posts/`,{
-//        headers: { 'Authorization': 'Bearer ' + req.user.token }
-//      })
-//        .then(posts=>{
-//          axios.get(`${API_URL}/resources/`,{
-//            headers: { 'Authorization': 'Bearer ' + req.user.token }
-//          })
-//            .then(resources=>{
-//              res.render('profile_user',{"active": "profile", 'user':user.data, 'posts':posts.data, 'resources':resources.data})
-//            })
-//            .catch(erro => {
-//              res.render('error',{err: erro})
-//            })
-//        })
-//        .catch(erro => {
-//          res.render('error',{err: erro})
-//        })
-//    })
-//    .catch(erro => {
-//      res.render('error',{err: erro})
-//    })
-//});
-
-
-
-
-
-// router.get('/profile_edit/:username', check_auth, (req, res) => {
-//   // Data retrieve
-//   axios.get(`${API_URL}/users/`+req.params.username,{
-//     headers: { 'Authorization': 'Bearer ' + req.user.token }
-//   })
-//     .then(user=>
-//               res.render('profile_edit',{"active": "profile", 'user':user.data}))
-//     .catch(erro => {
-//       res.render('error',{err: erro})
-//     })
-// });
-
-// //POST edit avatar
-// router.post('/profile_edit/:username', check_auth, (req, res) => {
-//   // Data retrieve
-//   axios.put(`${API_URL}/users/`+req.params.username, JSON.stringify(req.body))
-//     .then(res.redirect('/profile_edit/'+req.params.username))
-//     .catch(err => res.render('error', {err:err}));
-// });
-
-
 //----------- ROTAS NEW RESOURCE/POST --------------------
 router.get('/new_resource', check_auth, (req, res) => {
 
@@ -315,7 +259,11 @@ router.get('/new_resource', check_auth, (req, res) => {
     })
     .then(resource_types=>{
         // console.log(resources_types.data)
-        res.render('new_resource',{"active": "new_resource", "types":resource_types.data});
+        res.render('new_resource',{
+            "active": "new_resource", 
+            'user':req.user,
+            "types":resource_types.data
+        });
     })
     .catch(err => res.render('error', {err: err}))
 });
@@ -357,7 +305,10 @@ router.get('/new_post', check_auth, (req, res) => {
     }
     else
     {
-        res.render('new_post',{"active": "new_post", "resource_id": req.query.resource_id});
+        res.render('new_post',{
+            "active": "new_post", 
+            'user':req.user, 
+            "resource_id": req.query.resource_id});
     }
 });
 
@@ -391,7 +342,11 @@ router.get('/resources', check_auth, (req, res) => {
             params: req.query
         })
         .then(resources=>{
-            res.render('resources',{"active": "resources", "types":resource_types.data, "resources":resources.data});
+            res.render('resources',{
+                "active": "resources", 
+                'user':req.user,
+                "types":resource_types.data,
+                "resources":resources.data});
         })
         .catch(err => res.render('error', {err: err}))
     })
@@ -419,7 +374,7 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
         headers: { 'Authorization': 'Bearer ' + req.user.token }
     })
     .then(resource => {
-        res.render('resource',{"resource":resource.data});
+        res.render('resource',{"resource":resource.data, 'user':req.user});
     })
     .catch(err => {
         res.render('error', {err: err})
@@ -430,7 +385,7 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
 router.get('/post/:id', check_auth, (req, res) => {
   // Data retrieve
   //post_id
-  res.render('post');
+  res.render('post', {'user':req.user});
 });
 
 //----------- ROTAS MANAGER --------------------
@@ -438,13 +393,13 @@ router.get('/post/:id', check_auth, (req, res) => {
 router.get('/managment', check_auth, (req, res) => {
   // Data retrieve
   //post_id
-  res.render('managment');
+  res.render('managment', {'user':req.user});
 });
 
 router.post('/managment', check_auth, (req, res) => {
   // Data retrieve
   //post_id
-  res.render('managment');
+  res.render('managment', {'user':req.user});
 });
 
 module.exports = router;

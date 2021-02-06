@@ -526,6 +526,10 @@ display: none;
   border-right: solid 2px rgb(172, 172, 172);
 }
 
+.profile-topbar:hover{
+  background-color: #eeeeee;
+}
+
 
 .profile-name{
   padding: 10px;
@@ -614,6 +618,10 @@ form input[type="file"] {
   cursor: pointer;
 }
 
+.resource1:hover{
+  background-color: #eeeeee;
+}
+
 .text-box {
   padding: 15px;
 }
@@ -635,6 +643,11 @@ form input[type="file"] {
   flex: 1;
   /* alinha as coisas à esquerda dentro do container em flex */
   justify-content: flex-end;
+}
+
+.bottom-buttons a{
+  color:#000;
+  margin-right: 10px;
 }
 
 .bottom-button {
