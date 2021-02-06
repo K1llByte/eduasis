@@ -18,8 +18,8 @@ block content
     .resources-box
       each r in resources
         .resource-box
-          .profile-topbar(style='height: 60px;')
-            a(href=`/users/${r.author}`)
+          a(href=`/users/${r.author}`).profile-topbar(style='height: 60px;')
+            div
               img.profile-picture(src=`http://localhost:7700/api/users/${r.author}/avatar`, style='height: 60px; width: 60px;')
             .profile-name(style='font-size: 20px;')= r.author
           a.resource1(href=`/resources/${r.resource_id}`,style='font-size: 30px;')= r.title

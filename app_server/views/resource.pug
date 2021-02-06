@@ -17,17 +17,33 @@ block content
             h2= `${resource.title}`
             h3= `${resource.author}`
             p DataTime: #{resource.create_date}
+            -var star = resource.rate
             div(style='font-size: large;')
-              span.fa.fa-star.checked
-              span.fa.fa-star.checked
-              span.fa.fa-star.checked
-              span.fa.fa-star.checked
-              span.fa.fa-star
+              if star>=1
+                span.fa.fa-star.checked
+              else 
+                span.fa.fa-star
+              if star>=2
+                span.fa.fa-star.checked
+              else 
+                span.fa.fa-star
+              if star>=3
+                span.fa.fa-star.checked
+              else 
+                span.fa.fa-star
+              if star>=4
+                span.fa.fa-star.checked
+              else 
+                span.fa.fa-star
+              if star>=5
+                span.fa.fa-star.checked
+              else 
+                span.fa.fa-star
               span(style='margin-left: 20px;') #{resource.rate}
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        a.doublebox-page-leftBox-button(href='/download')
           .doublebox-page-leftBox-button-inner
             | Download
-        a.doublebox-page-leftBox-button(href='/html/profile_edit.html')
+        a.doublebox-page-leftBox-button(href='/new_post/'+resource.resource_id)
           .doublebox-page-leftBox-button-inner
             | Post about this
     .doublebox-page-rightBox

@@ -17,6 +17,12 @@ html
             a.links.logo(href='/eduasis')
                 img(src='/static/images/eduasis.png' style='height: 100%;')
             .topnav-right
+                if user.perms == 128 || user.permissions == 128
+                    if link == "managment"
+                        a.active(href='/managment') Managment
+                    else 
+                        a.links(href='/managment') Managment
+
                 if link == "resources"
                     a.active(href='/resources') Resources
                 else 
@@ -33,7 +39,7 @@ html
                     a.links(href='/new_post') New Post
 
                 if link =="profile"
-                    a.active(href='/users/@me') Profile
+                    a.active(href='/users/@me') #{user.username}
                 else
-                    a.links(href='/users/@me') Profile
+                    a.links(href='/users/@me') #{user.username}
         block content
