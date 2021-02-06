@@ -38,7 +38,7 @@ function auth_header(token)
 const storage = multer.diskStorage({
     destination : (req, file, next) => {
         console.log("PASSOU POR AQUI");
-        next(null,'tmp/');
+        next(null,'tmp');
     },
     filename : (req, file, next) => {
         console.log("PASSOU POR ACULA");
@@ -152,11 +152,7 @@ router.get('/users/:username/edit', check_auth, async (req, res) => {
 router.post('/users/:username/edit', check_auth, async (req, res) => {
     if(req.params.username === req.user.username)
     {
-<<<<<<< HEAD
         console.log("req.body",req.body);
-=======
-        console.log(req.body);
->>>>>>> fde6cd8b6e1e58d5298e1e12d384091f8c6aaba6
         // let header_body = {
         //     headers: { 'Authorization': 'Bearer ' + token },
         //     body: {
