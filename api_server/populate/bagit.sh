@@ -24,5 +24,9 @@ for fullfile in resources/*; do
 
     # Zip bag folder
     mkdir -p "zip_bags/"
-    zip "zip_bags/$filename.zip" "bags/$filename/"
+    cd bags/
+    zip -r "../zip_bags/$filename.zip" "$filename/"
+    cd ..
 done
+
+rm -rf bags/

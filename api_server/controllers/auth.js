@@ -2,7 +2,8 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 
-const SECRET_KEY = 'DAW2020_EDUASIS';
+// This should be configured and hidden
+const SECRET_KEY = 'sIu92Bg136n3fr1ja0GbZMpWxBfOgH7T3NqmBqF7sL817oBWFAe2LezSnwj5WUMMFdSuTqltj5TqjlNF2k3Eny1GRIP7WXXTNmme';
 
 
 module.exports.fetch_token = (req) =>

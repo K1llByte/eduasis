@@ -32,6 +32,7 @@
 **GET /resources/:resource_id**<br/>
 **POST /resources**<br/>
 **DELETE /resources/:resource_id**<br/>
+**GET/resources/:resource_id/download**<br/>
 **GET /resources/:resource_id/rate**<br/>
 **PUT /resources/:resource_id/rate**<br/>
 **GET /resources/:resource_id/posts**<br/>

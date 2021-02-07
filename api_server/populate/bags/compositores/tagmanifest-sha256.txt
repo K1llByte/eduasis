@@ -1,3 +1,0 @@
-e91f941be5973ff71f1dccbdd1a32d598881893a7f21be516aca743da38b1689 bagit.txt
-4ace54ac1b721e5d31ffb1ce30e424d706dce271b7bb6c7796f1e6f4d76b826a manifest-sha256.txt
-5e5e3bb8e7dbeee9143169bcc5c89d6606d55d34b7a3b2db182ccd5b6f08cac6 bag-info.txt

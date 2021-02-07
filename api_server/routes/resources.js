@@ -5,8 +5,10 @@ const Resource = require('../controllers/resource');
 const Post = require('../controllers/post');
 const ResourceType = require('../controllers/resource_type');
 const multer = require('multer');
+const extract = require('extract-zip');
 const AdmZip = require('adm-zip');
 const fs = require('fs');
+const lineReader = require('line-reader');
 
 // ================================== //
 
@@ -16,83 +18,85 @@ const router = express.Router();
 
 const resource_storage = multer.diskStorage({
     destination : (req, file, next) => {
-        console.log("AQUI 1");
-        next(null,'storage/resources/');
+        req.dest_dir = `storage/resources/${req.resource_id}/`;
+        if (!fs.existsSync(req.dest_dir))
+        {
+            fs.mkdirSync(req.dest_dir);
+        }
+        next(null,req.dest_dir);
     },
     filename : (req, file, next) => {
-        console.log("AQUI 2");
+        req.originalname = file.originalname;
         const tmp = file.originalname.split('.');
         const ext = tmp[tmp.length-1];
-        req.resource_id = Resource.gen_id();
         req.new_filename = `${req.resource_id}.${ext}`;
-        next(null,req.new_filename);
+        next(null, req.new_filename);
     }
 });
 
 
-const data_process_filter = async (req) => {
-    console.log(req.body.type_id)
-    const type_id = new Number(req.body.type_id);
-    const title = req.body.title;
-    const description = req.body.description;
-    const visibility = req.body.visibility;
-    console.log("IM IN");
-    try {
-        console.log("req.body.type_id",req.body.type_id);
-        console.log("type_id",type_id);
-        let type = await ResourceType.get(type_id);
-        if(type == null) 
-        {
-            req.error = 'Invalid type_id';
-            return;
-        }
-    }
-    catch { // TODO: Not sure about this, check later
-        req.error = 'Invalid type_id';
-        return;
-    }
+// const data_process_filter = async (req) => {
+//     console.log(req.body.type_id)
+//     const type_id = new Number(req.body.type_id);
+//     const title = req.body.title;
+//     const description = req.body.description;
+//     const visibility = req.body.visibility;
+//     console.log("IM IN");
+//     try {
+//         console.log("req.body.type_id",req.body.type_id);
+//         console.log("type_id",type_id);
+//         let type = await ResourceType.get(type_id);
+//         if(type == null) 
+//         {
+//             req.error = 'Invalid type_id';
+//             return;
+//         }
+//     }
+//     catch { // TODO: Not sure about this, check later
+//         req.error = 'Invalid type_id';
+//         return;
+//     }
     
-    if(title == undefined)
-    {
-        req.error = 'Invalid title';
-        return;
-    }
+//     if(title == undefined)
+//     {
+//         req.error = 'Invalid title';
+//         return;
+//     }
 
-    if(description == undefined)
-    {
-        req.error = 'Invalid description';
-        return;
-    }
+//     if(description == undefined)
+//     {
+//         req.error = 'Invalid description';
+//         return;
+//     }
 
-    if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
-    {
-        req.error = 'Invalid visibility';
-        return;
-    }
+//     if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
+//     {
+//         req.error = 'Invalid visibility';
+//         return;
+//     }
 
-    req.resource_id = Resource.gen_id();
-    const new_resource = {
-        "type_id" : type_id,
-        "author" : req.user.username,
-        "title" : title,
-        "description" : description,
-        "filename" : `${req.resource_id}.zip`,
-        "created_date" : Date.now(),
-        "visibility" : visibility,
-        "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
-    };
+//     req.resource_id = Resource.gen_id();
+//     const new_resource = {
+//         "type_id" : type_id,
+//         "author" : req.user.username,
+//         "title" : title,
+//         "description" : description,
+//         "filename" : `${req.resource_id}.zip`,
+//         "created_date" : Date.now(),
+//         "visibility" : visibility,
+//         "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
+//     };
         
-    try {
-        await Resource.insert(new_resource);
-    }
-    catch(err) {
-        req.error = err.message;
-    }
-};
+//     try {
+//         await Resource.insert(new_resource);
+//     }
+//     catch(err) {
+//         req.error = err.message;
+//     }
+// };
 
 const file_type_filter = async (req,file,next) => {
 
-    console.log("IM IN FILE TYPE FILTER");
     req.valid = (file.mimetype === 'application/zip');
     //if(req.valid)
     //{
@@ -103,6 +107,9 @@ const file_type_filter = async (req,file,next) => {
     //{
     //    req.error = 'Invalid file type (zip with BagIt format)!';
     //}
+
+    if(req.valid)
+        req.resource_id = Resource.gen_id();
 
     next(null,req.valid);
 };
@@ -176,7 +183,6 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
         "sorted" : -1
     };
 
-    console.log("options",options);
     Resource.list_all(options) 
         .then(data => {
             res.json(data);
@@ -190,40 +196,40 @@ router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res
 router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     Resource.get(req.params.resource_id)
-        .then(data => {
+        .then(async (data) => {
             data = data[0];
             if(data.visibility === 0)
             {
-                res.json(data);
+                var files = [];
+                lineReader.eachLine(`storage/resources/${req.params.resource_id}/${data.filename}/manifest-sha256.txt`, (line, last, cb) => {
+                    
+                    files.push(line.split('  ')[1] );
+                    
+                    if(last)
+                    {
+                        data.files = files;
+                        res.json(data);
+                    }
+                });
+                
+                if(files == [])
+                {
+                    data.files = files;
+                    res.json(data);
+                }
             }
             else
             {
-                res.status(404).json({"error" : "Not Found"})
+                res.status(404).json({"error" : "Resource not found"})
             }
         })
         .catch(err => { 
-            res.json('error', err.message);
+            res.json({'error': err.message});
         });
 });
 
 
 router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_upload.single('resource_data'), (req, res) => {
-
-    console.log("req.body",req.body);
-    console.log("req.body.type_id",req.body.type_id);
-    console.log('valid',req.valid);
-    console.log('files',req.files);
-    console.log('file',req.file);
-    
-    //if(req.valid)
-    //{
-    //    res.json({"success":"Resource created successfully"});
-    //}
-    //else 
-    //{
-    //    console.log(req.error);
-    //    res.status(400).json({"error":req.error});
-    //}
 
     if(req.valid)
     {
@@ -237,7 +243,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(title == undefined)
             {
                 console.log("Invalid title");
-                try { fs.unlinkSync(req.new_filename); }
+                try { fs.rmdirSync(req.dest_dir, { recursive: true }); } // fs.unlinkSync(req.new_filename);
                 catch {}
                 res.status(400).json({'error': "Invalid title"});
                 return;
@@ -245,7 +251,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(description == undefined)
             {
                 console.log("Invalid description");
-                try { fs.unlinkSync(req.new_filename); }
+                try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
                 catch {}
                 res.status(400).json({'error': "Invalid description"});
                 return;
@@ -253,22 +259,32 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
             {
                 console.log("Invalid visibility");
-                try { fs.unlinkSync(req.new_filename); }
+                try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
                 catch {}
                 res.status(400).json({'error': "Invalid visibility"});
                 return;
             }
+
+            var tmp = req.originalname.split('.');
+            tmp = tmp.slice(0,tmp.length-1)
+            folder_name = tmp.join('.');
+            console.log('folder_name:',folder_name);
+
             const new_resource = {
                 "resource_id": req.resource_id,
                 "type_id" : type_id,
                 "author" : req.user.username,
                 "title" : title,
                 "description" : description,
-                "filename" : req.new_filename,
+                "filename" : folder_name,
                 "created_date" : Date.now(),
                 "visibility" : visibility,
                 "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
             };
+
+            console.log("new_filename:",req.new_filename)
+            const zip = new AdmZip(`${req.dest_dir}${req.new_filename}`);
+            zip.extractAllTo(req.dest_dir, true);
             
             Resource.insert(new_resource)
                 .then(data => { 
@@ -276,14 +292,13 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
                 })
                 .catch(err => { 
                     console.log(err.message);
-                    try { fs.unlinkSync(req.new_filename); }
+                    try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
                     catch {}
                     res.status(400).json({'error': err.message});
                 });
         })
         .catch(err => {
-            console.log("Invalid type_id",err);
-            try { fs.unlinkSync(req.new_filename); }
+            try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
             catch {}
             res.status(400).json({'error': "Invalid type_id"});
         })
@@ -308,6 +323,26 @@ router.delete('/api/resources/:resource_id', auth.authenticate(User.Permissions.
     .catch(err => {
         res.status(400).json({"error":err.message});
     });
+});
+
+
+router.get('/api/resources/:resource_id/download', auth.authenticate(User.CPermissions.apc), (req, res) => {
+
+    Resource.get(req.params.resource_id)
+        .then(data => {
+            data = data[0];
+            if(data.visibility === 0)
+            {
+                res.redirect(`storage/resources/${req.params.resource_id}/${req.params.resource_id}.zip`)
+            }
+            else
+            {
+                res.status(404).json({"error" : "Resource not found"})
+            }
+        })
+        .catch(err => { 
+            res.json('error', err.message);
+        });
 });
 
 
