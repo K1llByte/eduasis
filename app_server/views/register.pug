@@ -12,10 +12,10 @@ head
     input.un(type='text' align='center' placeholder='Nickname' required='required' name="nickname")
     input.un(type='text' align='center' placeholder='Email address' required='required' name="email")
     div
-        input#pass.pass(type='password' align='center' placeholder='Password' name="password" required='required')
+        input#pass.pass(type='password' align='center' onclick="confirm-pass()" class="" placeholder='Password' name="password" required='required')
         i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 1)')
     div
-        input#repass.pass(type='password' align='center' placeholder='Confirm password' required='required')
+        input#repass.pass(type='password' name="repassword" align='center' class="" placeholder='Confirm password' required='required')
         i.fa.fa-eye.fa-eye-slash(onclick='changeEye(this, 2)')
     button.submit(align='center') Register
     .forgot(align='center')
@@ -34,3 +34,27 @@ script.
     }
     icon.classList.toggle("fa-eye-slash");
   }
+
+  //- function confirm-pass(icon, id) {
+  //-   var pass = document.getElementById("pass");
+  //-   var repass = document.getElementById("repass");
+    
+  //-   if (pass != repass) {
+  //-     pass.classList.add(has-error)
+  //-   }
+  //- }
+
+
+  //- input.onclick = function() {
+  //-   var pass =  $('input[name=password]').val();
+  //-   var repass =  $('input[name=repassword]').val();
+    
+  //-   if (pass != repass) {
+  //-       $('#password').addClass('has-error');
+  //-       $('#repassword').addClass('has-error');
+  //-   }
+  //-   else {
+  //-       pass.classList.remove('has-error').add('has-success');
+  //-       $('#repassword').removeClass().addClass('has-success');
+  //-   }
+  //- }

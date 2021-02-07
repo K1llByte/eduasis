@@ -168,6 +168,7 @@ router.get('/eduasis', check_auth, async (req,res) => {
     res.render('home_page',{
         'posts': posts,
         'resources': resources,
+        'time_difference': time_difference,
         'user':req.user
     });
 });

@@ -16,24 +16,51 @@ block content
           .something(style='justify-content:center; text-align: center;')
             h2= `${resource.title}`
             h3= `${resource.author}`
-            p #{ time_difference(resource.created_date)}
-            -var star = resource.rate
-            form(method="POST" action='/resources/'+resource.resource_id+'/rate')
+            p #{time_difference(resource.created_date)}
+            if false
+              -var star = resource.rate
+              form(method="POST" action='/resources/'+resource.resource_id+'/rate')
+                .resource-rate
+                  .rate
+                    input#star5(type='radio' name='value' value='5')
+                    label(for='star5' title='5 stars') &starf;
+                    input#star4(type='radio' name='value' value='4')
+                    label(for='star4' title='4 stars') &starf;
+                    input#star3(type='radio' name='value' value='3')
+                    label(for='star3' title='3 stars') &starf;
+                    input#star2(type='radio' name='value' value='2')
+                    label(for='star2' title='2 stars') &starf;
+                    input#star1(type='radio' name='value' value='1')
+                    label(for='star1' title='1 star') &starf;
+                  span.button-rate 
+                    button send               
+                  span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
+            else
+              -var star = resource.rate
               .resource-rate
-                .rate
-                  input#star5(type='radio' name='value' value='5')
-                  label(for='star5' title='5 stars') &starf;
-                  input#star4(type='radio' name='value' value='4')
-                  label(for='star4' title='4 stars') &starf;
-                  input#star3(type='radio' name='value' value='3')
-                  label(for='star3' title='3 stars') &starf;
-                  input#star2(type='radio' name='value' value='2')
-                  label(for='star2' title='2 stars') &starf;
-                  input#star1(type='radio' name='value' value='1')
-                  label(for='star1' title='1 star') &starf;
-                span.button-rate 
-                  button send
-                span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
+                  .rate
+                    span
+                      if star >= 1
+                        .checked &starf;
+                      else 
+                        | &starf;
+                      if star >= 2
+                        .checked &starf;
+                      else 
+                        | &starf;
+                      if star >= 3
+                        .checked &starf;
+                      else 
+                        | &starf;
+                      if star >= 4
+                        .checked &starf;
+                      else 
+                        | &starf;
+                      if star >= 5
+                        .checked &starf;
+                      else 
+                        | &starf;
+                    span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
         a.doublebox-page-leftBox-button(href=`http://localhost:7700/storage/resources/${resource.resource_id}.zip`)
           .doublebox-page-leftBox-button-inner
             | Download
@@ -49,6 +76,7 @@ block content
           div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;')
             h1 #{resource.title}
             h3 Resourd Id: #{resource.resource_id}
+            h3 Type: #{resource.type}
             h4 #{resource.description}
             h1 Files
             h3
