@@ -77,7 +77,8 @@ router.post('/api/register', (req,res) => {
                         "affiliation"       : "",
                         "permissions"       : User.Permissions.Consumer,
                         "registration_date" : date_now,
-                        "last_login_date"   :   date_now
+                        "last_login_date"   : date_now,
+                        "avatar_url"        : ""
                     })
                     
                     res.json({ "status" : "success" });

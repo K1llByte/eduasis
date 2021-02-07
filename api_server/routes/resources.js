@@ -263,7 +263,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
 
             var tmp = req.originalname.split('.');
             tmp = tmp.slice(0,tmp.length-1)
-            folder_name = tmp.join('.');
+            var folder_name = tmp.join('.');
 
             const new_resource = {
                 "resource_id": req.resource_id,
@@ -280,68 +280,72 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             const zip = new AdmZip(`${req.dest_dir}${req.new_filename}`);
             zip.extractAllTo(req.dest_dir, true);
 
-            Resource.insert(new_resource)
-            .then(data => { 
-                res.json({ "success": "Resource created successfully" });
-            })
-            .catch(err => { 
-                console.log(err.message);
-                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
-                catch {}
-                res.status(400).json({'error': err.message});
-            });
-
-            // try {
-            //     // `${req.dest_dir}${folder_name}`
-
-            //     // Verificar se existe:
-            //     // pasta data/
-            //     // ficheiro manifest-sha256.txt
-            //     // Verificar para todas as entradas do ficheiro manifest se o ficheiro existe
-                
-            //     if (fs.existsSync(`${req.dest_dir}${folder_name}/data`) && 
-            //         fs.existsSync(`${req.dest_dir}${folder_name}/manifest-sha256.txt`)) 
-            //     {
-            //         lineReader.eachLine(`${req.dest_dir}${folder_name}/manifest-sha256.txt`, (line, last) => {
-                        
-            //             try {
-            //                 const filename = line.split('  ')[1];
-            //                 if(!fs.existsSync(`${req.dest_dir}${folder_name}/${filename}`))
-            //                 {
-            //                     throw Error();
-            //                 }
-            //             } 
-            //             catch (err) {
-            //                 try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
-            //                 catch {}
-            //                 console.log("Invalid BagIt format: incorrect manifest entries");
-            //                 res.status(400).json({'error': "Invalid BagIt format: incorrect manifest entries"});
-            //             }
-                        
-                        
-            //             if(last)
-            //             {
-            //                 // After verifying every file, insert resource
-            //                 Resource.insert(new_resource)
-            //                 .then(data => { 
-            //                     res.json({ "success": "Resource created successfully" });
-            //                 })
-            //                 .catch(err => { 
-            //                     console.log(err.message);
-            //                     try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
-            //                     catch {}
-            //                     res.status(400).json({'error': err.message});
-            //                 });
-            //             }
-            //         });
-            //     }
-            // }
-            // catch(err) {
+            // Resource.insert(new_resource)
+            // .then(data => { 
+            //     res.json({ "success": "Resource created successfully" });
+            // })
+            // .catch(err => { 
+            //     console.log(err.message);
             //     try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
             //     catch {}
-            //     console.log("Invalid BagIt format");
-            //     res.status(400).json({'error': "Invalid BagIt format"});
-            // }
+            //     res.status(400).json({'error': err.message});
+            // });
+
+            try {
+                // `${req.dest_dir}${folder_name}`
+
+                // Verificar se existe:
+                // pasta data/
+                // ficheiro manifest-sha256.txt
+                // Verificar para todas as entradas do ficheiro manifest se o ficheiro existe
+                
+                if (fs.existsSync(`${req.dest_dir}${folder_name}/data`) && 
+                    fs.existsSync(`${req.dest_dir}${folder_name}/manifest-sha256.txt`)) 
+                {
+                    lineReader.eachLine(`${req.dest_dir}${folder_name}/manifest-sha256.txt`, (line, last) => {
+                        
+                        try {
+                            const filename = line.split('  ')[1];
+                            console.log("req.dest_dir",req.dest_dir);
+                            console.log("folder_name",folder_name);
+                            console.log("line",line);
+                            console.log("filename",filename);
+                            if(!( fs.existsSync(`${req.dest_dir}${folder_name}/${filename}`) ))
+                            {
+                                throw Error();
+                            }
+                        } 
+                        catch (err) {
+                            //try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+                            //catch {}
+                            console.log("Invalid BagIt format: incorrect manifest entries");
+                            res.status(400).json({'error': "Invalid BagIt format: incorrect manifest entries"});
+                        }
+                        
+                        
+                        if(last)
+                        {
+                            // After verifying every file, insert resource
+                            Resource.insert(new_resource)
+                            .then(data => { 
+                                res.json({ "success": "Resource created successfully" });
+                            })
+                            .catch(err => { 
+                                console.log(err.message);
+                                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+                                catch {}
+                                res.status(400).json({'error': err.message});
+                            });
+                        }
+                    });
+                }
+            }
+            catch(err) {
+                //try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+                //catch {}
+                console.log("Invalid BagIt format");
+                res.status(400).json({'error': "Invalid BagIt format"});
+            }
             
         })
         .catch(err => {
