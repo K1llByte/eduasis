@@ -1,1 +1,0 @@
-a046b8f80eca0554334f2ce9aea3abf1b7a6e6bcb391fd0f2918b19a9cb6c8b5  data/carta.xml

@@ -243,7 +243,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(title == undefined)
             {
                 console.log("Invalid title");
-                try { fs.rmdirSync(req.dest_dir, { recursive: true }); } // fs.unlinkSync(req.new_filename);
+                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); } // fs.unlinkSync(req.new_filename);
                 catch {}
                 res.status(400).json({'error': "Invalid title"});
                 return;
@@ -251,7 +251,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(description == undefined)
             {
                 console.log("Invalid description");
-                try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
+                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
                 catch {}
                 res.status(400).json({'error': "Invalid description"});
                 return;
@@ -259,7 +259,7 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             if(visibility == undefined || (visibility != 1 && visibility != 0 ) )
             {
                 console.log("Invalid visibility");
-                try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
+                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
                 catch {}
                 res.status(400).json({'error': "Invalid visibility"});
                 return;
@@ -268,7 +268,6 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
             var tmp = req.originalname.split('.');
             tmp = tmp.slice(0,tmp.length-1)
             folder_name = tmp.join('.');
-            console.log('folder_name:',folder_name);
 
             const new_resource = {
                 "resource_id": req.resource_id,
@@ -282,23 +281,75 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
                 "rate" : { "current_rate":0, "num_rates":0, "rates":[] },
             };
 
-            console.log("new_filename:",req.new_filename)
             const zip = new AdmZip(`${req.dest_dir}${req.new_filename}`);
             zip.extractAllTo(req.dest_dir, true);
-            
+
             Resource.insert(new_resource)
-                .then(data => { 
-                    res.json({ "success": "Resource created successfully" });
-                })
-                .catch(err => { 
-                    console.log(err.message);
-                    try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
-                    catch {}
-                    res.status(400).json({'error': err.message});
-                });
+            .then(data => { 
+                res.json({ "success": "Resource created successfully" });
+            })
+            .catch(err => { 
+                console.log(err.message);
+                try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+                catch {}
+                res.status(400).json({'error': err.message});
+            });
+
+            // try {
+            //     // `${req.dest_dir}${folder_name}`
+
+            //     // Verificar se existe:
+            //     // pasta data/
+            //     // ficheiro manifest-sha256.txt
+            //     // Verificar para todas as entradas do ficheiro manifest se o ficheiro existe
+                
+            //     if (fs.existsSync(`${req.dest_dir}${folder_name}/data`) && 
+            //         fs.existsSync(`${req.dest_dir}${folder_name}/manifest-sha256.txt`)) 
+            //     {
+            //         lineReader.eachLine(`${req.dest_dir}${folder_name}/manifest-sha256.txt`, (line, last) => {
+                        
+            //             try {
+            //                 const filename = line.split('  ')[1];
+            //                 if(!fs.existsSync(`${req.dest_dir}${folder_name}/${filename}`))
+            //                 {
+            //                     throw Error();
+            //                 }
+            //             } 
+            //             catch (err) {
+            //                 try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+            //                 catch {}
+            //                 console.log("Invalid BagIt format: incorrect manifest entries");
+            //                 res.status(400).json({'error': "Invalid BagIt format: incorrect manifest entries"});
+            //             }
+                        
+                        
+            //             if(last)
+            //             {
+            //                 // After verifying every file, insert resource
+            //                 Resource.insert(new_resource)
+            //                 .then(data => { 
+            //                     res.json({ "success": "Resource created successfully" });
+            //                 })
+            //                 .catch(err => { 
+            //                     console.log(err.message);
+            //                     try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+            //                     catch {}
+            //                     res.status(400).json({'error': err.message});
+            //                 });
+            //             }
+            //         });
+            //     }
+            // }
+            // catch(err) {
+            //     try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
+            //     catch {}
+            //     console.log("Invalid BagIt format");
+            //     res.status(400).json({'error': "Invalid BagIt format"});
+            // }
+            
         })
         .catch(err => {
-            try { fs.rmdirSync(req.dest_dir, { recursive: true }); }
+            try { fs.rmSync(req.dest_dir, { recursive: true, force: true }); }
             catch {}
             res.status(400).json({'error': "Invalid type_id"});
         })
