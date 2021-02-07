@@ -89,7 +89,8 @@ block content
               .posts-about-resource
                 a(href=`/users/${post.author}`)
                   img.w3-left.w3-circle.w3-margin-right.profile-picture(src=`http://localhost:7700/api/users/${post.author}/avatar` alt='Avatar' width=':60px; height: 60px;')
-                p(style='margin-left: 20px')= `${post.content}`
+                a(href=`/posts/${post.post_id}`)
+                  p(style='margin-left: 20px')= `${post.content}`
 
   script.
     function opentab(evt, name) {
