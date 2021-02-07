@@ -78,11 +78,13 @@ block content
             h3 Resourd Id: #{resource.resource_id}
             h3 Type: #{resource.type}
             h4 #{resource.description}
-            h1 Files
+            h1 #{resource.filename}
             h3
               ul
                 each file in resource.files
-                  li #{file}
+                  a(href=`http://localhost:7700/storage/resources/${resource.resource_id}/${resource.filename}/${file}`)
+                    li
+                      u #{file}
         #Posts.tabcontent.doublebox-page-rightBox-innerbox-content(style='display: none;')
           div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;') 
             each post in posts
