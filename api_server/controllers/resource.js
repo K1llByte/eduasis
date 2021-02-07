@@ -111,6 +111,35 @@ module.exports.gen_id = () => {
     return mongoose.Types.ObjectId().toString('hex');
 }
 
+
+module.exports.get_rate = async (rid,username) => {
+
+    var rate = await Resource.findOne(
+        {
+            "resource_id": rid
+        },
+        {
+            "_id":0,
+            "current_rate":"$rate.current_rate",
+            "num_rates":"$rate.num_rates",
+            "rates":"$rate.rates"
+        }
+    )
+    // .lean() is an alternative to .toObject()
+    // since query object aren't javascript pure objects
+    .lean() 
+    .exec();
+
+    rate.you_rated = null;
+    rate.rates.forEach(e => {
+        if(e.username === username)
+            rate.you_rated = e.rated;
+    });
+    delete rate.rates;
+    return rate;
+}
+
+
 module.exports.rate = async (rid,username,value) => {
     
     var res = await Resource.findOne(
@@ -138,4 +167,3 @@ module.exports.rate = async (rid,username,value) => {
     
     return res.rate.current_rate;
 }
-
