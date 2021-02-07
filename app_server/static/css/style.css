@@ -173,7 +173,8 @@ a {
 }
 
 a:link {
-  color: #5CD19F;
+  /* color: #5CD19F; */
+  color: #000;
 }
 
 @media (max-width: 600px) {
@@ -528,18 +529,32 @@ display: none;
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 250px;
   /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  margin: 10px;
   /* linha da direita */
   border-right: solid 2px rgb(172, 172, 172);
 }
 
 .profile-topbar:hover{
+  height: 60px;
   background-color: #eeeeee;
 }
 
+.resource-post {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 150px;
+  /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  /* linha da direita */
+  border-right: solid 2px rgb(172, 172, 172);
+}
 
 .profile-name{
   padding: 10px;
@@ -574,6 +589,13 @@ display: none;
   align-items: center;
   justify-content: center;
   padding: 10px;
+}
+
+.comment-author{
+  font-size: large; 
+  font-weight: bold; 
+  color: black; 
+  margin-left: 40px;
 }
 
 .profile-pic-edit {
@@ -623,13 +645,16 @@ form input[type="file"] {
   flex: 1;
   height: 100%;
   display: flex;
+  margin-left: 10px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
 .resource1:hover{
+  /* margin-left: 10px; */
   background-color: #eeeeee;
+  height: 60px;
 }
 
 .text-box {
@@ -749,7 +774,10 @@ form input[type="file"] {
 	padding: 10px 20px;
 	border-radius: 20px;
 	border: 2px solid darkgray;
+}
 
+.add-comment:focus, :active {
+	border: 0px none;
 }
 
 .doublebox-page-content {
@@ -1224,7 +1252,7 @@ input:focus + label {
   display: flex;
   flex-direction: row;
   width: 90%;
-  height: 75px;
+  height: 60px;
   font-size: 30px;
   font-weight: bold;
   margin: 1rem;
@@ -1234,6 +1262,7 @@ input:focus + label {
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  padding: 10px;
 }
 
 .search-box{
@@ -1367,7 +1396,8 @@ input:focus + label {
 .noticias{
   justify-content: center;
   text-align: center;
-  text-shadow: 4px 2px #4A4A4A;
+  text-shadow: 2px 2px #4A4A4A;
+  font-size: xx-large;
 }
 
 .setinha{

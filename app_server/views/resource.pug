@@ -21,15 +21,15 @@ block content
             form(method="POST" action='/resources/'+resource.resource_id+'/rate')
               .resource-rate
                 .rate
-                  input#star5(type='radio' name='rate' value='5')
+                  input#star5(type='radio' name='value' value='5')
                   label(for='star5' title='5 stars') &starf;
-                  input#star4(type='radio' name='rate' value='4')
+                  input#star4(type='radio' name='value' value='4')
                   label(for='star4' title='4 stars') &starf;
-                  input#star3(type='radio' name='rate' value='3')
+                  input#star3(type='radio' name='value' value='3')
                   label(for='star3' title='3 stars') &starf;
-                  input#star2(type='radio' name='rate' value='2')
+                  input#star2(type='radio' name='value' value='2')
                   label(for='star2' title='2 stars') &starf;
-                  input#star1(type='radio' name='rate' value='1')
+                  input#star1(type='radio' name='value' value='1')
                   label(for='star1' title='1 star') &starf;
                 span.button-rate 
                   button send
