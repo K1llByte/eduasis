@@ -14,6 +14,7 @@
 **GET /users**<br/>
 **GET /users/:username**<br/>
 **PUT /users/:username**<br/>
+**DELETE /users/:username**<br/>
 **GET /users/:username/avatar**<br/>
 **PUT /users/:username/avatar**<br/>
 
@@ -22,18 +23,22 @@
 **GET /posts**<br/>
 **GET /posts/:post_id**<br/>
 **POST /posts**<br/>
+**DELETE /posts/:post_id**<br/>
 **POST /posts/:post_id/comments**<br/>
 
 <ins>Resources</ins>
 
 **GET /resources**<br/>
-**POST /resources**<br/>
 **GET /resources/:resource_id**<br/>
+**POST /resources**<br/>
+**DELETE /resources/:resource_id**<br/>
 **GET /resources/:resource_id/rate**<br/>
 **PUT /resources/:resource_id/rate**<br/>
 **GET /resources/:resource_id/posts**<br/>
+
 **GET /resource_types**<br/>
 **POST /resource_types**<br/>
+**DELETE /resource_types/:type_id**<br/>
 **GET /resource_types/:type_id**<br/>
 
 ___

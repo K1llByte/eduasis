@@ -119,6 +119,21 @@ router.post('/api/posts', auth.authenticate(User.CPermissions.apc), (req, res) =
 });
 
 
+router.delete('/api/posts/:post_id', auth.authenticate(User.Permissions.Admin), (req, res) => {
+
+    Post.delete(req.params.post_id)
+    .then(data => {
+        if(data.deletedCount != 0)
+            res.json({"success":"Post deleted successfully"});
+        else 
+            res.status(400).json({"error":"Post doesn't exist"});
+    })
+    .catch(err => {
+        res.status(400).json({"error":err.message});
+    });
+});
+
+
 router.post('/api/posts/:post_id/comments', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     const MESSAGE_MAX_LENGTH = 1000;
@@ -140,7 +155,6 @@ router.post('/api/posts/:post_id/comments', auth.authenticate(User.CPermissions.
         "message" : req.body.message,
         "created_date" : Date.now(),
         "author" : req.user.username
-
     };
 
     Post.insert_comment(req.params.post_id, comment)

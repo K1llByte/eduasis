@@ -35,10 +35,18 @@ sleep = (ms) => {
 
 let users_success = 0;
 let users_error = 0;
+
 let rt_success = 0;
 let rt_error = 0;
+
 let resources_success = 0;
 let resources_error = 0;
+
+let posts_success = 0;
+let posts_error = 0;
+
+let comments_added = 0;
+
 console.log("Preparing database populating ...");
 
 // Define some static users to insert
@@ -75,6 +83,7 @@ let rtypes_to_insert = [
     { "type_id" : 7, "name" : "Notes" },
     { "type_id" : 8, "name" : "Other" }
 ];
+//var resources_inserted = [];
 
 function load_users_from_file(filename)
 {
@@ -82,61 +91,57 @@ function load_users_from_file(filename)
     return JSON.parse(rawdata);
 }
 
+
 async function add_user(userdata)
 {
-    User.get(userdata.username)
-    .then(data => {
-        if(data != null) 
-        {
-            ++users_error;
-            return;
-        }
-        User.gen_password_hash(userdata.password)
-            .then(passwd_hash => {
+    let data = await User.get(userdata.username)
+    
+    if(data != null) 
+    {
+        ++users_error;
+        return;
+    }
+    let passwd_hash = await User.gen_password_hash(userdata.password);
 
-                const date_now = Date.now();
-                User.insert({
-                    "username" : userdata.username,
-                    "nickname" : "",
-                    "password_hash" : passwd_hash,
-                    "email" : userdata.email,
-                    "affiliation" : userdata.affiliation,
-                    "permissions" : userdata.permissions,
-                    "registration_date" : date_now,
-                    "last_login_date" : date_now,
-                    "avatar_url" : ""
-                })
-                .then(data => {
-                    ++users_success;
-                })
-                .catch(err => {
-                    ++users_error;
-                });
-                
-        });
-    });
-}
-
-
-function populate_users(users_array)
-{
-    users_array.forEach(u => {
-        add_user(u);
-    });
-}
-
-
-function populate_rtypes(rtypes)
-{
-    rtypes.forEach(rt => {
-        ResourceType.insert(rt)
-        .then(data => {
-            ++rt_success;
+    const date_now = Date.now();
+    try {
+        User.insert({
+            "username" : userdata.username,
+            "nickname" : "",
+            "password_hash" : passwd_hash,
+            "email" : userdata.email,
+            "affiliation" : userdata.affiliation,
+            "permissions" : userdata.permissions,
+            "registration_date" : date_now,
+            "last_login_date" : date_now,
+            "avatar_url" : ""
         })
-        .catch(err => {
+        ++users_success;
+    }
+    catch(err) {
+        ++users_error;
+    }
+}
+
+
+async function populate_users(users_array)
+{
+    users_array.forEach(async (u) => {
+        await add_user(u);
+    });
+}
+
+
+async function populate_rtypes(rtypes)
+{
+    rtypes.forEach(async (rt) => {
+        try {
+            await ResourceType.insert(rt)
+            ++rt_success;
+        } catch (err) {
             console.log(err);
             ++rt_error;
-        });
+        }
     });
 }
 
@@ -148,7 +153,7 @@ async function populate_resources()
         {username: 'jcr', password: 'a_password'});
     let token = payload.data.TOKEN;
     
-    fs.readdirSync('zip_bags').forEach(filename => {
+    fs.readdirSync('zip_bags').forEach(async (filename) => {
         
         const description = `File(s) from jcr XML documents collection.
 All documents can be listed in http://www4.di.uminho.pt/~jcr/XML/didac/xmldocs/
@@ -163,19 +168,65 @@ Note: This resource was automaticly generated`;
         form.append('description',description);
         form.append('visibility','0');
 
-        await axios.post('http://localhost:7700/api/resources',form,{
-            headers: { 
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': `multipart/form-data; boundary=${form._boundary}`
-            }
-        })
-        .then(data => {
+        try {
+            await axios.post('http://localhost:7700/api/resources',form,{
+                headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+                }
+            });
             ++resources_success;
-        })
-        .catch(err => {
+        }
+        catch(err) {
             ++resources_error;
-        });
+        }
     });
+}
+
+
+async function populate_posts()
+{
+    await sleep(3000);
+    let resources_inserted = await Resource.list_all({ "page_limit":1000 });
+    //console.log("resources_inserted",resources_inserted);
+    //console.log("rand_choice(resources_inserted)",rand_choice(resources_inserted));
+    //console.log("rand_choice(resources_inserted).resource_id",rand_choice(resources_inserted).resource_id);
+
+    let quotes = (await axios.get('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/')).data
+
+    for(let i = 0 ; i < 500; ++i)
+    {
+        // Generate a list of up to 5 comments
+        const num_comments = Math.floor(Math.random() * 6);
+        let comments = [];
+        for(let j = 0 ; j < num_comments; ++j)
+        {
+            comments.push(
+            {
+                "message" : rand_choice(quotes.quotes).quote,
+                "created_date" : Date.now(),
+                "author" : rand_choice(users_to_insert).username
+            });
+        }
+
+        try
+        {
+            await Post.insert({
+                "resource_id" : rand_choice(resources_inserted).resource_id,
+                "content" : rand_choice(quotes.quotes).quote,
+                "author" : rand_choice(users_to_insert).username,
+                "created_date" : Date.now(),
+                "comments" : comments
+            });
+
+            ++posts_success;
+            comments_added += num_comments;
+        }
+        catch(err)
+        {
+            ++posts_error;
+        }
+    }
 }
 
 
@@ -184,25 +235,54 @@ async function print_values()
     console.log("Users: ",users_success,"Created",users_error,"Not created");
     console.log("Resource Types: ",rt_success,"Created",rt_error,"Not created");
     console.log("Resources: ",resources_success,"Created",resources_error,"Not created");
+    console.log("Posts: ",posts_success,"Created",posts_error,"Not created");
+    console.log("Comments: ",comments_added,"Created");
 }
 
 
 async function populate()
 {
-    users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
-    await populate_users(users_to_insert);
-    console.log('Users finished');
+    try {
+        users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
+        await populate_users(users_to_insert);
+        console.log('Users finished');
+    }
+    catch(err) {
+        console.log('Users populate error');
+    }
 
-    await populate_rtypes(rtypes_to_insert);
-    console.log('Resource Types finished');
+    try {
+        await populate_rtypes(rtypes_to_insert);
+        console.log('Resource Types finished');
+    }
+    catch(err) {
+        console.log('Resource Types populate error');
+    }
+    
 
-    await populate_resources();
-    console.log('Resources finished');
+    try {
+        await populate_resources();
+        console.log('Resources finished');
+    }
+    catch(err) {
+        console.log('Resources populate error',err.message);
+    }
 
-    //await populate_posts();
-    //console.log('Posts finished');
+    
+    try {
+        await populate_posts();
+        console.log('Posts finished');
+    }
+    catch(err) {
+        console.log('Posts populate error');
+    }
+    
 
     print_values();
 }
 
+
 populate()
+
+// Useful copy paste:
+// db.resources.drop(); db.users.drop(); db.resource_types.drop(); db.posts.drop();
