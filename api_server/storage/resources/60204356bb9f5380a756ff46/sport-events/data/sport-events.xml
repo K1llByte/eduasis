@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sportevents>
+  <event>
+    <data>2011-01-30</data>
+    <designacao>Meia-maratona de Viana do Castelo, <distancia>21.095</distancia>Km, Estrada</designacao>
+    <url></url>
+    <local>Viana do Castelo</local>
+    <resultado><tempo>01:42:44</tempo></resultado> 
+  </event>
+  <event>
+    <data>2011-09-18</data>
+    <designacao>Meia maratona do Porto, <distancia>21.095</distancia>Km, Estrada</designacao>
+    <url></url>
+    <local>Porto</local>
+    <resultado><tempo>1:49:59</tempo></resultado> 
+  </event>
+  <event>
+    <data>2011-10-05</data>
+    <designacao>Meia maratona de Ovar, <distancia>21.095</distancia>Km, Estrada</designacao>
+    <url></url>
+    <local>Ovar</local>
+    <resultado><tempo>1:42:10</tempo></resultado> 
+  </event>
+  <event>
+    <data>2011-12-31</data>
+    <designacao>S. Silvestre de Requião, <distancia>8</distancia>Km, Estrada</designacao>
+    <url></url>
+    <local>Requião, Vila Nova de Famalicão</local>
+    <resultado><tempo>34:00</tempo> (11º Vet1)</resultado> 
+  </event>
+  <event>
+    <data>2012-01-07</data>
+    <designacao>S. Silvestre de Sto Tirso, <distancia>10</distancia>Km</designacao>
+    <url></url>
+    <local>Sto Tirso</local>
+    <resultado></resultado> 
+  </event>
+</sportevents>
+

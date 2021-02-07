@@ -201,9 +201,10 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
             if(data.visibility === 0)
             {
                 var files = [];
-                lineReader.eachLine(`storage/resources/${req.params.resource_id}/${data.filename}/manifest-sha256.txt`, (line, last, cb) => {
+                console.log("In")
+                lineReader.eachLine(`storage/resources/${req.params.resource_id}/${data.filename}/manifest-sha256.txt`, (line, last) => {
                     
-                    files.push(line.split('  ')[1] );
+                    files.push(line.split('  ')[1]);
                     
                     if(last)
                     {
@@ -212,11 +213,6 @@ router.get('/api/resources/:resource_id', auth.authenticate(User.CPermissions.ap
                     }
                 });
                 
-                if(files == [])
-                {
-                    data.files = files;
-                    res.json(data);
-                }
             }
             else
             {

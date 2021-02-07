@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ARQSITS>
+    <ARQELEM>
+        <IDENTI> Castro do Caires </IDENTI>
+        <DESCRI>
+            <LIGA TERMO="povoado fortificado"> Povoado fortificado</LIGA>
+        </DESCRI>
+        <LUGAR> Grovos </LUGAR>
+        <FREGUE> Caires </FREGUE>
+        <CONCEL> Amares </CONCEL>
+        <CODADM> 030105 </CODADM>
+        <LATITU> 519,9 </LATITU>
+        <LONGIT> 181,5 </LONGIT>
+        <ALTITU> 320m </ALTITU>
+        <ACESSO>O acesso ao povoado faz-se a partir do lugar de Caires, por caminho
+carreteiro, que circunda o monte. </ACESSO>
+        <QUADRO>O cabeço onde assenta o <LIGA TERMO="castro"> castro</LIGA> corresponde a um
+esporão, de vertentes abruptas, situado praticamente na base da encosta Sul
+do monte de S. Pedro de Fins. A Norte, um profundo talvegue separa o monte
+de um outro, mais pequeno, onde se encontram também vestígios de ocupação.</QUADRO>
+        <DESARQ>São perceptíveis 3 linhas de muralhas, que definem outros tantos tabuleiros
+do povoado. São também visíveis alguns muros circulares e outros rectos,
+pertencentes a estruturas habitacionais. Na superfície do solo recolheram-se
+alguns fragmentos de <LIGA TERMO="cerâmica indígena"> cerâmica
+indígena</LIGA>, de fabrico <LIGA TERMO="micáceo"> micáceo</LIGA>, bem como
+outros de <LIGA TERMO="cerâmica comum romana"> cerâmica comum romana</LIGA>.
+O sítio é referido na bibliografia arqueológica desde os princípios do
+século, devido à descoberta de alguns materiais importantes. Pinho Leal
+refere o aparecimento, no lugar de Gróvios, localizado na vertente oeste do
+povoado, de "canos de metal ", tijolos, ânforas e de um possível forno (DIAS
+1903, 78). Dados também como procedentes do sítio, são: um baixo-relevo, em
+granito, representando uma figura equestre masculina, seguramente romana
+(CARDOSO 1972, 156) e uma pedra lavrada com um motivo geométrico (PEREIRA
+1941, 30 ; CARDOSO 1971, 174). </DESARQ>
+        <INTERP>
+            <LIGA TERMO="povoado fortificado romanizado"> povoado fortificado
+romanizado</LIGA>. </INTERP>
+        <DEPOSI>Museu Martins Sarmento, em Guimarães e Quinta do lugar do Paço, em
+Caires.</DEPOSI>
+        <BIBLIO>DIAS. A. R. (1903). Notícias arqueológicas extraídas do "Portugal Antigo e
+Moderno" de Pinho Leal, com algumas notas e indicações, Boletim da Real
+Associação dos Arquitectos e Arqueólogos Portugueses, pp. 78. </BIBLIO>
+        <BIBLIO>CARDOSO, M. (1972). Catálogo do Museu Martins Sarmento. Secção de Epigrafia
+e de Escultura Antiga, Guimarães, 2ª ed., pp.156. </BIBLIO>
+        <BIBLIO>MARTINS, M. (1990). O Povoamento Proto-Histórico e a romanização da Bacia do
+Médio Cávado, Cadernos de Arqueologia - Monografias, 5, Universidade do
+Minho, Braga, pp.65. </BIBLIO>
+        <AUTOR> Manuela Martins</AUTOR>
+        <DATA>04-Fev-1998</DATA>
+    </ARQELEM>
+    <ARQELEM>
+        <IDENTI> Lago </IDENTI>
+        <DESCRI>
+            <LIGA TERMO="povoado fortificado"> Povoado fortificado</LIGA>
+        </DESCRI>
+        <CRONO>Proto-História</CRONO>
+        <LUGAR> Lago </LUGAR>
+        <FREGUE> Lago </FREGUE>
+        <CONCEL> Amares </CONCEL>
+        <CODADM> 030113 </CODADM>
+        <LATITU>517,4</LATITU>
+        <LONGIT>177</LONGIT>
+        <ALTITU> 65m </ALTITU>
+        <ACESSO>O acesso a este povoado faz-se a partir do lugar de Lago,
+ por caminho carreteiro, que contorna os lados Oeste e Sul do
+monte.</ACESSO>
+        <QUADRO>O povoado do Lago assenta num pequeno cabeço de baixa altitude, sobranceiro
+ao rio.
+Possui boas defesas naturais e destaca-se bem na superfície suavemente
+ondulada da plataforma fluvial.</QUADRO>
+        <TRAARQ>Conhecido da bibliografia arqueológica desde os anos 50 o povoado foi
+objecto de trabalhos de escavação entre 1980 e
+ 1982, no âmbito de um projecto de investigação da responsabilidade de
+Manuela Martins. Estes trabalhos permitiram a
+ caracterização do povoado e a sua datação. </TRAARQ>
+        <DESARQ>O povoado possui uma única plataforma poligonal irregular, circundada, pelo
+menos no lado Oeste, por uma muralha de pedra,
+ à qual se associa um fosso, escavado na base da vertente.</DESARQ>
+        <INTERP> Os trabalhos de escavação aí realizados permitiram determinar uma
+ocupação situada entre o século III a.C. e
+meados do século I da nossa era. Não foram encontrados indícios seguros de
+<LIGA TERMO="romanização"> romanização</LIGA>.
+ Também não se encontraram habitações pétreas. Todavia, identificaram-se
+várias fossas que permitem atribuir ao povoado
+ uma função económica importante relacionada com a exploração do vale.
+Trata-se com alguma probabilidade de um povoado
+agrícola, que desempenharia um papel importante na rede hierárquica do
+povoamento indígena, característica dos últimos
+séculos antes da nossa era. As escavações forneceram abundante espólio.
+Povoado fortificado proto-históroco.</INTERP>
+        <DEPOSI> Museu D. Diogo de Sousa. </DEPOSI>
+        <INTERE>Apesar de não serem visíveis estruturas, a visita ao povoado permite
+compreender a original implantação dos povoados de
+ baixa altitude, que constituem uma especifidade do povoamento
+proto-histórico da região. </INTERE>
+        <BIBLIO>SILVA D. M. (1958-59). Entre Homem e Cávado, Amares, Monografia do concelho
+de Amares e Terras de Bouro, Amares.pp. 139; </BIBLIO>
+        <BIBLIO>MARTINS, M. (1986b). O povoado proto-histórico do Lago (Amares). Sistemas de
+defesa e fases de ocupação, Arqueólogo Português,
+ série IV, 4, pp. 149-184. </BIBLIO>
+        <BIBLIO>MARTINS, M. (1988). O povoado fortificado de Lago, Amares, Cadernos de
+Arqueologia - Monografias, 1,
+ Universidade do Minho, Braga. </BIBLIO>
+        <AUTOR>Manuela Martins</AUTOR>
+        <DATA>04-FEV-1998</DATA>
+    </ARQELEM>
+    <ARQELEM>
+        <IDENTI> Chã do Castro; Castro da Joubreia </IDENTI>
+        <DESCRI>
+            <LIGA TERMO="povoado fortificado"> Povoado fortificado</LIGA>
+        </DESCRI>
+        <CRONO>Proto-História</CRONO>
+        <LUGAR> Chã do Castro </LUGAR>
+        <FREGUE> Portela </FREGUE>
+        <CONCEL> Amares </CONCEL>
+        <CODADM> 030116 </CODADM>
+        <LATITU> 519,8 </LATITU>
+        <LONGIT> 180,2 </LONGIT>
+        <ALTITU> 308-311m </ALTITU>
+        <ACESSO>O acesso a este povoado pode fazer-se a partir do lugar de Portela, por
+caminho carreteiro.</ACESSO>
+        <QUADRO>O povoado localiza-se num pequeno cabeço conhecido por Chã do Castro, hoje
+densamente arborizado.
+ Situa-se na vertente SO do monte de S. Pedro Fins, relevo importante do
+concelho de Amares. </QUADRO>
+        <DESARQ>Os trabalhos permitiram assinalar vários momentos na ocupação do sítio: o
+mais antigo pode ser atribuído
+ ao período Calcolítico ou ao Bronze Inicial, estando caracterizado por
+cerâmicas decoradas, associadas
+a abundante material lítico, como pontas de seta, <LIGA TERMO="raspadeira">raspadeiras</LIGA>,
+ <LIGA TERMO="raspador"> raspadores</LIGA>, <LIGA TERMO="lasca">lascas</LIGA> e <LIGA TERMO="núcleo"> núcleos</LIGA>;
+ o outro momento encontra-se testemunhado pela construção de uma estrutura ,
+aparentemente defensiva, que surge associada
+ a cerâmicas indígenas de fabrico <LIGA TERMO="micáceo"> micáceo</LIGA>,
+inseríveis na Idade do Ferro. O aparecimento de
+ raros fragmentos de cerâmica romana sugere apenas uma <LIGA TERMO="romanização"> romanização</LIGA> incipiente do povoado. </DESARQ>
+        <INTERP>Trata-se de um local com uma ocupação longa, embora não necessariamente
+continuada. Aí existiu um povoado do Calcolítico, ou Bronze
+ Inicial e, mais tarde, um <LIGA TERMO="povoado fortificado"> povoado
+fortificado</LIGA> proto-histórico.</INTERP>
+        <DEPOSI>Os materiais recolhidos encontram-se no Museu Pio XII, em Braga e no Museu
+da Sociedade Martins Sarmento, em Guimarães.</DEPOSI>
+        <BIBLIO>:
+JORGE S. O. (1979). Escavações arqueológicas no povoado da Chã do Castro
+(Amares, Braga), Revista de Guimarães, 89, pp. 281-292; </BIBLIO>
+        <BIBLIO>JORGE, S. O. e J.J. RIGAUD DE SOUSA (1980). Resultados preliminares de uma
+sondagem na estação arqueológica da Chã do Castro (Amares, Braga), I
+Seminário de Arqueologia do Noroeste Peninsular, 2 , pp. 12. </BIBLIO>
+        <BIBLIO>MARTINS, M. (1990). O Povoamento Proto-Histórico e a romanização da Bacia do
+Médio Cávado, Cadernos de Arqueologia - Monografias, 5, Universidade do
+Minho, Braga, pp.69-70. </BIBLIO>
+        <AUTOR> Manuela Martins </AUTOR>
+        <TRAARQ>Os únicos trabalhos de escavação conhecidos no local realizaram-se, entre
+1978 e 1979, sendo dirigidos por Susana O. Jorge e J. J. Rigaud de
+Sousa.</TRAARQ>
+        <DATA>04-Fev-1998</DATA>
+    </ARQELEM>
+</ARQSITS>

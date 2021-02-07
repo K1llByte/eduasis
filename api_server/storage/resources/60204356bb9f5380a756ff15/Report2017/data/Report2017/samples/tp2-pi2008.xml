@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<r:report xmlns:r="http://xml.di.uminho.pt/report2007"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xml.di.uminho.pt/report2007 report.xsd"
+	xmlns:p="http://xml.di.uminho.pt/paragraph2007">
+	<frontmatter>
+		<title>Trabalho Prático II</title>
+		<subtitle>Programação Imperativa (PI2008)</subtitle>
+		<authors>
+			<author>
+				<name>José Carlos Ramalho</name>
+			</author>
+			<author>
+				<name>Alberto Simões</name>
+			</author>
+		</authors>
+		<date>
+			<value>2008-04-05</value>
+			<description>Revisão: foi introduzida a definição da linguagem MSP.</description>
+		</date>
+		
+		<date>
+			<value>2008-03-21</value>
+			<description>Revisão: foram introduzidas melhorias ao enunciada da primeira
+			fase.</description>
+		</date>
+
+		<date>
+			<value>2008-03-06</value>
+			<description>Criada a primeira versão.</description>
+		</date>
+		<keywords>
+			<kw>Programação Imperativa</kw>
+			<kw>Trabalho Prático</kw>
+			<kw>C</kw>
+		</keywords>
+		<abstract>
+			<p:p>Este documento descreve o único tema disponível para a realização do trabalho
+				prático que os alunos a fazer a disciplina em epígrafe têm de realizar de forma a
+				obter uma avaliação prática à disciplina.</p:p>
+			<p:p>Ao longo de várias semanas, irá evoluindo e sofrendo alterações. Esteja atento às
+				datas de revisões e aos comentários sobre as alterações introduzidas.</p:p>
+		</abstract>
+		<toc/>
+	</frontmatter>
+	<body>
+		<chapter>
+			<title>Objectivos de formação e resultados de aprendizagem</title>
+			<p:p>Este projecto tem como objectivos principais a formação genérica e específica de
+				estudantes em fundamentos de computação na área da programação imperativa. </p:p>
+			<p:p>Os objectivos de formação genérica incluem: (i) a pesquisa, análise e selecção de
+				informação, (ii) o treino na resolução de problemas, (iii) o desenvolvimento da
+				capacidade de análise, e (iv) o desenvolvimento da capacidade de comunicação escrita
+				e oral. </p:p>
+			<p:p>Os objectivos de formação específica incluem: (i) a análise da especificação e do
+				problema, (ii) o desenvolvimento de algoritmos e consequente programação numa
+				linguagem imperativa, (iii) a execução e realização de testes de conformidade. </p:p>
+			<p:p>A avaliação dos resultados esperados de aprendizagem irão verificar se as/os
+				estudantes conseguem demonstrar ter adquirido o seguinte conjunto de competências
+				genéricas e específicas:</p:p>
+			<ulist>
+				<item>competências genéricas<ulist>
+						<item>a capacidade de comunicação escrita e oral na apresentação e discussão
+							dos processos usados e resultados obtidos;</item>
+						<item>a capacidade de utilização de utilitários genéricos de informática em
+							ambiente Linux e de elaboração de documentos anotados</item>
+					</ulist>
+				</item>
+				<item>competências específicas de Programação Imperativa<ulist>
+						<item>a capacidade de desenvolver algoritmos para resolver problemas, de
+							forma criativa, criteriosa e crítica, e inserida/o num grupo de trabalho</item>
+						<item>o conhecimento e a capacidade de codificar algoritmos e estruturas de
+							dados segundo os princípios da programação estruturada</item>
+						<item>a capacidade e aptidões práticas para gerar, executar e testar
+							programas codificados em C, usando um conjunto adequado de utilitários
+							(GNU)</item>
+						<item>o conhecimento e as aptidões de desenvolver e aplicar testes de
+							conformidade e de analisar situações de fronteira na execução de
+							programas</item>
+						<item>capacidade e aptidões na produção de documentação adequada à
+							manutenção por terceiros dos programas desenvolvidos</item>
+					</ulist>
+				</item>
+			</ulist>
+		</chapter>
+		<chapter>
+			<title>Tema: "Mais Simples Possível (MSP)"</title>
+			<p:p>O tema escolhido para este projecto foi o da criação de uma máquina de <i>stack</i>
+				virtual e do respectivo ambiente de edição e execução.</p:p>
+			<p:p>A máquina virtual será programada em <i>Assembly</i> numa linguagem muito simples
+				definida para este contexto, o MSP.</p:p>
+			<p:p>O MSP é uma linguagem simples, com um número de instruções reduzido e com uma
+				sintaxe e uma semântica bastante acessíveis. O MSP destina-se a programar uma
+				Máquina de <i>Stack</i> Virtual. Como se verá mais à frente, é recorrendo a uma
+					<i>stack</i> que a máquina efectua os seus cálculos. A designação de virtual
+				surge do facto de que tal máquina não tem existência real, sendo, neste caso, da
+				vossa responsabilidade a criação da ilusão de que ela existe.</p:p>
+			<p:p>Este trabalho será dividido em duas fases. Na primeira fase serás responsável pela
+				criação da interface da máquina: edição de programas, carregamento, armazenamento e
+				execução. Na segunda fase, terás de criar a máquina de stack e de executar nela os
+				programas entretanto criados.</p:p>
+			<p:p>Os objectivos a atingir para a primeira fase aparecem descritos no capítulo <ref
+					target="ambiente"/>. Enquanto que os objectivos a atingir na segunda fase, uma
+				vez que são mais complexos, encontram-se descritos nos capítulos seguintes.</p:p>
+			<p:p>Resumindo, podemos enumerar na seguinte lista os objectivos a atingir na primeira
+				fase:</p:p>
+			<olist>
+				<item>Especificação do modelo de dados para suportar o ambiente de edição,
+					manipulação e execução de programas: programa (linhas de código), historial de
+					comandos, ...</item>
+				<item>Especificação e implementação das funcionalidades descritas no capítulo <ref
+						target="ambiente"/>.</item>
+				<item>Elaboração do respectivo relatório em LaTeX.</item>
+			</olist>
+
+			<p:p>
+				<i>A seu tempo colocaremos aaqui os objectivos a atingir na segunda fase.</i>
+			</p:p>
+
+		</chapter>
+		<chapter id="ambiente">
+			<title>Ambiente de programação: "Vamos voltar aos anos 80"</title>
+			<p:p>O ambiente de programação que se pretende criar é muito semelhante ao que existia
+				para as máquinas pessoais tipo <i>ZX Spectrum</i> nos anos 80.</p:p>
+			<p:p>Basicamente, um utilizador tem um monitor de caracteres à frente com uma área de
+				trabalho útil de 25 linhas, em que cada linha tem 80 colunas. Por baixo dessas 25
+				linhas, existe uma linha especial que é a <i>prompt</i> de interacção. É nesta linha
+				que o utilizador introduz os comandos do ambiente que levarão à criação e execução
+				de programas.</p:p>
+			<p:p>Na figura <ref target="f1"/> podemos ver o aspecto geral do ambiente.</p:p>
+
+			<figure id="f1">
+				<caption>Estado geral do ambiente de edição</caption>
+				<graphic path="img/ambiente1.png" width="300"/>
+			</figure>
+
+			<p:p>No início, se o sistema fôr invocado sem nenhum programa:</p:p>
+
+			<codeblock> $msp</codeblock>
+
+			<p:p>O sistema deverá aparecer com o aspecto da figura <ref target="f1"/>.</p:p>
+
+			<p:p>No entanto, se o sistema fôr invocado com um programa:</p:p>
+
+			<codeblock> $msp prog1.msp</codeblock>
+
+			<p:p>O ambiente deverá apresentar as primeiras 25 linhas do programa (se este tiver mais
+				de 25) e reflectir na linha de status a informação relativa ao programa que foi
+				carregado (como se pode ver na figura <ref target="f2"/>).</p:p>
+
+			<figure id="f2">
+				<caption>Ambiente invocado com um programa: prog1.msp</caption>
+				<graphic path="img/ambiente2.png" width="600"/>
+			</figure>
+
+			<p:p>Pode encarar este ambiente como um editor de texto parecido com o <i>vi</i> que
+				acompanha normalmente o sistema operativo Linux.</p:p>
+
+			<p:p>O ambiente tem no topo uma linha de status para dar alguma informação ao
+				utilizador: qual o ficheiro que está a ser editado, quantas linhas contem esse
+				ficheiro,... Em baixo tem uma linha especial que será o ponto de entrada de comandos
+				por parte do utilizador. Será nesta linha que o utiizador introduzirá comandos aos
+				quais o ambiente deverá reagir.</p:p>
+
+			<p:p>Também à semelhança do <i>vi</i> o ambiente terá dois tipos de comandos:</p:p>
+			<ulist>
+				<item> um primeiro tipo correspondente ao carregamento de programas, armazenamento,
+					execução de um programa, listagem de um programa,...</item>
+				<item>um segundo tipo correspondente aos comandos de edição de um programa:
+					acrescentar uma linha, apagar linhas, posicionar em determinada linha,
+				...</item>
+			</ulist>
+
+			<p:p>Quando tiver tempo, poderá sofisticar a interface do sistema fazendo com que esta
+				aceite abreviaturas dos comandos.</p:p>
+
+			<p:p>Estes dois tipos de comandos enumeram-se e descrevem-se nas subsecções seguintes.</p:p>
+
+			<section>
+				<title>Comandos de Operação</title>
+
+				<p:p>Nesta secção apresentam-se os comandos operacionais que o seu sistema deverá
+					suportar. Tome as descrições seguintes como guias e não se deixe limitar por
+					elas. <b>Use a imaginação...</b></p:p>
+				<p:p>O sistema deverá aceitar os seguintes comandos operacionais:</p:p>
+				<dlist>
+					<dt>load &lt;ficheiro&gt;</dt>
+					<dd>Carregamento de programas: se o ficheiro existir na directoria corrente o
+						ambiente deverá carregá-lo exibindo depois um écran semelhante ao mostrado
+						na figura <ref target="f2"/>. O ambiente deverá reagir com uma mensagem de
+						erro à inexistência do ficheiro na directoria corrente. No caso deste
+						comando ser dado com um programa já a ser editado, o utilizador deverá ser
+						consultado quanto ao armazenamento do programa que estava a ser editado
+						antes do novo ser carregado.</dd>
+					<dt>save &lt;ficheiro&gt;</dt>
+					<dd>Armazenamento de programas: o ambiente deverá gravar o programa corrente no
+						ficheiro designado. Se o nome do ficheiro fornecido diferir do ficheiro que
+						estava a ser editado, o sistema deverá assumir este como o ficheiro actual
+						para edição e deverá actualizar a linha de status.</dd>
+					<dt>history</dt>
+					<dd>Historial de comandos: à semelhança de um sistema Unix este comando permite
+						listar todos os comandos introduzidos pelo utilizador até ao momento. Como
+						resultado deste comando o écran deverá exibir os útimos 25 comandos dados
+						pelo utilizador numerados de 1 a 25. Depois da listagem, a introdução de um
+							<i>'\n'</i> na linha de comando fará regressar o sistema ao estado
+						anterior.</dd>
+					<dt>com &lt;n&gt;</dt>
+					<dd>Execução de comandos anteriores: o <i>n</i> corresponde ao número de ordem
+						de um comando anterior (dado pelo número de linha do editor); como resultado
+						o sistema deverá voltar a executar esse comando.</dd>
+					<dt>hsave &lt;ficheiro&gt;</dt>
+					<dd>Armazenamento do historial num ficheiro: o ambiente deverá o historial no
+						ficheiro designado (mais tarde poderá ser interessante olhar para a
+						descrição da interacção ocorrida numa sessão).</dd>
+					<dt>clear</dt>
+					<dd>Reset do sistema: após este comando o sistema volta ao seu estado inical
+						descartando tudo o que está a ser feito (programa que se está a editar e a
+						memória de todos os comandos dados até ao momento; eventualmente, poderá ser
+						pedido ao utilizador que confirme a execução deste comando.</dd>
+					<dt>run</dt>
+					<dd>Execução do programa que está no editor.</dd>
+					<dt>help</dt>
+					<dd>Lista os comandos disponíveis.</dd>
+					<dt>exit</dt>
+					<dd>Saída e abondono do sistema: todos os recursos alocados em tempo de execução
+						deverão ser libertados.</dd>
+				</dlist>
+			</section>
+			<section>
+				<title>Comandos de Edição</title>
+
+				<p:p>Estes comandos estão relacionados com a introdução/criação/alteração dos
+					programas no sistema e têm uma estrutura diferente: começam todos por número de
+					linha, a seguir têm o nome do comando seguido de opções caso as haja.</p:p>
+
+				<dlist>
+					<dt>&lt;int&gt; go</dt>
+					<dd>Posicionamento da janela de visualização: após este comando a primeira linha
+						da janela deverá corresponder à linha com número:
+						<i>&lt;int&gt;</i>.</dd>
+					<dt>&lt;int&gt; insert &lt;comando msp&gt;</dt>
+					<dd>Inserção de uma linha nova: a nova linha deverá ser inserida imediatamente
+						antes da linha com número <i>&lt;int&gt;</i> e o seu conteúdo será
+							<i>&lt;comando msp&gt;</i>.</dd>
+					<dt>&lt;int&gt; append &lt;comando msp&gt;</dt>
+					<dd>Acrescento de uma linha: a nova linha deverá ser acrescentada imediatamente
+						a seguir à linha com número <i>&lt;int&gt;</i> e o seu conteúdo será
+							<i>&lt;comando msp&gt;</i>.</dd>
+					<dt>&lt;int&gt; delete</dt>
+					<dd>Apagar uma linha: a linha com número &lt;int&gt; deverá ser apagada.</dd>
+					<dt>&lt;int&gt; replace &lt;comando msp&gt;</dt>
+					<dd>Substituir uma linha: a linha com número &lt;int&gt; é substituída
+						pelo novo &lt;comando msp&gt; introduzido pelo utilizador.</dd>
+				</dlist>
+			</section>
+
+		</chapter>
+		<chapter>
+			<title>Máquina Virtual de Stack</title>
+			<p:p>Numa Máquina de <i>Stack</i>, podem-se identificar os seguintes blocos:</p:p>
+			<dlist>
+				<dt>Memória</dt>
+				<dd>Área lógica para armazenamento de instruções e valores. Divide-se em 3 blocos
+					independentes com funcionalidades distintas: <ulist>
+						<item>Memória de Programa (ou abreviadamnte MProg);</item>
+						<item>Memória de Dados (ou MDados);</item>
+						<item>Memória de Trabalho (Stack).</item>
+					</ulist>
+				</dd>
+				<dt>Descodificador</dt>
+				<dd>Unidade encarregue de interpretar e mandar executar cada instrução;</dd>
+				<dt>Unidade Lógica e Aritmética</dt>
+				<dd>Unidade que tem a responsabilidade de efectuar as operações lógicas e aritméticas (na nossa máquina será materializada
+				num conjunto de funções que efectuarão as operações referidas);</dd>
+				<dt>Input e Output</dt>
+				<dd>São duas posições de memória especiais, com endereços fixos e bem conhecidos: <u>input</u> e <u>output</u>; Têm a 
+					característica especial de estarem ligadas ao exterior, permitindo a entrada de valores para a máquina (<u>input</u>) 
+					e a saída de valores da máquina (<u>output</u>); em concreto, estas células de memória estão ligadas ao teclado (<u>input</u>)
+					e ao monitor (<u>output</u>).</dd>
+				<dt>Bus Interno</dt>
+				<dd>É o "corredor" lógico qu liga as várias unidades permitindo a circulação e comunicação de instruções e valores (na
+				nossa máquina implementada em C não terá uma materialização concreta).</dd>
+				<dt>Instruction Pointer (IP) e Stack Pointer (SP)</dt>
+				<dd>São os únicos registos da nossa máquina. O IP contem sempre, num dado instante, o endereço da próxima instrução que
+				deve ser executada (endereço de MProg). O SP contem o endereço da última posição ocupada na <i>Stack</i>(ou seja, a posição 
+					do valor no <u>topo</u> da <i>Stack</i>).</dd>
+			</dlist>
+			
+			<figure id="f3">
+				<caption>Arquitectura da Máquina de Stack</caption>
+				<graphic path="img/arquitectura.png"/>
+			</figure>
+			
+			<p:p>A figura <ref target="f3"/> apresenta a arquitectura da Máquina de Stack de acordo com os blocos funcionais descritos 
+			anteriormente.</p:p>
+			<p:p>Cada célula de memória (<inlinecode>MProg</inlinecode>, <inlinecode>MDados</inlinecode> ou <inlinecode>Stack</inlinecode>) tem capacidade para armazenar um <i>byte</i> (sequência de 8 <i>bits</i>) e está associada a um enedereço que a identifica univocamente.</p:p>
+			<p:p>Um endereço é um número inteiro que tem o valor 0 para a primeira posição de memória e sofre incrementos de 1 para as posições seguintes até à última célula. Nesta máquina virtual definiu-se o valor 32000 como o número total de células de memória. Portanto, a gama de endereços possíveis na nossa máquina virtual é dada pelo seguinte intervalo: [0, 31999].</p:p>
+			<p:p>O <i>byte</i> que é armazenado em determinada célula de memória pode representar uma instrução, um argumento de uma instrução, um valor inteiro (como veremos mais à frente num dos intervalos: [0, 255] ou [-127, +127]), um carácter ou um componente de um endereço.</p:p>
+			<p:p>A interpretação do significado de cada <i>byte</i> é da responsabilidade da máquina e baseia-se no tipo de memória à qual se está a aceder em determinado instante:</p:p>
+			<dlist>
+				<dt>Memória de Programa (MProg)</dt>
+				<dd>Armazena as instruções que vão ser executadas pela máquina. Um <i>programa</i> é uma <i>sequência de instruções</i> armazenadas na MProg. Uma célula da MProg pode conter o codigo de uma instrução ou o argumento de uma instrução. A maioria das instruções da linguagem MSP não contem argumentos. Os argumentos, se existirem, localizam-se nas posições seguintes à do código da instrução.</dd>
+				<dt>Memória de Dados (MDados)</dt>
+				<dd>Armazena valores. Esses valores correspondem aos dados do problma ou aos resultados
+					calculados pelo programa. Cada valor ocupa um <i>byte</i>, podendo representar grandezas
+					numéricas no intervalo [-128,255], ou caracteres (pelo seu código ASCII respectivo), ou ainda
+					endereços de células da MDados, sendo que neste caso se estendem por dois <i>bytes</i>. A
+					possibilidade de usar inteiros de 8 <i>bits</i> para cobrir o intervalo [-128,255] com
+					128+256=384 valores, reside na interpretação contextual do conteúdo de cada <i>byte</i>: se em
+					dado momento da execução de um programa for necessário interpretar um <i>byte</i> como
+					componente de um endereço, o seu valor é interpretado no intervalo [0,255], por outro lado, se
+					for oportuno interpretá-lo como valor de 8 <i>bits</i> com sinal, o seu valor virá do intervalo
+					[-128,127].</dd>
+				<dt>Stack</dt>
+				<dd>Memória de trabalho semelhante no conteúdo à MDados. Contudo, é acedida e usada segundo uma
+					filosofia LIFO ("Last In First Out"): os valores que vão introduzindo na <i>Stack</i> ficam
+					empilhados uns por cima dos outros, de tal forma que apenas se pode aceder (ler, consultar) o
+					valor que está no cimo (topo) da <i>Stack</i>, e que corresponde ao último valor que lá foi
+					armazenado. Assim, apenas é necessário conhecer um único endereço: o da última posição, ou topo
+				da <i>Stack</i>. Considera-se que o topo é o endereço da <i>Stack</i> relativo ao último valor
+					armazenado. O próximo valor a guardar na <i>Stack</i> será armazenado no endereço a seguir ao
+					topo, e o primeiro valor a sair será empre o do topo. A Máquina de <i>Stack</i> foi desenhada
+					de tal forma que todas as operações esperam ter os seus operandos armazenados em posições
+					consecutivas a partir do topo, retiram-nos de lá e, em substituição, colocam no topo o
+					resultado da sua computação. Na Máquina de <i>Stack</i>, o topo "cresce do fim para o
+					princípio", ou seja, do último endereço disponível (31999) em direcção ao primeiro (0).</dd>
+			</dlist>
+			
+		</chapter>
+		<chapter>
+			<title>Funcionamento</title>
+			<p:p>Para um programa ser executado o IP é carregado com o endereço de MProg onde está a primeira
+			instrução a ser executada (como no nosso caso estamos a interpretar linha a linha o programa, bas
+			ta a indicação do número de linha onde está a primeira instrução).</p:p>
+			<p:p>A partir daqui o funcionamento é sistemático: descodifica-se a instrução, dão-se as ordens
+				necessárias para a executar, e coloca-se no IP a indicação da próxima instrução a executar
+				(atenção que na maior parte dos casos esta será a instrução seguinte mas no caso de haver saltos
+				poderá ser outra qualquer).</p:p>
+			<p:p>Este processo continua até que seja executada a instrução que manda parar a execução do
+			programa.</p:p>
+			<p:p>Como exemplo de acções a realizar para executar uma dada instrução podemos apresentar entre
+			outras as seguintes:</p:p>
+			<ulist>
+				<item>transferência de dados entre o topo da Stack e uma das células especiais <i>input</i> ou
+					<i>output</i>;</item>
+				<item>realização de uma operação aritmética (adição, subtracção, multiplicação ou divisão) ou
+				lógica (conjunção, disjunção ou negação);</item>
+				<item>alteração da sequência normal de execução do programa forçando o IP a tomar um valor que
+					não é o da linha seguinte.</item>
+			</ulist>
+		</chapter>
+		
+		<chapter>
+			<title>Linguagem MSP</title>
+			<p:p>Relativamente à linguagem MSP, e quando se estiver a analisar a linguagem, convem estar
+			atento aos seguintes pormenores:</p:p>
+			<ulist>
+				<item>em cada linha da Zona de Dados (limitada por <inlinecode>MEMORIA DE DADOS</inlinecode> e
+					por <inlinecode>CODIGO</inlinecode>)
+					e da Zona de Código (limitada por <inlinecode>CODIGO</inlinecode> e estendendo-se até à última
+					linha do texto do programa) não é permitida mais do que uma declaraçãode variável e de
+					<i>label</i> respectivamente; também não é permitida mais de uma instrução em cada linha da
+					Zona de Código;</item>
+				<item>são permitidas linhas vazias ou de comentário em qualquer parte da Zona de Dados e de
+				Código;</item>
+				<item>os identificadoes de variáveis ou <i>labels</i> devem começar por letra podendo
+					seguir-se-lhe mais letras, digitos ou o carácter <i>underscore</i>;</item>
+				<item>a presença dos delimitadores das Zonas de Dados e Código (<inlinecode>MEMORIA DE
+					DADOS</inlinecode> e <inlinecode>CODIGO</inlinecode>) é obrigatória mesmo que estas
+					estejam vazias;</item>
+				<item>um comentário começa pelo carácter ';' ao qual pode seguir-se qualquer sequência de
+				caracteres que não inclua o fim de linha, que termina o comentário;</item>
+				<item>em números positivos o sinal '+' é opcional; nos números negativos o sinal '-' é
+					obrigatório.</item>
+			</ulist>
+			<section>
+				<title>Sintaxe e Semântica</title>
+				<subsection>
+					<title>Zona de Dados: declaração de variáveis</title>
+					<p:p>A Zona de Dados é iniciada pelas palavras reservadas <inlinecode>MEMORIA de
+					DADOS</inlinecode> e prolonga-se até ao início da Zona de Código, iniciada pela palavra
+						reservada <inlinecode>CODIGO</inlinecode>.</p:p>
+					<p:p>É na Zona de Dados que se declaram e podem inicializar as variáveis que irão ser
+					utilizadas pelo programa. </p:p>
+					<p:p>A declaração de uma variável tem a seguinte forma:</p:p>
+					<codeblock>    identificador-variável endereço TAM tamanho VAL valor1 valor2 ... valorn</codeblock>
+					<p:p>Por exemplo:</p:p>
+					<codeblock>    x 100 TAM 20 VAL 4</codeblock>
+					<p:p>Declara uma variável com identificador "<i>x</i>", no endereço 100, com tamanho 20 e com o
+					primeiro <i>byte</i> inicializado com o valor 4 (os <i>bytes</i> do endereço 101 ao 119 são
+					inicializados por omissão com o valor 0).</p:p>
+					<p:p>A smântica das declarações compreende as seguintes características:</p:p>
+					<ulist>
+						<item>cada identificador de variável é único, não podendo haver mais que uma variável com o
+						mesmo identificador;</item>
+						<item>não é obrigatório declarar variáveis contiguamente, a partir do endereço 0, podendo-se
+						deixar buracos na Memória de Dados;</item>
+						<item>o espaço reservado para uma variável não pode colidir com o reservado para outra, i.e.,
+							os intervalos [endereço, endereço+tamanho-1] têm de ser mutuamente exclusivos para todas as
+							variáveis declaradas;</item>
+						<item>a inicialização do espaço alocado a uma variável é facultativa, sendo garantida, por
+						omissão, a inicialização desse espaço com o valor 0;</item>
+						<item>a iniciliazção das variáveis pode ser feita com qualquer valor inteiro no intervalo
+						[-128, 255];</item>
+						<item>é possível não declarar qualquer variável na Memória de Dados; neste caso, qualquer
+							acesso que se faça a esta Memória deverá ter em conta uma inicialização a 0 desse espaço. </item>
+					</ulist>
+					
+				</subsection>
+				<subsection>
+					<title>Zona de Código: instruções</title>
+					<p:p>A Zona de Código inicia-se pela palavra reservada <inlinecode>CODIGO</inlinecode> e
+					prolonga-se até ao fim do texto.</p:p>
+					<p:p>O conjunto das instruções pode-se dividir em três grupos de acordo com as repectivas
+						funcionalidades: instruções para manipulação de valores e endereços, instruções aritméticas e
+						lógicas e instruções de controlo da sequência de execução do progrma.</p:p>
+					<subsubsection>
+						<title>Manipulação de Valores e Endereços</title>
+						<dlist>
+							<dt>PUSH [valor]</dt>
+							<dd>Coloca <inlinecode>valor</inlinecode> no topo da Stack;</dd>
+							<dt>PSHA [endereço ou identificador de variável]</dt>
+							<dd>Coloca o endereço fornecido ou o endereço da variável correspondente ao identificador
+								fornecido no topo da Stack;</dd>
+							<dt>LOAD</dt>
+							<dd>Retira da Stack um endereço e vai buscar a essa posição de memória o valor lá armazenado
+								que coloca no topo da Stack;</dd>
+							<dt>LDA</dt>
+							<dd>Retira da Stack um endereço e vai buscar a essa posição de memória um endereço que coloca
+								no topo da Stack;</dd>
+							<dt>STORE</dt>
+							<dd>Retira da Stack primeiro um valor, depois um endereço e coloca na posição da Memória de
+								Dados referente ao endereço o valor retirado inicialmente da Stack;</dd>
+							<dt>STRA</dt>
+							<dd>Retira da Stack primeiro um endereço, depois outro endereço e coloca na posição da Memória de
+								Dados referente ao segundo endereço o primeiro endereço retirado da Stack;</dd>
+							<dt>IN</dt>
+							<dd>Coloca no topo da Stack o conteúdo da posição especial <inlinecode>input</inlinecode>
+								resultante da leitura de um valor via teclado;</dd>
+							<dt>OUT</dt>
+							<dd>Escreve no monitor o valor que é retirado do topo da Stack;</dd>
+							<dt>INC</dt>
+							<dd>Coloca na Stack o conteúdo (código ASCII) da posição especial <inlinecode>input</inlinecode>, resultante
+								da leitura de um carácter via teclado;</dd>
+							<dt>OUTC</dt>
+							<dd>Escreve no monitor o carácter cujo código ASCII é retirado da Stack;</dd>
+						</dlist>
+						<p:p>Observações: as instruções <inlinecode>PUSH, LOAD</inlinecode>e
+							<inlinecode>STORE</inlinecode> operam sobre valores inteiros de 1 byte enquanto que
+							<inlinecode>PSHA, LDA</inlinecode> e <inlinecode>STRA</inlinecode> operam sobre endereços.</p:p>
+					</subsubsection>
+					<subsubsection>
+						<title>Instruções Aritméticas e Lógicas</title>
+						<dlist>
+							<dt>ADD</dt>
+							<dd>Retira dois inteiros da Stack, soma-os e coloca na Stack o resultado;</dd>
+							<dt>SUB</dt>
+							<dd>Retira dois inteiros da Stack, subtrai o segundo ao primeiro e coloca na Stack o resultado;</dd>
+							<dt>MUL</dt>
+							<dd>Retira dois inteiros da Stack, multiplica-os-os e coloca na Stack o resultado;</dd>
+							<dt>DIV</dt>
+							<dd>Retira dois inteiros da Stack, divide o primeiro pelo segundo e coloca na Stack o resultado;</dd>
+							<dt>ADDA</dt>
+							<dd>Retira um inteiro e um endereço da Stack; soma o inteiro ao endereço calculando um novo
+								endereço que é por fim colocado na Stack;</dd>
+							<dt>AND</dt>
+							<dd>Retira dois inteiros da Stack, calcula a sua conjunção lógica e coloca na Stack o resultado;</dd>
+							<dt>OR</dt>
+							<dd>Retira dois inteiros da Stack, calcula a sua disjunção lógica e coloca na Stack o resultado;</dd>
+							<dt>NOT</dt>
+							<dd>Retira um inteiro da Stack, calcula a sua negação lógica e coloca na Stack o resultado;</dd>
+							<dt>EQ</dt>
+							<dd>Retira dois inteiros da Stack, verifica se são iguais e coloca na Stack o resultado da
+								comparação;</dd>
+							<dt>NE</dt>
+							<dd>Retira dois inteiros da Stack, verifica se são diferentes e coloca na Stack o resultado da
+								comparação;</dd>
+							<dt>LT</dt>
+							<dd>Retira dois inteiros da Stack, verifica se o primeiro é menor que o segundo e coloca na
+								Stack o resultado dessa
+								comparação;</dd>
+							<dt>LE</dt>
+							<dd>Retira dois inteiros da Stack, verifica se o primeiro é menor ou igual que o segundo e coloca na
+								Stack o resultado dessa
+								comparação;</dd>
+							<dt>GT</dt>
+							<dd>Retira dois inteiros da Stack, verifica se o primeiro é maior que o segundo e coloca na
+								Stack o resultado dessa
+								comparação;</dd>
+							<dt>GE</dt>
+							<dd>Retira dois inteiros da Stack, verifica se o primeiro é maior ou igual que o segundo e coloca na
+								Stack o resultado dessa
+								comparação;</dd>
+							<dt>ANDB</dt>
+							<dd>Retira dois inteiros da Stack, calcula a sua conjunção <i>bit-a-bit</i> e coloca na Stack o resultado;</dd>
+							<dt>ORB</dt>
+							<dd>Retira dois inteiros da Stack, calcula a sua disjunção <i>bit-a-bit</i> e coloca na Stack o resultado;</dd>
+							<dt>NOTB</dt>
+							<dd>Retira um inteiro da Stack, calcula a sua negação <i>bit-a-bit</i> e coloca na Stack o resultado;</dd>
+						</dlist>
+						<p:p>Observações:</p:p>
+						<ulist>
+							<item>Em todas as operações binárias o segundo operando é retirado da Stack antes do
+							primeiro;</item>
+							<item>À excepção de <inlinecode>ADDA</inlinecode>, cujo resultado é um endereço, todas as outras operações
+							resultam num inteiro de 1 byte;</item>
+							<item>Nas operações lógicas, o resultado é 0 (FALSO) ou 1 (VERDADEIRO);</item>
+						</ulist>
+						
+					</subsubsection>
+					<subsubsection>
+						<title>Instruções de Controlo</title>
+						<dlist>
+							<dt>JMP [id-label ou endereço ou endereço-relativo]</dt>
+							<dd>Faz com que a execução do programa salte incondicionalmente para o endereço calculado a
+								partir do argumento: a execução do programa continua no endereço da MProg marcado por
+								<inlinecode>id-label</inlinecode>, ou no <inlinecode>endereço</inlinecode> absoluto ou somando ao endereço actual o
+								<inlinecode>endereço-relativo</inlinecode> passado como argumento;</dd>
+							<dt>JMPF [id-label ou endereço ou endereço-relativo]</dt>
+							<dd>Testa o valor no topo da Stack (retirando-o de lá); se o valor for verdadeiro salta para
+							o endereço indicado, se for falso a execução continua na instrução seguinte;</dd>
+							<dt>CALL [id-label ou endereço ou endereço-relativo]</dt>
+							<dd>Guarda na Stack o endereço da instrução que se lhe segue e prossegue executando a
+							instrução que se encontra no endereço passado como argumento (Chamada incondicional de uma
+							subrotina);</dd>
+							<dt>RET</dt>
+							<dd>Efectua o retorno de uma subrotina: a execução do programa continua na instrução que está
+							no endereço que é retirado do topo da Stack;</dd>
+							<dt>HALT</dt>
+							<dd>Pára a execução do programa;</dd>
+							<dt>NOOP</dt>
+							<dd>Não faz nada, serve apenas para gastar tempo...</dd>
+						</dlist>
+						<p:p>Observações:</p:p>
+						<ulist>
+							<item>Um endereço absoluto é um endereço relativo ao iníco da MProg (endereço 0);</item>
+							<item>Quando às instruções <inlinecode>JMP, JMPF e CALL</inlinecode> é passado um endereço
+								relativo, o respectivo endereço calcula-se somando ao endereço da instrução seguinte o
+								<i>off-set</i> que foi passado;</item>
+							<item>A instrução <inlinecode>HALT</inlinecode> deve ser usada para terminar os programas.</item>
+						</ulist>
+						
+					</subsubsection>
+					
+					
+					
+				</subsection>
+				
+			</section>
+			
+		</chapter>
+		
+	</body>
+	<backmatter> </backmatter>
+
+</r:report>
