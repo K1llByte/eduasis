@@ -98,12 +98,12 @@ const upload = multer({
 // GET home page
 router.get('/', (req, res, next) => {
   // res.render('index', { title: 'Express' });
-  res.redirect('login');
+    res.redirect('eduasis');
 });
 
 
 router.get('/login', (req, res, next) => {
-  res.render('login');
+    res.render('login');
 });
 
 
