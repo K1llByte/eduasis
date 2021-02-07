@@ -29,6 +29,7 @@
 **GET /resources**<br/>
 **POST /resources**<br/>
 **GET /resources/:resource_id**<br/>
+**GET /resources/:resource_id/rate**<br/>
 **PUT /resources/:resource_id/rate**<br/>
 **GET /resources/:resource_id/posts**<br/>
 **GET /resource_types**<br/>

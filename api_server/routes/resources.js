@@ -296,6 +296,18 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
 });
 
 
+router.get('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissions.apc), (req, res) => {
+
+    Resource.get_rate(req.params.resource_id, req.user.username)
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => { 
+            res.status(400).json({'error': err.message});
+        });
+});
+
+
 router.put('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     let value = Number(req.body.value);
