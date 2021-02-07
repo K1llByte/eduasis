@@ -17,7 +17,7 @@ block content
             h2= `${resource.title}`
             h3= `${resource.author}`
             p #{time_difference(resource.created_date)}
-            if false
+            if rate.you_rated == null
               -var star = resource.rate
               form(method="POST" action='/resources/'+resource.resource_id+'/rate')
                 .resource-rate
@@ -36,28 +36,28 @@ block content
                     button send               
                   span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
             else
-              -var star = resource.rate
+              -var star = rate.you_rated
               .resource-rate
                   .rate
                     span
                       if star >= 1
-                        .checked &starf;
+                        span.checked &starf;
                       else 
                         | &starf;
                       if star >= 2
-                        .checked &starf;
+                        span.checked &starf;
                       else 
                         | &starf;
                       if star >= 3
-                        .checked &starf;
+                        span.checked &starf;
                       else 
                         | &starf;
                       if star >= 4
-                        .checked &starf;
+                        span.checked &starf;
                       else 
                         | &starf;
                       if star >= 5
-                        .checked &starf;
+                        span.checked &starf;
                       else 
                         | &starf;
                     span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
