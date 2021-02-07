@@ -45,6 +45,8 @@ body {
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
+
+
 .profile {
     background-color: #FFFFFF;
     left: 10px;
@@ -130,9 +132,20 @@ form.form1 {
         border: 2px solid rgba(0, 0, 0, 0.02);
         margin-bottom: 50px;
         margin-left: 46px;
+        margin-right: 5px;
         text-align: center;
         margin-bottom: 27px;
         font-family: 'Ubuntu', sans-serif, FontAwesome;
+}
+
+.has-error{
+  border: 2px solid brown;
+  border-radius: 20px;
+}
+
+.has-success{
+  border: 2px solid #329d9c;
+  border-radius: 20px;
 }
 
 .un:focus, .pass:focus {
@@ -353,6 +366,7 @@ display: none;
     float: left;
     height: 46px;
     padding: 0 10px;
+    font-size: 25px;
 }
 
 .button-rate {
@@ -534,24 +548,30 @@ display: none;
   align-items: center;
   justify-content: center;
   margin: 10px;
+  /* margin: -10px; */
   /* linha da direita */
   border-right: solid 2px rgb(172, 172, 172);
 }
 
 .profile-topbar:hover{
   height: 60px;
+  margin-right: 10px;
   background-color: #eeeeee;
+  /* border-radius: 10px 0px 0px 10px; */
 }
 
 .resource-post {
-  display: flex;
+  display: inline;
   flex-direction: row;
   height: 60px;
   width: 150px;
   /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
   align-items: center;
   justify-content: center;
+  /* align-content: center; */
+  text-align: center;
   margin: 10px;
+  margin-bottom: 15px;
   /* linha da direita */
   border-right: solid 2px rgb(172, 172, 172);
 }
@@ -1237,6 +1257,7 @@ input:focus + label {
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .resources-box {
@@ -1402,6 +1423,8 @@ input:focus + label {
 
 .setinha{
   color: #000;
+  margin: 10px;
+  margin-bottom: 20px;
 }
 .setinha:link{
   color: #000;

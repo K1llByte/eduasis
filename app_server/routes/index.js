@@ -168,6 +168,7 @@ router.get('/eduasis', check_auth, async (req,res) => {
     res.render('home_page',{
         'posts': posts,
         'resources': resources,
+        'time_difference': time_difference,
         'user':req.user
     });
 });
@@ -422,12 +423,20 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
     .then(resource => {
         axios.get(`${API_URL}/resources/${req.params.resource_id}/posts`,auth_header(req.user.token))
         .then(posts => {
-            res.render('resource', {
-            'resource':resource.data, 
-            'user':req.user,
-            'time_difference': time_difference,
-            'posts':posts.data
-        })})
+            axios.get(`${API_URL}/resources/${req.params.resource_id}/rate`,auth_header(req.user.token))
+            .then(rate => {
+                console.log('RATE:',rate.data)
+                res.render('resource', {
+                'resource':resource.data, 
+                'user':req.user,
+                'time_difference': time_difference,
+                'posts':posts.data,
+                'rate': rate.data
+            })})
+            .catch(err => {
+                res.render('error', {err: err})
+            })
+        })
         .catch(err => {
             res.render('error', {err: err})
         })
