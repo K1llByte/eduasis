@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<topicMap id="jcr-family-v4" xmlns="http://www.topicmaps.org/xtm/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!-- ontology -->
+	<topic id="teacher">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/professor"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>teacher</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="teaching">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/ensino"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>teaching</baseNameString>
+		</baseName>
+		<resourceData>Relation between a teacher and a course.</resourceData>
+	</topic>
+	<topic id="course-struct">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/disciplina-estrutura"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>Course Structure</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="course">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/disciplina"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>course</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="marriage">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/casamento"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>marriage</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="descendant">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/descendente"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>descendant</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="mother">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/mãe"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>mother</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="father">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/pai"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>father</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="son">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/filho"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>son</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="daugther">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/filha"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>daugther</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="husband">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/marido"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>husband</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="wife">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/esposa"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>wife</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="man">
+		<instanceOf>
+			<topicRef xlink:href="#person"/>
+		</instanceOf>
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/homem"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>man</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="woman">
+		<instanceOf>
+			<topicRef xlink:href="#pa"/>
+		</instanceOf>
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/mulher"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>woman</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="person">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/pessoa"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>person</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="photo">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/fotografia"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>photograph</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="email">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/email"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>email</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="bio">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/biografia"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>biography</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="db">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/datanascimento"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>birth date</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="obs">
+		<subjectIdentity>
+			<resourceRef xlink:href="http://www.psi.pt/obs"/>
+		</subjectIdentity>
+		<baseName>
+			<baseNameString>description</baseNameString>
+		</baseName>
+	</topic>
+	<!-- individuals-->
+	<topic id="jcr">
+		<instanceOf>
+			<topicRef xlink:href="#man"/>
+		</instanceOf>
+		<instanceOf>
+			<topicRef xlink:href="#teacher"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>José Carlos Ramalho</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#bio"/>
+			</instanceOf>
+			<resourceData>José was born in Portugal at 1.00 a.m. ...</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>14 de Janeiro de 1965</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#obs"/>
+			</instanceOf>
+			<resourceData>His father was an health manager...</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#obs"/>
+			</instanceOf>
+			<resourceData>His mother was a teacher.</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#email"/>
+			</instanceOf>
+			<resourceRef xlink:href="mailto:jcr@di.uminho.pt"/>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#email"/>
+			</instanceOf>
+			<resourceRef xlink:href="mailto:jramalho@sapo.pt"/>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#foto"/>
+			</instanceOf>
+			<resourceRef xlink:href="foto-jcr.jpg"/>
+		</occurrence>
+	</topic>
+	<topic id="david">
+		<instanceOf>
+			<topicRef xlink:href="#mr"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>David José Lopes Ramalho</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#bio"/>
+			</instanceOf>
+			<resourceData>David was born in Viana do Castelo at 1.00 a.m.</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>Novermber 3,  1994</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#email"/>
+			</instanceOf>
+			<resourceRef xlink:href="mailto:david@iol.pt"/>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#foto"/>
+			</instanceOf>
+			<resourceRef xlink:href="david.jpg"/>
+		</occurrence>
+	</topic>
+	<topic id="carmen">
+		<instanceOf>
+			<topicRef xlink:href="#woman"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Carmen M.J.R. Lopes</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#bio"/>
+			</instanceOf>
+			<resourceData>She was born in Mozambique.</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>June 24, 1963 (St John's night)</resourceData>
+		</occurrence>
+	</topic>
+	<topic id="leo">
+		<instanceOf>
+			<topicRef xlink:href="#man"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Leonardo Lopes Ramalho</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#bio"/>
+			</instanceOf>
+			<resourceData>Leo was born in Braccara Augusta.</resourceData>
+		</occurrence>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>March 11, 1999.</resourceData>
+		</occurrence>
+	</topic>
+	<topic id="flora">
+		<instanceOf>
+			<topicRef xlink:href="#woman"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Maria Flora A.L.S. Ramalho</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>February 4,  1941</resourceData>
+		</occurrence>
+	</topic>
+	<topic id="zeca">
+		<instanceOf>
+			<topicRef xlink:href="#man"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>José dos Santos Ramalho</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#db"/>
+			</instanceOf>
+			<resourceData>June 2,  1942</resourceData>
+		</occurrence>
+	</topic>
+	<topic id="ped">
+		<instanceOf>
+			<topicRef xlink:href="#course"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Processamento Estruturado de Documentos</baseNameString>
+		</baseName>
+	</topic>
+		<topic id="pf">
+		<instanceOf>
+			<topicRef xlink:href="#course"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Programação Funcional</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="pi">
+		<instanceOf>
+			<topicRef xlink:href="#course"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Programação Imperativa</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="pi2005">
+		<instanceOf>
+			<topicRef xlink:href="#pi"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Programação Imperativa 2005</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/AULAS/pi2005/dossier/inicio.html"/>
+		</occurrence>
+	</topic>
+<topic id="ped2004">
+		<instanceOf>
+			<topicRef xlink:href="#ped"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Proc. Estrut. de Doc. 2004</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="ped2005">
+		<instanceOf>
+			<topicRef xlink:href="#ped"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Proc. Estrut. de Doc. 2005</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="lecture">
+		<baseName>
+			<baseNameString>Lecture</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="tlesson">
+		<instanceOf>
+			<topicRef xlink:href="#lecture"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Theorectical Lecture</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="plesson">
+		<instanceOf>
+			<topicRef xlink:href="#lecture"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Practical Lecture</baseNameString>
+		</baseName>
+	</topic>
+	<topic id="project">
+		<baseName>
+			<baseNameString>Project</baseNameString>
+		</baseName>
+	</topic>
+		<topic id="proj2005">
+		<instanceOf>
+			<topicRef xlink:href="#project"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Project 2005</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005/tp/tp-ped2005.html"/>
+		</occurrence>
+	</topic>
+
+	<topic id="proj2004">
+		<instanceOf>
+			<topicRef xlink:href="#project"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Project 2004</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2004/tp/index.html"/>
+		</occurrence>
+	</topic>
+
+	<topic id="tlesson-ped2005">
+		<instanceOf>
+			<topicRef xlink:href="#tlesson"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Theorectical Lectures 2005</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005/aulas/index.html"/>
+		</occurrence>
+	</topic>
+
+	<topic id="plesson-ped2005">
+		<instanceOf>
+			<topicRef xlink:href="#plesson"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Practical Lectures 2005</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2005/fichas/"/>
+		</occurrence>
+	</topic>
+	<topic id="plesson-ped2004">
+		<instanceOf>
+			<topicRef xlink:href="#plesson"/>
+		</instanceOf>
+		<baseName>
+			<baseNameString>Practical Lectures 2004</baseNameString>
+		</baseName>
+		<occurrence>
+			<instanceOf>
+				<topicRef xlink:href="#url"/>
+			</instanceOf>
+			<resourceRef xlink:href="http://www.di.uminho.pt/~jcr/XML/CURSOS/PED2004/fichas/"/>
+		</occurrence>
+	</topic>
+	<!-- associations -->
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#teaching"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#teacher"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#course"/>
+			</roleSpec>
+			<topicRef xlink:href="#ped"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#teaching"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#teacher"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#course"/>
+			</roleSpec>
+			<topicRef xlink:href="#pf"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#teaching"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#teacher"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#course"/>
+			</roleSpec>
+			<topicRef xlink:href="#pi"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#marriage"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#husband"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#wife"/>
+			</roleSpec>
+			<topicRef xlink:href="#carmen"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#marriage"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#husband"/>
+			</roleSpec>
+			<topicRef xlink:href="#zeca"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#wife"/>
+			</roleSpec>
+			<topicRef xlink:href="#flora"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#father"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#david"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#father"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#leo"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#mother"/>
+			</roleSpec>
+			<topicRef xlink:href="#carmen"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#david"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#mother"/>
+			</roleSpec>
+			<topicRef xlink:href="#carmen"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#leo"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#mother"/>
+			</roleSpec>
+			<topicRef xlink:href="#flora"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#descendant"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#father"/>
+			</roleSpec>
+			<topicRef xlink:href="#zeca"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#son"/>
+			</roleSpec>
+			<topicRef xlink:href="#jcr"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#course-struct"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#course"/>
+			</roleSpec>
+			<topicRef xlink:href="#ped2005"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#tlesson"/>
+			</roleSpec>
+			<topicRef xlink:href="#tlesson-ped2005"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#project"/>
+			</roleSpec>
+			<topicRef xlink:href="#proj2005"/>
+		</member>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#plesson"/>
+			</roleSpec>
+			<topicRef xlink:href="#plesson-ped2005"/>
+		</member>
+	</association>
+	<association>
+		<instanceOf>
+			<topicRef xlink:href="#course-struct"/>
+		</instanceOf>
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#course"/>
+			</roleSpec>
+			<topicRef xlink:href="#ped2004"/>
+		</member>
+				<member>
+			<roleSpec>
+				<topicRef xlink:href="#tlesson"/>
+			</roleSpec>
+			<topicRef xlink:href="#tlesson-ped2004"/>
+		</member>
+						<member>
+			<roleSpec>
+				<topicRef xlink:href="#plesson"/>
+			</roleSpec>
+			<topicRef xlink:href="#plesson-ped2004"/>
+		</member>
+
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#project"/>
+			</roleSpec>
+			<topicRef xlink:href="#proj2004"/>
+		</member>
+
+		<member>
+			<roleSpec>
+				<topicRef xlink:href="#plesson"/>
+			</roleSpec>
+			<topicRef xlink:href="#plesson-ped2004"/>
+		</member>
+	</association>
+</topicMap>

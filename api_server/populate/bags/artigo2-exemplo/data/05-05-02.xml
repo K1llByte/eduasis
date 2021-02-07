@@ -1,0 +1,2557 @@
+<?xml version="1.0"?>
+<!DOCTYPE gcapaper SYSTEM "gcapaper.dtd" [
+	<!ENTITY p05-05-02-fig01 SYSTEM "05-05-02-fig01.png" NDATA png>
+	<!ENTITY p05-05-02-fig02 SYSTEM "05-05-02-fig02.png" NDATA png>
+	<!ENTITY p05-05-02-fig03 SYSTEM "05-05-02-fig03.png" NDATA png>
+	<!ENTITY p05-05-02-fig04 SYSTEM "05-05-02-fig04.png" NDATA png>
+	<!ENTITY p05-05-02-fig05 SYSTEM "05-05-02-fig05.png" NDATA png>
+	<!ENTITY p05-05-02-fig06 SYSTEM "05-05-02-fig06.png" NDATA png>
+	<!ENTITY p05-05-02-fig07 SYSTEM "05-05-02-fig07.png" NDATA png>
+	<!ENTITY p05-05-02-fig08 SYSTEM "05-05-02-fig08.png" NDATA png>
+	<!ENTITY p05-05-02-fig09 SYSTEM "05-05-02-fig09.png" NDATA png>
+]>
+<gcapaper secnumbers="1">
+	<front>
+		<title>Graphical Stylesheets</title>
+		<subt>Using XSLT to Generate SVG</subt>
+		<keyword>Graphics</keyword>
+		<keyword>Stylesheet</keyword>
+		<keyword>SVG</keyword>
+		<keyword>XSLT</keyword>
+		<keyword>XSL</keyword>
+		<keyword>XML</keyword>
+		<author>
+			<fname>Philip A.</fname>
+			<surname>Mansfield</surname>
+			<jobtitle>President</jobtitle>
+			<address>
+				<affil>Schema Software Inc.</affil>
+				<city>Vancouver</city>
+				<stateorprovince>British Columbia</stateorprovince>
+				<country>Canada</country>
+				<email>philipm@schemasoft.com</email>
+				<web>http://www.schemasoft.com</web>
+			</address>
+			<bio>
+				<para>After receiving his Ph.D. in Mathematical Physics from Yale
+			 University in 1989, Philip spent one year as Assistant Professor of Physics at
+			 Knox College, followed by four years as Assistant Professor of Mathematics at
+			 University of Toronto. This was followed by a career switch to Software
+			 Engineering, in which Philip played the successive roles of Software Developer
+			 and Research Department Head. Philip is now President of SchemaSoft (<a href="http://www.schemasoft.com"/>), a software development consulting company
+			 he co-founded in 1999. He is an active member of the World Wide Web Consortium
+			 standards body (<a href="http://www.w3.org"/>), and sits on the BC Advanced
+			 Systems Institute International Scientific Advisory Board (<a href="http://www.asi.bc.ca"/>). He co-founded the Vancouver XML Developers
+			 Association (<a href="http://www.vanx.org"/>), and co-authored the Scalable
+			 Vector Graphics specification (<a href="http://www.w3.org/TR/SVG/"/>). He
+			 regularly lectures on topics related to software engineering and XML.</para>
+			</bio>
+		</author>
+		<author>
+			<fname>Darryl W.</fname>
+			<surname>Fuller</surname>
+			<jobtitle>Senior Software Engineer</jobtitle>
+			<address>
+				<affil>Schema Software Inc.</affil>
+				<city>Vancouver</city>
+				<stateorprovince>British Columbia</stateorprovince>
+				<country>Canada</country>
+				<email>darrylf@schemasoft.com</email>
+				<web>http://www.schemasoft.com</web>
+			</address>
+			<bio>
+				<para>Darryl leads a software research &amp; development team at
+			 SchemaSoft (<a href="http://www.schemasoft.com"/>) and has been an active
+			 developer in Vancouver for about a decade in such diverse fields as X.400
+			 e-mail, SNMP, document file format translation, e-commerce back ends, and using
+			 XSLT to generate SVG visualizations of data in arbitrary XML. Darryl has a
+			 Computing Science and English degree from Simon Fraser University. When he
+			 isn't in front of a computer screen, Darryl spends his time hiking, playing
+			 alto saxophone badly, and reading trashy science fiction novels. </para>
+			</bio>
+		</author>
+		<abstract>
+			<para>Traditional stylesheets encode information about the appearance of
+		  text and the layout of content, thus enabling the separation of structure from
+		  presentation in the case of text-centric publications. Images are treated as
+		  single elements of content in such an approach, with very little flexibility
+		  for a stylesheet to vary their appearance. However, those images often arise as
+		  visualizations of structured data, such as graphs, maps or schematic diagrams
+		  of data. Hence the need for <i>Graphical Stylesheets</i> that encode how to
+		  draw specific visualizations of structured data.</para>
+			<para>The structured data may start as XML or be returned from a database
+		  as XML. Graphical Stylesheets are then naturally encoded as XSLT with SVG as
+		  its target. This encoding takes advantage of widely-supported standards and
+		  therefore serves as a practical implementation. The use of SVG enables
+		  hyperlinked, animated, interactive vector graphics that can be further styled
+		  with CSS for purposes of accessibility or other adaptations.</para>
+			<para>Graphical Stylesheets are applicable to such diverse areas as
+		  Business Graphics, Flowcharting, Project Plans, Engineering Blueprints, CAD,
+		  GIS, AM/FM, Meteorology, Statistical/Scientific Visualization, Environmental
+		  Engineering diagrams, Metadata Relationship diagrams, and
+		  Presentation/Courseware. The talk will explore Graphical Stylesheet use-cases
+		  within a number of these application areas, and demonstrate solutions encoded
+		  as XSLT with SVG as its target. The advantages of being able to vary the
+		  graphical styling separately from the data will be made explicit. For example,
+		  Graphical Stylesheets make it possible to generate visualizations on demand
+		  from changing or user-selected data. On the other hand, by varying the
+		  Graphical Stylesheet that you apply to your data, you can elicit or emphasize
+		  entirely different aspects of that data.</para>
+			<para>Techniques will be presented for encoding a Graphical Stylesheet as
+		  XSLT, and for computing the geometry needed in its SVG output. Automatic
+		  generation of Graphical Stylesheets will then be discussed, and a software
+		  application that generates Graphical Stylesheets will be demonstrated.</para>
+		</abstract>
+	</front>
+	<body>
+		<section>
+			<title>What are Graphical Stylesheets?</title>
+			<para> Although HTML grew out of SGML, it violates the spirit of SGML by
+		  mixing logical markup (&lt;p&gt; for paragraph) with presentation markup
+		  (&lt;b&gt; for bold). With the introduction of XML, it became possible in a Web
+		  context to properly separate presentation from text and logical structure, and
+		  move it off into stylesheets. </para>
+			<para> But there is far more to Web documents than just text. A large
+		  amount of what is presented is visual: diagrams, maps, graphs and so on. What
+		  does it mean to separate content from presentation when we are talking about
+		  graphics? What role can stylesheets play when the final product is a graphic
+		  rather than a page full of text?</para>
+			<para>Perhaps the widespread use of raster graphic formats on the Web
+		  prevented people from easily answering these questions or providing solutions.
+		  In order to specify graphical presentation, you need to have a way to specify
+		  objects in your presentation. The object model implicit in a raster format is
+		  just a matrix of colour values; not exactly useful for specifying geometry.
+		  What was needed first was a standard vector graphic format for the Web.</para>
+			<subsec1>
+				<title>Content and presentation</title>
+				<para> In the traditional world of structured text documents (SGML and
+			 HTML), it is pretty clear what is meant by content and presentation. The final
+			 output you see is a document. The content is the "text" and document structure.
+			 Presentation is things like font, font weight, and layout. </para>
+				<para> XML has now moved into the world of graphics with the
+			 introduction of an XML dialect called Scalable Vector Graphics
+			 <bibref refloc="SVG"/>. In addition, XML is now used to structure content from
+			 data sources like relational databases and spreadsheets. These are
+			 preconditions for being able to separate content from presentation in the
+			 context of graphics. We have pure "content" datasources with databases and
+			 spreadsheets. We have an XML dialect we can use to render the final graphic:
+			 SVG. </para>
+			</subsec1>
+			<subsec1>
+				<title>Data visualized using SVG</title>
+				<para> In the context of graphics, content is data we want to
+			 visualize. Presentation is some sort of visualization of that data. The
+			 stylesheet becomes the engine that creates the visualization from the data.
+			 Thus content is data in XML, presentation is SVG graphics, and <i>Graphical
+			 Stylesheets</i> are programs that produce SVG from an XML data source. A
+			 natural programming language for performing that transformation is Extensible
+			 Stylesheet Language Transformations <bibref refloc="XSLT"/>, so we will assume
+			 Graphical Stylesheets are written in XSLT unless specified otherwise.</para>
+				<para> With Graphical Stylesheets, you can do things like: 
+			 <randlist>
+						<li>
+							<para> Dynamically create a bar-chart of open vs. closed bugs on
+					 a Web page from an XML query of a bug tracking database. </para>
+						</li>
+						<li>
+							<para> Create a map from survey data published as GML by an
+					 online GIS server. </para>
+						</li>
+						<li>
+							<para> Create a state transition diagram of the business logic of
+					 an application from XML data exported from a CASE tool. </para>
+						</li>
+					</randlist>
+				</para>
+				<para> Right now, many of these things are done by custom software
+			 producing JPEGs and GIFs. However, this is neither a stylesheet solution nor a
+			 vector graphic solution. Let's review why it matters.</para>
+			</subsec1>
+			<subsec1>
+				<title>Some advantages of SVG</title>
+				<para> Here are a few of the most important advantages SVG gives us
+			 compared to a raster solution:</para>
+				<randlist>
+					<li>
+						<para> SVG is searchable. All the text and elements in it are may
+				  be indexed by search engine software. Search engines are the main method of
+				  finding information on the Web today. Using a search engine, a user could look
+				  for a map that has a particular street ("Homer") on it. Then they could search
+				  that map for where the street ("Homer") is on the map. To do the equivalent
+				  with a raster format, you'd need optical character recognition software.
+				  </para>
+					</li>
+					<li>
+						<para> The DOM of an SVG image is exposed, so you can give it
+				  dynamic behaviour with Javascript. Some examples of this include data values on
+				  a graph popping up when you hover the mouse over a datapoint, or making
+				  different kinds of features on a map (contour lines, population densities,
+				  sewer lines) appear or dissappear when you click on the map legend. </para>
+					</li>
+					<li>
+						<para>You can zoom and pan an SVG diagram without loss of fidelity.
+				  Aside from the quality improvement, this also means that you don't have to wait
+				  for an extra server download every time you want to look at your map or diagram
+				  from a different viewpoint.</para>
+					</li>
+					<li>
+						<para>SVG files are much smaller than their corresponding raster
+				  graphic representation, so they download faster.</para>
+					</li>
+					<li>
+						<para>In the case of server-generated graphics, SVG lightens server
+				  load substantially because the expensive rasterization calculation does not
+				  have to be performed on the server.</para>
+					</li>
+				</randlist>
+			</subsec1>
+			<subsec1>
+				<title>Some advantages of Graphical Stylesheets</title>
+				<para> Graphical stylesheets have the same advantages for graphics that
+			 text stylesheets have for text:</para>
+				<randlist>
+					<li>
+						<para>With text stylesheets, the look of a document or Web site can
+				  be changed by applying a different stylesheet. With Graphical Stylesheets, the
+				  way a set of data is visualized can be changed by applying a different
+				  Graphical Stylesheet.</para>
+					</li>
+					<li>
+						<para>With text stylesheets, the same look can be applied to
+				  different documents by applying the same stylesheet. With graphical
+				  stylesheets, different datasets can be visualized the same way by applying the
+				  same stylesheet.</para>
+					</li>
+					<li>
+						<para>With text stylesheets, Web pages can be easily created from
+				  dynamic data sources. The same is true of Graphical Stylesheets.</para>
+					</li>
+					<li>
+						<para>Typically, it is easier to maintain and re-use stylesheets as
+				  the needs of an organization change than it is to maintain and re-use custom
+				  software.</para>
+					</li>
+				</randlist>
+			</subsec1>
+		</section>
+		<section>
+			<title>Three Simple Examples</title>
+			<para> We will build up three example Graphical Stylesheets in detail, as
+		  a way to present a consistent methodology and to see how this can be applied in
+		  widely different application domains. </para>
+			<subsec1>
+				<title>This is programming</title>
+				<para> Before we dive right in, a word to the wise. Making graphical
+			 XSLT stylesheets is not at all like making XSLT stylesheets for text. The
+			 transformation involved is more radical than replacing a "chapter" tag with an
+			 "h1" tag. Code to produce a visualization requires real programming. Not only
+			 is it real programming, it's programming in an obscure programming language
+			 (XSLT) without the aid of a debugger. So program incrementally, test the output
+			 of each thing you do as you write it, and keep your SVG and XSLT reference
+			 material handy.</para>
+				<note>
+					<para>XSLT has structures to support rule-based programming,
+				functional programming or imperative programming. Our approach will be to
+				emphasize functional programming as part of a systematic approach to Graphical
+				Stylesheets, although we would recommend rule-based programming for simpler
+				situations.</para>
+				</note>
+			</subsec1>
+			<subsec1>
+				<title>Prerequisites</title>
+				<para> To work with Graphical Stylesheets, you'll need an XSLT
+			 interpreter to apply your stylesheets, and an SVG viewer to see your results.
+			 For an XSLT interpreter, we have listed some options under "XSLT resources"
+			 near the end of this paper <xref refloc="ResourcesXSLT"/>. When preparing this
+			 paper, we used James Clark's XT (<a href="http://www.jclark.com/xml/xt.html"/>). For an SVG viewer, we suggest
+			 Adobe's Web browser plug-in (<a href="http://www.adobe.com/svg"/>). These are
+			 both available for free download.</para>
+				<para> You'll also need to be somewhat familiar with XSLT to get
+			 something out of these examples. The focus here is a particular application of
+			 XSLT; an XSLT tutorial is beyond the scope of this article. </para>
+			</subsec1>
+			<subsec1>
+				<title>Map</title>
+				<para> For this example, let's imagine we want to produce maps from
+			 information in a database for some online road map utility similar to MapQuest
+			 (<a href="http://www.mapquest.com"/>) . </para>
+				<para> In this example, our data will look like: </para>
+				<code.block><![CDATA[<map>
+  <Streets>
+    <Feature name="Beach Ave">
+      <point x="26" y="0"/>
+      <point x="170" y="200"/>
+      <point x="275" y="280"/>
+    </Feature>
+    <Feature name="Granville St">
+      <point x="75" y="450"/>
+      <point x="557" y="40"/>
+    </Feature>
+    .
+    .
+    .
+  </Streets>
+  <Land>
+    <Feature name="Granville Island">
+      <point x="265" y="450"/>
+      <point x="275" y="448"/>
+      <point x="263" y="435"/>
+      .
+      .
+      .
+    </Feature>
+  </Land>
+  .
+  .
+  .
+</map>]]></code.block>
+				<para> Our GIS data contains a number feature categories, like "Land".
+			 Each category contains a number of features of that type, and each feature
+			 contains a number of x,y points. See <xref refloc="AppendixMapData"/> for the
+			 complete example data file, which is actual geographic data for downtown
+			 Vancouver, Canada. </para>
+				<note>
+					<para>You should consult <xref refloc="Appendix"/> while working
+				through all the examples below, since it contains the completed Graphical
+				Stylesheets along with sample input data for those stylesheets.</para>
+				</note>
+				<para> Our approach to visualizing the GIS data is very simple. For
+			 each feature, we will draw a polygon. The x,y vertices of the polygon will be
+			 the x,y coordinates of the feature's "point" nodes. The polygon's styling,
+			 specifically the colour, and whether it is a closed shape or an open shape,
+			 will depend upon what kind of feature we are rendering. </para>
+				<para> The first thing to do is to figure out what XPath statements
+			 we'll need to extract the data we need. This is reasonably independent of what
+			 we'll do later to transform the data. The XPaths are: </para>
+				<deflist>
+					<def.item>
+						<def.term> /map/Streets/Feature </def.term>
+						<def>
+							<para> absolute XPath to street features </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /map/Land/Feature </def.term>
+						<def>
+							<para> absolute XPath to Land features </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /map/Water/Feature </def.term>
+						<def>
+							<para> absolute XPath to Water features </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @name </def.term>
+						<def>
+							<para> XPath to feature name relative to feature </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> point </def.term>
+						<def>
+							<para> XPath to feature points relative to feature </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @x </def.term>
+						<def>
+							<para> XPath to X coordinate of point relative to point </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @y </def.term>
+						<def>
+							<para> XPath to Y coordinate of point relative to point </para>
+						</def>
+					</def.item>
+				</deflist>
+				<para> Now that we have the XPaths, it's time to write the stylesheet.
+			 We'll start with the top level elements of an XSLT stylesheet and indicate that
+			 our output is to be SVG. </para>
+				<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+</xsl:stylesheet>]]></code.block>
+				<para> The gap shown above is a convention indicating what needs to be
+			 filled in next as we work toward the full stylesheet in
+			 <xref refloc="AppendixMapXSLT"/>.</para>
+				<para>Next, we'll create a template that matches the root element. It
+			 will output the top level SVG element, and call other templates just like
+			 function calls to do the rest of the work. We'll use the "viewBox" attribute of
+			 the SVG element to set up our coordinate system for drawing. For convenience,
+			 we'll use a coordinate space that maps nicely to the coordinate space of our
+			 data. This allows us to plot X and Y values without doing conversions. </para>
+				<code.block><![CDATA[<xsl:template match="/">
+  <svg width="100%" height="100%" viewBox="0 0 650 450">
+
+  </svg>
+</xsl:template>]]></code.block>
+				<para> Now we'll stub in an XSLT template that we will use as a
+			 function to draw a set of features. The information this template will need to
+			 have passed into it is: the features to draw, whether to draw them as open
+			 shapes or closed shapes, and what colour to draw them. This is an empty routine
+			 now, but we'll be filling it in soon. </para>
+				<code.block><![CDATA[<xsl:template name="render-feature">
+  <xsl:param name="features"/>
+  <xsl:param name="closed"/>
+  <xsl:param name="colour"/>
+
+</xsl:template>]]></code.block>
+				<para> Call our "render-feature" stub template from the top level
+			 template. Here we will be making use of the XPaths we figured out earlier.
+			 Since the SVG nodes produced by these calls must be be children of the top
+			 level SVG node, The calls should be children of the "svg" node in the main
+			 template. </para>
+				<code.block><![CDATA[<!-- render water -->
+<xsl:call-template name="render-feature">
+  <xsl:with-param name="features" select="/map/Water/Feature"/>
+  <xsl:with-param name="closed" select="1"/>
+  <xsl:with-param name="colour">blue</xsl:with-param>
+</xsl:call-template>
+<!-- render land -->
+<xsl:call-template name="render-feature">
+  <xsl:with-param name="features" select="/map/Land/Feature"/>
+  <xsl:with-param name="closed" select="1"/>
+  <xsl:with-param name="colour">yellow</xsl:with-param>
+</xsl:call-template>
+<!-- render roads -->
+<xsl:call-template name="render-feature">
+  <xsl:with-param name="features" select="/map/Streets/Feature"/>
+  <xsl:with-param name="closed" select="0"/>
+  <xsl:with-param name="colour">black</xsl:with-param>
+</xsl:call-template>]]></code.block>
+				<para> Now it's time to start putting some logic in our
+			 "render-feature" stub. First, we'll put in a graphic element that has the basic
+			 rendering style of that kind of feature, then we'll put in a loop to iterate
+			 through the features. </para>
+				<code.block><![CDATA[<g style="stroke:{$colour}; fill:{$colour}">
+  <xsl:for-each select="$features">
+
+  </xsl:for-each>
+</g>]]></code.block>
+				<para> We're going to draw our feature using SVG's "path" element. A
+			 path is defined by a command string in a "d" attribute. The command string has
+			 a terse syntax, including commands to move to some point "M 12,33" and draw a
+			 line to a point "L 34,33". A path command to draw a shape could look like:
+			 </para>
+				<code.block><![CDATA[<path d="M 34,33 L 55,99 L 33,77 L 34,12"/>]]></code.block>
+				<para> We'll need some sort of routine to construct those strings for
+			 the "d" attribute. We'll stub one in now. </para>
+				<code.block><![CDATA[<xsl:template name="create_path">
+  <xsl:param name="points"/>
+
+</xsl:template>]]></code.block>
+				<para> With the "create_path" stub available, let's fill in the
+			 "for-each" loop in the "render-feature" routine. We'll put the path string into
+			 a variable, then use it to create a full blown "path" statement. </para>
+				<code.block><![CDATA[<xsl:variable name="path">
+  <xsl:call-template name="create_path">
+    <xsl:with-param name="points" select="point"/>
+  </xsl:call-template>
+</xsl:variable>
+
+<path d="{$path} Z"/>]]></code.block>
+				<para> But that's not quite right yet. We've forgotten that some of our
+			 shapes are closed and some of our shapes are open. So let's change from just
+			 having "path" element to having a "choose" statement that outputs "path"
+			 differently depending upon whether it is a closed feature or not. </para>
+				<code.block><![CDATA[<xsl:choose>
+  <xsl:when test="$closed = 1">
+    <path d="{$path} Z"/>
+  </xsl:when>
+  <xsl:otherwise>
+    <path d="{$path}" style="fill:none"/>
+  </xsl:otherwise>
+</xsl:choose>]]></code.block>
+				<para> Now the only thing left to do is to fill in our "create_path"
+			 routine. As I mentioned earlier, our result should be a string, starting with
+			 an "M" (move to), then having the x,y points with L (line to) commands between
+			 them. Let's start with a loop to make a string of x,y points separated with the
+			 " L ". Note the use of the "xml:space" attribute so we keep spaces between the
+			 points and the "L commands". </para>
+				<code.block><![CDATA[<xsl:variable name="pointlist">
+  <xsl:for-each select="$points" xml:space="preserve">
+    <xsl:value-of select="@x"/>,<xsl:value-of select="@y"/> L
+  </xsl:for-each>
+</xsl:variable>]]></code.block>
+				<para> The string now looks like "34,34 L 33,99 L 22,99 L " and has
+			 newlines in it. To put it into its final form, we need to normalize the spaces
+			 in the string (to be rid of the newlines), chop the trailing "L", and put an
+			 "M" on the front. After that, we can just return it. </para>
+				<code.block><![CDATA[<xsl:variable name="pointlist1"
+  select="normalize-space($pointlist)"/>
+<xsl:variable name="pointlist2"
+  select="substring($pointlist1,1,string-length($pointlist1)-2)"/>
+<xsl:variable name="pointlist3" select="concat('M ',$pointlist2)"/>
+<xsl:value-of select="$pointlist3"/>]]></code.block>
+				<para> And that's all there is to it. You now have a stylesheet that
+			 should produce a map. Use your favourite XSLT interpreter to give it a try.
+			 When applied to our example data of <xref refloc="AppendixMapData"/>, you
+			 should see the stunning results captured in <xref refloc="fig01"/> below.
+			 </para>
+				<figure id="fig01">
+					<title>Map example output</title>
+					<graphic figname="p05-05-02-fig01" width="6in" height="4.062in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>Scatter plot</title>
+				<para> For this example, let's imagine that we have data from a
+			 scientific experiment in high energy physics, and we want to draw a scatter
+			 plot of the data that shows margins of error. </para>
+				<para> In this example, the XML file produced by the data aquisition
+			 hardware will look like: </para>
+				<code.block><![CDATA[<test>
+  <description>Warp Core Power Output</description>
+  <accuracy mesons="3" temperature="2"/>
+  <datasets>
+    <dataset name="open bore">
+      <point mesons="14" temperature="3"/>
+      <point mesons="80" temperature="4"/>
+      .
+      .
+      .
+    </dataset>
+    <dataset name="clamped">
+      <point mesons="18" temperature="3"/>
+      .
+      .
+      .
+    </dataset>
+  </datasets>
+</test>]]></code.block>
+				<para> Our captured data consists of a number of "dataset" nodes, each
+			 containing a number of "point" nodes. We will want to plot "temperature"
+			 against "mesons". The complete example data file is available in
+			 <xref refloc="AppendixScatterData"/>. </para>
+				<para> We will take a straightforward approach to drawing a scatter
+			 plot of this data. We'll draw our axis, then use two nested loops to draw the
+			 data points. The outer loop will be the dataset, and we'll change the colour
+			 styling as we increment through the loop. The inner loop will iterate over the
+			 "point" nodes, using the "mesons" and "temperature" attributes as x,y
+			 coordinates. We'll invert the Y values, as typically in a graph Y is upward,
+			 whereas in SVG, Y is downward. At each x,y coordinate, we'll draw a cross (two
+			 lines) centred on that point. The length of the lines will be the error margin
+			 for the measurement. </para>
+				<para> As the first example demonstrated, the data extraction problem
+			 can be cleanly factored from the problem of drawing the data. So, let's write
+			 down the XPath statements we'll need to extract the data we want from the data
+			 file:</para>
+				<deflist>
+					<def.item>
+						<def.term> /test/description </def.term>
+						<def>
+							<para> Path to description of data </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /test/accuracy@mesons </def.term>
+						<def>
+							<para> Path to + or - accuracy of "x" component </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /test/accuracy@temperature </def.term>
+						<def>
+							<para> Path to + or - accuracy of "y" component </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /test/datasets/dataset </def.term>
+						<def>
+							<para> Path to each dataset </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @name </def.term>
+						<def>
+							<para> Path to name of dataset (relative to dataset path) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> point </def.term>
+						<def>
+							<para> Path to a datapoint in a dataset (relative to dataset
+					 path) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @mesons </def.term>
+						<def>
+							<para> Path to "x" component of point (relative to point path)
+					 </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @temperature </def.term>
+						<def>
+							<para> Path to "y" component of point (relative to point path)
+					 </para>
+						</def>
+					</def.item>
+				</deflist>
+				<para> Now that we've taken note of XPaths, we write the stylesheet. We
+			 begin creating the stylesheet of <xref refloc="AppendixScatterXSLT"/> with
+			 top-level elements indicating that our XSLT target is to be SVG. </para>
+				<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+</xsl:stylesheet>]]></code.block>
+				<para> Now we'll make our top level template (the one that matches "/")
+			 and have it output the top level svg element. We'll set up a view box such that
+			 our drawing coordinates map directly onto our dataset. That way we don't have
+			 to do any conversions. Note the negative numbers for x,y coordinates of the
+			 viewbox. This offsets the origin of the graph for us, so we have room for
+			 things like the title of the graph and labels on the axis. </para>
+				<code.block><![CDATA[<xsl:template match="/">
+  <svg width="100%" height="100%" viewBox="-15 -15 135 130">
+
+  </svg>
+</xsl:template>]]></code.block>
+				<para> Put in the title of the graph as a text element that is a child
+			 of the svg element. Once you have done this, you can run your XSLT interpreter
+			 and see the first SVG output, unexciting though it is. </para>
+				<code.block><![CDATA[<text x="50" y="-5" style="font-size:5; text-anchor:middle">
+  <xsl:value-of select="/test/description"/>
+</text>]]></code.block>
+				<para> Next we'll stub in templates for drawing the axis of the graph
+			 and for plotting the actual data on the graph. For this example we'll use the
+			 technique of taking into account what the current context node is rather than
+			 passing parameters. The reason we use this approach in this case is only so
+			 that you see an example of each approach.</para>
+				<code.block><![CDATA[<xsl:template name="draw_axis">
+
+</xsl:template>
+
+<xsl:template name="draw_datasets">
+
+</xsl:template>]]></code.block>
+				<para> Call the stubs from the main template. </para>
+				<code.block><![CDATA[<xsl:call-template name="draw_axis"/>
+<xsl:call-template name="draw_datasets"/>]]></code.block>
+				<para> Given that we have a firm handle on the extents of our dataset,
+			 we'll just hard code drawing the axis in the "draw_axis" routine. First, we
+			 draw lines for the X and Y axes. </para>
+				<code.block><![CDATA[<g style="stroke:black; stroke-width:0.25">
+  <line x1="0" y1="100" x2="100" y2="100"/>
+  <line x1="0" y1="0" x2="0" y2="100"/>
+
+</g>]]></code.block>
+				<para> Then we put in the text for labelling what the axes represent.
+			 </para>
+				<code.block><![CDATA[<g style="font-size:3">
+  <text x="103" y="103" style="text-anchor:start">Mesons</text>
+
+  <text x="-1" y="-5" style="text-anchor:middle">Temperature</text>
+
+</g>]]></code.block>
+				<para> We finish off the axes by adorning them with labelled tick
+			 marks. The SVG for the first X-axis tick mark is </para>
+				<code.block><![CDATA[<line x1="0" y1="100" x2="0" y2="101"/>]]></code.block>
+				<para> and the corresponding label is</para>
+				<code.block><![CDATA[<g style="text-anchor:middle">
+  <text x="0" y="104">0</text>
+
+</g>]]></code.block>
+				<para>Similarly, the SVG for the first Y-axis tick mark (remembering
+			 that the Y coordinates are inverted) is </para>
+				<code.block><![CDATA[<line x1="0" y1="100" x2="-1" y2="100"/>]]></code.block>
+				<para> and the corresponding label is</para>
+				<code.block><![CDATA[<g style="text-anchor:end">
+  <text x="-1" y="100">0</text>
+
+</g>]]></code.block>
+				<para> How to put in all the tick marks should be obvious. After this,
+			 if you run your XSLT interpreter, your output should have a nice X axis and Y
+			 axis drawn. </para>
+				<para> Now it's time to start drawing our data. The general approach is
+			 to iterate through the datasets. For each dataset, we'll establish a graphics
+			 context with a different colour, draw a legend entry, then loop through the
+			 points in the dataset. For each point, we'll draw a cross, the size of which
+			 will be determined by our error margins. </para>
+				<para> Since we want to change colours as we iterate across datasets,
+			 we'll make a simple template that returns a colour, depending upon an index.
+			 </para>
+				<code.block><![CDATA[<xsl:template name="colour_by_index">
+  <xsl:param name="index"/>
+  <xsl:choose>
+    <xsl:when test="$index = 1">red</xsl:when>
+    <xsl:when test="$index = 2">blue</xsl:when>
+    <xsl:when test="$index = 3">green</xsl:when>
+    <xsl:otherwise>black</xsl:otherwise>
+  </xsl:choose>
+</xsl:template>]]></code.block>
+				<para> We use the "colour_by_index" template within a loop in the
+			 "draw_datasets" template to establish a colour with which to draw each
+			 dataset.</para>
+				<code.block><![CDATA[<xsl:for-each select="/test/datasets/dataset">
+  <xsl:variable name="colour">
+    <xsl:call-template name="colour_by_index">
+      <xsl:with-param name="index" select="position()"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+</xsl:for-each>]]></code.block>
+				<para> Now continue this loop by drawing a legend entry for the
+			 dataset. Remember that the current context node is the current dataset. What we
+			 want to write out is the value of its "name" attribute.</para>
+				<code.block><![CDATA[<g style="fill:{$colour}; font-size:3">
+  <xsl:variable name="ypos" select="position() * 5"/>
+  <text x="101" y="{$ypos}">
+    <xsl:value-of select="@name"/>
+  </text>
+</g>
+			]]></code.block>
+				<para> Elsewhere, we stub in a template for drawing a point. </para>
+				<code.block><![CDATA[<xsl:template name="draw_point">
+
+</xsl:template>]]></code.block>
+				<para>Next, we re-use the colour established for the legend entry to
+			 draw its data points. In the same dataset loop, we add a nested loop to iterate
+			 over the data points, calling the "draw_point" template each time.</para>
+				<code.block><![CDATA[<g style="stroke:{$colour}; stroke-width:0.25">
+  <xsl:for-each select="point">
+    <xsl:call-template name="draw_point"/>
+  </xsl:for-each>
+</g>]]></code.block>
+				<para> Finally, it is time to fill in the meat of our "draw_point"
+			 routine. What we'll do is get the X and Y coordinates of the current point, and
+			 the X and Y error ranges. From the error ranges we'll compute where to put the
+			 endpoints of our cross. Fairly straightforward stuff, so long as we remember to
+			 invert our Y. </para>
+				<code.block><![CDATA[<xsl:variable name="x" select="@mesons"/>
+<xsl:variable name="y_raw" select="@temperature"/>
+<xsl:variable name="y" select="100 - $y_raw"/>
+<xsl:variable name="x_error" select="/test/accuracy/@mesons"/>
+<xsl:variable name="y_error" select="/test/accuracy/@temperature"/>
+<xsl:variable name="x_plus" select="$x + $x_error"/>
+<xsl:variable name="x_minus" select="$x - $x_error"/>
+<xsl:variable name="y_plus" select="$y + $y_error"/>
+<xsl:variable name="y_minus" select="$y - $y_error"/>
+
+<line x1="{$x_plus}" y1="{$y}" x2="{$x_minus}" y2="{$y}"/>
+<line x1="{$x}" y1="{$y_plus}" x2="{$x}" y2="{$y_minus}"/>]]></code.block>
+				<para> That's all there is to it. We now have a stylesheet that draws a
+			 scatter plot. <xref refloc="fig02"/>shows an image of this stylesheet in
+			 action, when applied to our sample data in <xref refloc="AppendixScatterData"/>.</para>
+				<figure id="fig02">
+					<title>Scatter plot example output</title>
+					<graphic figname="p05-05-02-fig02" width="6in" height="5.5in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>State transition diagram</title>
+				<para> For a state transition diagram example, let's imagine that we
+			 have a reverse engineering analysis of the state transitions of a Unix
+			 scheduler handling lightweight processes. The analysis is XML output from a
+			 CASE tool, and we want to draw a state transition diagram. </para>
+				<para> In this example, the XML output from the CASE tool will look
+			 like: </para>
+				<code.block><![CDATA[<LWP>
+  <states>
+    <state type="active" name="running">
+      running
+    </state>
+    <state type="active" name="runnable_inmem">
+      runnable in memory
+    </state>
+    .
+    .
+    .
+  </states>
+  <transitions>
+    <transition from="running" to="runnable_inmem">
+      preempt
+    </transition>
+    <transition from="running" to="sleep_inmem">
+      sleep
+    </transition>
+    .
+    .
+    .
+  </transitions>
+</LWP>]]></code.block>
+				<para> This file has two parts. The first part contains the various
+			 states the system may be in; the second part contains all the transitions from
+			 state to state. You can find the complete example data file in
+			 <xref refloc="AppendixStateData"/>. </para>
+				<para> You can use very sophisticated algorithms to lay out node graphs
+			 visually, but that would obscure this example. We'll keep it simple. We'll draw
+			 the states along a line from top to bottom of the screen, and connect the
+			 appropriate states with curved arcs. We'll put downward arcs on one side, and
+			 upward arcs on the other to keep things from getting too visually cluttered.
+			 Given this strategy, drawing the data is simple. We iterate through the states,
+			 drawing a shape for each one further down the screen. Depending upon the kind
+			 of state, we'll use a different shape. Then we will iterate through the state
+			 transitions, drawing an arc between the two states each connect. We know where
+			 on the screen any state is, as all x positions are the same, and the y position
+			 depends upon where the state is in the sequence of state definitions. </para>
+				<para> The first thing to do is to create the XPath statements that
+			 extract the data we want to visualize. These XPaths are: </para>
+				<deflist>
+					<def.item>
+						<def.term> /LWP/states/state </def.term>
+						<def>
+							<para> path to states </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> text() </def.term>
+						<def>
+							<para> path to state description (relative to state) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @type </def.term>
+						<def>
+							<para> path to state type (relative to state) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @name </def.term>
+						<def>
+							<para> path to unique state name (relative to state) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> /LWP/transitions/transition </def.term>
+						<def>
+							<para> path to transitions </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> text() </def.term>
+						<def>
+							<para> path to transition description (relative to transition)
+					 </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @from </def.term>
+						<def>
+							<para> path to transition start state name (relative to
+					 transition) </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term> @to </def.term>
+						<def>
+							<para> path to transition end state name (relative to transition)
+					 </para>
+						</def>
+					</def.item>
+				</deflist>
+				<para> As before, the top level elements of the XSLT stylesheet in
+			 <xref refloc="AppendixStateXSLT"/>indicate that our output is to be SVG.
+			 </para>
+				<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+</xsl:stylesheet>]]></code.block>
+				<para> We put in a top level template (that matches "/") with the top
+			 level svg element. </para>
+				<code.block><![CDATA[<xsl:template match="/">
+  <svg width="100%" height="100%" viewBox="0 0 1000 1000">
+
+  </svg>
+</xsl:template>]]></code.block>
+				<para> Drawing the states and drawing the arcs depend upon being able
+			 to know the X,Y position that a state is drawn at. Since we've chosen to draw
+			 our states in a line starting from the top of the screen, our X positions are
+			 constant. We just need a routine to calculate a Y position, based upon the name
+			 of a state. We'll use the position of the state in the sequence of states in
+			 the data source to derive our Y position. Let's write a template to do this
+			 calculation. </para>
+				<code.block><![CDATA[<xsl:template name="state_ypos">
+  <xsl:param name="name"/>
+
+  <xsl:for-each select="/LWP/states/state">
+    <xsl:if test="@name = $name">
+      <xsl:value-of select="position() * 150"/>
+    </xsl:if>
+  </xsl:for-each>
+</xsl:template>]]></code.block>
+				<para> Stub in templates for drawing a state and for drawing an arc.
+			 </para>
+				<code.block><![CDATA[<xsl:template name="draw_state">
+  <xsl:param name="name"/>
+  <xsl:param name="type"/>
+  <xsl:param name="label"/>
+
+</xsl:template>
+
+<xsl:template name="draw_arc">
+  <xsl:param name="from" />
+  <xsl:param name="to" />
+  <xsl:param name="label" />
+
+</xsl:template>]]></code.block>
+				<para> In the main routine, add a for-each loop that iterates through
+			 the states, calling the "draw_state" template (currently just a stub). </para>
+				<code.block><![CDATA[<xsl:for-each select="/LWP/states/state">
+  <xsl:call-template name="draw_state">
+    <xsl:with-param name="name" select="@name"/>
+    <xsl:with-param name="type" select="@type"/>
+    <xsl:with-param name="label" select="text()"/>
+  </xsl:call-template>
+</xsl:for-each>]]></code.block>
+				<para> In the main routine, add a for-each loop that iterates through
+			 the state transitions, calling the "draw_arc" template (also currently just a
+			 stub). </para>
+				<code.block><![CDATA[<xsl:for-each select="/LWP/transitions/transition">
+  <xsl:call-template name="draw_arc">
+    <xsl:with-param name="from" select="@from"/>
+    <xsl:with-param name="to" select="@to"/>
+    <xsl:with-param name="label" select="text()"/>
+  </xsl:call-template>
+</xsl:for-each>]]></code.block>
+				<para> There are two different kinds of states in our input, "active"
+			 and "inactive". We want to make a visual distinction between these states, so
+			 we'll draw them differently. For this example, we'll draw the first as a
+			 rectangle with the label in its centre, and we'll draw the second as an ellipse
+			 with the label in its centre. Stub in a template routine to draw a rectangular
+			 state and another to draw an elliptical state. </para>
+				<code.block><![CDATA[<xsl:template name="draw_square_state">
+  <xsl:param name="name"/>
+  <xsl:param name="label"/>
+
+</xsl:template>
+
+<xsl:template name="draw_ellipse_state">
+  <xsl:param name="name"/>
+  <xsl:param name="label"/>
+
+</xsl:template>]]></code.block>
+				<para> Now that we've stubbed in templates to draw the two different
+			 kinds of state, have the "draw_state" template call one or the other depending
+			 upon the kind of state. </para>
+				<code.block><![CDATA[<xsl:choose>
+  <xsl:when test="$type = 'active'">
+    <xsl:call-template name="draw_square_state">
+      <xsl:with-param name="name" select="$name"/>
+      <xsl:with-param name="label" select="$label"/>
+    </xsl:call-template>
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:call-template name="draw_ellipse_state">
+      <xsl:with-param name="name" select="$name"/>
+      <xsl:with-param name="label" select="$label"/>
+    </xsl:call-template>
+  </xsl:otherwise>
+</xsl:choose>]]></code.block>
+				<para> We'll write the code for drawing the elliptical state next.
+			 There are three things we'll do in the "draw_ellipse_state". We'll calculate
+			 the Y position for the state, draw an ellipse at that Y position, and put the
+			 label for the state at that Y position. </para>
+				<para> First we calculate the Y position for the state. </para>
+				<code.block><![CDATA[<xsl:variable name="y">
+  <xsl:call-template name="state_ypos">
+    <xsl:with-param name="name" select="$name"/>
+  </xsl:call-template>
+</xsl:variable>]]></code.block>
+				<para> Then we draw an ellipse at that position and put the label for
+			 the state at that position. </para>
+				<code.block><![CDATA[<ellipse cx="500" cy="{$y}" rx="120" ry="50"
+  style="fill:none; stroke:black; stroke-width:3"/>
+<text x="500" y="{$y}" style="text-anchor:middle; font-size:25">
+  <xsl:value-of select="$label"/>
+</text>]]></code.block>
+				<para> That takes care of drawing elliptical states. If you run your
+			 favourite XSLT processor with the stylesheet now, the elliptical states should
+			 be drawn. The code for the rectangular states in the "draw_square_state"
+			 template is very similar. The one difference is that when positioning ellipses,
+			 you specify the centre of the ellipse, but when positioning a rectangle, you
+			 specify the position of the corner of the rectangle. This means that we
+			 position the text slightly differently from the rectangle. </para>
+				<para>So, we start by calculating Y positions for text and rectangle.
+			 </para>
+				<code.block><![CDATA[<xsl:variable name="y_raw">
+  <xsl:call-template name="state_ypos">
+    <xsl:with-param name="name" select="$name"/>
+  </xsl:call-template>
+</xsl:variable>
+<xsl:variable name="y" select="$y_raw - 50"/>]]></code.block>
+				<para> Next, we draw a rectangle and put a text label in it. </para>
+				<code.block><![CDATA[<rect x="380" y="{$y}" width="240" height="100"
+  style="fill:none; stroke:black; stroke-width:3"/>
+<text x="500" y="{$y_raw}"
+  style="text-anchor:middle; font-size:25">
+  <xsl:value-of select="$label"/>
+</text>]]></code.block>
+				<para> That takes care of drawing states. If you use this stylesheet
+			 now you'll get boxes and ellipses drawn down the centre of the screen. The next
+			 thing to do is draw the state transitions. We'll draw the transitions as arcs
+			 between the states, with "down" arcs on the left hand side of the diagram, and
+			 "up" arcs on the right hand side. In SVG, arcs are drawn using the "path"
+			 element. In particular, the elliptical arc command is an "A" in the path
+			 string, followed by the specifics for where the arc begins, its X and Y radius,
+			 where it ends, and so on. But first we need to distinguish "upward" arcs from
+			 "downward" arcs. We'll start by stubbing in a template to draw an "up" arc and
+			 a template to draw a "down" arc. </para>
+				<code.block><![CDATA[<xsl:template name="draw_up_arc">
+  <xsl:param name="from_y" />
+  <xsl:param name="to_y" />
+  <xsl:param name="label" />
+
+</xsl:template>
+
+<xsl:template name="draw_down_arc">
+  <xsl:param name="from_y" />
+  <xsl:param name="to_y" />
+  <xsl:param name="label" />
+
+</xsl:template>]]></code.block>
+				<para> Setting aside our templates for drawing "up" and "down" arcs for
+			 the moment, let's consider our general "draw_arc" template. The first thing to
+			 do in this template is to calculate Y positions of where we are drawing the arc
+			 to Unsurprisingly, we will be calling the same template that the state
+			 templates used for calculating Y position. </para>
+				<code.block><![CDATA[<xsl:variable name="from_y">
+  <xsl:call-template name="state_ypos">
+    <xsl:with-param name="name" select="$from"/>
+  </xsl:call-template>
+</xsl:variable>
+<xsl:variable name="to_y">
+  <xsl:call-template name="state_ypos">
+    <xsl:with-param name="name" select="$to"/>
+  </xsl:call-template>
+</xsl:variable>]]></code.block>
+				<para> The way we know whether we are drawing an "up" arc or a "down"
+			 arc, is by seeing which is greater, the Y value of the "to" position, or the Y
+			 value of the "from" position. Depending upon this we call either our
+			 "draw_up_arc" template or our "draw_down_arc" template. </para>
+				<code.block><![CDATA[<xsl:choose>
+  <xsl:when test="$from_y &gt; $to_y">
+    <xsl:call-template name="draw_up_arc">
+      <xsl:with-param name="from_y" select="$from_y"/>
+      <xsl:with-param name="to_y" select="$to_y"/>
+      <xsl:with-param name="label" select="$label"/>
+    </xsl:call-template>
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:call-template name="draw_down_arc">
+      <xsl:with-param name="from_y" select="$from_y"/>
+      <xsl:with-param name="to_y" select="$to_y"/>
+      <xsl:with-param name="label" select="$label"/>
+    </xsl:call-template>
+  </xsl:otherwise>
+</xsl:choose>]]></code.block>
+				<para> That takes care of "draw_arc". Now we need to fill in our
+			 "draw_up_arc" template and our "draw_down_arc" template. We'll do the
+			 "draw_up_arc" template first. </para>
+				<para> In the "draw_up_arc" template, first calculate the radius
+			 needed, and the midpoint. We'll be using the midpoint as a place to put the
+			 label for the arc and a place to put some directional indicator for the arc.
+			 </para>
+				<code.block><![CDATA[<xsl:variable name="radius" select="($from_y - $to_y) div 2"/>
+<xsl:variable name="mid_x" select="620 + $radius"/>
+<xsl:variable name="mid_y" select="$from_y - $radius"/>]]></code.block>
+				<para> Draw an arc from the beginning point to the end point with the
+			 calculated radius. </para>
+				<code.block><![CDATA[<g style="fill:none; stroke:blue; stroke-width:3">
+  <path d="M 620 {$from_y} A {$radius},{$radius} 0 1,0 620,{$to_y}"/>
+</g>]]></code.block>
+				<para> Label the arc just offset from the midpoint. </para>
+				<code.block><![CDATA[<xsl:variable name="text_x" select="$mid_x + 5"/>
+<text x="{$text_x}" y="{$mid_y}" style="fill:blue; font-size:25">
+  <xsl:value-of select="$label"/>
+</text>]]></code.block>
+				<para> Now we have blue upward arcs being drawn. Let's do the downward
+			 arcs. In "draw_down_arc", we start by calculating radius and midpoint. </para>
+				<code.block><![CDATA[<xsl:variable name="radius" select="($to_y - $from_y) div 2"/>
+<xsl:variable name="mid_x" select="380 - $radius"/>
+<xsl:variable name="mid_y" select="$to_y - $radius"/>]]></code.block>
+				<para> Draw the arc from beginning point to end point with the
+			 calculated radius. </para>
+				<code.block><![CDATA[<g style="fill:none; stroke:blue; stroke-width:3">
+  <path d="M 380 {$from_y} A {$radius},{$radius} 0 1,0 380,{$to_y}"/>
+</g>]]></code.block>
+				<para> Label the arc, just off the midpoint. </para>
+				<code.block><![CDATA[<xsl:variable name="text_x" select="$mid_x - 10"/>
+<text x="{$text_x}" y="{$mid_y}"
+  style="fill:blue; font-size:25; text-anchor:end">
+  <xsl:value-of select="$label"/>
+</text>]]></code.block>
+				<para> If you run your XSLT interpreter on the stylesheet now, you'll
+			 see nice labeled arcs drawn between the states. The diagram is almost complete.
+			 All that is left to do is to put some marker on the midpoint of the arcs to
+			 indicate the direction of the arcs. So, we'll make a template to draw an
+			 arrowhead at a point. Note the use of a rotate transformation so we can make it
+			 point in any direction we want. We could actually have done both the
+			 translation and rotation in one "transform" statement, but we've broken them
+			 out so it is clearer what is going on. </para>
+				<code.block><![CDATA[<xsl:template name="arrowhead">
+  <xsl:param name="x"/>
+  <xsl:param name="y"/>
+  <xsl:param name="rotation"/>
+  <g transform="translate( {$x}, {$y} )">
+    <g transform="rotate( {$rotation} )">
+      <path d="M 0 0 l -7 -7 l 7 7 l -7 7"/>
+    </g>
+  </g>
+</xsl:template>]]></code.block>
+				<para> In the "draw_up_arc", within the same "g" context we use to draw
+			 the arc, we draw the arrowhead at the arc mid point </para>
+				<code.block><![CDATA[<xsl:call-template name="arrowhead">
+  <xsl:with-param name="x" select="$mid_x"/>
+  <xsl:with-param name="y" select="$mid_y"/>
+  <xsl:with-param name="rotation" select="270"/>
+</xsl:call-template>]]></code.block>
+				<para> In the "draw_down_arc", within the same "g" context we use to
+			 draw the arc, we again draw the arrowhead at the arc mid point </para>
+				<code.block><![CDATA[<xsl:call-template name="arrowhead">
+  <xsl:with-param name="x" select="$mid_x"/>
+  <xsl:with-param name="y" select="$mid_y"/>
+  <xsl:with-param name="rotation" select="90"/>
+</xsl:call-template>]]></code.block>
+				<para> And that's it. We now have a stylesheet that nicely renders
+			 simple State Transition Diagrams. When applied to the sample data of
+			 <xref refloc="AppendixStateData"/>, it produces the results shown in
+			 <xref refloc="fig03"/>.</para>
+				<figure id="fig03">
+					<title>State transition diagram example output</title>
+					<graphic figname="p05-05-02-fig03" width="6in" height="5in" scalefit="1"/>
+				</figure>
+			</subsec1>
+		</section>
+		<section>
+			<title>Let's Get Fancy</title>
+			<para>The examples that we have worked through were artificially
+		  simplified in order to improve their instructional value. This chapter will
+		  give you a taste of what is possible when we remove these limitations and
+		  explore the full potential of Graphical Stylesheets.</para>
+			<para>For instance, we hard-coded some details about the geometry so that
+		  our specific example data would be sized and positioned properly. These
+		  included the viewBox, the units and range of values written on X and Y axes,
+		  the font sizes and the stroke-widths. Ideally, all of these things need to be
+		  computed from the data to ensure that the generated graphical components are
+		  appropriately proportioned relative to one another regardless of the input data
+		  values. By doing so, we achieve truly universal diagram-generators.</para>
+			<para>The following sections provide a number of samples of images
+		  generated by actual Graphical Stylesheets. In each case, we highlight both the
+		  unique features and the real-world complexities that were involved in creating
+		  these solutions.</para>
+			<subsec1>
+				<title>A better mapmaker</title>
+				<para>We can add a good deal to our map example by utilizing more
+			 sophisticated logic and some more features of SVG. First, we use the
+			 text-on-a-path feature to lay out the names of certain features along their
+			 edges. Other types of features get labelled relative to their centroid, or
+			 according to another algorithm. Ideally, we would compute avoidance algorithms
+			 and adjust font sizes in dense areas, but this has not been done yet.</para>
+				<para>Next, we add an interactive legend that allows you to show or
+			 hide map features by clicking on their legend entries. This uses the scripting,
+			 layer (grouping) and visibility features of SVG.</para>
+				<para> Finally, we tackle more complicated data formats. Popular GIS
+			 XML formats such as Geographic Markup Language <bibref refloc="GML"/> and
+			 LandXML (<a href="http://www.landxml.org/spec.htm"/>) can encode data points in
+			 much more complicated ways than our example suggested. It is possible for
+			 entire sets of points to be encoded in a single text string without markup.
+			 Worse, encoded strings can be indexes into encoded point lists.</para>
+				<para>
+					<xref refloc="fig04"/> shows output from a Graphical Stylesheet
+			 that is a better mapmaker.</para>
+				<figure id="fig04">
+					<title>Interactive map</title>
+					<graphic figname="p05-05-02-fig04" width="6in" height="3.151in" scalefit="1"/>
+				</figure>
+				<para/>
+			</subsec1>
+			<subsec1>
+				<title>Mathematical complexities</title>
+				<para>The geometry problems in real-world Graphical Stylesheets can
+			 require a whole lot of Mathematics that XSLT does not specifically support,
+			 including matrix multiplication, trigonometry and square roots. So, we wrote
+			 our own Math library purely in XSLT 1.0 to facilitate such Graphical
+			 Stylesheets. <xref refloc="fig05"/> shows an enhancement of our scatter plot
+			 example that has a logarithmic scale on one of its axes. It also has hover
+			 behaviours, an interactive legend, and buttons to toggle data points and
+			 lines.</para>
+				<figure id="fig05">
+					<title>Logarithmic axis</title>
+					<graphic figname="p05-05-02-fig05" width="6in" height="4.875in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>Flowcharting and charting flow</title>
+				<para>Our state transition example was a special case of a flowchart,
+			 and a flowchart is just a way of drawing a directed graph of vertices and
+			 edges. Another way is to give the edges thickness, so they become like tubes.
+			 One of our most complex Graphical Stylesheets to date draws a fairly general
+			 class of directed graphs in tubular fashion. An example of its output is shown
+			 in <xref refloc="fig06"/>. It is called a "Spaghetti Diagram" for obvious
+			 reasons.</para>
+				<para>This diagram type was invented by Sebastian Moffatt of Propolis
+			 Information Technologies (<a href="http://www.sheltair.com/affiliated/aframe.html"/>), who uses our
+			 Graphical Stylesheet to present resource planning and modelling scenarios. It
+			 is suitable for representing the flow of any conserved quantity (e.g. water,
+			 energy, gas) with sources, sinks, and any number of optional intermediate
+			 vertices and loopbacks. The thickness of a tube represents a quantity that
+			 passes from start to end. Our challenge was to find algorithms that weave the
+			 tubes in such a way that they do not completely obliterate each other. Hovering
+			 over a tube causes it to become highlighted and move to the foreground.</para>
+				<figure id="fig06">
+					<title>Spaghetti diagram</title>
+					<graphic figname="p05-05-02-fig06" width="6in" height="3.172in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>Pi, anyone?</title>
+				<para>Now that we've had spaghetti, how about pie? Or should we say pi,
+			 in honour of the trigonometry needed to compute the arcs of the pie chart in
+			 <xref refloc="fig07"/>. This one allows you to move the pieces of the pie by
+			 clicking on them, has an interactive legend, and features 3D shadow
+			 effects.</para>
+				<figure id="fig07">
+					<title>Pie chart</title>
+					<graphic figname="p05-05-02-fig07" width="6in" height="4.5in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>The 3rd dimension</title>
+				<para>Our XSLT Math library includes 4x4 matrix multiplication and
+			 functions necessary to project 3-dimensional graphs onto 2 dimensions at
+			 whatever roll, pitch and yaw you choose. <xref refloc="fig08"/> shows output
+			 from a Graphical Stylesheet that uses this functionality.</para>
+				<figure id="fig08">
+					<title>3-D Plot</title>
+					<graphic figname="p05-05-02-fig08" width="6in" height="5in" scalefit="1"/>
+				</figure>
+			</subsec1>
+			<subsec1>
+				<title>Equations to go</title>
+				<para>Our last sample image, <xref refloc="fig09"/>, demonstrates a
+			 Graphical Stylesheet capable of the advanced text layout needed to render
+			 equations. It is a Mathematical Markup Language <bibref refloc="MathML2"/> to
+			 SVG converter written in XSLT. This has a very practical use: if SVG becomes
+			 widely supported by browsers but MathML does not, then this provides a way for
+			 people to publish their equations online for everyone to read.</para>
+				<figure id="fig09">
+					<title>MathML as SVG</title>
+					<graphic figname="p05-05-02-fig09" width="6in" height="1.5in" scalefit="1"/>
+				</figure>
+			</subsec1>
+		</section>
+		<section>
+			<title>Automating Graphical Stylesheet Production</title>
+			<subsec1>
+				<title>Reusability</title>
+				<para> Given that there is actual programming effort involved in
+			 creating a Graphical Stylesheet, you don't want to spend a day or two writing a
+			 Graphical Stylesheet to just create a single image. You'd be better off with a
+			 drawing program. </para>
+				<para> A key strength of Graphical Stylesheets is that they are are
+			 re-usable. When the data (perhaps in a database) being visualized changes,
+			 applying the stylesheet creates a new, up-to-date image. When you want to
+			 visualize a new dataset, so long as the dataset has the same DTD, you can just
+			 apply the same stylesheet. </para>
+				<para> If the dataset has a different DTD, usually only minimal changes
+			 to the stylesheet are required. Our examples demonstrated a methodology of
+			 separating XPath dependencies from rendering code. The result is that the bulk
+			 of a Graphical Stylesheet's logic depends upon the output SVG, not upon the
+			 input format. You only need to change the few XPath statements that extract key
+			 bits of data from the data source. The time invested in creating a Graphical
+			 Stylesheet can pay dividends as you re-use it again and again to visualize
+			 different data.</para>
+			</subsec1>
+			<subsec1>
+				<title>Software to generate Graphical Stylesheets</title>
+				<para> Our success at factoring out XPaths begs the question: what else
+			 can be factored out? Can the geometry be factored in such a way that the XSLT
+			 can be easily tweaked for appearance, not just data format? Can the whole
+			 process of authoring and modifying Graphical Stylesheets be automated to the
+			 point that the XSLT can be machine-generated? Can the programming paradigm be
+			 completely removed, so that Graphical Stylesheets can be created through an
+			 intuitive user interface accessible to a wide audience?</para>
+				<para>The answer to all of these questions is a resounding "yes", and
+			 the proof is an application called <i>Catwalk</i> recently developed by
+			 SchemaSoft (<a href="http://www.schemasoft.com"/>). Catwalk embodies a system
+			 for parameterizing geometry, and presents the user with the input parameters
+			 for a given diagram type as slots that need to be filled in. Once they are
+			 filled in, Catwalk <i>generates a Graphical Stylesheet</i> that will
+			 manufacture diagrams as needed. The input parameters include the data to be
+			 drawn as well as many other parameters affecting appearance. The user need not
+			 know anything about XPath syntax to fill in a slot; they simply load one or
+			 more example XML data files and point at a node containing an instance of their
+			 data. They can also pipe their data through various functions en route, using a
+			 visual representation of functions. You can find out more at
+			 <a href="http://www.schemasoft.com/catwalk/"/>.</para>
+			</subsec1>
+		</section>
+		<section>
+			<title>Implications</title>
+			<subsec1>
+				<title>Where will Graphical Stylesheets be used?</title>
+				<para> Now that you have been exposed to a random sampling of Graphical
+			 Stylesheet examples, you might be wondering how widely they apply and what
+			 their compelling use-cases might be. Here are some of the important vertical
+			 application domains that we have identified within the broader category of data
+			 visualization. Feel free to add to the list!</para>
+				<randlist>
+					<li>
+						<para>Business graphics (Bar chart, etc.)</para>
+					</li>
+					<li>
+						<para>Schematic Diagrams</para>
+					</li>
+					<li>
+						<para>Geographic Information Systems / Digital Mapping</para>
+					</li>
+					<li>
+						<para>Computer Aided Design</para>
+					</li>
+					<li>
+						<para>Project Management (Gantt Chart, etc.)</para>
+					</li>
+					<li>
+						<para>Engineering Blueprints</para>
+					</li>
+					<li>
+						<para>Automated Mapping / Facilities Management</para>
+					</li>
+					<li>
+						<para>Meteorology (Weather maps, etc.)</para>
+					</li>
+					<li>
+						<para>Presentation and Courseware</para>
+					</li>
+					<li>
+						<para>Statistics</para>
+					</li>
+					<li>
+						<para>Molecular Visualization</para>
+					</li>
+				</randlist>
+			</subsec1>
+			<subsec1>
+				<title>Why will Graphical Stylesheets be used?</title>
+				<para> By separating style from content, stylesheets can be re-applied
+			 and content can be re-purposed. Text stylesheets have already proven themselves
+			 invaluable on the Web, partly due to the sheer size of internal and external
+			 corporate Web sites. Text stylesheets allow the look of entire Web sites to be
+			 re-designed by tweaking the stylesheet rather than tediously editing every Web
+			 page. The same advantages apply to Graphical Stylesheets, since much of the
+			 data stored by organizations is either graphical in nature or needs to be
+			 presented graphically.</para>
+			</subsec1>
+			<subsec1>
+				<title>What form will Graphical Stylesheets take?</title>
+				<para> In principle, one could implement the concept of Graphical
+			 Stylesheets in a form other than XSLT producing SVG. However, we believe that
+			 XSLT and SVG bring unique advantages to this problem.</para>
+				<para>SVG provides a universal non-proprietary vector graphic format.
+			 It provides a means for Web publishing of graphics that download quickly, can
+			 be styled, can be animated, are scalable, are accessible, are interactive, and
+			 are searchable. It is integrated with a host of other open standards, enabling
+			 software re-use and a consistent user experience. It is vastly superior to the
+			 alternative of raster graphics. Therefore SVG is the natural choice as a target
+			 for Graphical Stylesheets.</para>
+				<para>Since SVG is XML, the problem of defining a Graphical Stylesheet
+			 therefore reduces to an XML to XML translation problem. Since the input and
+			 output tend to have radically different structure, one needs a powerful XML
+			 translation language that supports programming constructs. XSLT fits the bill
+			 perfectly.</para>
+				<para>A variation on the theme is to use a hybrid Java/XSLT
+			 transformation solution with SVG output. This is made particularly compelling
+			 by the recent progress in compiling XSLT to Java byte code (<a href="http://xml.apache.org/xalan-j/xsltc/"/>). This speeds up the XSLT and
+			 allows it to call through to code written in Java for things that are better
+			 not done in XSLT (e.g. intensive Math or string manipulations).</para>
+			</subsec1>
+			<subsec1>
+				<title>How will Graphical Stylesheets be used?</title>
+				<para>More and more Web sites are replacing their fixed HTML pages with
+			 pages that are generated on the fly via server-side scripting. Thus the
+			 information presented to the user can always be current, and can be responsive
+			 to particular user requests or profiles. By retrieving database queries as XML
+			 and piping the XML through a server-based Graphical Stylesheet, one can achieve
+			 a similar objective with SVG. Therefore we expect that sites employing fixed
+			 SVG pages will be rapidly replaced by sites employing Graphical Stylesheets; in
+			 fact where appropriate, fixed SVG will essentially be pre-empted by Graphical
+			 Stylesheets because the world has already learned its lesson on HTML.</para>
+				<para>Furthermore, SVG has rich animation and interactivity features
+			 built in, and many of these can be exploited by more sophisticated Graphical
+			 Stylesheets. While Graphical Stylesheets are clearly useful for dynamic
+			 generation of graphics on a server, the graphics that they serve up can also be
+			 dynamic on the client. The combined effect: Graphical Stylesheets can provide a
+			 compelling user interface for the next generation of Web applications and
+			 services, whether for desktop, mobile or embedded systems. When so used, the
+			 range of possible applications is vast indeed.</para>
+			</subsec1>
+		</section>
+		<section id="Appendix">
+			<title>Appendix: Example Files</title>
+			<para>For reference, full listings are given here for the input data
+		  files and the XSLT files of each of the three worked examples in this
+		  paper.</para>
+			<subsec1 id="AppendixMap">
+				<title>Map files</title>
+				<subsec2 id="AppendixMapData">
+					<title>Input data</title>
+					<code.block><![CDATA[<map>
+  <Streets>
+    <Feature name="Beach Ave">
+      <point x="26" y="0"/>
+      <point x="170" y="200"/>
+      <point x="275" y="280"/>
+    </Feature>
+    <Feature name="Granville St">
+      <point x="75" y="450"/>
+      <point x="557" y="40"/>
+    </Feature>
+    <Feature name="Burrard St">
+      <point x="0" y="270"/>
+      <point x="225" y="171"/>
+      <point x="430" y="0"/>
+    </Feature>
+    <Feature name="Pacific St">
+      <point x="27" y="0"/>
+      <point x="377" y="300"/>
+      <point x="400" y="315"/>
+      <point x="425" y="320"/>
+    </Feature>
+    <Feature name="Bute St">
+      <point x="80" y="75"/>
+      <point x="175" y="0"/>
+    </Feature>
+    <Feature name="Thurlow St">
+      <point x="132" y="148"/>
+      <point x="310" y="0"/>
+    </Feature>
+    <Feature name="Hornby St">
+      <point x="185" y="260"/>
+      <point x="500" y="0"/>
+    </Feature>
+    <Feature name="Howe St">
+      <point x="220" y="280"/>
+      <point x="555" y="0"/>
+    </Feature>
+    <Feature name="Seymour St">
+      <point x="348" y="275"/>
+      <point x="650" y="15"/>
+    </Feature>
+    <Feature name="Richards St">
+      <point x="375" y="299"/>
+      <point x="650" y="60"/>
+    </Feature>
+    <Feature name="Homer">
+      <point x="420" y="318"/>
+      <point x="650" y="110"/>
+    </Feature>
+    <Feature name="Hamilton St">
+      <point x="474" y="293"/>
+      <point x="612" y="171"/>
+    </Feature>
+    <Feature name="Mainland St">
+      <point x="535" y="257"/>
+      <point x="650" y="160"/>
+    </Feature>
+    <Feature name="Harwood St">
+      <point x="80" y="0"/>
+      <point x="254" y="146"/>
+    </Feature>
+    <Feature name="Burnaby St">
+      <point x="148" y="0"/>
+      <point x="285" y="120"/>
+    </Feature>
+    <Feature name="Davie St">
+      <point x="205" y="0"/>
+      <point x="606" y="312"/>
+    </Feature>
+    <Feature name="Pendrell St">
+      <point x="270" y="0"/>
+      <point x="294" y="13"/>
+    </Feature>
+    <Feature name="Comox St">
+      <point x="345" y="0"/>
+      <point x="389" y="34"/>
+    </Feature>
+    <Feature name="Drake St">
+      <point x="267" y="135"/>
+      <point x="563" y="360"/>
+    </Feature>
+    <Feature name="Helmcken St">
+      <point x="372" y="50"/>
+      <point x="582" y="218"/>
+    </Feature>
+    <Feature name="Nelson St">
+      <point x="408" y="0"/>
+      <point x="650" y="202"/>
+    </Feature>
+    <Feature name="Smithe St">
+      <point x="510" y="0"/>
+      <point x="650" y="120"/>
+    </Feature>
+    <Feature name="Robson St">
+      <point x="600" y="0"/>
+      <point x="650" y="45"/>
+    </Feature>
+    <Feature name="Marinaside Cres">
+      <point x="550" y="375"/>
+      <point x="606" y="312"/>
+      <point x="630" y="305"/>
+      <point x="650" y="305"/>
+    </Feature>
+    <Feature name="Pacific Blvd">
+      <point x="425" y="320"/>
+      <point x="455" y="320"/>
+      <point x="490" y="315"/>
+      <point x="525" y="310"/>
+      <point x="634" y="270"/>
+      <point x="650" y="275"/>
+    </Feature>
+    <Feature name="Expo St">
+      <point x="634" y="270"/>
+      <point x="650" y="270"/>
+    </Feature>
+    <Feature name="Cambie St">
+      <point x="650" y="215"/>
+      <point x="630" y="260"/>
+      <point x="634" y="270"/>
+    </Feature>
+    <Feature name="Cambie St">
+      <point x="634" y="270"/>
+      <point x="650" y="222"/>
+    </Feature>
+    <Feature name="Johnston St">
+      <point x="120" y="340"/>
+      <point x="228" y="450"/>
+    </Feature>
+    <Feature name="Cartwright St">
+      <point x="117" y="414"/>
+      <point x="175" y="450"/>
+    </Feature>
+    <Feature name="Duranbau St">
+      <point x="120" y="340"/>
+      <point x="123" y="409"/>
+    </Feature>
+    <Feature name="Old Bridge St">
+      <point x="178" y="399"/>
+      <point x="120" y="450"/>
+    </Feature>
+    <Feature name="Anderson St">
+      <point x="178" y="399"/>
+      <point x="130" y="403"/>
+    </Feature>
+  </Streets>
+  <Land>
+    <Feature name="Granville Island">
+      <point x="265" y="450"/>
+      <point x="275" y="448"/>
+      <point x="263" y="435"/>
+      <point x="258" y="440"/>
+      <point x="190" y="365"/>
+      <point x="185" y="365"/>
+      <point x="185" y="360"/>
+      <point x="170" y="355"/>
+      <point x="155" y="340"/>
+      <point x="160" y="335"/>
+      <point x="150" y="325"/>
+      <point x="135" y="327"/>
+      <point x="134" y="322"/>
+      <point x="110" y="322"/>
+      <point x="80" y="325"/>
+      <point x="85" y="330"/>
+      <point x="85" y="350"/>
+      <point x="75" y="375"/>
+      <point x="75" y="380"/>
+      <point x="85" y="395"/>
+      <point x="85" y="405"/>
+      <point x="75" y="415"/>
+      <point x="72" y="425"/>
+      <point x="74" y="440"/>
+      <point x="80" y="450"/>
+    </Feature>
+    <Feature name="Downtown Vancouver">
+      <point x="0" y="0"/>
+      <point x="0" y="60"/>
+      <point x="20" y="57"/>
+      <point x="30" y="72"/>
+      <point x="26" y="94"/>
+      <point x="10" y="99"/>
+      <point x="22" y="108"/>
+      <point x="43" y="100"/>
+      <point x="48" y="112"/>
+      <point x="40" y="130"/>
+      <point x="60" y="155"/>
+      <point x="73" y="145"/>
+      <point x="91" y="149"/>
+      <point x="95" y="170"/>
+      <point x="115" y="220"/>
+      <point x="130" y="230"/>
+      <point x="140" y="225"/>
+      <point x="165" y="240"/>
+      <point x="155" y="255"/>
+      <point x="165" y="265"/>
+      <point x="165" y="275"/>
+      <point x="175" y="270"/>
+      <point x="170" y="280"/>
+      <point x="170" y="285"/>
+      <point x="175" y="275"/>
+      <point x="190" y="285"/>
+      <point x="205" y="280"/>
+      <point x="215" y="282"/>
+      <point x="210" y="282"/>
+      <point x="215" y="310"/>
+      <point x="220" y="315"/>
+      <point x="225" y="330"/>
+      <point x="245" y="333"/>
+      <point x="255" y="340"/>
+      <point x="265" y="340"/>
+      <point x="265" y="338"/>
+      <point x="268" y="338"/>
+      <point x="280" y="345"/>
+      <point x="265" y="355"/>
+      <point x="300" y="375"/>
+      <point x="295" y="380"/>
+      <point x="295" y="385"/>
+      <point x="310" y="385"/>
+      <point x="325" y="375"/>
+      <point x="425" y="445"/>
+      <point x="455" y="435"/>
+      <point x="430" y="410"/>
+      <point x="465" y="370"/>
+      <point x="475" y="375"/>
+      <point x="490" y="375"/>
+      <point x="505" y="375"/>
+      <point x="530" y="405"/>
+      <point x="540" y="398"/>
+      <point x="570" y="415"/>
+      <point x="580" y="405"/>
+      <point x="600" y="400"/>
+      <point x="610" y="398"/>
+      <point x="612" y="380"/>
+      <point x="615" y="370"/>
+      <point x="615" y="335"/>
+      <point x="630" y="328"/>
+      <point x="630" y="320"/>
+      <point x="650" y="315"/>
+      <point x="650" y="0"/>
+    </Feature>
+  </Land>
+  <Water>
+    <Feature name="Salt Chuck">
+      <point x="0" y="60"/>
+      <point x="20" y="57"/>
+      <point x="30" y="72"/>
+      <point x="26" y="94"/>
+      <point x="10" y="99"/>
+      <point x="22" y="108"/>
+      <point x="43" y="100"/>
+      <point x="48" y="112"/>
+      <point x="40" y="130"/>
+      <point x="60" y="155"/>
+      <point x="73" y="145"/>
+      <point x="91" y="149"/>
+      <point x="95" y="170"/>
+      <point x="115" y="220"/>
+      <point x="130" y="230"/>
+      <point x="140" y="225"/>
+      <point x="165" y="240"/>
+      <point x="155" y="255"/>
+      <point x="165" y="265"/>
+      <point x="165" y="275"/>
+      <point x="175" y="270"/>
+      <point x="170" y="280"/>
+      <point x="170" y="285"/>
+      <point x="175" y="275"/>
+      <point x="190" y="285"/>
+      <point x="205" y="280"/>
+      <point x="215" y="282"/>
+      <point x="210" y="282"/>
+      <point x="215" y="310"/>
+      <point x="220" y="315"/>
+      <point x="225" y="330"/>
+      <point x="245" y="333"/>
+      <point x="255" y="340"/>
+      <point x="265" y="340"/>
+      <point x="265" y="338"/>
+      <point x="268" y="338"/>
+      <point x="280" y="345"/>
+      <point x="265" y="355"/>
+      <point x="300" y="375"/>
+      <point x="295" y="380"/>
+      <point x="295" y="385"/>
+      <point x="310" y="385"/>
+      <point x="325" y="375"/>
+      <point x="425" y="445"/>
+      <point x="455" y="435"/>
+      <point x="430" y="410"/>
+      <point x="465" y="370"/>
+      <point x="475" y="375"/>
+      <point x="490" y="375"/>
+      <point x="505" y="375"/>
+      <point x="530" y="405"/>
+      <point x="540" y="398"/>
+      <point x="570" y="415"/>
+      <point x="580" y="405"/>
+      <point x="600" y="400"/>
+      <point x="610" y="398"/>
+      <point x="612" y="380"/>
+      <point x="615" y="370"/>
+      <point x="615" y="335"/>
+      <point x="630" y="328"/>
+      <point x="630" y="320"/>
+      <point x="650" y="315"/>
+      <point x="650" y="450"/>
+      <point x="265" y="450"/>
+      <point x="275" y="448"/>
+      <point x="263" y="435"/>
+      <point x="258" y="440"/>
+      <point x="190" y="365"/>
+      <point x="185" y="365"/>
+      <point x="185" y="360"/>
+      <point x="170" y="355"/>
+      <point x="155" y="340"/>
+      <point x="160" y="335"/>
+      <point x="150" y="325"/>
+      <point x="135" y="327"/>
+      <point x="134" y="322"/>
+      <point x="110" y="322"/>
+      <point x="80" y="325"/>
+      <point x="85" y="330"/>
+      <point x="85" y="350"/>
+      <point x="75" y="375"/>
+      <point x="75" y="380"/>
+      <point x="85" y="395"/>
+      <point x="85" y="405"/>
+      <point x="75" y="415"/>
+      <point x="72" y="425"/>
+      <point x="74" y="440"/>
+      <point x="80" y="450"/>
+      <point x="0" y="450"/>
+    </Feature>
+  </Water>
+</map>]]></code.block>
+				</subsec2>
+				<subsec2 id="AppendixMapXSLT">
+					<title>XSLT</title>
+					<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+<!-- xpaths of note in our input format are:
+  absolute xpath to street features
+    /map/Streets/Feature
+  absolute xpath to Land features
+    /map/Land/Feature
+  absolute xpath to Water features
+    /map/Water/Feature
+
+  Relative xpaths within a feature:
+    name of feature
+      @name
+    points in a feature:
+      point
+    X coords of feature
+      point/@x
+    Y coords of feature
+      point/@y
+-->
+
+<!-- our "main routine" -->
+<xsl:template match="/">
+  
+  <!-- to save us having to do conversions of units, just set the 
+       viewbox so we can directly plot data points.  That way the
+       viewer does most of unit conversions.
+       Our max x value is 650, our min x value is 0
+       Our max y value is 450, our min y value is 0
+       -->
+  <svg width="100%" height="100%" viewBox="0 0 650 450">
+
+    <!-- render water -->
+    <xsl:call-template name="render-feature">
+      <xsl:with-param name="features" select="/map/Water/Feature"/>
+      <xsl:with-param name="closed" select="1"/>
+      <xsl:with-param name="colour">blue</xsl:with-param>
+    </xsl:call-template>
+    <!-- render land -->
+    <xsl:call-template name="render-feature">
+      <xsl:with-param name="features" select="/map/Land/Feature"/>
+      <xsl:with-param name="closed" select="1"/>
+      <xsl:with-param name="colour">yellow</xsl:with-param>
+    </xsl:call-template>
+    <!-- render roads -->
+    <xsl:call-template name="render-feature">
+      <xsl:with-param name="features" select="/map/Streets/Feature"/>
+      <xsl:with-param name="closed" select="0"/>
+      <xsl:with-param name="colour">black</xsl:with-param>
+    </xsl:call-template>
+
+  </svg>
+</xsl:template>
+
+<!-- render a "feature", a simple polygon that is either open or closed -->
+<xsl:template name="render-feature">
+  <xsl:param name="features"/>
+  <xsl:param name="closed"/>
+  <xsl:param name="colour"/>
+  
+  <!-- style of polygons -->
+  <g style="stroke:{$colour}; fill:{$colour}">
+    <!-- loop through each feature -->
+    <xsl:for-each select="$features">
+
+      <desc><xsl:value-of select="@name"/></desc>
+
+      <!-- stuff the meat of an svg "path" into a variable -->
+      <xsl:variable name="path">
+        <xsl:call-template name="create_path">
+          <xsl:with-param name="points" select="point"/>
+        </xsl:call-template>
+      </xsl:variable>
+
+      <!-- draw the path, open or closed -->
+      <xsl:choose>
+        <xsl:when test="$closed = 1">
+          <path d="{$path} Z"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <path d="{$path}" style="fill:none"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+  </g>
+</xsl:template>
+
+<!-- Create the meat of a path's "d" attribute -->
+<xsl:template name="create_path">
+  <xsl:param name="points"/>
+
+  <!-- extract x and y points into a string -->
+  <xsl:variable name="pointlist">
+    <!-- loop through points -->
+    <xsl:for-each select="$points" xml:space="preserve">
+      <xsl:value-of select="@x"/>,<xsl:value-of select="@y"/> L
+    </xsl:for-each>
+  </xsl:variable>
+
+  <!-- normalize spaces in path -->
+  <xsl:variable name="pointlist1"
+    select="normalize-space($pointlist)"/>
+  <!-- remove trailing ' L' -->
+  <xsl:variable name="pointlist2"
+    select="substring($pointlist1,1,string-length($pointlist1)-2)"/>
+  <!-- add first 'M' -->
+  <xsl:variable name="pointlist3" select="concat('M ',$pointlist2)"/>
+
+  <!-- spit out the value -->
+  <xsl:value-of select="$pointlist3"/>
+
+</xsl:template>
+
+</xsl:stylesheet>]]></code.block>
+				</subsec2>
+			</subsec1>
+			<subsec1 id="AppendixScatter">
+				<title>Scatter plot files</title>
+				<subsec2 id="AppendixScatterData">
+					<title>Input data</title>
+					<code.block><![CDATA[<test>
+  <description>Warp Core Power Output</description>
+  <!-- accuracy indicates measurement is accurate to
+       + or - given number
+       -->
+  <accuracy mesons="3" temperature="2"/>
+  <datasets>
+    <dataset name="open bore">
+      <point mesons="14" temperature="3"/>
+      <point mesons="22" temperature="13"/>
+      <point mesons="33" temperature="41"/>
+      <point mesons="41" temperature="42"/>
+      <point mesons="53" temperature="50"/>
+      <point mesons="61" temperature="8"/>
+      <point mesons="72" temperature="2"/>
+      <point mesons="80" temperature="4"/>
+      <point mesons="93" temperature="1"/>
+    </dataset>
+    <dataset name="clamped">
+      <point mesons="18" temperature="3"/>
+      <point mesons="27" temperature="10"/>
+      <point mesons="42" temperature="2"/>
+      <point mesons="52" temperature="15"/>
+      <point mesons="60" temperature="4"/>
+      <point mesons="70" temperature="8"/>
+      <point mesons="81" temperature="2"/>
+    </dataset>
+  </datasets>
+</test>]]></code.block>
+				</subsec2>
+				<subsec2 id="AppendixScatterXSLT">
+					<title>XSLT</title>
+					<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+<!-- xpaths of note in our input are:
+  Path to description of data:
+    /test/description
+  Path to + or - accuracy of "x" component
+    /test/accuracy@mesons
+  Path to + or - accuracy of "y" component
+    /test/accuracy@temperature
+
+  Path to each dataset:
+    /test/datasets/dataset
+  Path to name of dataset (relative to dataset path)
+    @name
+  Path to a datapoint in a dataset (relative to dataset path)
+    point
+  Path to "x" component of point (relative to point path)
+    @mesons
+  Path to "y" component of point (relative to point path)
+    @temperature
+-->
+
+<!-- our "main routine" -->
+<xsl:template match="/">
+
+  <!-- to save us having to do conversions of units, just set the
+       viewbox so we can directly plot data points.  That way the 
+       viewer does most of our unit conversions.
+       -->
+  <svg width="100%" height="100%" viewBox="-15 -15 135 130">
+    
+    <!-- Draw X and Y axis -->
+    <xsl:call-template name="draw_axis"/>
+
+    <!-- title of graph -->
+    <text x="50" y="-5" style="font-size:5; text-anchor:middle">
+      <xsl:value-of select="/test/description"/>
+    </text>
+
+    <!-- draw datasets -->
+    <xsl:call-template name="draw_datasets"/>
+  </svg>
+</xsl:template>
+
+<!-- Draw our X and Y axis, labeling them as we do -->
+<xsl:template name="draw_axis">
+  <g style="stroke:black; stroke-width:0.25">
+    <!-- draw axis lines -->
+    <line x1="0" y1="100" x2="100" y2="100"/>
+    <line x1="0" y1="0" x2="0" y2="100"/>
+
+    <!-- tick marks for X axis -->
+    <line x1="0" y1="100" x2="0" y2="101"/>
+    <line x1="10" y1="100" x2="10" y2="101"/>
+    <line x1="20" y1="100" x2="20" y2="101"/>
+    <line x1="30" y1="100" x2="30" y2="101"/>
+    <line x1="40" y1="100" x2="40" y2="101"/>
+    <line x1="50" y1="100" x2="50" y2="101"/>
+    <line x1="60" y1="100" x2="60" y2="101"/>
+    <line x1="70" y1="100" x2="70" y2="101"/>
+    <line x1="80" y1="100" x2="80" y2="101"/>
+    <line x1="90" y1="100" x2="90" y2="101"/>
+    <line x1="100" y1="100" x2="100" y2="101"/>
+
+    <!-- tick marks for Y axis -->
+    <line x1="0" y1="100" x2="-1" y2="100"/>
+    <line x1="0" y1="90" x2="-1" y2="90"/>
+    <line x1="0" y1="80" x2="-1" y2="80"/>
+    <line x1="0" y1="70" x2="-1" y2="70"/>
+    <line x1="0" y1="60" x2="-1" y2="60"/>
+    <line x1="0" y1="50" x2="-1" y2="50"/>
+    <line x1="0" y1="40" x2="-1" y2="40"/>
+    <line x1="0" y1="30" x2="-1" y2="30"/>
+    <line x1="0" y1="20" x2="-1" y2="20"/>
+    <line x1="0" y1="10" x2="-1" y2="10"/>
+    <line x1="0" y1="0" x2="-1" y2="0"/>
+  </g>
+
+  <g style="font-size:3">
+    <!-- labels for X axis -->
+    <text x="103" y="103" style="text-anchor:start">Mesons</text>
+    <g style="text-anchor:middle">
+      <text x="0" y="104">0</text>
+      <text x="10" y="104">10</text>
+      <text x="20" y="104">20</text>
+      <text x="30" y="104">30</text>
+      <text x="40" y="104">40</text>
+      <text x="50" y="104">50</text>
+      <text x="60" y="104">60</text>
+      <text x="70" y="104">70</text>
+      <text x="80" y="104">80</text>
+      <text x="90" y="104">90</text>
+      <text x="100" y="104">100</text>
+    </g>
+
+    <!-- labels for Y axis -->
+    <text x="-1" y="-5" style="text-anchor:middle">Temperature</text>
+    <g style="text-anchor:end">
+      <text x="-1" y="100">0</text>
+      <text x="-1" y="90">10</text>
+      <text x="-1" y="80">20</text>
+      <text x="-1" y="70">30</text>
+      <text x="-1" y="60">40</text>
+      <text x="-1" y="50">50</text>
+      <text x="-1" y="40">60</text>
+      <text x="-1" y="30">70</text>
+      <text x="-1" y="20">80</text>
+      <text x="-1" y="10">90</text>
+      <text x="-1" y="0">100</text>
+    </g>
+  </g>
+</xsl:template>
+
+<!-- Draw our datasets... this involves drawing a legend entry,
+     and plotting the points
+     -->
+<xsl:template name="draw_datasets">
+  <xsl:for-each select="/test/datasets/dataset">
+    
+    <!-- create a colour for the dataset -->
+    <xsl:variable name="colour">
+      <xsl:call-template name="colour_by_index">
+        <xsl:with-param name="index" select="position()"/>
+      </xsl:call-template>
+    </xsl:variable>
+
+    <g style="fill:{$colour}; font-size:3">
+    
+      <!-- put in legend entry -->
+      <xsl:variable name="ypos" select="position() * 5"/>
+      <text x="101" y="{$ypos}">
+        <xsl:value-of select="@name"/>
+      </text>
+    </g>
+    
+    <g style="stroke:{$colour}; stroke-width:0.25">
+
+      <!-- draw datapoints -->
+      <xsl:for-each select="point">
+        <xsl:call-template name="draw_point"/>
+      </xsl:for-each>
+
+    </g>
+  </xsl:for-each>
+</xsl:template>
+
+<!-- a quick routine to return a colour, given an index -->
+<xsl:template name="colour_by_index">
+  <xsl:param name="index"/>
+  <xsl:choose>
+    <xsl:when test="$index = 1">red</xsl:when>
+    <xsl:when test="$index = 2">blue</xsl:when>
+    <xsl:when test="$index = 3">green</xsl:when>
+    <xsl:otherwise>black</xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- draw a cross at a data point, showing magnitude of
+     possible error
+     -->
+<xsl:template name="draw_point">
+
+  <xsl:variable name="x" select="@mesons"/>
+  <xsl:variable name="y_raw" select="@temperature"/>
+  <xsl:variable name="y" select="100 - $y_raw"/>
+  <xsl:variable name="x_error" select="/test/accuracy/@mesons"/>
+  <xsl:variable name="y_error" select="/test/accuracy/@temperature"/>
+  <xsl:variable name="x_plus" select="$x + $x_error"/>
+  <xsl:variable name="x_minus" select="$x - $x_error"/>
+  <xsl:variable name="y_plus" select="$y + $y_error"/>
+  <xsl:variable name="y_minus" select="$y - $y_error"/>
+
+  <line x1="{$x_plus}" y1="{$y}" x2="{$x_minus}" y2="{$y}"/>
+  <line x1="{$x}" y1="{$y_plus}" x2="{$x}" y2="{$y_minus}"/>
+</xsl:template>
+
+</xsl:stylesheet>]]></code.block>
+				</subsec2>
+			</subsec1>
+			<subsec1 id="AppendixState">
+				<title>State diagram files</title>
+				<subsec2 id="AppendixStateData">
+					<title>Input data</title>
+					<code.block><![CDATA[<LWP>
+  <states>
+    <state type="active" name="running">
+      running
+    </state>
+    <state type="active" name="runnable_inmem">
+      runnable in memory
+    </state>
+    <state type="active" name="runnable_swap">
+      runnable swapped
+    </state>
+    <state type="inactive" name="sleep_inmem">
+      sleeping in memory
+    </state>
+    <state type="inactive" name="sleep_swap">
+      sleeping swapped
+    </state>
+  </states>
+  <transitions>
+    <transition from="running" to="runnable_inmem">
+      preempt
+    </transition>
+    <transition from="running" to="sleep_inmem">
+      sleep
+    </transition>
+    <transition from="runnable_inmem" to="running">
+      assign CPU
+    </transition>
+    <transition from="runnable_inmem" to="runnable_swap">
+      swap out
+    </transition>
+    <transition from="runnable_swap" to="runnable_inmem">
+      swap in
+    </transition>
+    <transition from="sleep_inmem" to="runnable_inmem">
+      wakeup
+    </transition>
+    <transition from="sleep_inmem" to="sleep_swap">
+      swap out
+    </transition>
+    <transition from="sleep_swap" to="runnable_swap">
+      wakeup
+    </transition>
+  </transitions>
+</LWP>]]></code.block>
+				</subsec2>
+				<subsec2 id="AppendixStateXSLT">
+					<title>XSLT</title>
+					<code.block><![CDATA[<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes"
+    doctype-public="-//W3C//DTD SVG 1.0//EN" doctype-system=
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+
+<!-- xpaths of note in our input are:
+  path to states
+    /LWP/states/state
+  path to state description (relative to state)
+    text()
+  path to state type (releative to state)
+    @type
+  path to unique state name (releative to state)
+    @name
+
+  path to transitions
+    /LWP/transitions/transition
+  path to transition description (relative to transition)
+    text()
+  path to transition start state name (relative to transition)
+    @from
+  path to transition end state name (relative to transition)
+    @to
+-->
+
+<!-- our "main routine" -->
+<xsl:template match="/">
+
+  <svg width="100%" height="100%" viewBox="0 0 1000 1000">
+
+    <!-- draw states -->
+    <xsl:for-each select="/LWP/states/state">
+      <xsl:call-template name="draw_state">
+        <xsl:with-param name="name" select="@name"/>
+        <xsl:with-param name="type" select="@type"/>
+        <xsl:with-param name="label" select="text()"/>
+      </xsl:call-template>
+    </xsl:for-each>
+
+    <!-- draw state transitions -->
+    <xsl:for-each select="/LWP/transitions/transition">
+      <xsl:call-template name="draw_arc">
+        <xsl:with-param name="from" select="@from"/>
+        <xsl:with-param name="to" select="@to"/>
+        <xsl:with-param name="label" select="text()"/>
+      </xsl:call-template>
+    </xsl:for-each>
+    
+  </svg>
+
+</xsl:template>
+
+<!-- draw a state in the state diagram.  This just
+     decides what kind of state to draw and calls the
+     appropriate template to draw that kind of state
+     -->
+<xsl:template name="draw_state">
+  <xsl:param name="name"/>
+  <xsl:param name="type"/>
+  <xsl:param name="label"/>
+  
+  <xsl:choose>
+    <xsl:when test="$type = 'active'">
+      <xsl:call-template name="draw_square_state">
+        <xsl:with-param name="name" select="$name"/>
+        <xsl:with-param name="label" select="$label"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="draw_ellipse_state">
+        <xsl:with-param name="name" select="$name"/>
+        <xsl:with-param name="label" select="$label"/>
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- given the name of the state, what y position is that
+     state drawn at?-->
+<xsl:template name="state_ypos">
+  <xsl:param name="name"/>
+
+  <xsl:for-each select="/LWP/states/state">
+    <xsl:if test="@name = $name">
+      <xsl:value-of select="position() * 150"/>
+    </xsl:if>
+  </xsl:for-each>
+</xsl:template>
+
+<!-- draw a circular state node -->
+<xsl:template name="draw_ellipse_state">
+  <xsl:param name="name"/>
+  <xsl:param name="label"/>
+
+  <!-- y position of the node -->
+  <xsl:variable name="y">
+    <xsl:call-template name="state_ypos">
+      <xsl:with-param name="name" select="$name"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <!-- the ellipse -->
+  <ellipse cx="500" cy="{$y}" rx="120" ry="50"
+    style="fill:none; stroke:black; stroke-width:3"/>
+
+  <!-- the label -->
+  <text x="500" y="{$y}" style="text-anchor:middle; font-size:25">
+    <xsl:value-of select="$label"/>
+  </text>
+</xsl:template>
+
+<!-- draw a square state node -->
+<xsl:template name="draw_square_state">
+  <xsl:param name="name"/>
+  <xsl:param name="label"/>
+
+  <!-- y position of the node -->
+  <xsl:variable name="y_raw">
+    <xsl:call-template name="state_ypos">
+      <xsl:with-param name="name" select="$name"/>
+    </xsl:call-template>
+  </xsl:variable>
+  <xsl:variable name="y" select="$y_raw - 50"/>
+
+  <!-- the rectangle -->
+  <rect x="380" y="{$y}" width="240" height="100"
+    style="fill:none; stroke:black; stroke-width:3"/>
+
+  <!-- the label -->
+  <text x="500" y="{$y_raw}" style="text-anchor:middle; font-size:25">
+    <xsl:value-of select="$label"/>
+  </text>
+</xsl:template>
+
+<!-- draw a transition (an arc) from one state to another.  Decides
+     whether the arc is going up or down, and calls template to draw
+     an arc up or down.
+  -->
+<xsl:template name="draw_arc">
+  <xsl:param name="from" />
+  <xsl:param name="to" />
+  <xsl:param name="label" />
+
+  <!-- y coordinate to start the arc -->
+  <xsl:variable name="from_y">
+    <xsl:call-template name="state_ypos">
+      <xsl:with-param name="name" select="$from"/>
+    </xsl:call-template>
+  </xsl:variable>
+  <!-- y coordinate to end the arc -->
+  <xsl:variable name="to_y">
+    <xsl:call-template name="state_ypos">
+      <xsl:with-param name="name" select="$to"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <!-- are we drawing an arc up or down?  -->
+  <xsl:choose>
+    <xsl:when test="$from_y &gt; $to_y">
+      <xsl:call-template name="draw_up_arc">
+        <xsl:with-param name="from_y" select="$from_y"/>
+        <xsl:with-param name="to_y" select="$to_y"/>
+        <xsl:with-param name="label" select="$label"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="draw_down_arc">
+        <xsl:with-param name="from_y" select="$from_y"/>
+        <xsl:with-param name="to_y" select="$to_y"/>
+        <xsl:with-param name="label" select="$label"/>
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
+
+</xsl:template>
+
+<xsl:template name="draw_up_arc">
+  <xsl:param name="from_y" />
+  <xsl:param name="to_y" />
+  <xsl:param name="label" />
+
+  <!-- Radius of the arc -->
+  <xsl:variable name="radius" select="($from_y - $to_y) div 2"/>
+  <xsl:variable name="mid_x" select="620 + $radius"/>
+  <xsl:variable name="mid_y" select="$from_y - $radius"/>
+
+  <g style="fill:none; stroke:blue; stroke-width:3">
+    <!-- draw the arc -->
+    <path d="M 620 {$from_y} A {$radius},{$radius} 0 1,0 620,{$to_y}"/>
+
+    <!-- draw the arrowhead marker at the middle of the arc -->
+    <xsl:call-template name="arrowhead">
+      <xsl:with-param name="x" select="$mid_x"/>
+      <xsl:with-param name="y" select="$mid_y"/>
+      <xsl:with-param name="rotation" select="270"/>
+    </xsl:call-template>
+  </g>
+
+  <!-- label the arc -->
+  <xsl:variable name="text_x" select="$mid_x + 5"/>
+  <xsl:variable name="text_y" select="$mid_y"/>
+  <text x="{$text_x}" y="{$text_y}" style="fill:blue; font-size:25">
+    <xsl:value-of select="$label"/>
+  </text>
+
+</xsl:template>
+
+<xsl:template name="draw_down_arc">
+  <xsl:param name="from_y" />
+  <xsl:param name="to_y" />
+  <xsl:param name="label" />
+
+  <!-- Radius of the arc -->
+  <xsl:variable name="radius" select="($to_y - $from_y) div 2"/>
+
+  <!-- middle of the arc -->
+  <xsl:variable name="mid_x" select="380 - $radius"/>
+  <xsl:variable name="mid_y" select="$to_y - $radius"/>
+
+  <g style="fill:none; stroke:blue; stroke-width:3">
+    <!-- draw the arc -->
+    <path d="M 380 {$from_y} A {$radius},{$radius} 0 1,0 380,{$to_y}"/>
+
+    <!-- draw the arrowhead marker at the middle of the arc -->
+    <xsl:call-template name="arrowhead">
+      <xsl:with-param name="x" select="$mid_x"/>
+      <xsl:with-param name="y" select="$mid_y"/>
+      <xsl:with-param name="rotation" select="90"/>
+    </xsl:call-template>
+  </g>
+
+  <!-- label the arc -->
+  <xsl:variable name="text_x" select="$mid_x - 10"/>
+  <xsl:variable name="text_y" select="$mid_y"/>
+  <text x="{$text_x}" y="{$text_y}"
+    style="fill:blue; font-size:25; text-anchor:end">
+    <xsl:value-of select="$label"/>
+  </text>
+</xsl:template>
+
+<!-- a little routine to draw an arrowhead marker -->
+<xsl:template name="arrowhead">
+  <xsl:param name="x"/>
+  <xsl:param name="y"/>
+  <xsl:param name="rotation"/>
+  <g transform="translate( {$x}, {$y} )">
+    <g transform="rotate( {$rotation} )">
+      <path d="M 0 0 l -7 -7 l 7 7 l -7 7"/>  
+    </g>
+  </g>
+</xsl:template>
+
+</xsl:stylesheet>]]></code.block>
+				</subsec2>
+			</subsec1>
+		</section>
+		<section id="Resources">
+			<title>Online Resources</title>
+			<subsec1 id="ResourcesXSLT">
+				<title>XSLT resources</title>
+				<deflist>
+					<def.item>
+						<def.term>
+							<a href="http://www.w3.org/Style/XSL/"/>
+						</def.term>
+						<def>
+							<para> W3C XSL page</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://www.ibiblio.org/xml/books/bible2/chapters/ch17.html"/>
+						</def.term>
+						<def>
+							<para>Chapter 17 of the <cit>XML Bible, 2nd Edition</cit>
+								<bibref refloc="XMLB"/>: XSL Transformations</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://incrementaldevelopment.com/xsltrick/"/>
+						</def.term>
+						<def>
+							<para> Gallery of stupid XSL/XSLT tricks </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://www.jclark.com/xml/xt.html"/>
+						</def.term>
+						<def>
+							<para> J. Clark's XSLT processor</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://saxon.sourceforge.net/"/>
+						</def.term>
+						<def>
+							<para> The SAXON XSLT processor </para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://xml.apache.org/xalan-j/"/>
+						</def.term>
+						<def>
+							<para>The XALAN XSLT processor</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://xml.apache.org/xalan-j/xsltc/"/>
+						</def.term>
+						<def>
+							<para>XSLTC, an XSLT to Java byte code compiler</para>
+						</def>
+					</def.item>
+				</deflist>
+			</subsec1>
+			<subsec1 id="ResourcesSVG">
+				<title>SVG resources</title>
+				<deflist>
+					<def.item>
+						<def.term>
+							<a href="http://www.w3.org/Graphics/SVG/"/>
+						</def.term>
+						<def>
+							<para> W3C SVG page</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://www.adobe.com/svg"/>
+						</def.term>
+						<def>
+							<para> The Adobe Web browser plug-in for viewing SVG</para>
+						</def>
+					</def.item>
+				</deflist>
+			</subsec1>
+			<subsec1 id="ResourcesGraphical">
+				<title>Graphical Stylesheet pages</title>
+				<deflist>
+					<def.item>
+						<def.term>
+							<a href="http://www-106.ibm.com/developerworks/education/transforming-xml/xmltosvg/"/>
+						</def.term>
+						<def>
+							<para> IBM tutorial entitled <cit>Transforming XML into SVG</cit>
+							</para>
+						</def>
+					</def.item>
+					<def.item>
+						<def.term>
+							<a href="http://www.vanx.org/prev_meetings.htm#Catwalk"/>
+						</def.term>
+						<def>
+							<para> Online demo of <i>Catwalk</i>, a SchemaSoft application
+					 that creates Graphical Stylesheets</para>
+						</def>
+					</def.item>
+				</deflist>
+			</subsec1>
+		</section>
+	</body>
+	<rear>
+		<acknowl>
+			<para>The authors would like to acknowledge <i>National Research Council
+		  Canada</i> (<a href="http://www.nrc.ca"/>) for Industrial Research Assistance
+		  Program grants #381883 and #436510 contributing to the research for this paper.
+		  The authors are also grateful for contributions to this work made by many of
+		  their colleagues at <i>SchemaSoft</i> (<a href="http://www.schemasoft.com"/>).</para>
+		</acknowl>
+		<bibliog>
+			<bibitem id="CSS2">
+				<bib>CSS2</bib>
+				<pub>
+					<i>Cascading Style Sheets, level 2</i>, B. Bos, H. W. Lie, C.
+			 Lilley, I. Jacobs, W3C Recommendation, 12 May 1998. Available at
+			 http://www.w3.org/TR/REC-CSS2/.</pub>
+			</bibitem>
+			<bibitem id="GML">
+				<bib>GML</bib>
+				<pub>
+					<i>Geography Markup Language (GML)
+			 2.0</i>, S. Cox, A. Cuthbert, R. Lake, R. Martell, editors, OpenGIS
+			 Implementation Specification, 20 February 2001. Available at
+			 http://www.opengis.net/gml/01-029/GML2.html.</pub>
+			</bibitem>
+			<bibitem id="MathML2">
+				<bib>MathML2</bib>
+				<pub>
+					<i>Mathematical Markup Language (MathML) Version 2.0</i>, D.
+			 Carlisle, P. Ion, R. Miner, N. Poppelier, editors, W3C Recommendation, 21
+			 February 2001. Available at http://www.w3.org/TR/MathML2/.</pub>
+			</bibitem>
+			<bibitem id="SVG">
+				<bib>SVG</bib>
+				<pub>
+					<i>Scalable Vector Graphics (SVG) 1.0 Specification</i>, J.
+			 Ferraiolo, editor, W3C Recommendation, 4 September 2001. Available at
+			 http://www.w3.org/TR/SVG/.</pub>
+			</bibitem>
+			<bibitem id="XMLB">
+				<bib>XMLB</bib>
+				<pub>
+					<i>XML Bible, 2nd Edition</i>, E. R. Harold, Hungry Minds, Inc.,
+			 June 2001. ISBN 0764547607.</pub>
+			</bibitem>
+			<bibitem id="XPath">
+				<bib>XPath</bib>
+				<pub>
+					<i>XML Path Language (XPath) Version 1.0</i>, J. Clark, S.
+			 DeRose, editors, W3C Recommendation, 16 November 1999. Available at
+			 http://www.w3.org/TR/xpath.</pub>
+			</bibitem>
+			<bibitem id="XSLT">
+				<bib>XSLT</bib>
+				<pub>
+					<i>XSL Transformations (XSLT) Version 1.0</i>, J. Clark, editor,
+			 W3C Recommendation, 16 November 1999. Available at
+			 http://www.w3.org/TR/xslt.</pub>
+			</bibitem>
+		</bibliog>
+	</rear>
+</gcapaper>

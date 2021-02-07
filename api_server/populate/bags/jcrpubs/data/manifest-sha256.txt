@@ -1,0 +1,1 @@
+c9e7de0a8557630accd5deb412b4863e628f9bee4cf1fc2a9bbb8c53f0eb7091  data/jcrpubs.xml

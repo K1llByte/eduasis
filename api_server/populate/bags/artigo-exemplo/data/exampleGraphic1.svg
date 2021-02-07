@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 100">
+  <title>Communication Diagram</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .background {fill:gold}
+      .label, .arrow {fill:indigo; font-size:16; font-weight:bold}
+      .connector {fill:none; stroke-width:2.5; stroke:firebrick;
+        stroke-linejoin:bevel}
+    ]]></style>
+  </defs>
+  <rect class="background" width="100" height="100"/>
+  <g class="label">
+    <text x="9" y="88">A</text>
+    <text x="62" y="22">B</text>
+    <text x="44" y="88">C</text>
+    <text x="26" y="22">D</text>
+    <text x="79" y="88">E</text>
+  </g>
+  <polyline class="connector" points="20,73 65,27 50,73 35,27 80,73"/>
+  <polygon class="arrow" points="-4.5,-4.5 4.5,0 -4.5,4.5">
+    <animateMotion rotate="auto" dur="16s" repeatCount="indefinite"
+      path="M20,73L65,27L50,73L65,27L50,73L35,27L50,73L35,27L80,73"/>
+  </polygon>
+</svg>

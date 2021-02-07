@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DB NAME="DigitArq" CREATIONDATE="" EXPORTDATE="2007-4-18 17:27:15"
+    PRODUCTNAME="Microsoft SQL Server" PRODUCTVERSION="8.00.2039">
+    <STRUCTURE>
+        <TABLE ID="0" NAME="Bibliography">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ComponentID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="BibRef" TYPE="STRING" SIZE="8000" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ComponentID"/>
+                    <FIELD NAME="ID"/>
+                </PKEY>
+                <FKEY ID="0" NAME="ComponentID" IN="Components" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="1" NAME="ChronList">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ComponentID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Date" TYPE="STRING" SIZE="8000" NULL="false"/>
+                <COLUMN ID="3" NAME="Event" TYPE="STRING" SIZE="8000" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ComponentID"/>
+                    <FIELD NAME="ID"/>
+                </PKEY>
+                <FKEY ID="1" NAME="ComponentID" IN="Components" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="2" NAME="Components">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ParentID" TYPE="bigint" SIZE="19" NULL="true"/>
+                <COLUMN ID="2" NAME="Visible" TYPE="bit" SIZE="1" NULL="false"/>
+                <COLUMN ID="3" NAME="Valid" TYPE="bit" SIZE="1" NULL="false"/>
+                <COLUMN ID="4" NAME="HasChildren" TYPE="bit" SIZE="1" NULL="false"/>
+                <COLUMN ID="5" NAME="OtherLevel" TYPE="STRING" SIZE="10" NULL="false"/>
+                <COLUMN ID="6" NAME="UnitId" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="7" NAME="CompleteUnitId" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="8" NAME="CountryCode" TYPE="STRING" SIZE="3" NULL="true"/>
+                <COLUMN ID="9" NAME="RepositoryCode" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="10" NAME="UnitTitle" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="11" NAME="UnitTitleType" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="12" NAME="UnitDateInitial" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="13" NAME="UnitDateInitialCertainty" TYPE="bit" SIZE="1" NULL="true"/>
+                <COLUMN ID="14" NAME="UnitDateFinal" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="15" NAME="UnitDateFinalCertainty" TYPE="bit" SIZE="1" NULL="true"/>
+                <COLUMN ID="16" NAME="UnitDateBulk" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="17" NAME="ExtentBook" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="18" NAME="ExtentMaco" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="19" NAME="ExtentMacete" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="20" NAME="ExtentFolder" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="21" NAME="ExtentCover" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="22" NAME="ExtentCapilha" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="23" NAME="ExtentRoll" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="24" NAME="ExtentBox" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="25" NAME="ExtentOther" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="26" NAME="ExtentPage" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="27" NAME="ExtentLeaf" TYPE="int" SIZE="10" NULL="true"/>
+                <COLUMN ID="28" NAME="ExtentMl" TYPE="float" SIZE="53" NULL="true"/>
+                <COLUMN ID="29" NAME="Dimensions" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="30" NAME="GenreForm" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="31" NAME="GeogName" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="32" NAME="PhysFacet" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="33" NAME="PhysLoc" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="34" NAME="MaterialSpec" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="35" NAME="LangMaterial" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="36" NAME="OriginationAuthor" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="37" NAME="OriginationDestination" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="38" NAME="OriginationAuthorAddress" TYPE="STRING" SIZE="8000"
+                    NULL="true"/>
+                <COLUMN ID="39" NAME="OriginationDestinationAddress" TYPE="STRING" SIZE="8000"
+                    NULL="true"/>
+                <COLUMN ID="40" NAME="OriginationScrivener" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="41" NAME="OriginationNotary" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="42" NAME="ScopeContent" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="43" NAME="BiogHist" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="44" NAME="OtherFindAid" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="45" NAME="OriginalNumbering" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="46" NAME="Note" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="47" NAME="RelatedMaterial" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="48" NAME="PhysTech" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="49" NAME="AcqInfo" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="50" NAME="Arrangement" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="51" NAME="CustodHist" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="52" NAME="AltFormAvail" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="53" NAME="Appraisal" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="54" NAME="AccessRestrict" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="55" NAME="LegalStatus" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="56" NAME="Accruals" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="57" NAME="UseRestrict" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="58" NAME="OriginalsLoc" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="59" NAME="ProcessInfoName" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="60" NAME="ProcessInfoDate" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="61" NAME="PreferCite" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="62" NAME="SeparatedMaterial" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="63" NAME="Abstract" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="64" NAME="Repository" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="65" NAME="FilePlan" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="66" NAME="ContainerType" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="67" NAME="ContainerCustomType" TYPE="STRING" SIZE="8000" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="ID"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="3" NAME="ControlAccess">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ComponentID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ItemID" TYPE="bigint" SIZE="19" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ComponentID"/>
+                    <FIELD NAME="ItemID"/>
+                </PKEY>
+                <FKEY ID="2" NAME="ComponentID" IN="Components" REF="ID"/>
+                <FKEY ID="3" NAME="ItemID" IN="ControlAccessItems" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="4" NAME="ControlAccessItems">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="TypeID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Item" TYPE="STRING" SIZE="8000" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="ID"/>
+                </PKEY>
+                <FKEY ID="4" NAME="TypeID" IN="ControlAccessTypes" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="5" NAME="ControlAccessItemsFonds">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ComponentID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ItemID" TYPE="bigint" SIZE="19" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ComponentID"/>
+                    <FIELD NAME="ItemID"/>
+                </PKEY>
+                <FKEY ID="5" NAME="ComponentID" IN="Components" REF="ID"/>
+                <FKEY ID="6" NAME="ItemID" IN="ControlAccessItems" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="6" NAME="ControlAccessTypes">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="Type" TYPE="STRING" SIZE="8000" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="ID"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="7" NAME="DaoGrp">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ComponentID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ID_DigitalObject" TYPE="bigint" SIZE="19" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ComponentID"/>
+                    <FIELD NAME="ID_DigitalObject"/>
+                </PKEY>
+                <FKEY ID="7" NAME="ComponentID" IN="Components" REF="ID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="9" NAME="EAC">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="FondsID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="Type" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="2" NAME="SysKey" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="3" NAME="CountryCode" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="4" NAME="OwnerCode" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="5" NAME="Part" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="6" NAME="UseDate" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="7" NAME="DetailLevel" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="8" NAME="BiogHist" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="9" NAME="Place" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="10" NAME="LegalStatus" TYPE="STRING" SIZE="200" NULL="true"/>
+                <COLUMN ID="11" NAME="LegalId" TYPE="STRING" SIZE="200" NULL="true"/>
+                <COLUMN ID="12" NAME="FunActDesc" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="13" NAME="AssetStruct" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="14" NAME="Env" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="15" NAME="Rules" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="16" NAME="Status" TYPE="STRING" SIZE="50" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="FondsID"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="10" NAME="EacArchRelationships">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Type" TYPE="STRING" SIZE="500" NULL="true"/>
+                <COLUMN ID="3" NAME="Date" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="4" NAME="UnitId" TYPE="STRING" SIZE="500" NULL="true"/>
+                <COLUMN ID="5" NAME="UnitDateInitial" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="6" NAME="UnitDateFinal" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="7" NAME="UnitTitle" TYPE="STRING" SIZE="800" NULL="true"/>
+                <COLUMN ID="8" NAME="Repository" TYPE="STRING" SIZE="800" NULL="true"/>
+                <COLUMN ID="9" NAME="DescNote" TYPE="STRING" SIZE="800" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="8" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="11" NAME="EacIdentity">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Part" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="3" NAME="UseDate" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="4" NAME="Type" TYPE="STRING" SIZE="50" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="9" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="12" NAME="EacLanguageDecl">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Language" TYPE="STRING" SIZE="100" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="10" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="13" NAME="EacMaintenanceHistory">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="MainType" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="3" NAME="MainName" TYPE="STRING" SIZE="500" NULL="true"/>
+                <COLUMN ID="4" NAME="MainDate" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="5" NAME="MainDesc" TYPE="STRING" SIZE="8000" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="11" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="14" NAME="EacRelationships">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Type" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="3" NAME="Name" TYPE="STRING" SIZE="500" NULL="true"/>
+                <COLUMN ID="4" NAME="Date" TYPE="STRING" SIZE="10" NULL="true"/>
+                <COLUMN ID="5" NAME="Place" TYPE="STRING" SIZE="500" NULL="true"/>
+                <COLUMN ID="6" NAME="DescNote" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="7" NAME="EacType" TYPE="STRING" SIZE="50" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="12" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="15" NAME="EacResourceRelationships">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="EacID" TYPE="bigint" SIZE="19" NULL="false"/>
+                <COLUMN ID="2" NAME="Type" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="3" NAME="ResourceType" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="4" NAME="Unit" TYPE="STRING" SIZE="8000" NULL="true"/>
+                <COLUMN ID="5" NAME="Date" TYPE="STRING" SIZE="50" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="COMPOSITE">
+                    <FIELD NAME="ID"/>
+                    <FIELD NAME="EacID"/>
+                </PKEY>
+                <FKEY ID="13" NAME="EacID" IN="EAC" REF="FondsID"/>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="16" NAME="Log">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="ID" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="DateTime" TYPE="datetime" SIZE="23" NULL="false"/>
+                <COLUMN ID="2" NAME="Username" TYPE="STRING" SIZE="50" NULL="false"/>
+                <COLUMN ID="3" NAME="ActionCode" TYPE="int" SIZE="10" NULL="false"/>
+                <COLUMN ID="4" NAME="Description" TYPE="STRING" SIZE="8000" NULL="false"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="ID"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="17" NAME="Projects">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="IdProject" TYPE="bigint identity" SIZE="19" NULL="false"/>
+                <COLUMN ID="1" NAME="Name" TYPE="STRING" SIZE="100" NULL="false"/>
+                <COLUMN ID="2" NAME="Location" TYPE="STRING" SIZE="100" NULL="true"/>
+                <COLUMN ID="3" NAME="Description" TYPE="STRING" SIZE="2000" NULL="true"/>
+                <COLUMN ID="4" NAME="CreationDateTime" TYPE="datetime" SIZE="23" NULL="false"/>
+                <COLUMN ID="5" NAME="LastUpdateDateTime" TYPE="datetime" SIZE="23" NULL="false"/>
+                <COLUMN ID="6" NAME="UserName" TYPE="STRING" SIZE="50" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="IdProject"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+        <TABLE ID="18" NAME="Users">
+            <COLUMNS>
+                <COLUMN ID="0" NAME="Username" TYPE="STRING" SIZE="20" NULL="false"/>
+                <COLUMN ID="1" NAME="Password" TYPE="STRING" SIZE="50" NULL="true"/>
+                <COLUMN ID="2" NAME="FullName" TYPE="STRING" SIZE="200" NULL="true"/>
+            </COLUMNS>
+            <KEYS>
+                <PKEY TYPE="SIMPLE">
+                    <FIELD NAME="Username"/>
+                </PKEY>
+            </KEYS>
+        </TABLE>
+    </STRUCTURE>
+</DB>

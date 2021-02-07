@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DirectoryMetadata>
+    <FileSet>
+        <FileName>ACMCC98\.info</FileName>
+        <Description>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|General|Biographies/autobiographies</Metadata>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|General|Conference proceedings</Metadata>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|General|General literary works (e.g., fiction, plays)</Metadata>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|Introductory and Survey</Metadata>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|REFERENCE (e.g., dictionaries, encyclopedias, glossaries)</Metadata>
+            <Metadata mode="accumulate" name="prjum.ACMCCS98">ACMCCS98|General Literature|MISCELLANEOUS</Metadata>
+        </Description>
+    </FileSet>
+</DirectoryMetadata>
+

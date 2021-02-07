@@ -8,8 +8,6 @@ const ResourceType = require('../controllers/resource_type');
 const Post = require('../controllers/post');
 const FormData = require('form-data');
 
-
-
 const MONGODB_URL = 'mongodb://127.0.0.1/eduasis';
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -39,6 +37,8 @@ let users_success = 0;
 let users_error = 0;
 let rt_success = 0;
 let rt_error = 0;
+let resources_success = 0;
+let resources_error = 0;
 console.log("Preparing database populating ...");
 
 // Define some static users to insert
@@ -141,32 +141,66 @@ function populate_rtypes(rtypes)
 }
 
 
-function populate_resources(resources)
+async function populate_resources()
 {
-    resources.forEach(r => {
+    await sleep(3000);
+    let payload = await axios.post('http://localhost:7700/api/login/',
+        {username: 'jcr', password: 'a_password'});
+    let token = payload.data.TOKEN;
+    
+    fs.readdirSync('zip_bags').forEach(filename => {
+        
+        const description = `File(s) from jcr XML documents collection.
+All documents can be listed in http://www4.di.uminho.pt/~jcr/XML/didac/xmldocs/
+
+Note: This resource was automaticly generated`;
+
+        // API server must be running for this populate to succeed
         let form = new FormData();
-        form.append('arquive',fs.createReadStream(`resources/${r.filename}`));    
-        form.append('type_id',r.type_id);
-        form.append('title',r.title);
-        form.append('description',r.description);
-        form.append('visibility',r.visibility);
+        form.append('resource_data',fs.createReadStream(`zip_bags/${filename}`));    
+        form.append('type_id','8');
+        form.append('title',`XML Documents: ${filename.slice(0, -4)}`);
+        form.append('description',description);
+        form.append('visibility','0');
+        
+
+        axios.post('http://localhost:7700/api/resources',form,{
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': `multipart/form-data; boundary=${form._boundary}`
+            }
+        })
+        .then(data => {
+            ++resources_success;
+        })
+        .catch(err => {
+            ++resources_error;
+        });
     });
 }
 
 
 async function print_values()
 {
-    await sleep(2000);
     console.log("Users: ",users_success,"Created",users_error,"Not created");
     console.log("Resource Types: ",rt_success,"Created",rt_error,"Not created");
+    console.log("Resources: ",resources_success,"Created",resources_error,"Not created");
 }
 
 
-//users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
-//populate_users(users_to_insert);
+async function populate()
+{
+    users_to_insert = users_to_insert.concat(load_users_from_file('users.json'));
+    await populate_users(users_to_insert);
+    console.log('Users finished');
 
-//populate_rtypes(rtypes_to_insert);
+    await populate_rtypes(rtypes_to_insert);
+    console.log('Resource Types finished');
 
-//populate_resources();
+    await populate_resources();
+    console.log('Resources finished');
 
-print_values();
+    print_values();
+}
+
+populate()

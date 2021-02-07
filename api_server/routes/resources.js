@@ -110,7 +110,7 @@ const file_type_filter = async (req,file,next) => {
 const resource_upload = multer({ 
     storage: resource_storage,
     limits : {
-        fileSize : 1024 * 1024 * 1024 * 1024 * 1024
+        fileSize : 1024 * 1024 * 1024 * 1024
     },
     fileFilter: file_type_filter
 });

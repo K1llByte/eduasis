@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="gen-html.xsl"?>
+<cfp>
+  <header>
+    <sigla>XATA 2003 (1ª Workshop)</sigla>
+    <logo url="logo.gif"/>
+    <title>XML: aplicações e tecnologias associadas</title>
+    <subtitle>Workshop</subtitle>
+    <date>13 e 14 de Fevereiro de 2003</date>
+    <local>Braga - Portugal</local>
+    <url>http://www.di.uminho.pt/~jcr/XML/conferencias/xata2003/</url>
+  </header>
+  <body>
+    <sec>
+      <title>Novidades</title>
+      <lseq>
+        <li>Daqui a pouco encerramos a parte administrativa aqui na Universidade. Para inscrições de última hora é favor dirigir-se à casa da Torre. 
+        Haverá gente na recepção da workshop para o atender. Alternativamente ligue para 253 310400 entre as 9.30h e as 12.00h.</li>
+        <li>
+          <xref url="acesso.htm">Como chegar à Casa da Torre.</xref>
+        </li>
+        <li>
+          <xref url="inscritos.html">Lista de Participantes inscritos</xref>
+        </li>
+        <li>
+          <xref url="programa.html">Programa da Workshop.</xref>
+        </li>
+      </lseq>
+    </sec>
+    <sec>
+      <title>Apresentação</title>
+      <para>A primeira worshop sobre "XML, aplicações e tecnologias associadas 
+(XATA)" terá lugar em Braga, Portugal, nos dias 13 e 14 de Fevereiro de 
+2003.
+</para>
+      <para>Nos últimos dois anos, decorreu um projecto financiado pela FCT denominado "Metamedia". Este projecto, reuniu duas equipas de investigadores, uma da Faculdade de Engenharia da Universidade do Porto e outra do Departamento de Informática da Universidade do Minho. </para>
+      <para>Entre os objectivos do projecto estava o estudo das relações entre XML e 
+  Bases de Dados e o estudo de normas (XML) para documentos multimédia.
+</para>
+      <para> Findo o projecto e estando os investigadores convictos de que a comunidade científica que utiliza esta família de tecnologias está já bem alargada e estabelecida em Portugal, surgiu a ideia de organizar uma primeira workshop em torno deste tema que reúna equipas envolvidas em 
+projectos em que estas tecnologias sejam determinantes, para 2 dias de 
+intensa discussão de ideias.
+</para>
+      <para>XATA tem como objectivo principal proporcionar um espaço alargado para discussão sobre as várias utilizações do XML. A workshop está aberta à participação de  especialistas e utilizadores que comunguem do mesmo interesse, vindos do meio académico, ou da indústria.</para>
+      <para>Convidamo-lo a participar na XATA 2003, enviando uma proposta de artigo para posterior apresentação na workshop ou simplesmente assistindo à workshop.</para>
+      <para>A língua oficial da workshop é o português, sendo portanto destinada à comunidade de língua portuguesa. No entanto, aceitam-se propostas em galego ou castelhano.</para>
+    </sec>
+    <sec>
+      <title>Programa provisório</title>
+      <para>A workshop irá decorrer em dois dias consecutivos.
+          Cada dia terá 4 sessões (2 de manhã e 2 à tarde), num total de 8 sessões.</para>
+      <para>A primeira sessão está reservada para a organização que, para além do discurso de abertura, fará duas ou três comunicações temáticas.</para>
+      <para>A segunda sessão está reservada para dois oradores convidados, investigadores com trabalhos e projectos relevantes na área.</para>
+      <para>As restantes 6 sessões serão preenchidas com as comunicações seleccionadas. As propostas serão agrupadas por áreas temáticas e cada sessão terá um tema associado.</para>
+    </sec>
+    <sec>
+      <title>Pedido de propostas e apresentações</title>
+      <para>O objectivo principal da workshop é a discussão de experiências, ideias e tecnologias. Para esse fim, serão previlegiadas as propostas que retratem projectos em curso ou recentemente terminados.</para>
+      <para>Os tópicos da workshop serão os seguintes:
+              <lseq>
+          <li>XML e Bases de Dados</li>
+          <li>Metodologias de modelação/especificação: Schemas, RelaxNG, Schematron, XCSL, XMI, ...</li>
+          <li>Web Semântica e Ontologias: OWL, RDF, Topic Maps</li>
+          <li>XML-EDI</li>
+          <li>XML Web Services</li>
+          <li>Bibliotecas digitais (baseadas em XML)</li>
+          <li>E-learning com XML</li>
+          <li>Normas XML: MathML, MusicML, ChessML, SVG, EAD, ...</li>
+          <li>Outros ...</li>
+        </lseq>
+      </para>
+      <para>As propostas deverão ser enviadas na forma de resumo alargado (500 a 800 palavras).</para>
+      <para>Todas as propostas serão avaliadas pelo comité científico. Posteriormente, será solicitado aos autores das propostas seleccionadas o envio do respectivo artigo para publicação nas actas da workshop.</para>
+      <para>A edição das actas da workshop será tratada pelo comité organizador.</para>
+      <para>As propostas deverão ser enviadas electronicamente, em texto puro, para o endereço <email>jcr@di.uminho.pt</email> com o assunto "XATA 2003 - submissão".</para>
+    </sec>
+    <sec>
+      <title>Comissão Científica</title>
+      <elem>
+        <name>Gabriel David</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>Pedro Henriques</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Cristina Ribeiro</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>José Carlos Ramalho</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Marta Jacinto</name>
+        <affil>ITIJ - DI/UM</affil>
+      </elem>
+    </sec>
+    <sec>
+      <title>Comissão Organizadora</title>
+      <elem>
+        <name>Gabriel David</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>Pedro Henriques</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Cristina Ribeiro</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>José Carlos Ramalho</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Ademar Aguiar</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>Gustavo Arnold</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Catalin Calistru</name>
+        <affil>Metamedia - INESC/Porto</affil>
+      </elem>
+      <elem>
+        <name>Giovani Librelotto</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Ricardo Martins</name>
+        <affil>Metamedia - DI/UM</affil>
+      </elem>
+      <elem>
+        <name>Carla Oliveira</name>
+        <affil>CI/UM</affil>
+      </elem>
+    </sec>
+    <sec>
+      <title>Datas importantes</title>
+      <dw>13 e 14 de Fevereiro de 2003</dw>
+      <dp>10 de Janeiro de 2002</dp>
+      <da>15 de Janeiro de 2003</da>
+    </sec>
+    <sec id="inscricoes">
+      <title>Inscrições</title>
+      <para>O preço de inscrição na Workshop é de 50 euros.</para>
+      <para>O preço inclui todas as apresentações realizadas durante a workshop e 
+          uma cópia impressa de todos os trabalhos apresentados.</para>
+      <para>No entanto, há outras modalidades de inscrição:
+      <lseq>
+          <li>Refeições: almoços nos dois dias e jantar no dia 13 --- +35 euros (total = 85)</li>
+          <li>Refeições+Alojamento de 13 para 14 --- +50 euros (total = 100)</li>
+          <li>Refeições+Alojamento+Noite extra de 12 para 13 --- +15 euros (total = 115)</li>
+        </lseq>
+      </para>
+      <para>O pagamento deverá ser enviado em cheque, vale postal ou numerário para: José Carlos Ramalho, Dep. Informática,
+      Campus de Gualtar, Universidade do Minho, 4710-057 Braga.</para>
+      <para>Os cheques devem ser passados <emph>à ordem da Universidade do Minho.</emph>
+      </para>
+    </sec>
+    <sec id="alojamento">
+      <title>Alojamento e Local da Workshop</title>
+      <para>A XATA2003 terá lugar na Casa da Torre em Vila Verde (7 Km de Braga).</para>
+      <para>A casa da Torre é um antigo mosteiro agora restaurado e que funciona como unidade
+          de turismo rural.</para>
+      <para>Para além dos quartos onde alberga hóspedes, possui cantina, auditório
+          com capacidade máxima de 100 lugares (com um ponto de rede), várias salas de
+          convívio e jardins e espaço envolvente.</para>
+    </sec>
+  </body>
+</cfp>

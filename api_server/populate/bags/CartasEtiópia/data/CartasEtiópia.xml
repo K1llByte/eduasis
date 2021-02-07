@@ -1,0 +1,3706 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<documento>
+   <capa>
+      <cabec>
+         <instituicao>UNIVERSIDADE DO MINHO</instituicao>
+         <arquivo>ARQUIVO DISTRITAL DE BRAGA</arquivo>
+      </cabec>
+      <titulo>INVENTÁRIO DAS CARTAS ANUAIS DAS MISSÕES DA ETIÓPIA</titulo>
+      <localAno>
+         <local>BRAGA</local>
+         <ano valor="1984.01.01">1984</ano>
+      </localAno>
+   </capa>
+   <conteudo>
+      <sumario>
+         <titulo>SUMÁRIO</titulo>
+         <capitulos>
+            <capitulo>
+               <titulo>INTRODUÇÃO</titulo>
+               <folhaCap>
+                  <numFolha>
+                     <folha>Fl.</folha>
+                     <numero tipo="romano" valorArabe="3">III</numero>
+                  </numFolha>
+               </folhaCap>
+            </capitulo>
+            <capitulo>
+               <titulo>BIBLIOGRAFIA</titulo>
+               <folhaCap>
+                  <numFolha>
+                     <folha>Fl.</folha>
+                     <numero tipo="romano" valorArabe="5">V</numero>
+                  </numFolha>
+               </folhaCap>
+            </capitulo>
+            <capitulo>
+               <titulo>CARTAS ANUAIS DAS MISSÕES DA ETIÓPIA</titulo>
+               <folhaCap>
+                  <numFolha>
+                     <folha>Fl.</folha>
+                     <numero valorArabe="1">1</numero>
+                  </numFolha>
+               </folhaCap>
+            </capitulo>
+            <capitulo>
+               <titulo>ÍNDICES</titulo>
+               <folhaCap>
+                  <subcapitulo>
+                     <titulo>Índice Topográfico</titulo>
+                     <numFolha>
+                        <folha>Fl.</folha>
+                        <numero valorArabe="14">14</numero>
+                     </numFolha>
+                  </subcapitulo>
+                  <subcapitulo>
+                     <titulo>Índice Onomástico</titulo>
+                     <numFolha>
+                        <folha>Fl.</folha>
+                        <numero valorArabe="21">21</numero>
+                     </numFolha>
+                  </subcapitulo>
+                  <subcapitulo>
+                     <titulo>Índice Toponímico</titulo>
+                     <numFolha>
+                        <folha>Fl.</folha>
+                        <numero valorArabe="26">26</numero>
+                     </numFolha>
+                  </subcapitulo>
+               </folhaCap>
+            </capitulo>
+         </capitulos>
+      </sumario>
+      <corpo>
+         <introducao>
+            <titulo>INTRODUÇÃO</titulo>
+            <paragrafo>
+               <texto>A colecção das cartas anuais, das <instituicao>Missões da Etiópia</instituicao>, existentes no <instituicao>Arquivo Distrital de
+                     Braga</instituicao>, na <referencia>Secção dos Manuscritos, nº 779</referencia>, compreende uma série de cartas anuais enviadas
+                  por Padres da <instituicao>Companhia de Jesus</instituicao>, durante as <instituicao>Missões no Oriente</instituicao>, e outros
+                  documentos referentes às mesmas.</texto>
+            </paragrafo>
+            <paragrafo>
+               <texto>Quando da organização do inventário, verificámos que todos os documentos, arquivados em duas caixas, se encontravam devidamente
+                  paginados e cozidos em cadernos, mais ou menos ordenados cronologicamente, de maneira a poderem ser, por este <instituicao>Arquivo
+                     Distrital</instituicao>, encadernados em dois volumes.</texto>
+            </paragrafo>
+            <paragrafo>
+               <texAlinea>
+                  <texto>No entanto, não obstante a respectiva encadernação, que de momento se não concretizou, orgánizamos o presente inventário do
+                     modo seguinte:</texto>
+                  <alineaPar>
+                     <alinea valor="1">a)</alinea>
+                     <texto>Cada documento foi catalogado peça a peça, e sem alterar a ordem dos cadernos, todas as referências foram organizadas
+                        cronologicamente e cada espécie cotada numericamente segundo a ordem dada pelo inventário.</texto>
+                  </alineaPar>
+                  <alineaPar>
+                     <alinea valor="2">b)</alinea>
+                     <texto>Deste modo, o primeiro número referido é o da ordem geral. Segue-se a data exacta ou factícia do documento e, por fim, o
+                        sumário. Por último é colocado o número da folha que localiza o documento arquivado.</texto>
+                  </alineaPar>
+               </texAlinea>
+               <texAlinea>
+                  <texto>Após o inventário, propriamente dito, seguem-se os índices, nomeadamente topogáfico, onomástico e toponímico, conforme os
+                     seguintes critérios.</texto>
+                  <alineaPar>
+                     <alinea valor="3">c)</alinea>
+                     <texto>Na organização do índice topográfico, foi mantida a apresentação dada no próprio inventário, só que aqui o primeiro número
+                        é referente à cota dada no inventário, o sumário é mais simplificativo e redigido na forma objectiva e, por fim, novamente
+                        aparece o número da folha que localiza o documento original.</texto>
+                  </alineaPar>
+                  <alineaPar>
+                     <alinea valor="4">d)</alinea>
+                     <texto>Tanto o índice onomástico (com nomes de pessoas) como o índice toponímico (só com nomes de terras) , foram organizados
+                        segundo o inventário. Os toponímicos foram tanto quanto possível identificados, encontrando-se a respectiva identificação
+                        entre parentises rectos, por se trataram de elementos não referenciados no sumário dos documentos.</texto>
+                  </alineaPar>
+               </texAlinea>
+               <texto>Após a identificação do toponímico seguem-se os dados que indicam a sua natureza. O número do documento refere-se à cota dada
+                  pelo inventário.</texto>
+               <texto>Para terminar, se esclarece que a bibliografia fornecida é referente aquela utilizada na eleboração do inventário.</texto>
+            </paragrafo>
+         </introducao>
+         <bibliografia>
+            <titulo>BIBLIOGRAFIA</titulo>
+            <fontes>
+               <fonte>
+                  <filiacao>ALMEIDA, Fortunato</filiacao>
+                  <nomeLivro>História da Igreja em Portugal</nomeLivro>
+                  <descricao>, <volume> 8 vol.</volume>, <local>Coimbra</local>, <ano valor="1915.01.01"> 1910 - 20</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <filiacao>BRAGA, Arquivo Distrital</filiacao>
+                  <nomeLivro>Inventário das Cartas do Cabido de Braga</nomeLivro>
+                  <descricao>
+                     <ano valor="1848.01.01">(1821 - 1874)</ano>, organizado por <orientacao>Maria da Assunção Vasconcelos</orientacao>. <local>U. M.,
+                        Braga</local>, <ano valor="1980.01.01"> 1980</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <filiacao>BRAGA, Arquivo Distrital</filiacao>
+                  <nomeLivro>Inventário da Gaveta das Cartas dos Arcebispos de Braga</nomeLivro>
+                  <descricao>, organizado por <dirigido>Maria da Assunção Vasconcelos</dirigido>. <local>U. M., Braga</local>, <ano valor="1980.01.01"
+                        > 1980</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <filiacao>BRAGA, Arquivo Distrital</filiacao>
+                  <nomeLivro>Inventário dos livros e dodumentos avulsos pertencentes à Mitra Primaz</nomeLivro>
+                  <descricao>, por <dirigido>Maria de Fátima Ferreira</dirigido>, sob orientação de <orientacao>Maria da Assunção
+                        Vasconcelos</orientacao>. <local>U.M., Braga</local>, <ano valor="1981.01.01"> 1981</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <nomeLivro>Dicionário de História de Portugal</nomeLivro>
+                  <descricao>, dirigido por <dirigido>Joel Serrão</dirigido>, <volume> 4 vol.</volume>
+                     <editora> Iniciativas Editoriais</editora>. <local> Lisboa</local>, <ano valor="1967.01.01"> 1963 - 1971</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <nomeLivro>Enciclopédia Portuguesa</nomeLivro>
+                  <descricao>, <dirigido>dirigida por Maximiano Lemos</dirigido>, <volume> 11 vol.</volume>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <nomeLivro>Encyclopédie Métodique: Geographie Moderne</nomeLivro>
+                  <descricao>, <volume> 5 vol.</volume>, <local> Paris</local>, <ano valor="1782.01.01"> 1782</ano>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <filiacao>Frazão, A. C. Amaral</filiacao>
+                  <nomeLivro>Novo Dicionário Corográfico de Portugal</nomeLivro>
+               </fonte>
+               <fonte>
+                  <nomeLivro>Grande Enciclopédia Portuguesa e Brasileira</nomeLivro>
+                  <descricao>, <editora> Editorial Enciclopédia</editora>, <local> Lisboa</local>
+                  </descricao>
+               </fonte>
+               <fonte>
+                  <nomeLivro>Verbo Enciclopédia Luso Brasileira</nomeLivro>
+                  <descricao>. <editora>Editorial Verbo</editora>, <local> Lisboa</local>. </descricao>
+               </fonte>
+            </fontes>
+         </bibliografia>
+         <cartas>
+            <titulo> CARTAS ANUAIS DAS MISSõES DA ETIÓPIA</titulo>
+            <docs>
+               <doc>
+                  <alinea valor="1">1)</alinea>
+                  <desenvolvimento>
+                     <data valor="1542.01.01">[Depois de 1541]</data>
+                     <texto>Informação sobre a entrada de <nome apelido="GAMA" nome="Cristóvão, D.">D Cristóvam da Gama</nome>, irmão de<nome
+                           apelido="GAMA" nome="Vasco">Vasco da Gama</nome>, na <local nome="ETIÓPIA">Etiópia</local>. Descreve o encontro com a
+                        imperatriz <nome apelido="OANGEL" nome="Sabelo, imperatriz">Çabelo Oangel</nome>; a batalha na serra de <local
+                           nome="AMBAÇANET" contexto="Serra">Ambaçanet</local> e o encontro com o exército de Granh etc</texto>
+                  </desenvolvimento>
+                  <folhas flh="587">587-601</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="2">2)</alinea>
+                  <desenvolvimento>
+                     <data valor="1556.10.30">1556, Outubro, 30 </data>
+                     <texto>
+                        <nome apelido="BARRETO" nome="João (D), Patriarca">D. João Barreto</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Patriarca">Etiópia</local>, concede a <nome apelido="OVIEDO" nome="André, D.">D. André de Oviedo</nome>, todos os
+                        poderes que possui por bula papal de <data valor="1555.02.01">Fevereiro de 1555</data>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="553">553-554 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="3">3)</alinea>
+                  <desenvolvimento>
+                     <data valor="1603.07.29">1603, Julho, 29,</data>
+                     <local nome="GOA">Goa</local>
+                     <texto>
+                        <nome apelido="MENESES" nome="Aleixo, D. Fr., Arcebispo">D. Fr. Aleixo de Meneses</nome>, Arcebispo de <local nome="GOA"
+                           contexto="Arcebispo">Goa</local> e Primaz da <local nome="ÍNDIAS ORIENTAIS" contexto="Patriarca">Índia e Oriente</local>,
+                        dá comissão ao <nome apelido="SILVA" nome="Belchior, padre">Padre Belchior da Silva</nome>, Vigário Geral dos Católicos da
+                           <local nome="ETIÓPIA" contexto="Vigário Geral dos Católicos">Etiópia</local>, para tirar informações jurídicas sobre a
+                        vida, morte e milagres de <nome apelido="OVIEDO" nome="André, D.">D. António de Oviedo</nome>, Padre Patriarca da
+                           <instituicao>Companhia de Jesus</instituicao> e mais Padres da dita Companhia, na <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="0025">2, reg. 2.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="4">4)</alinea>
+                  <desenvolvimento>
+                     <data valor="1604.01.26">1604, Janeiro,26,</data>
+                     <local nome="ETIÓPIA" contexto="Companhia de Jesus">Etiópia</local>
+                     <texto>
+                        <nome apelido="SILVA" nome="Belchior, padre">Padre Belchior da Silva</nome>, ordena ao escrivão <nome apelido="GABRIEL"
+                           nome="João, escrivão">João Gabriel</nome> que treslada e recolha testemunhos sobre <nome apelido="OVIEDO" nome="André, D."
+                           >D. André de Oviedo</nome> e mais padres da <instituicao>Companhia de Jesus</instituicao>.</texto>
+                  </desenvolvimento>
+                  <folhas flh="002">2, reg. 2.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="5">5)</alinea>
+                  <desenvolvimento>
+                     <data valor="1604.03.07">[Depois de 7 de Março de 1604] </data>
+                     <texto>Cópia do testemunho sobre a vida do Patriarca da <local nome="ETIÓPIA" contexto="Companhia de  Jesus, Patriarca"
+                           >Etiópia</local> e ainda dos Padres <nome apelido="CARDOSO" nome="Gonçalo, padre">Gonçalo Cardoso</nome>, <nome
+                           apelido="LOPES" nome="Francisco, padre">Francisco Lopes</nome>, <nome apelido="FERNANDES" nome="António, padre">António
+                           Fernandes</nome>
+                        <nome apelido="BALDAMES" nome="padre">Baldames</nome> e <nome apelido="MARONITA" nome="Abraão de Mação, padre">Abraão de Mação
+                           Maronita</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="523">523-528</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="6">6)</alinea>
+                  <desenvolvimento>
+                     <data valor="1604.03.17">1604, Março, 17</data>
+                     <texto>
+                        <nome apelido="VEIGA" nome="Manuel, padre">Padre Manuel da Veiga</nome>, Provincial da <instituicao>Companhia de
+                           Jesus</instituicao>, na <local nome="ÍNDIA" contexto="Companhia de Jesus, Provincial">Índia</local>, requer ao Arcebispo
+                           <nome apelido="MENESES" nome="Aleixo, D. Fr., Arcebispo">D. Fr. Aleixo de Meneses</nome>, uma cópia da inquirição feita
+                        pelo <nome apelido="SILVA" nome="Belchior, padre">Padre Belchior da Silva</nome> sobre <nome apelido="OVIEDO" nome="André, D."
+                           >D. André de Oviedo</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="001">1</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="7">7)</alinea>
+                  <desenvolvimento>
+                     <data valor="1604.03.17">1604, Março, 17</data>
+                     <texto>
+                        <nome apelido="GABRIEL" nome="João, escrivão">João Gabriel</nome>, Escrivão, por ordem do <nome apelido="SILVA"
+                           nome="Belchior, padre">Padre Belchior da Silva</nome>, treslada os testemunhos sobre <nome apelido="OVIEDO"
+                           nome="André, D.">D. André de Oviedo</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="0027">2-17 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="8">8)</alinea>
+                  <desenvolvimento>
+                     <data valor="1605.03.30">1605, Março, 30,</data>
+                     <local nome="DIU">Diu</local>
+                     <texto>
+                        <nome apelido="SOARES" nome="Gaspar, padre">Padre Gaspar Soares</nome>, notícia ao <nome apelido="VEIGA" nome="Manuel, padre"
+                           >Padre Manuel da Veiga</nome>, Provincial da <instituicao>Companhia de Jesus</instituicao> em <local nome="GOA"
+                           contexto="Companhia de Jesus">Goa</local> sobre o <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome> e
+                        transcreve uma carta por ele escrita da nau datada de <data valor="1601.03.27">27 de Março de 1601</data>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="688">688-691</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="9">9)</alinea>
+                  <desenvolvimento>
+                     <data valor="1607.07.22">1607, Julho, 22,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome nome="Luís, padre" apelido="AZEVEDO">Padre Luís de Azevedo</nome>, informa o Provincial <nome apelido="VEIGA"
+                           nome="Manuel, padre">Padre Manuel da Veiga</nome>, sobre as edificações feitas em <local nome="FREMONA">Fremona</local>
+                        desde <data valor="1605.01.01">1605</data>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="018">18-31 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="10">10)</alinea>
+                  <desenvolvimento>
+                     <data valor="1608.01.01">1608</data>
+                     <texto>
+                        <nome apelido="PAIS" nome="Pero, padre">Padre Pero Pais</nome>, refere-se à morte do Padre Patriarca em <data
+                           valor="1583.01.01">1583</data> (?) e à substituição deste por um Bispo frade capucho, <nome apelido="BAPTISTA"
+                           nome="João, D., bispo">D João Baptista</nome> em <data valor="1585.01.01">1585</data> ou <data valor="1586.01.01"
+                           >1586</data>. Notícia sobre coisas passadas após esta data</texto>
+                  </desenvolvimento>
+                  <folhas flh="667">667-686 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="11">11)</alinea>
+                  <desenvolvimento>
+                     <data valor="1608.01.01">[1608]</data>
+                     <texto>Tratado feito- em latim, da viagem que fizeram os Padres <nome apelido="MONSERRATE" nome="António, padre">António
+                           Monserrate</nome> e <nome apelido="PAIS" nome="Pero, padre">Pedro Pais</nome> a <local nome="BAXIM">Baxim</local> e <local
+                           nome="BAXIM" contexto="Cativeiro">seu cativeiro</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="657">657-666 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="12">12)</alinea>
+                  <desenvolvimento>
+                     <data valor="1609.06.24">1609, Junho, 24,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia ao <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Provincial">Provincial</local> da <instituicao>Companhia</instituicao>, <nome
+                           apelido="FERNANDES" nome="Gaspar, padre">Padre Gaspar Fernandes</nome> sobre todo o problema das missões </texto>
+                  </desenvolvimento>
+                  <folhas flh="053">53-65 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="13">13)</alinea>
+                  <desenvolvimento>
+                     <data valor="1609.01.01">1609</data>
+                     <texto>
+                        <nome nome="Luís, padre" apelido="AZEVEDO">Padre Luís de Azevedo</nome>, relata a entrada dos Padres da <instituicao>Companhia
+                           de Jesus</instituicao> na <local nome="ETIÓPIA" contexto="Companhia de Jesus">Etiópia</local> e descreve algumas coisas que
+                        aí fizeram desde <data valor="1516.01.01">1516</data>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="040">40-52</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="14">14)</alinea>
+                  <desenvolvimento>
+                     <data valor="1610.07.03">1610, Julho, 3,</data>
+                     <local nome="FREMONA"> Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia ao <nome apelido="VIEIRA"
+                           nome="Francisco, padre">Padre Francisco Vieira</nome>, <local nome="ÍNDIA" contexto="Companhia de Jesus, Provincial"
+                           >Provincial da Companhia de Jesus</local> na <local nome="ÍNDIA" contexto="Companhia de Jesus, Provincial">Índia</local>,
+                        sobre o problema das missões; a amizade do <local nome="ÍNDIA" contexto="Imperador">Imperador</local> e informa sobre o que se
+                        passa na <local nome="ETIÓPIA">Etiópia</local> quanto ao seu governo . </texto>
+                  </desenvolvimento>
+                  <folhas flh="066">66-73</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="15">15)</alinea>
+                  <desenvolvimento>
+                     <data valor="1611.07.13">1611, Julho, 13,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, em missão no reino de <local nome="TIGRÉ"
+                           >Tigré</local>, notícia sobre as instâncias de <local nome="FREMONA" contexto="Instância">Fremona</local> e <local
+                           nome="GORGORA">Gorgora</local>, ambas na <local nome="ETIÓPIA">Etiópia</local> e sobre a saúde dos seis padres que aí se
+                        encontram </texto>
+                  </desenvolvimento>
+                  <folhas flh="074">74-83 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="16">16)</alinea>
+                  <desenvolvimento>
+                     <data valor="1613.06.01">1613, Junho,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, resume ao Padre <local nome="ÍNDIA"
+                           contexto="Companhia de Jesus, Provincial">Provincial</local>
+                        <nome apelido="VIEIRA" nome="Francisco, padre">, Francisco Vieira</nome>, as notícias enviadas em <data valor="1612.01.01"
+                           >1612</data> e notícia os frutos recolhidos nas duas instâncias da <local nome="ETIÓPIA">Etiópia</local>, <local
+                           nome="GORAMA" contexto="Instância">Gorama</local> e <local nome="TIGRÉ" contexto="Instância">Tigré</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="084">84-96</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="17">17)</alinea>
+                  <desenvolvimento>
+                     <data valor="1614.06.02">1614, Junho, 2, </data>
+                     <local nome="GORGORA">Gorgora</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia ao <nome apelido="VIEIRA"
+                           nome="Francisco, padre">Provincial Padre Francisco Vieira</nome>, sobre a missão no reino de <local nome="NAREÂ"
+                           >Nareâ</local>; sobre a instância de <local nome="GORGORA" contexto="Instância">Gorgora</local>, no reino de <local
+                           nome="DAMBIA" contexto="Reino">Dambea</local>, côrte do Imperador; e ainda sobre os acontecimentos na instância de <local
+                           nome="TIGRÉ" contexto="Instância">Tigré</local>, <local nome="GORAMA" contexto="Instância">Gorama</local> e <local
+                           nome="FREMONA" contexto="Instância">Fremona</local> no reino de <local nome="TIGRÉ">Tigré</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="097">97-114 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="18">18)</alinea>
+                  <desenvolvimento>
+                     <data valor="1615.06.28">1615, Junho, 28,</data>
+                     <local nome="GORGORA"> Gorgora</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia ao <nome apelido="VIEIRA"
+                           nome="Francisco, padre">Provincial Padre Francisco Vieira</nome>, as consequências havidas por dois frades terem rejeitado
+                        os círios oferecidos pelo Secretário do Imperador; sobre o fim que teve a embaixada feita pelo <nome apelido="FERNANDES"
+                           nome="António, padre">Padre António Fernandes</nome>, por ordem do Padre Superior da missão <nome apelido="PAIS"
+                           nome="Pero, padre">Pedro Pais</nome>; e ainda notícia sobre as instâncias de <local nome="FREMONA" contexto="Instância"
+                           >Fremona</local> e <local nome="TIGRÉ" contexto="Instância">Tigré</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="115">115-127 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="19">19)</alinea>
+                  <desenvolvimento>
+                     <data valor="1615.07.04">1615, Julho, 4,</data>
+                     <local nome="GORGORA"> Gorgora</local>
+                     <texto>Padre . .. notícia ao Provincial de <local nome="GOA" contexto="Companhia de Jesus, Provincial">Goa</local>, <nome
+                           apelido="VIEIRA" nome="Francisco, padre">Padre Francisco Vieira</nome>, que chegaram a <local nome="MASSUA">Mansua</local>
+                        as imagens, livros e fatos, os quais não pagaram direitos em <local nome="SUAQUEM">Suaquem</local> e em <local nome="MASSUA"
+                           >Mansua</local>, por razões que apresenta. Informa, ainda, sobre os queixumes entre os Padres <nome apelido="AZEVEDO"
+                           nome="Luís, padre">Luís de Azevedo</nome> e <nome apelido="ROMANO" nome="Lourenço, padre">Lourenço Romano</nome> e, sobre o
+                        facto do <nome apelido="ANTÓNIO" nome="Francisco, padre">Padre Francisco António</nome> ter deitado dinheiro ao mar. Lamenta a
+                        morte de <nome apelido="CERQUEIRA" nome="Luís, D., Bispo">D. Luís Cerqueira</nome> Bispo do <local nome="JAPÃO"
+                           contexto="Bispo">Japão</local> e do <nome apelido="VEIGA" nome="Francisco, padre">Padre Prancisco da Veiga</nome>. Por fim,
+                        notícia sobre o <nome apelido="FERNANDES" nome="António, padre">Padre António Fernandes</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="152">152-154 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="20">20)</alinea>
+                  <desenvolvimento>
+                     <data valor="1615.01.01">1615,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia sobre a viagem que fez o <nome
+                           apelido="FERNANDES" nome="António, padre">Padre António Fernandes</nome>, pelo <local nome="RIO BRAVO">Rio Bravo</local>,
+                        de <local nome="MOMBAÇA">Mombaça</local> para <local nome="ETIÓPIA">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="557">557-557 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="21">21)</alinea>
+                  <desenvolvimento>
+                     <data valor="1615.01.01">[c.1615]</data>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Patriarca da Companhia de Jesus</local>, informa quando começou a pregação do
+                        Evangelho na <local nome="ETIÓPIA" contexto="Pregação do Evangelho">Etiópia</local> e ainda sobre a vida monástica,
+                        instituidores e pregadores </texto>
+                  </desenvolvimento>
+                  <folhas flh="559">559-569</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="22">22)</alinea>
+                  <desenvolvimento>
+                     <data valor="1615.01.01">c.1615</data>
+                     <texto>Informação do caminho que se pode fazer de <local nome="MOMBAÇA">Mombaça</local> para <local nome="ETIÓPIA"
+                           >Etiópia</local> pelo <local nome="RIO BRAVO">Rio Bravo</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="654">654-654 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="23">23)</alinea>
+                  <desenvolvimento>
+                     <data valor="1619.07.08">1619, Julho, 8,</data>
+                     <local nome="FREMONA"> Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia a missão que tem juntamente com quatro
+                        padres, na <local nome="ETIÓPIA">Etiópia</local> e informa que se encontram divididos em três instâncias: Reino de <local
+                           nome="TIGRÉ" contexto="Instância">Tigré</local>,da <local nome="DAMBIA" contexto="Instância">Dambea</local> e Reino de
+                           <local nome="GOIAMA" contexto="Instância">Goyama</local>. Por fim, informa quanto diferem os portugueses da gente gentia
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="023">32-39</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="24">24)</alinea>
+                  <desenvolvimento>
+                     <data valor="1619.07.08">1619, Julho, 8,</data>
+                     <local nome="FREMONA"> Fremona</local>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, notícia ao Padre Provincial da Companhia, em <local
+                           nome="GOA" contexto="Companhia de Jesus, Provincial">Goa</local>, <nome apelido="MEDEIROS" nome="Jácome de, padre">Jácome
+                           de Medeiros</nome>, a construção, no reino da <local nome="DAMBIA" contexto="Reino">Dambia</local>, da primeira igreja de
+                        pedra em cantaria, a qual foi feita com "particular mimo e favor do Imperador". Noticia, ainda, a redução de algumas pessoas
+                        abexins, algumas delas principais e, por fim, notícia a missão, numa província do reino de <local nome="GOIAMA"
+                        >Goiama</local>, com "gente muito belicosa </texto>
+                  </desenvolvimento>
+                  <folhas flh="155">155-178 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="25">25)</alinea>
+                  <desenvolvimento>
+                     <data valor="1620.05.24">1620, Maio, 24,</data>
+                     <local nome="DAMBIA">Dambia</local>
+                     <texto>
+                        <nome apelido="FERNANDES" nome="António, padre">Padre António Fernandes</nome>, notícia sobre a peste na <local nome="ETIÓPIA"
+                           contexto="Peste">Etiópia</local> e, os cuidados que tiveram os Padres da Companhia em cuidar os enfermos, particularmente
+                        os Padres <nome apelido="ROMANO" nome="Leonardo, padre">Leonardo Romano</nome>, em <local nome="TIGRÉ">Tigré</local> e <nome
+                           apelido="PAIS" nome="Pero, padre">Pero Pais</nome> em <local nome="DAMBIA">Dambia</local>. Notícia, ainda que as igrejas
+                        são muito frequentadas principalmente nas festas principais e sobre a expansão da fé cristã </texto>
+                  </desenvolvimento>
+                  <folhas flh="185">185-190</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="26">26)</alinea>
+                  <desenvolvimento>
+                     <data valor="1620.05.24">1620, Maio, 24,</data>
+                     <local nome="DAMBIA">Dambia</local>
+                     <texto>
+                        <nome apelido="FERNANDES" nome="António, padre">Padre António Fernandes</nome>, mais uma vez notícia sobre a peste e informa
+                        que os cuidados que os Padres da Companhia tiveram edificou-os perante os " sismáticos". Notícia ainda sobre os frutos
+                        colhidos com o <local nome="DAMBIA" contexto="Seminário">seminário</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="191">191-194</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="27">27)</alinea>
+                  <desenvolvimento>
+                     <data valor="1620.01.01">1620</data>
+                     <texto>
+                        <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>, resume a um Padre de <local nome="PORTUGAL"
+                           contexto="Padres">Portugal</local> (<nome apelido="MEDEIROS" nome="Jácome de, padre">Padre Jácome de Medeiros</nome>), as
+                        notícias enviadas no ano anterior e informa sobre a construção da nova igreja de <local nome="GORGORA" contexto="Igreja"
+                           >Gorgora</local>: seu acabamento, qualidade de pedra, arquitecto (<nome apelido="PAIS" nome="Pero, padre">Padre Pero
+                           Pais</nome>) e seus oficiais. Informa ainda, sobre a necessidade de obreiros e outros assuntos</texto>
+                  </desenvolvimento>
+                  <folhas flh="195">195-200 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="28">28)</alinea>
+                  <desenvolvimento>
+                     <data valor="1620.01.01">1620</data>
+                     <texto>
+                        <nome apelido="MAIORCA" nome="Jerónimo, padre">Padre Jerónimo Maiorca</nome>, notícia em latim, sobre o império da <local
+                           nome="ETIÓPIA" contexto="Império">Etiópia</local> e problema das <local nome="ETIÓPIA" contexto="Missões">missões</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="179">179-184</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="29">29)</alinea>
+                  <desenvolvimento>
+                     <data valor="1621.06.20">1621, Junho, 20,</data>
+                     <local nome="FREMONA"> Fremona</local>
+                     <texto>
+                        <nome apelido="MATOS" nome="Diogo, padre">Padre Diogo de Matos</nome>, notícia a em 2.a via, que se começou a colher os frutos
+                        lançados nas missões. Como exemplo, descreve que a viagem que fez com o <nome apelido="BRUNO" nome="António, padre">Padre
+                           António Bruno</nome>, em <data valor="1620.01.01">1620</data>, de <local nome="GOA">Goa</local> para a <local
+                           nome="ETIÓPIA">Etiópia</local>, foi um sucesso. Ao descrever promonorizadamente essa viagem, notícia sobre a residência de
+                           <local nome="GORGORA" contexto="Residência">Gorgora</local> e a sua <local nome="GORGORA" contexto="Igreja">igreja
+                           nova</local>; a residência de <local nome="COLELA">Colleã</local> no reino de <local nome="GOIAMA">Goiama</local>; a missão
+                        dos <local nome="AGAÕ, AGOS ou AGADUS" contexto="Missão">Agãos</local> e a residência de <local nome="FREMONA">Fremona</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="201">201-214 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="30">30)</alinea>
+                  <desenvolvimento>
+                     <data valor="1622.06.28">1622, Junho,28</data>
+                     <texto>
+                        <nome apelido="MATOS" nome="Diogo, padre">Padre Diogo de Matos</nome>, descreve em pormenor as residências de <local
+                           nome="GORGORA">Gorgora</local> e de <local nome="COLELA">Colelã</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="215">215-225</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="31">31)</alinea>
+                  <desenvolvimento>
+                     <data valor="1622.01.01">1622</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="BARROS" nome="Tomás, padre">Fr. Tomás de Barros</nome>, notícia em pormenor e em latim, as residências de
+                           <local nome="GORGORA" contexto="Residência">Gorgora</local>, <local nome="COLELA" contexto="Residência">Colelã</local> e
+                           <local nome="FREMONA" contexto="Residência">Fremona</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="227">227-232 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="32">32)</alinea>
+                  <desenvolvimento>
+                     <data valor="1623.07.15">1623, Julho, 15, </data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="MATOS" nome="Diogo, padre">Padre Diogo de Matos</nome>, alegra-se com a conversão de muitos gentios. No
+                        entanto, lamenta que a Companhia corra com todos os frades e clérigos, pondo e depondo superiores e mestres. Notícia, ainda,
+                        que na residência de <local nome="GORGORA" contexto="Residência">Gorgora</local>, por morte do <nome apelido="PAIS"
+                           nome="Pero, padre">Padre Pero Pais</nome>, residem o <nome apelido="FERNANDES" nome="António, padre">Padre Superior António
+                           Fernandes</nome> e o <nome apelido="AZEVEDO" nome="Luís, padre">Padre Luís de Azevedo</nome>. Por fim descreve a míssão do
+                           <local nome="AMAXA">Amxa</local> e terras circunvzinas e a residência de <local nome="TIGRÉ" contexto="Residência"
+                           >Tigre</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="233">233-243</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="33">33)</alinea>
+                  <desenvolvimento>
+                     <data valor="1624.05.10">1624, Maio, 10,</data>
+                     <local nome="GORGORA">Gorgora</local>
+                     <texto>
+                        <nome apelido="ALMEIDA" nome="Manuel, padre">Manuel Almeida</nome>, notícia ao Padre Geral da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Geral">Companhia</local>, <nome apelido="VITELLEQUI" nome="Mutio">Mutio Vitellequi</nome>,a
+                        viagem que fez com mais três padres da Companhia, desde a <local nome="ÍNDIA">Índia</local> à <local nome="ETIÓPIA"
+                           >Etiópia</local> e o sucesso desta missão, que vai desde <data valor="1623.07.01">Julho de 1623</data> a <data
+                           valor="1624.04.01">Abril de1624</data>-. Notícia ainda, os sucessos das residências do <local nome="DANCAS"
+                           >Dancãs</local>:<local nome="GANETA JESUS">Ganeta Jesus</local> (antigo lugar de <local nome="AZOZÕ">Azozõ</local> e <local
+                           nome="GORGORA">Gorgora</local>; a missão que os Padres <nome apelido="AZEVEDO" nome="Luís, padre">Luís de Azevedo</nome>,
+                        do <local nome="GANETA JESUS">Ganata Jesus</local>, e <nome apelido="BRUNO" nome="António, padre">António Bruno</nome>, de
+                           <local nome="COLELA">Colele</local>, fizeram ao fundarem na província de <local nome="AGAÕ, AGOS ou AGADUS"
+                           contexto="Província">Agaos</local>, em <local nome="TANGAROA">Tangaroa</local>, uma igreja, por ordem e à custa do <nome
+                           apelido="CRISTOS" nome="Cella, Príncipe Ras">Príncipe Raz Cella Cristos</nome>; por fim, notícia sobre a residência de
+                           <local nome="COLELA">Colela</local> no reino de <local nome="GOIAMA">Goiama</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="264">264-285</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="34">34)</alinea>
+                  <desenvolvimento>
+                     <data valor="1625.01.30">1625, Janeiro, 30, </data>
+                     <local nome="TAMQHA">Tanqha</local>
+                     <texto>
+                        <nome apelido="PAIS" nome="Gaspar, padre">Padre Gaspar Pais</nome>, participa a morte de três principais inimigos do <nome
+                           apelido="SAGUED" nome="Seltan, imperador">Imperador Seltad Seguel</nome> e da Santa Sé. Informa ainda, sobre as condições
+                        irnpostas para a embaixada do Padre Patriarca da Companhia, poder passar de <local nome="TIGRÉ">Tigré</local> para a <local
+                           nome="DAMBIA">Dambia</local> e sobre a estado geral da Santa Sé, na <local nome="ETIÓPIA">Etiópia</local>. Descreve as
+                        residências de <local nome="FREMONA" contexto="Residência">Fremona</local>, no reino de <local nome="TIGRÉ">Tigré</local>, a
+                        de <local nome="GORGORA">Gorgora</local>, de<local nome="COLELA">Colela</local>, em <local nome="GOIAMA">Goiama</local>, de
+                           <local nome="TAMQHA">Tanqha</local>, de <local nome="LIGC NUGUS" contexto="Residência">Ligenogus</local>, no reino de
+                           <local nome="DAMOT">Damotez</local> e, ainda, a de <local nome="ADEGADA">Adegba</local>, no reino de <local
+                           nome="BEGAMEDES">Begamendri</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="320">320-341</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="35">35)</alinea>
+                  <desenvolvimento>
+                     <data valor="1625.06.15">1625, Junho, 15, </data>
+                     <local nome="TAMQHA"> Tamqha</local>
+                     <texto>
+                        <nome apelido="PAIS" nome="Gaspar, padre">Padre Gaspar Pais</nome>, lamenta ao <nome apelido="VERGARA" nome="Francisco, padre"
+                           >Padre Francisco de Vergara</nome> da Compannhia, na <local nome="ÍNDIA" contexto="Companhia de Jesus, Provincial"
+                           >Índia</local>, o estado secular da <local nome="ETIÓPIA" contexto="Estado Secular">Eiópia</local> se encontre contra o
+                        Imperador, por este ser amigo dos cristãos. Notícia em pormenor a contenda existente de uma casta real entre os Galas; outra
+                        entre os Judeus,no <local nome="SEMEN" contexto="Reino">reino</local> de <local nome="SEMEN" contexto="Judém">Semen</local>;e,
+                        por fim,"um meio egípcio" no <local nome="AMARA" contexto="Reino">reino</local> de <local nome="AMARA" contexto="Egípcios"
+                           >Amara</local>. Transcreve a carta do <nome apelido="SAGUED" nome="Seltan, imperador">Imperador Seltan Sagued</nome>, a fim
+                        de ser conhecida em todo o império notícia sobre as residências de <local nome="FREMONA" contexto="Residência"
+                        >Fremona</local>, no reino de <local nome="TIGRÉ">Tigré</local>, a de <local nome="GABRAMÁ">Gabrama</local>, no reino de
+                           <local nome="DAMOT">Damostes</local> e sobre a <local nome="BEGAMEDES" contexto="Residência">residência</local> de <local
+                           nome="BEGAMEDES">Beguemedri</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="245">245-263</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="36">36)</alinea>
+                  <desenvolvimento>
+                     <data valor="1625.07.07">1625, Julho, 7</data>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">Padre Afonso Mendes</nome>, descreve e envia aos irmãos da companhia, em <local
+                           nome="PORTUGAL" contexto="Irmão da Companhia de Jesus">Portugal</local>, o seu testemunho e o de outros autores de toda a
+                        jornada feita de <local nome="PORTUGAL">Portugal</local> à <local nome="ÍNDIA">Índia</local> e de <local nome="DIU"
+                           >Diu</local> à <local nome="ETIÓPIA">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="304">304-319</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="37">37)</alinea>
+                  <desenvolvimento>
+                     <data valor="1625.01.01">1625</data>
+                     <texto>Informação sobre o <nome apelido="SAGUED" nome="Seltan, imperador">imperador Seltan Segued</nome>, cujo nome de baptismo é
+                           <nome apelido="SUCCINEOS" nome="((nome de baptismo do imperador Sagued Seltal))">Succineos</nome>, e sobre outras coisas
+                        passadas na <local nome="ETIÓPIA">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="648">648-652 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="38">38)</alinea>
+                  <desenvolvimento>
+                     <data valor="1626.06.01">1626, Junho, 1,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">Afonso Mendes</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, um dos quatro padres que passaram na <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Provincial">Etiópia</local> por ordem do Padre visitador <nome apelido="PALMEIRA"
+                           nome="André, padre">Andre Palmeira</nome>, notícia ao Provincial Geral da companhia, <nome apelido="VITELLEQUI"
+                           nome="Mutio">Padre Mutio Vítelleschi</nome>, a chegada a <local nome="FREMONA">Fremona</local> e as dificuldades que teve
+                        ao ser forçado a governar, por causa das chuvas, frios e outras "encomonidades" </texto>
+                  </desenvolvimento>
+                  <folhas flh="286">286-302 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="39">39)</alinea>
+                  <desenvolvimento>
+                     <data valor="1626.06.01">1626, Junho, 1, </data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, notícia em latim ao <nome apelido="VITELLEQUI" nome="Mutio">Padre
+                           Mutio Vítelleschi</nome>, sobre a <local nome="ETIÓPIA">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="342">342-356 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="40">40)</alinea>
+                  <desenvolvimento>
+                     <data valor="1626.06.22">1626, Junho, 22,</data>
+                     <local nome="BAROA"> Baroa</local>
+                     <texto>
+                        <nome apelido="BARRADAS" nome="Manuel, padre">Padre Manuel Barradas</nome>, notícia sobre o reino de <local nome="TIGRÉ"
+                           >Tigré</local>, por onde andou, o que viu e notou e compara as árvores e plantas e ervas da "<local nome="ÍNDIA"
+                           contexto="Plantas">Índia</local>", com as de <local nome="PORTUGAL" contexto="Plantas">Portugal</local>. Descreve, ainda a
+                        sua viagem a <local nome="FREMONA">Fremona</local>, a <local nome="SIRE">Sire</local>, a <local nome="ADECOROCÂ"
+                           >Adecorocã</local>, a <local nome="AGAMEA">Agamea</local>, a <local nome="DEBOROA">Deboroa</local>, a <local
+                           nome="AMBAÇANETE">Ambaçanete</local>, a <local nome="DERATA">Dereta</local>, etc</texto>
+                  </desenvolvimento>
+                  <folhas flh="462">462-476</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="41">41)</alinea>
+                  <desenvolvimento>
+                     <data valor="1627.04.17">1627, Abril, 17, </data>
+                     <local nome="GORGORA">Gorgora</local>
+                     <texto>
+                        <nome apelido="ALMADA" nome="Manuel, padre">Padre Manuel Almada</nome> informa o Padre Geral da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Geral">Companhia</local>, sobre a vitória da Igreja Católica no reino de <local
+                           nome="ABISSINEA">Abexins</local>. Notícia sobre o <local nome="ETIÓPIA" contexto="Império">império</local> dos Abexins e o
+                        estado eclesiástico da Residência de <local nome="DANCAS" contexto="Residência">Dancas</local>, <local nome="GANETA JESUS"
+                           >Ganeta Jesus</local>, <local nome="COLELA" contexto="Residência">Colela</local>, <local nome="ADAXA" contexto="Residência"
+                           >Adaxã</local>, <local nome="ENEBESSÉ" contexto="Residência">Enebesse</local>, <local nome="LIGC NUGUS"
+                           contexto="Residência">Lige Nugus</local>, na terra dos <local nome="DAMOT">Damotes</local>, <local nome="ATCANA"
+                           contexto="Residência">Atghana</local>, no reino de <local nome="BEGAMEDES">Begamedes</local>, <local nome="FREMONA"
+                           contexto="Residência">Fremona</local>, no reino de <local nome="TIGRÉ">Tigré</local> e residência de <local nome="ADEGADA"
+                           >Adegada</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="358">358-382 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="42">42)</alinea>
+                  <desenvolvimento>
+                     <data valor="1628.06.16">1628, Junho, 16, </data>
+                     <local nome="GORGORA">Gorgora</local>
+                     <texto>
+                        <nome apelido="ALMADA" nome="Manuel, padre">Padre Manuel Almada</nome>, notícia ao Provincial da Companhia, que não existe na
+                           <local nome="ETIÓPIA" contexto="Companhia de Jesus, Provincial">Etiópia</local> coisa segura. Descreve que houve um
+                        encontro derivado de "Zizania" entre o <local nome="ETIÓPIA" contexto="Imperador">Imperador</local> e seu irmão <nome
+                           apelido="RAS" nome="irmão do imperador">Ras</nome>; houve uma conjuração perigosa e inesperada e uma ameaça dos Galas na
+                        fronteira do Império. Informa ainda, sobre as residências de <local nome="DANCAS" contexto="Residência">Dancas</local>, <local
+                           nome="GORGORA" contexto="Residência">Gorgora</local>, <local nome="COLELA" contexto="Residência">Colela</local> e <local
+                           nome="CARCA" contexto="Igreja e Residência">Carca</local>, <local nome="ADAXA" contexto="Residência">Adaxa</local>, <local
+                           nome="LIGC NUGUS" contexto="Residência">Lige Nugus</local>, <local nome="TAMQHA">Tamqha</local> e ainda sobre as
+                        residências do reino de <local nome="TIGRÉ">Tigré</local>: <local nome="FREMONA" contexto="Residência">Fremona</local>, <local
+                           nome="ADEGADA" contexto="Residência">Adagada</local>, e sobre <local nome="DEPSAM" contexto="Residência">Depsan</local>, em
+                           <local nome="ENFRAZ ASSENTO">Enfraz Assento</local>, do Padre <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Patriarca</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="384">384-402</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="43">43)</alinea>
+                  <desenvolvimento>
+                     <data valor="1630.07.10">1630, Julho, 10, </data>
+                     <local nome="CAMARÃO">Camarão, Ilha do Mar Vermelho, Costa da Arábia </local>
+                     <texto>Bispo de <local nome="NICÉA" contexto="Bispo">Nicea</local>, relata toda a peregrinação dos Padres que partiram para a
+                           <local nome="ETIÓPIA" contexto="Companhia de Jesus, Geral">Etiópia</local>, no ano de <data valor="1630.01.01">1630</data>,
+                        para o mando do <nome apelido="VITELLEQUI" nome="Mutio">Rev. dº. Mutio Vitelleschi</nome>, Propósito Geral da Companhia, e
+                        para os reverendos padres da <local nome="ÍNDIA" contexto="Padres">Índia</local>, <local nome="PORTUGAL" contexto="Padres"
+                           >Portugal</local> e <local nome="NÁPOLES" contexto="Padres">Nápoles</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="130">130-148 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="44">44)</alinea>
+                  <desenvolvimento>
+                     <data valor="1631.06.20">1631, Maio, 20,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="BARRADAS" nome="Manuel, padre">Padre Manuel Barradas</nome>, informa que nem tudo corre pelo melhor. Notícia
+                        sobre os levantamentos contra o Imperador e outras coisas temporais na <local nome="ETIÓPIA">Etiópia</local>. Quanto ao
+                        aspecto espiritual, notícia sobre a residência de <local nome="GORGORA" contexto="Residência">Górgora</local> em que governou
+                        no inverno o <nome apelido="PAIS" nome="Gaspar, padre">Padre Gaspar Pais</nome> e no princípio do verão, o <nome
+                           apelido="FRANCISCO" nome="Jacinto, padre">Padre Jacinto Francisco</nome>. Noícia ainda sobre a residência de <local
+                           nome="GANETA JETOS" contexto="Residência">Ganeta Jetos</local>; <local nome="DANCAS" contexto="Residência">Dancas</local>;
+                        a casa do Padre Patriarca; <local nome="COLELA">Colela</local>; <local nome="NEBSE">Nebse</local>; <local nome="NEFACA"
+                           >Nefaca</local>; <local nome="LIGC NUGUS" contexto="Residência">Lige Nogus</local> e por fim, no reino de <local
+                           nome="TIGRÉ">Tigre</local>, <local nome="FREMONA">Fremona</local> .</texto>
+                  </desenvolvimento>
+                  <folhas flh="404">404-433</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="45">45)</alinea>
+                  <desenvolvimento>
+                     <data valor="1931.06.29">1631, Junho, 29,</data>
+                     <local nome="GORGORA">Gorgora</local>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, notícia o martírio de <nome apelido="ZASELASSÊ" nome="Abba">Abba
+                           Zaselassê</nome> mestre do mosteiro de <local nome="SELABO" contexto="Mosteiro">Selalo</local>, e do <nome apelido="EMANÔ"
+                           nome="Fecur, capitão">Capitão Tecur Emanô</nome>, criado do <nome apelido="CRISTOS" nome="Cella, Príncipe Ras">Ras Sela
+                           Cros</nome>, mortos na <local nome="ETIÓPIA">Etiópia</local> a <data valor="1631.05.24">24 de Maio de 1631</data>, pela fé
+                        católica</texto>
+                  </desenvolvimento>
+                  <folhas flh="644">644-646 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="46">46)</alinea>
+                  <desenvolvimento>
+                     <data valor="1632.04.01">1632, Abril</data>
+                     <texto>Notícia sobre a entrada do imperador nalgumas terras de <local nome="LASTÃ" contexto="Terras">Lastã</local> e suas
+                        consequências </texto>
+                  </desenvolvimento>
+                  <folhas flh="602">602-639 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="47">47)</alinea>
+                  <desenvolvimento>
+                     <data valor="1633.05.09">1633, Maio, 9,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, Patriarca, notícia a <nome apelido="FILIPE III"
+                           nome="rei de Portugal">D. Filipe III</nome>, rei de <local nome="PORTUGAL" contexto="Rei">Portugal</local>, sobre as coisas
+                        que se passaram em <data valor="1632.01.01">1632</data>. Descreve as disputas religiosas que houveram entre o imperador <nome
+                           apelido="SAGUED" nome="Seltan, imperador">Seltan Sagued</nome> e a Compahnia de Jesus em que na matéria dé fe vieram a
+                        entender-se. Transcreve a carta de <nome apelido="CRISTOS" nome="Cella, Príncipe Ras">Ras Cela Cristos</nome> a seu irmão, o
+                        imperador, etc</texto>
+                  </desenvolvimento>
+                  <folhas flh="477">477-500</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="48">48)</alinea>
+                  <desenvolvimento>
+                     <data valor="1633.01.01">1633</data>
+                     <texto> Notícia enviada ao Patriarca, Bispo e outros Padres da Companhia que ficaram na <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, sobre os "trabalhos" que o autor passou, juntamente com mais três
+                        padres, desde <local nome="MASSUA">Massua</local> (Etiópia) a <local nome="ADEN">Aden</local>, na <local nome="ÍNDIA"
+                           >Índia</local>. Noticia, ainda, sobre a cidade de<local nome="ADEN">Aden</local> e seu contorno; sobre alguns costumes
+                        destes árabes e sobre as terras que vão de <local nome="ADEN">Aden</local> a <local nome="CAXEM">Gaxem</local>, ao longo da
+                        costa</texto>
+                  </desenvolvimento>
+                  <folhas flh="434">434-441 /501-504 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="49">49)</alinea>
+                  <desenvolvimento>
+                     <data valor="1634.01.11">1634, Janeiro, 11,</data>
+                     <local nome="FREMONA">Fremona</local>
+                     <texto>
+                        <nome apelido="MIRANDA" nome="Manuel, padre">Padre Manuel de Miranda</nome> notário apostólico, certifica a <data
+                           valor="0001.05.18">18 de Maio</data> a carta que o Rev.do. Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>
+                        escreve ao imperador <nome apelido="SAGUED" nome="Seltan, imperador">Seltan Segued</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="5315"> 531-532</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="50">50)</alinea>
+                  <desenvolvimento>
+                     <data valor="1634.05.16">1634, Maio, 16,</data>
+                     <local nome="BARROSAN">Barrozã, Etiópia</local>
+                     <texto>Certidão da carta que o imperador <nome apelido="SAGUED" nome="Seltan, imperador">Seltan Segued</nome> Faciladês escreve
+                        ao Patriarca da <local nome="ETIÓPIA" contexto="Companhia de Jesus, Patriarca">Etiópia</local>, <nome apelido="MENDES"
+                           nome="Afonso, D.">D. Afonso Mendes</nome>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="531">531</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="51">51)</alinea>
+                  <desenvolvimento>
+                     <data valor="1634.05.18">1634, Maio, 18,</data>
+                     <local nome="BARROSAN">Barrozã, Etiópia</local>
+                     <texto>Certidão da carta do imperador <nome apelido="SAGUED" nome="Seltan, imperador">Seltan Sagued</nome> ao Patriarca, Bispo,
+                           <nome apelido="DIOGO" nome="padre">Padre Diogo</nome> e mais padres da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Padres">Compannhia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="532">532 v-53</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="52">52)</alinea>
+                  <desenvolvimento>
+                     <data valor="1634.06.19">1634, Junho, 19,</data>
+                     <local nome="MASSUA">Maçua</local>
+                     <texto>Certidão da resposta da carta que o <local nome="ETIÓPIA" contexto="Companhia de Jesus, Patriarca">Patriarca</local> dá ao
+                        imperador, por se encontrar preso</texto>
+                  </desenvolvimento>
+                  <folhas flh="533">533-537</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="53">53)</alinea>
+                  <desenvolvimento>
+                     <data valor="1635.04.25">1635, Abril, 25,</data>
+                     <local nome="ETIÓPIA" contexto="Companhia de Jesus">Etiópia</local>
+                     <texto>Cópia do processo e inquirição que se fez após a morte de dois religiosos da Companhia de Jesus e mais quatro
+                        companheiros, todos mortos na terra de <local nome="ASSAM">Assã</local>, no reino da <local nome="ETIÓPIA" contexto="Reino"
+                           >Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="640">640-642</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="54">54)</alinea>
+                  <desenvolvimento>
+                     <data valor="1635.09.18">1635,Setembro, 18</data>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>, notícia ao Provincial da <local nome="ÍNDIAS ORIENTAIS">Índia
+                           Oriental</local>, <nome apelido="TAVARES" nome="Álvaro, padre">Padre Álvaro Tavares</nome>, de todas as peripécias que tem
+                        vindo a ter desde o ano anterior, quando embarcou da <local nome="ETIÓPIA">Etiópia</local> para a <local nome="ÍNDIA"
+                           >Índia</local> e que foi preso pelo Baxa juntamente com os <nome apelido="MATOS" nome="Diogo, padre">Padres Diogo de
+                           Matos</nome> e <nome apelido="FERNANDES" nome="António, padre">António Fernandes</nome> e mais trinta e dois moços; noíicia
+                        o perigo que teve de um na frágio etc. Por fim, notícia que está perto de <local nome="DIU">Diu</local> e a vontade que tem em
+                        encontrar-se com toda a Companhia</texto>
+                  </desenvolvimento>
+                  <folhas flh="505">505-516</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="55">55)</alinea>
+                  <desenvolvimento>
+                     <data valor="1635.01.01">[c. 1635]</data>
+                     <texto>Breve relação sobre a vinda de <local nome="MASSUA">Massua</local> a <local nome="ADEN">Aden</local> e dos "trabalhos"
+                        passados por quatro padres da Companhia de Jesus, desde a <local nome="ETIÓPIA">Etiópia</local> à <local nome="ÍNDIA"
+                           >Índia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="539">539-540</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="56">56)</alinea>
+                  <desenvolvimento>
+                     <data valor="1636.01.20">1636, Janeiro, 20,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="RODRIGUES" nome="Francisco, padre">Padre Francisco Roiz</nome>, começa por noticiar ao Patriarca de <local
+                           nome="ETIÓPIA" contexto="Companhia de Jesus, Patriarca">Etiópia</local>, sobre o estado secular da <local nome="ETIÓPIA"
+                           >Etiópia</local>, informando que o imperador desde que tomou posse do império, até hoje tem andado em "campo". Por fim,
+                        participa morte dos padres <nome apelido="PAIS" nome="Gaspar, padre">Gaspar Pais</nome> e <nome apelido="PEREIRA"
+                           nome="João, padre">João Pereira</nome> e, informa que os cinco padres que ficaram, e em que se inclui, têm-se visto em
+                        grandes trabalhos</texto>
+                  </desenvolvimento>
+                  <folhas flh="517">517-523</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="57">57)</alinea>
+                  <desenvolvimento>
+                     <data valor="1636.01.20">1636, Janeiro, 20,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>Cópia da carta anterior</texto>
+                  </desenvolvimento>
+                  <folhas flh="541">541-545</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="58">58)</alinea>
+                  <desenvolvimento>
+                     <data valor="1636.01.01">[c. 1636 ,</data>
+                     <local nome="SUAQUEM">Suaquem]</local>
+                     <texto>
+                        <nome apelido="MATOS" nome="Diogo, padre">Padre Diogo de Matos</nome> notícia ao <nome apelido="LAMEIRA" nome="Manuel, padre"
+                           >padre Manuel Lameira</nome> Reitor do Colégio de <local nome="DIU" contexto="Reitor do Colégio">Diu</local>, da viagem que
+                        fez da <local nome="ÍNDIA">Índia</local> para <local nome="SUAQUEM">Suaquem</local> (Etiópia) .</texto>
+                  </desenvolvimento>
+                  <folhas flh="547">547-548</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="59">59)</alinea>
+                  <desenvolvimento>
+                     <data valor="1636.01.01"> [e. 1636]</data>
+                     <texto>
+                        <nome apelido="SILVA" nome="Gonçalo, bispo">D. Gonçalo da Silva</nome> Bispo de <local nome="MALACA" contexto="Bispo"
+                           >Malaca</local>, dá seu parecer sobre o breve das faculdades concedidas ao Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus, Patriarca">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="549">549-552</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="60">60)</alinea>
+                  <desenvolvimento>
+                     <data valor="1640.01.01">1640</data>
+                     <texto>Notícia sobre o martírio dos Padres <nome apelido="CERDEIRA" nome="Luís, padre">Luis Cerdeira</nome> e <nome
+                           apelido="BRUNI" nome="Bruno">Bruno Bruni</nome>, na <local nome="ETIÓPIA" contexto="Companhia de Jesus, Padres"
+                           >Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="601">601-601 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="61">61)</alinea>
+                  <desenvolvimento>
+                     <data valor="1641.07.20">1641, Julho, 20,</data>
+                     <local nome="SUAQUEM">Suaqué</local>
+                     <texto>
+                        <nome apelido="CALAÇA" nome="Damião, padre">Padre Damião Calaça</nome>, descreve a sua chegada e estadia na ilha de <local
+                           nome="SUAQUEM">Suaqué</local>. Notícia a prova de amizade recebida pelo Baxa e as perseguições sofridas pelos cristãos e
+                        deligências que fez para as combater</texto>
+                  </desenvolvimento>
+                  <folhas flh="442">442-447 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="62">62)</alinea>
+                  <desenvolvimento>
+                     <data valor="1649.01.01">1649</data>
+                     <texto>
+                        <nome apelido="PARISIANI" nome="Torcato, padre">Padre Torcato Parisiani</nome>, noticia sobre o estado da <local
+                           nome="ETIÓPIA">Etiópia</local>, desde <data valor="1647.01.01">1647</data> a <data valor="1649.01.01">1649</data>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="450">450-461 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="63">63)</alinea>
+                  <desenvolvimento>
+                     <data valor="1652.10.16">1652, Outubro, 16,</data>
+                     <local nome="GOA">Goa</local>
+                     <texto>
+                        <nome apelido="MENDES" nome="Afonso, D.">D. Afonso Mendes</nome>, Patriarca da <local nome="ETIÓPIA"
+                           contexto="Companhia de Jesus">Etiópia</local>, noticia que desde a morte por enforcamento dos padres <nome
+                           apelido="CERDEIRA" nome="Luís, padre">Luis Cardeira</nome> e <nome apelido="SANTA CRUZ" nome="Bruno de, padre">Bruno de
+                           S.Ta Cruz</nome>, a Companhia passou a ter cuidado em acudir a Igreja na <local nome="ETIÓPIA" contexto="Igreja"
+                           >Etiópia</local>. Para isso, passou a prover aquela Igreja, com um governador da sua obediência</texto>
+                  </desenvolvimento>
+                  <folhas flh="699">699-699 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="64">64)</alinea>
+                  <desenvolvimento>
+                     <data valor="1657.06.20">1657 (?), Junho, 20</data>
+                     <texto>História do imperador <nome apelido="MALAC" nome="Çagued, imperador">Malac Çagued</nome>, tresladada da Crónica da <local
+                           nome="ETIÓPIA" contexto="Crónica">Etiópia</local>
+                     </texto>
+                  </desenvolvimento>
+                  <folhas flh="571">571-577 v.</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="65">65)</alinea>
+                  <desenvolvimento>
+                     <data valor="1657.01.01">[c. 1657 ]</data>
+                     <texto>Relação breve das coisas da <local nome="ETIÓPIA">Etiópia</local> em que esta é descrita geograficamente,
+                        climatericamente, etc.</texto>
+                  </desenvolvimento>
+                  <folhas flh="583">583-586</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="66">66)</alinea>
+                  <desenvolvimento>
+                     <data valor="1657.01.01">[c. 1657]</data>
+                     <texto>Informação sobre corno viveram os portugueses e seus descendentes, na <local nome="ETIÓPIA" contexto="Portugueses"
+                           >Eiópia</local> e sobre o que estes lá passaram</texto>
+                  </desenvolvimento>
+                  <folhas flh="578">578-582</folhas>
+               </doc>
+               <doc>
+                  <alinea valor="67">67)</alinea>
+                  <desenvolvimento>
+                     <data valor="1698.08.05">1698, Agosto, 5,</data>
+                     <local nome="ETIÓPIA">Etiópia</local>
+                     <texto>
+                        <nome apelido="SILVA" nome="Belchior, padre">Padre Belchior da Silva</nome>, noticia que os católicos correm perigo na <local
+                           nome="ETIÓPIA" contexto="Católicos">Etiópia</local> e que a sua vinda foi muito útil por evitar perda de muitas almas.
+                        Descreve a viagem pelo porto de <local nome="DELEC">Delec</local> e os costumes usados pelos católicos nestas partes</texto>
+                  </desenvolvimento>
+                  <folhas flh="692">692-698</folhas>
+               </doc>
+            </docs>
+         </cartas>
+      </corpo>
+   </conteudo>
+   <indices>
+      <indiceDatas>
+
+         <datas>
+            <numAlinea>6</numAlinea>
+
+            <data>1604, Mar&#231;o, 17</data>
+
+            <txt>Requerimento do Padre Manuel Veiga ao Arcebispo D. Fr. Aleixo de Meneses</txt>
+
+            <flhs>1</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>4</numAlinea>
+
+            <data>1604, Janeiro,26,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Belchior da Silva ao Escriv&#227;o Jo&#227;o Gabriel</txt>
+
+            <flhs>2, reg. 2.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>3</numAlinea>
+
+            <data>1603, Julho, 29,</data>
+
+            <lcl>Goa</lcl>
+
+            <txt>Comiss&#227;o que o Arcebispo D. Fr. Aleixo de Meneses d&#225; ao Padre Belchior da Silva</txt>
+
+            <flhs>2, reg. 2.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>7</numAlinea>
+
+            <data>1604, Mar&#231;o, 17</data>
+
+            <txt>C&#243;pia dos testemunhos sobre D. Andr&#233; de Oviedo</txt>
+
+            <flhs>2-17 v.</flhs>
+         </datas>
+         <datas>
+            <numAlinea>9</numAlinea>
+
+            <data>1607, Julho, 22,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial, Padre Manuel da Veiga</txt>
+
+            <flhs>18-31 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>23</numAlinea>
+
+            <data>1619, Julho, 8,</data>
+
+            <lcl> Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo</txt>
+
+            <flhs>32-39</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>13</numAlinea>
+
+            <data>1609</data>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo</txt>
+
+            <flhs>40-52</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>12</numAlinea>
+
+            <data>1609, Junho, 24,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial da Companhia, Padre Gaspar Fernandes</txt>
+
+            <flhs>53-65 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>14</numAlinea>
+
+            <data>1610, Julho, 3,</data>
+
+            <lcl> Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial Francisco Vieira</txt>
+
+            <flhs>66-73</flhs>
+         </datas>
+         <datas>
+            <numAlinea>15</numAlinea>
+
+            <data>1611, Julho, 13,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo</txt>
+
+            <flhs>74-83 v.</flhs>
+         </datas>
+         <datas>
+            <numAlinea>16</numAlinea>
+
+            <data>1613, Junho,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial Padre Francisco Vieira</txt>
+
+            <flhs>84-96</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>17</numAlinea>
+
+            <data>1614, Junho, 2, </data>
+
+            <lcl>Gorgora</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial Padre Francisco Vieira</txt>
+
+            <flhs>97-114 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>18</numAlinea>
+
+            <data>1615, Junho, 28,</data>
+
+            <lcl> Gorgora</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial Padre Francisco Vieira</txt>
+
+            <flhs>115-127 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>43</numAlinea>
+
+            <data>1630, Julho, 10, </data>
+
+            <lcl>Camar&#227;o</lcl>
+
+            <txt>Carta do Bispo de Nicea aos Padres da &#205;ndia, Portugal e N&#225;poles</txt>
+
+            <flhs>130-148 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>19</numAlinea>
+
+            <data>1615, Julho, 4,</data>
+
+            <lcl> Gorgora</lcl>
+
+            <txt>Carta ao Provincial Francisco Vieira</txt>
+
+            <flhs>152-154 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>24</numAlinea>
+
+            <data>1619, Julho, 8,</data>
+
+            <lcl> Fremona</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Provincial da Companhia</txt>
+
+            <flhs>155-178 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>28</numAlinea>
+
+            <data>1620</data>
+
+            <txt>Carta do Padre Jer&#243;nimo Maiorca</txt>
+
+            <flhs>179-184</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>25</numAlinea>
+
+            <data>1620, Maio, 24,</data>
+
+            <lcl>Dambia</lcl>
+
+            <txt>Carta do Padre Ant&#243;nio Fernandes</txt>
+
+            <flhs>185-190</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>26</numAlinea>
+
+            <data>1620, Maio, 24,</data>
+
+            <lcl>Dambia</lcl>
+
+            <txt>Carta do Padre Ant&#243;nio Fernandes</txt>
+
+            <flhs>191-194</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>27</numAlinea>
+
+            <data>1620</data>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo a um Padre de Portugal</txt>
+
+            <flhs>195-200 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>29</numAlinea>
+
+            <data>1621, Junho, 20,</data>
+
+            <lcl> Fremona</lcl>
+
+            <txt>Carta do Padre Diogo de Matos</txt>
+
+            <flhs>201-214 v.</flhs>
+         </datas>
+         <datas>
+            <numAlinea>30</numAlinea>
+
+            <data>1622, Junho,28</data>
+
+            <txt>Carta do Padre Diogo de Matos</txt>
+
+            <flhs>215-225</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>31</numAlinea>
+
+            <data>1622</data>
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Fr. Tom&#225;s de Azevedo</txt>
+
+            <flhs>227-232 v.</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>32</numAlinea>
+
+            <data>1623, Julho, 15, </data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Diogo de Matos</txt>
+            <flhs>233-243</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>35</numAlinea>
+
+            <data>1625, Junho, 15, </data>
+
+            <lcl> Tamqha</lcl>
+
+            <txt>Carta do Padre Gaspar Pais ao Provincial Padre Francisco Vergara</txt>
+
+            <flhs>245-263</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>33</numAlinea>
+
+            <data>1624, Maio, 10,</data>
+
+            <lcl>Gorgora</lcl>
+
+            <txt>Carta do Padre Manuel Almeida ao Padre Geral da Companhia Mutio Vitellequi</txt>
+
+            <flhs>264-285</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>38</numAlinea>
+
+            <data>1626, Junho, 1,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Patriarca D. Afonso Mendes ao Provincial Padre Mutio Vitelleschi</txt>
+
+            <flhs>286-302 v.</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>36</numAlinea>
+
+            <data>1625, Julho, 7</data>
+
+            <txt>Carta do Padre Afonso Mendes aos irm&#227;os da Companhia de Jesus, em Portugal</txt>
+
+            <flhs>304-319</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>34</numAlinea>
+
+            <data>1625, Janeiro, 30, </data>
+
+            <lcl>Tanqha</lcl>
+
+            <txt>Carta do Padre Gaspar Pais</txt>
+
+            <flhs>320-341</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>39</numAlinea>
+
+            <data>1626, Junho, 1, </data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Patriarca da Eti&#243;pia ao Provincial Mutil Viteleschi</txt>
+
+            <flhs>342-356 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>41</numAlinea>
+
+            <data>1627, Abril, 17, </data>
+
+            <lcl>Gorgora</lcl>
+
+            <txt>Carta do Padre Manuel Almada ao Padre Geral da Companhia</txt>
+
+            <flhs>358-382 v.</flhs>
+         </datas>
+         <datas>
+            <numAlinea>42</numAlinea>
+
+            <data>1628, Junho, 16, </data>
+
+            <lcl>Gorgora</lcl>
+
+            <txt>Carta do Padre Manuel Almada</txt>
+
+            <flhs>384-402</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>44</numAlinea>
+
+            <data>1631, Maio, 20,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Manuel Barradas</txt>
+
+            <flhs>404-433</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>48</numAlinea>
+
+            <data>1633</data>
+
+            <txt>Carta enviada ao Patriarca Bispo e outros Padres da Companhia de Jesus que ficaram na Eti&#243;pia</txt>
+
+            <flhs>434-441</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>61</numAlinea>
+
+            <data>1641, Julho, 20,</data>
+
+            <lcl>Suaqu&#233;</lcl>
+
+            <txt>Carta do Padre Dami&#227;o Cala&#231;a</txt>
+
+            <flhs>442-447 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>62</numAlinea>
+
+            <data>1649</data>
+
+            <txt>Carta do Padre Turcato Parisiani</txt>
+
+            <flhs>450-461 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>40</numAlinea>
+
+            <data>1626, Junho, 22,</data>
+
+            <lcl> Baroa</lcl>
+
+            <txt>Carta do Padre Manuel Barradas</txt>
+
+            <flhs>462-476</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>47</numAlinea>
+
+            <data>1633, Maio, 9,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Carta do Patriarca D. Afonso Mendes a D. Filipe III</txt>
+
+            <flhs>477-500</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>48</numAlinea>
+
+            <data>1633</data>
+
+            <txt>&gt;Continua&#231;&#227;o da carta enviada a todos os padres que ficaram na Eti&#243;pia</txt>
+
+            <flhs>501-504 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>54</numAlinea>
+
+            <data>1635,Setembro, 18</data>
+
+            <txt>Carta de D. Afonso Mendes ao Provincial, Padre &#193;lvaro Tavares</txt>
+
+            <flhs>505-516</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>56</numAlinea>
+
+            <data>1636, Janeiro, 20,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Francisco Roiz ao Patriarca da Eti&#243;pia</txt>
+
+            <flhs>517-523</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>5</numAlinea>
+
+            <data>[Depois de 7 de Mar&#231;o de 1604] </data>
+
+            <txt>C&#243;pia do testemunho sobre o Patriarca da Eti&#243;pia</txt>
+
+            <flhs>523-528</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>50</numAlinea>
+
+            <data>1634, Maio, 16,</data>
+
+            <lcl>Barroz&#227;, Eti&#243;pia</lcl>
+
+            <txt>Certid&#227;o da carta do imperador Seltan Sagued a D. Afonso Mendes</txt>
+
+            <flhs>531</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>49</numAlinea>
+
+            <data>1634, Janeiro, 11,</data>
+
+            <lcl>Fremona</lcl>
+
+            <txt>Certid&#227;o da carta do Padre Patriarca ao imperador Seltan Sagued</txt>
+
+            <flhs> 531-532</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>51</numAlinea>
+
+            <data>1634, Maio, 18,</data>
+
+            <lcl>Barroz&#227;, Eti&#243;pia</lcl>
+
+            <txt>Certid&#227;o da carta do imperador Seltan Sagued aos Padres da Companhia de Jesus</txt>
+
+            <flhs>532-553</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>52</numAlinea>
+
+            <data>1634, Junho, 19,</data>
+
+            <lcl>Ma&#231;ua</lcl>
+
+            <txt>Certid&#227;o da resposta da carta dada pelo Patriarca ao Imperador</txt>
+
+            <flhs>533-537</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>55</numAlinea>
+
+            <data>[c. 1635]</data>
+
+            <txt>Breve rela&#231;&#227;o</txt>
+
+            <flhs>539-540</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>57</numAlinea>
+
+            <data>1636, Janeiro, 20,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Francisco Roiz ao Patriarca da Eti&#243;pia</txt>
+
+            <flhs>541-545</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>58</numAlinea>
+
+            <data>[c. 1636 ,</data>
+
+            <lcl>Suaquem]</lcl>
+
+            <txt>Carta do Padre Diogo de Matos ao Reitor Padre Manuel Lameira</txt>
+
+            <flhs>547-548</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>59</numAlinea>
+
+            <data> [e. 1636]</data>
+
+            <txt>Parecer dado pelo Bispo D. Gon&#231;alo da Silva</txt>
+            <flhs>549-552</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>2</numAlinea>
+
+            <data>1556, Outubro, 30 </data>
+
+            <txt>Carta de D. Jo&#227;o Barreto a D. Andr&#233; de Oviedo</txt>
+
+            <flhs>553-554 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>20</numAlinea>
+
+            <data>1615,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Lu&#237;s de Azevedo ao Padre Ant&#243;nio Fernandes</txt>
+
+            <flhs>557-557 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>21</numAlinea>
+
+            <data>[c.1615]</data>
+
+            <txt>Carta de D. Afonso Mendes</txt>
+            <flhs>559-569</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>64</numAlinea>
+
+            <data>1657 (?), Junho, 20</data>
+
+            <txt>Hist&#243;ria do Imperador Malac &#199;egued</txt>
+
+            <flhs>571-577 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>66</numAlinea>
+
+            <data>[c. 1657]</data>
+
+            <txt>Informa&#231;&#227;o sobre portugueses na Eti&#243;pia</txt>
+
+            <flhs>578-582</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>65</numAlinea>
+
+            <data>[c. 1657 ]</data>
+
+            <txt>Rela&#231;&#227;o breve das crises da Eti&#243;pis</txt>
+
+            <flhs>583-586</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>1</numAlinea>
+
+            <data>[Depois de 1541]</data>
+
+            <txt>Informa&#231;&#227;o sobre a entrada de D. Cristov&#227;o do Carmo</txt>
+
+            <flhs>587-601</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>60</numAlinea>
+
+            <data>1640</data>
+
+            <txt>Not&#237;cia sobre o mart&#237;rio dos padres</txt>
+
+            <flhs>601-601 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>46</numAlinea>
+
+            <data>1632, Abril</data>
+
+            <txt>Not&#237;cia sobre o Imperador</txt>
+
+            <flhs>602-639 v.</flhs>
+         </datas>
+         <datas>
+            <numAlinea>53</numAlinea>
+
+            <data>1635, Abril, 25,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>C&#243;pia do processo de inquiri&#231;&#227;o</txt>
+
+            <flhs>640-642</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>45</numAlinea>
+
+            <data>1631, Junho, 29,</data>
+
+            <lcl>Gorgora</lcl>
+
+            <txt>Carta de D. Afonso Mendes</txt>
+
+            <flhs>644-646 v.</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>37</numAlinea>
+
+            <data>1625</data>
+
+            <txt>Informa&#231;&#227;o sobre o imperador Seltan Segued</txt>
+            <flhs>648-652 v.</flhs>
+         </datas>
+         <datas>
+
+            <numAlinea>22</numAlinea>
+
+            <data>c.1615</data>
+
+            <txt>Informa&#231;&#227;o sobre o caminho de Momba&#231;a para a Eti&#243;pia pelo Rio Bravo</txt>
+
+            <flhs>654-654 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>11</numAlinea>
+
+            <data>[1608]</data>
+
+            <txt>Tratado de viagem</txt>
+
+            <flhs>657-666 v.</flhs>
+         </datas>
+
+         <datas>
+            <numAlinea>10</numAlinea>
+
+            <data>1608</data>
+
+            <txt>Carta do Padre Pero Pais</txt>
+
+            <flhs>667-686 v.</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>8</numAlinea>
+
+            <data>1605, Mar&#231;o, 30,</data>
+
+            <lcl>Diu</lcl>
+
+            <txt>Carta do Padre Gaspar Soares ao Padre Manuel da Veiga</txt>
+
+            <flhs>688-691</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>67</numAlinea>
+
+            <data>1698, Agosto, 5,</data>
+
+            <lcl>Eti&#243;pia</lcl>
+
+            <txt>Carta do Padre Belchior da Silva</txt>
+
+            <flhs>692-698</flhs>
+
+         </datas>
+         <datas>
+            <numAlinea>63</numAlinea>
+
+            <data>1652, Outubro, 16,</data>
+
+            <lcl>Goa</lcl>
+
+            <txt>Carta de D. Afonso Mendes</txt>
+
+            <flhs>699-699 v.</flhs>
+         </datas>
+
+      </indiceDatas>
+
+      <indiceNomes>
+
+         <nomes>
+            <apelido>ALMADA</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>41</numAlinea>
+            <numAlinea>42</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>ALMEIDA</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>33</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>ANT&#211;NIO</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>19</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>AZEVEDO</apelido>
+            <priNome>Lu&#237;s, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>8</numAlinea>
+            <numAlinea>9</numAlinea>
+            <numAlinea>12</numAlinea>
+            <numAlinea>13</numAlinea>
+            <numAlinea>14</numAlinea>
+            <numAlinea>15</numAlinea>
+            <numAlinea>16</numAlinea>
+            <numAlinea>17</numAlinea>
+            <numAlinea>18</numAlinea>
+            <numAlinea>19</numAlinea>
+            <numAlinea>20</numAlinea>
+            <numAlinea>23</numAlinea>
+            <numAlinea>24</numAlinea>
+            <numAlinea>27</numAlinea>
+            <numAlinea>32</numAlinea>
+            <numAlinea>33</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>BALDAMES</apelido>
+            <priNome>padre</priNome>
+            <d>doc.</d>
+            <numAlinea>5</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>BAPTISTA</apelido>
+            <priNome>Jo&#227;o, D., bispo</priNome>
+            <d>doc.</d>
+            <numAlinea>10</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>BARRADAS</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>40</numAlinea>
+            <numAlinea>44</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>BARRETO</apelido>
+            <priNome>Jo&#227;o (D), Patriarca</priNome>
+            <d>doc.</d>
+            <numAlinea>2</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>BARROS</apelido>
+            <priNome>Tom&#225;s, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>31</numAlinea>
+         </nomes>
+         <nomes>
+            <apelido>BRUNI</apelido>
+            <priNome>Bruno</priNome>
+            <d>doc.</d>
+            <numAlinea>60</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>BRUNO</apelido>
+            <priNome>Ant&#243;nio, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>29</numAlinea>
+            <numAlinea>33</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>CALA&#199;A</apelido>
+            <priNome>Dami&#227;o, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>61</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>CARDOSO</apelido>
+            <priNome>Gon&#231;alo, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>5</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>CERDEIRA</apelido>
+            <priNome>Lu&#237;s, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>60</numAlinea>
+            <numAlinea>63</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>CERQUEIRA</apelido>
+            <priNome>Lu&#237;s, D., Bispo</priNome>
+            <d>doc.</d>
+            <numAlinea>19</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>CRISTOS</apelido>
+            <priNome>Cella, Pr&#237;ncipe Ras</priNome>
+            <d>doc.</d>
+            <numAlinea>33</numAlinea>
+            <numAlinea>45</numAlinea>
+            <numAlinea>47</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>DIOGO</apelido>
+            <priNome>padre</priNome>
+            <d>doc.</d>
+            <numAlinea>51</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>EMAN&#212;</apelido>
+            <priNome>Fecur, capit&#227;o</priNome>
+            <d>doc.</d>
+            <numAlinea>45</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>FERNANDES</apelido>
+            <priNome>Ant&#243;nio, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>5</numAlinea>
+            <numAlinea>18</numAlinea>
+            <numAlinea>19</numAlinea>
+            <numAlinea>20</numAlinea>
+            <numAlinea>25</numAlinea>
+            <numAlinea>26</numAlinea>
+            <numAlinea>32</numAlinea>
+            <numAlinea>54</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>FERNANDES</apelido>
+            <priNome>Gaspar, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>12</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>FILIPE III</apelido>
+            <priNome>rei de Portugal</priNome>
+            <d>doc.</d>
+            <numAlinea>47</numAlinea>
+         </nomes>
+         <nomes>
+            <apelido>FRANCISCO</apelido>
+            <priNome>Jacinto, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>44</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>GABRIEL</apelido>
+            <priNome>Jo&#227;o, escriv&#227;o</priNome>
+            <d>doc.</d>
+            <numAlinea>4</numAlinea>
+            <numAlinea>7</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>GAMA</apelido>
+            <priNome>Crit&#243;v&#227;o, D.</priNome>
+            <d>doc.</d>
+            <numAlinea>1</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>GAMA</apelido>
+            <priNome>Vasco</priNome>
+            <d>doc.</d>
+            <numAlinea>1</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>LAMEIRA</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>58</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>LOPES</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>5</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>MAIORCA</apelido>
+            <priNome>Jer&#243;nimo, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>28</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>MALAC</apelido>
+            <priNome>&#199;agued, imperador</priNome>
+            <d>doc.</d>
+            <numAlinea>64</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>MARONITA</apelido>
+            <priNome>Abra&#227;o de Ma&#231;&#227;o, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>5</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>MATOS</apelido>
+            <priNome>Diogo, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>29</numAlinea>
+            <numAlinea>30</numAlinea>
+            <numAlinea>32</numAlinea>
+            <numAlinea>54</numAlinea>
+            <numAlinea>58</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>MEDEIROS</apelido>
+            <priNome>J&#225;come de, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>24</numAlinea>
+            <numAlinea>27</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>MENDES</apelido>
+            <priNome>Afonso, D.</priNome>
+            <d>doc.</d>
+            <numAlinea>21</numAlinea>
+            <numAlinea>36</numAlinea>
+            <numAlinea>38</numAlinea>
+            <numAlinea>39</numAlinea>
+            <numAlinea>45</numAlinea>
+            <numAlinea>47</numAlinea>
+            <numAlinea>49</numAlinea>
+            <numAlinea>50</numAlinea>
+            <numAlinea>54</numAlinea>
+            <numAlinea>63</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>MENESES</apelido>
+            <priNome>Aleixo, D. Fr., Arcebispo</priNome>
+            <d>doc.</d>
+            <numAlinea>3</numAlinea>
+            <numAlinea>6</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>MIRANDA</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>49</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>MONSERRATE</apelido>
+            <priNome>Ant&#243;nio, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>11</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>OANGEL</apelido>
+            <priNome>Sabelo, imperatriz</priNome>
+            <d>doc.</d>
+            <numAlinea>1</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>OVIEDO</apelido>
+            <priNome>Andr&#233;, D.</priNome>
+            <d>doc.</d>
+            <numAlinea>2</numAlinea>
+            <numAlinea>3</numAlinea>
+            <numAlinea>4</numAlinea>
+            <numAlinea>6</numAlinea>
+            <numAlinea>7</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>PAIS</apelido>
+            <priNome>Gaspar, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>34</numAlinea>
+            <numAlinea>35</numAlinea>
+            <numAlinea>44</numAlinea>
+            <numAlinea>56</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>PAIS</apelido>
+            <priNome>Pero, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>10</numAlinea>
+            <numAlinea>11</numAlinea>
+            <numAlinea>18</numAlinea>
+            <numAlinea>25</numAlinea>
+            <numAlinea>27</numAlinea>
+            <numAlinea>32</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>PALMEIRA</apelido>
+            <priNome>Andr&#233;, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>38</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>PARISIANI</apelido>
+            <priNome>Torcato, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>62</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>PEREIRA</apelido>
+            <priNome>Jo&#227;o, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>56</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>RAS</apelido>
+            <priNome>irm&#227;o do imperador</priNome>
+            <d>doc.</d>
+            <numAlinea>42</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>RODRIGUES</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>56</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>ROMANO</apelido>
+            <priNome>Leonardo, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>25</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>ROMANO</apelido>
+            <priNome>Louren&#231;o, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>19</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>SAGUED</apelido>
+            <priNome>Seltan, imperador</priNome>
+            <d>doc.</d>
+            <numAlinea>34</numAlinea>
+            <numAlinea>35</numAlinea>
+            <numAlinea>37</numAlinea>
+            <numAlinea>47</numAlinea>
+            <numAlinea>49</numAlinea>
+            <numAlinea>50</numAlinea>
+            <numAlinea>51</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>SANTA CRUZ</apelido>
+            <priNome>Bruno de, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>63</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>SILVA</apelido>
+            <priNome>Belchior, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>3</numAlinea>
+            <numAlinea>4</numAlinea>
+            <numAlinea>6</numAlinea>
+            <numAlinea>7</numAlinea>
+            <numAlinea>67</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>SILVA</apelido>
+            <priNome>Gon&#231;alo, bispo</priNome>
+            <d>doc.</d>
+            <numAlinea>59</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>SOARES</apelido>
+            <priNome>Gaspar, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>8</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>SUCCINEOS</apelido>
+            <priNome>((nome de baptismo do imperador Sagued Seltal))</priNome>
+            <d>doc.</d>
+            <numAlinea>37</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>TAVARES</apelido>
+            <priNome>&#193;lvaro, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>54</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>VEIGA</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>19</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>VEIGA</apelido>
+            <priNome>Manuel, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>6</numAlinea>
+            <numAlinea>8</numAlinea>
+            <numAlinea>9</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>VERGARA</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>35</numAlinea>
+         </nomes>
+
+         <nomes>
+            <apelido>VIEIRA</apelido>
+            <priNome>Francisco, padre</priNome>
+            <d>doc.</d>
+            <numAlinea>14</numAlinea>
+            <numAlinea>16</numAlinea>
+            <numAlinea>17</numAlinea>
+            <numAlinea>18</numAlinea>
+            <numAlinea>19</numAlinea>
+         </nomes>
+         <nomes>
+
+            <apelido>VITELLEQUI</apelido>
+            <priNome>Mutio</priNome>
+            <d>doc.</d>
+            <numAlinea>33</numAlinea>
+            <numAlinea>38</numAlinea>
+            <numAlinea>39</numAlinea>
+            <numAlinea>43</numAlinea>
+
+         </nomes>
+         <nomes>
+            <apelido>ZASELASS&#202;</apelido>
+            <priNome>Abba</priNome>
+            <d>doc.</d>
+            <numAlinea>45</numAlinea>
+         </nomes>
+
+      </indiceNomes>
+
+      <indiceLocais>
+
+         <sitio>
+
+            <local>ABISSINEA</local>
+
+            <texto>v. ETI&#211;PIA</texto>
+
+            <contextos>
+               <contexto lugar="ABISSINEA"/>
+               <d>doc.</d>
+               <numAlinea>41</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ADAXA</local>
+
+            <texto> ((Aldeia no reino de Goiam, Eti&#243;pia, a uma jornada de Colela)) </texto>
+
+            <contextos>
+               <contexto lugar="ADAXA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ADECOROC&#195;</local>
+
+            <texto> ((Aldeia no reino de Tigr&#233;, Eti&#243;pia)) </texto>
+
+            <contextos>
+               <contexto lugar="ADECOROCÂ"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ADEGADA</local>
+
+            <texto> ((Aldeia no rieno de Tigr&#233;, Eti&#243;pia, entre Maigogua e Massua quasi no meio fica Deboroa que &#233; cabe&#231;a de
+               terras)) </texto>
+            <contextos>
+               <contexto lugar="ADEGADA"/>
+               <d>doc.</d>
+               <numAlinea>34</numAlinea>
+               <numAlinea>41</numAlinea>
+            </contextos>
+
+            <contextos>
+               <contexto lugar="ADEGADA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>42</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>ADEN</local>
+
+            <texto> ((cid. forte da Ar&#225;bia meridional, a 170 km a E. do estreito de Bad - el - Mandeb. Ergue-se no territ&#243;rio da tribu
+               Abdali. Divide-se em duas zonas: a cidade mar&#237;tima ou Steamer - point, onde tocam os vapores, e a cidade propriamente dita,
+               defendida por canh&#245;es)). </texto>
+
+            <contextos>
+               <contexto lugar="ADEN"/>
+               <d>doc.</d>
+               <numAlinea>48</numAlinea>
+               <numAlinea>48</numAlinea>
+               <numAlinea>48</numAlinea>
+               <numAlinea>55</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AGAMEA</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="AGAMEA"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AGA&#213;, AGOS ou AGADUS</local>
+
+            <texto> ((Prov.; povo primitivo e inculto da Abissinea que ocupa as partes montanhosas e as regi&#245;es selvagens do centro do pa&#237;s
+               entre Taccaz&#233; e o Abai)) </texto>
+
+            <contextos>
+               <contexto lugar="AGAÕ, AGOS ou AGADUS">Miss&#227;o</contexto>
+               <d>doc.</d>
+               <numAlinea>29</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="AGAÕ, AGOS ou AGADUS">Prov&#237;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AMARA</local>
+
+            <texto> (Amaha) ((Ant. prov. (1838 a 1851 e 1868 a 1872); estado independente da Eti&#243;pia, cap. Gondar. Chama-se assim actualmente o
+               centro do pa&#237;s, a parte mais elevada do massi&#231;o abissineo, onde predomina a l&#237;ngua americana)). </texto>
+
+            <contextos>
+               <contexto lugar="AMARA">Eg&#237;pcios</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="AMARA">Reino</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AMAXA</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="AMAXA"/>
+               <d>doc.</d>
+               <numAlinea>32</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AMBA&#199;ANET</local>
+
+            <texto>((Aldeia no reino de Tigr&#233;, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="AMBAÇANET">Serra</contexto>
+               <d>doc.</d>
+               <numAlinea>1</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="AMBAÇANET"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AR&#193;BIA</local>
+
+            <texto> ((Pen&#237;nsula da &#193;sia, a NW do Continente, entre a S&#237;ria e a Mesopot&#226;mia a N., os golfos P&#233;rsicos e d' Oman
+               a E., o oceano &#205;ndico e o golfo de Aden ao S., o estreito de Bad - el Mandeb, o mar vermelho e o canal do Suez a O.)) </texto>
+
+            <contextos>
+               <contexto lugar="ARÁBIA">Costa</contexto>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ASSAM</local>
+
+            <texto> (Ass&#227;) ((Regi&#227;o norte - oriental da &#205;ndia Inglesa, constitu&#237;da desde 1874 em governo distinto do de Bengala
+               propriamente dito. &#201; um longo vale rodeado por montanhas cobertas de matagais e banhado pelo Brahmaputra e por muitos dos seus
+               afluentes, quasi todos naveg&#225;veis. Divide-se actualmente em doze dist., a capital dos quais &#233; Chillong, ou, melhor Silang)). </texto>
+
+            <contextos>
+               <contexto lugar="ASSAM"/>
+               <d>doc.</d>
+               <numAlinea>53</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ATCANA</local>
+
+            <texto> (Atghana) ((Aldeia no reino de Begamedes, Eti&#243;pia, a oriente da Dambia e de Goiam, cujo lado oriental &#233; regado pelo
+               Nilo)) </texto>
+
+            <contextos>
+               <contexto lugar="ATCANA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>41</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>AZOZ&#213;</local>
+
+            <texto>v. GANETA JESUS</texto>
+
+            <contextos>
+               <contexto lugar="AZOZÕ"/>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>BAROA</local>
+
+            <texto>((reino de Tigr&#233;))</texto>
+
+            <contextos>
+               <contexto lugar="BAROA"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>BARROSAN</local>
+
+            <texto>((reino da Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="BARROSAN"/>
+               <d>doc.</d>
+               <numAlinea>50</numAlinea>
+               <numAlinea>51</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>BAXIM</local>
+
+            <texto/>
+
+            <contextos>
+               <contexto lugar="BAXIM"/>
+               <d>doc.</d>
+               <numAlinea>11</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="BAXIM">Cativeiro</contexto>
+               <d>doc.</d>
+               <numAlinea>11</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>BEGAMEDES</local>
+
+            <texto>((Reino da Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="BEGAMEDES"/>
+               <d>doc.</d>
+               <numAlinea>34</numAlinea>
+               <numAlinea>35</numAlinea>
+               <numAlinea>41</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="BEGAMEDES">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>CARCA</local>
+
+            <texto>((Reino de Goiam))</texto>
+
+            <contextos>
+               <contexto lugar="CARCA">Igreja e Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>42</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>CAMAR&#195;O</local>
+
+            <texto>((ilha da Ar&#225;bia, situada no mar vermelho))</texto>
+
+            <contextos>
+               <contexto lugar="CAMARÃO"/>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>CAXEM</local>
+
+            <texto>((cid. Ar&#225;bia, na costa))</texto>
+
+            <contextos>
+               <contexto lugar="CAXEM"/>
+               <d>doc.</d>
+               <numAlinea>48</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>COLELA</local>
+
+            <texto>((reino de Goiama, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="COLELA"/>
+               <d>doc.</d>
+               <numAlinea>29</numAlinea>
+               <numAlinea>30</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>44</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="COLELA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>31</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DAMBIA</local>
+
+            <texto> (Dambea) ((prov. da Abissinea, na &#193;frica, sobre um grande lago com o mesmo nome, pr&#243;ximo do Nilo)) </texto>
+
+            <contextos>
+               <contexto lugar="DAMBIA"/>
+               <d>doc.</d>
+               <numAlinea>25</numAlinea>
+               <numAlinea>25</numAlinea>
+               <numAlinea>26</numAlinea>
+               <numAlinea>34</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="DAMBIA">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>23</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="DAMBIA">Reino</contexto>
+               <d>doc.</d>
+               <numAlinea>17</numAlinea>
+               <numAlinea>24</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="DAMBIA">Semin&#225;rio</contexto>
+               <d>doc.</d>
+               <numAlinea>26</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DAMOT</local>
+
+            <texto> (Damotes, Damotez, Danotes) ((prov. da Eti&#243;pia (Godjam) Capital Dembetcha)). </texto>
+            <contextos>
+
+               <contexto lugar="DAMOT"/>
+               <d>doc.</d>
+               <numAlinea>34</numAlinea>
+               <numAlinea>35</numAlinea>
+               <numAlinea>41</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DANCAS</local>
+
+            <texto>((a norte das DAMBIA, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="DANCAS"/>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="DANCAS">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>44</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DEBOROA</local>
+
+            <texto>((cid. no reino de Tigr&#233;, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="DEBOROA"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DELEC</local>
+
+            <texto>((porto na Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="DELEC"/>
+               <d>doc.</d>
+               <numAlinea>67</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DEPSAM</local>
+
+            <texto>((Enfraz, Assento, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="DEPSAM">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DERATA</local>
+
+            <texto> ((chamado de Teda Gucirguir, confina com Galas, Eti&#243;pia)) </texto>
+
+            <contextos>
+               <contexto lugar="DERATA"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>DIU</local>
+
+            <texto> ((Antiga cidade e pra&#231;a forte portuguesa; situada na ilha do mesmo nome, na margem sul da pen&#237;nsula da Kativar, na
+               &#205;ndia)) </texto>
+
+            <contextos>
+               <contexto lugar="DIU"/>
+               <d>doc.</d>
+               <numAlinea>8</numAlinea>
+               <numAlinea>36</numAlinea>
+               <numAlinea>54</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="DIU">Reitor do Col&#233;gio</contexto>
+               <d>doc.</d>
+               <numAlinea>58</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ENEBESS&#201;</local>
+
+            <texto>((Antiga Mertula Mariam, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="ENEBESSÉ">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>41</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ENFRAZ ASSENTO</local>
+
+            <texto> ((Prov. onde est&#225; a resid&#234;ncia de Depsam, Eti&#243;pia)) </texto>
+
+            <contextos>
+               <contexto lugar="ENFRAZ"/>
+               <d>doc.</d>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>ETI&#211;PIA</local>
+
+            <texto> ((de extens&#227;o muito vari&#225;vel conforme as &#233;pocas, este nome aplicou-se a diversos pa&#237;ses de &#193;frica
+               Equatorial. Entre os gregos a Eti&#243;pia era toda a parte meridional da terra habitada de E. a O. Entre os s&#225;bios o nome
+               restringiu-se &#224;s regi&#245;es e povos de &#193;frica, mais particularmente aos que estavam situados a sul do Egipto e da sua
+               fronteira dos tempos cl&#225;ssicos, Siena e Fila. Teoricamente designa toda a regi&#227;o de forma triangular que vai d'entre o mar
+               vermelho e o Nilo acimo de um soco de 1000 m de eleva&#231;&#227;o)). </texto>
+
+            <contextos>
+               <contexto lugar="ETIÓPIA"/>
+               <d>doc.</d>
+               <numAlinea>1</numAlinea>
+               <numAlinea>14</numAlinea>
+               <numAlinea>15</numAlinea>
+               <numAlinea>16</numAlinea>
+               <numAlinea>20</numAlinea>
+               <numAlinea>20</numAlinea>
+               <numAlinea>22</numAlinea>
+               <numAlinea>23</numAlinea>
+               <numAlinea>29</numAlinea>
+               <numAlinea>31</numAlinea>
+               <numAlinea>32</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>36</numAlinea>
+               <numAlinea>37</numAlinea>
+               <numAlinea>38</numAlinea>
+               <numAlinea>39</numAlinea>
+               <numAlinea>39</numAlinea>
+               <numAlinea>44</numAlinea>
+               <numAlinea>44</numAlinea>
+               <numAlinea>45</numAlinea>
+               <numAlinea>54</numAlinea>
+               <numAlinea>55</numAlinea>
+               <numAlinea>56</numAlinea>
+               <numAlinea>56</numAlinea>
+               <numAlinea>57</numAlinea>
+               <numAlinea>62</numAlinea>
+               <numAlinea>65</numAlinea>
+               <numAlinea>67</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Cat&#243;licos</contexto>
+               <d>doc.</d>
+               <numAlinea>67</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Companhia de Jesus, Geral</contexto>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>43</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Companhia de Jesus, Padres</contexto>
+               <d>doc.</d>
+               <numAlinea>51</numAlinea>
+               <numAlinea>60</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Companhia de Jesus, Patriarca</contexto>
+               <d>doc.</d>
+               <numAlinea>5</numAlinea>
+               <numAlinea>21</numAlinea>
+               <numAlinea>38</numAlinea>
+               <numAlinea>39</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>45</numAlinea>
+               <numAlinea>48</numAlinea>
+               <numAlinea>49</numAlinea>
+               <numAlinea>50</numAlinea>
+               <numAlinea>52</numAlinea>
+               <numAlinea>54</numAlinea>
+               <numAlinea>56</numAlinea>
+               <numAlinea>59</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Companhia de Jesus, Provincial</contexto>
+               <d>doc.</d>
+               <numAlinea>12</numAlinea>
+               <numAlinea>38</numAlinea>
+               <numAlinea>42</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Companhia de Jesus</contexto>
+               <d>doc.</d>
+               <numAlinea>3</numAlinea>
+               <numAlinea>4</numAlinea>
+               <numAlinea>13</numAlinea>
+               <numAlinea>53</numAlinea>
+               <numAlinea>63</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Cr&#243;nica</contexto>
+               <d>doc.</d>
+               <numAlinea>64</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Estado Secular</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Igreja</contexto>
+               <d>doc.</d>
+               <numAlinea>63</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Imperador</contexto>
+               <d>doc.</d>
+               <numAlinea>42</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Imp&#233;rio</contexto>
+               <d>doc.</d>
+               <numAlinea>28</numAlinea>
+               <numAlinea>41</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Miss&#245;es</contexto>
+               <d>doc.</d>
+               <numAlinea>28</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Patriarca</contexto>
+               <d>doc.</d>
+               <numAlinea>2</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Peste</contexto>
+               <d>doc.</d>
+               <numAlinea>25</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Portugueses</contexto>
+               <d>doc.</d>
+               <numAlinea>66</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Prega&#231;&#227;o do Evangelho</contexto>
+               <d>doc.</d>
+               <numAlinea>21</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Reino</contexto>
+               <d>doc.</d>
+               <numAlinea>53</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ETIÓPIA">Vig&#225;rio Geral dos Cat&#243;licos</contexto>
+               <d>doc.</d>
+               <numAlinea>3</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>FREMONA</local>
+
+            <texto/>
+            <contextos>
+
+               <contexto lugar="FREMONA"/>
+               <d>doc.</d>
+               <numAlinea>9</numAlinea>
+               <numAlinea>9</numAlinea>
+               <numAlinea>12</numAlinea>
+               <numAlinea>14</numAlinea>
+               <numAlinea>15</numAlinea>
+               <numAlinea>16</numAlinea>
+               <numAlinea>23</numAlinea>
+               <numAlinea>24</numAlinea>
+               <numAlinea>29</numAlinea>
+               <numAlinea>29</numAlinea>
+               <numAlinea>38</numAlinea>
+               <numAlinea>40</numAlinea>
+               <numAlinea>44</numAlinea>
+               <numAlinea>47</numAlinea>
+               <numAlinea>49</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="FREMONA">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>15</numAlinea>
+               <numAlinea>17</numAlinea>
+               <numAlinea>18</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="FREMONA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>31</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>35</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GABRAM&#193;</local>
+
+            <texto>((Reino dos Damotes, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="GABRAMÁ"/>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GANETA JESUS</local>
+
+            <texto>((Antigo lugar de Azoz&#244;, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="GANETA"/>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>41</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GANETA JETOS</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="GANETA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>44</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GOA</local>
+
+            <texto> ((Cid. e territ&#243;rio da costa ocidental da &#205;ndia que a partir de 1510 contitu&#237;a a capital do Estado Portugu&#234;s
+               na &#205;ndia)) </texto>
+
+            <contextos>
+               <contexto lugar="GOA"/>
+               <d>doc.</d>
+               <numAlinea>3</numAlinea>
+               <numAlinea>29</numAlinea>
+               <numAlinea>63</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GOA">Arcebispo</contexto>
+               <d>doc.</d>
+               <numAlinea>3</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GOA">Companhia de Jesus, Provincial</contexto>
+               <d>doc.</d>
+               <numAlinea>19</numAlinea>
+               <numAlinea>24</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GOA">Companhia de Jesus</contexto>
+               <d>doc.</d>
+               <numAlinea>8</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GOIAMA</local>
+
+            <texto>((Reino da Eti&#243;pia, onde existe a resid&#234;ncia de Colela))</texto>
+
+            <contextos>
+               <contexto lugar="GOIAMA"/>
+               <d>doc.</d>
+               <numAlinea>24</numAlinea>
+               <numAlinea>29</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>34</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GOIAMA">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>23</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GONDAR</local>
+
+            <texto>((Cid. Do imp&#233;rio da Eti&#243;pia, cap. da prov. de Amhara; a norte do lago Demb&#233;a))</texto>
+
+            <contextos>
+               <contexto lugar="GONDAR">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea/>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GORAMA</local>
+
+            <texto>((Reino de Tigr&#233;, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="GORAMA">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>16</numAlinea>
+               <numAlinea>17</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>GORGORA</local>
+
+            <texto>((Reino da Dambia, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="GORGORA"/>
+               <d>doc.</d>
+               <numAlinea>15</numAlinea>
+               <numAlinea>17</numAlinea>
+               <numAlinea>18</numAlinea>
+               <numAlinea>19</numAlinea>
+               <numAlinea>30</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>33</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>45</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GORGORA">Igreja</contexto>
+               <d>doc.</d>
+               <numAlinea>27</numAlinea>
+               <numAlinea>29</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GORGORA">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>17</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="GORGORA">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>29</numAlinea>
+               <numAlinea>31</numAlinea>
+               <numAlinea>32</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>44</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>&#205;NDIA</local>
+
+            <texto>((Pen&#237;nsula indostanica, mas que outrora se deu a toda a regi&#227;o da &#193;sia que compreende as duas grandes
+               pen&#237;nsulas sul orientais e que se chamavam ainda &#205;ndias Orientais ou grandes &#205;ndias. O Ganges ou seus afluentes dividiam
+               esta vasta regi&#227;o em Indost&#227;o e em Indochina))</texto>
+
+            <contextos>
+               <contexto lugar="ÍNDIA"/>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+               <numAlinea>36</numAlinea>
+               <numAlinea>48</numAlinea>
+               <numAlinea>54</numAlinea>
+               <numAlinea>55</numAlinea>
+               <numAlinea>58</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ÍNDIA">Companhia de Jesus, Provincial</contexto>
+               <d>doc.</d>
+               <numAlinea>6</numAlinea>
+               <numAlinea>14</numAlinea>
+               <numAlinea>14</numAlinea>
+               <numAlinea>16</numAlinea>
+               <numAlinea>35</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ÍNDIA">Imperador</contexto>
+               <d>doc.</d>
+               <numAlinea>14</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ÍNDIA">Padres</contexto>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ÍNDIA">Plantas</contexto>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>&#205;NDIAS ORIENTAIS</local>
+
+            <texto>((Por declara&#231;&#227;o do Padroado de Greg&#243;rio XIII a 11/10/1577, entende-se todas as regi&#245;es da Maurit&#226;nia para
+               sul e oriente, pertencendo a Portugal por direito de soberania, de conquista de com&#233;rcio e navega&#231;&#227;o))</texto>
+
+            <contextos>
+               <contexto lugar="ÍNDIAS"/>
+               <d>doc.</d>
+               <numAlinea>54</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="ÍNDIAS">Patriarca</contexto>
+               <d>doc.</d>
+               <numAlinea>3</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>JAP&#195;O</local>
+
+            <texto>((O imp&#233;rio denominado Nippon pelos seus naturais &#233; constituido por uma grande parte da orla insular da &#193;sia
+               Oriental, banhado a E. pelo Oceano Pac&#237;fico e a O. pelos mares Okhotsh, do Jap&#227;o Oriental))</texto>
+
+            <contextos>
+               <contexto lugar="JAPÃO">Bispo</contexto>
+               <d>doc.</d>
+               <numAlinea>19</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>LAST&#195;</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="LASTÃ">Terras</contexto>
+               <d>doc.</d>
+               <numAlinea>46</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>LIGC NUGUS</local>
+
+            <texto>((Terra dos Damotes, Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="LIGC">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>34</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>44</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>MALACA</local>
+
+            <texto>((Cap. da antiga col&#243;nia inglesa de Malaca, situada no estreito do mesmo nome, na Indochina. Ruinas de uma igreja portuguesa,
+               constru&#237;da por Afonso de Albuquerque))</texto>
+            <contextos>
+
+               <contexto lugar="MALACA">Bispo</contexto>
+               <d>doc.</d>
+               <numAlinea>59</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>MASSUA</local>
+
+            <texto>(Massuah) ((Cap. da antiga col&#243;nia da Eriteia italiana, situada contra a costa africana do mar Vermelho, ao N. das baias
+               d'Adulis e d'Arkiko. &#201; desde os tempos imemoriais o ponto de exporta&#231;&#227;o de mercadorias trazidas por carabanas de
+               Abissinea, do Kordofan e do Darfour))</texto>
+
+            <contextos>
+               <contexto lugar="MASSUA"/>
+               <d>doc.</d>
+               <numAlinea>19</numAlinea>
+               <numAlinea>19</numAlinea>
+               <numAlinea>48</numAlinea>
+               <numAlinea>52</numAlinea>
+               <numAlinea>55</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>MOMBA&#199;A</local>
+
+            <texto>((Cid. da antiga &#193;frica oriental inglesa, na costa E. da ilha do mesmo nome))</texto>
+
+            <contextos>
+               <contexto lugar="MOMBAÇA"/>
+               <d>doc.</d>
+               <numAlinea>20</numAlinea>
+               <numAlinea>22</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>N&#225;poles</local>
+
+            <texto>((Cid. da It&#225;lia, cap. de Prov., ao p&#233; do Ves&#250;vio nas margens do golfo que tem o mesmo nome))</texto>
+
+            <contextos>
+               <contexto lugar="NÁPOLES">Padres</contexto>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>NARE&#194;</local>
+
+            <texto>((Reino na Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="NAREÂ"/>
+               <d>doc.</d>
+               <numAlinea>17</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>NEBSE</local>
+
+            <texto>((Resid&#234;ncia na Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="NEBSE"/>
+               <d>doc.</d>
+               <numAlinea>44</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>NEFACA</local>
+
+            <texto>((Resid&#234;ncia que pertenceu aos aguas. Esteve situada num lugar chamado Depuam. Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="NEFACA"/>
+               <d>doc.</d>
+               <numAlinea>44</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>NIC&#201;A</local>
+
+            <texto>((Cid. da &#193;sia Menor antiga (Bithynia), no lago Ascanio, no s&#237;tio actual da vida turca de Isnik))</texto>
+
+            <contextos>
+               <contexto lugar="NICÉA">Bispo</contexto>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>PORTUGAL</local>
+
+            <texto/>
+
+            <contextos>
+               <contexto lugar="PORTUGAL"/>
+               <d>doc.</d>
+               <numAlinea>36</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="PORTUGAL">Irm&#227;o da Companhia de Jesus</contexto>
+               <d>doc.</d>
+               <numAlinea>36</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="PORTUGAL">Padres</contexto>
+               <d>doc.</d>
+               <numAlinea>27</numAlinea>
+               <numAlinea>43</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="PORTUGAL">Plantas</contexto>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="PORTUGAL">Rei</contexto>
+               <d>doc.</d>
+               <numAlinea>47</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>RIO BRAVO</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="RIO"/>
+               <d>doc.</d>
+               <numAlinea>20</numAlinea>
+               <numAlinea>22</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>SELABO</local>
+
+            <texto/>
+
+            <contextos>
+               <contexto lugar="SELABO">Mosteiro</contexto>
+               <d>doc.</d>
+               <numAlinea>45</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>SEMEN</local>
+
+            <texto>(Simen) ((Massi&#231;o montanhoso da Eti&#243;pia que constitui uma provincia))</texto>
+
+            <contextos>
+               <contexto lugar="SEMEN">Jud&#233;m</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="SEMEN">Reino</contexto>
+               <d>doc.</d>
+               <numAlinea>35</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>SIRE</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="SIRE"/>
+               <d>doc.</d>
+               <numAlinea>40</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>SUAQUEM</local>
+
+            <texto>(Suaqu&#233;, Suaquen, Suaquim) ((Ilha da &#193;frica sobre a costa ocidental do Mar Vermelho))</texto>
+
+            <contextos>
+               <contexto lugar="SUAQUEM"/>
+               <d>doc.</d>
+               <numAlinea>19</numAlinea>
+               <numAlinea>58</numAlinea>
+               <numAlinea>58</numAlinea>
+               <numAlinea>61</numAlinea>
+               <numAlinea>61</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>TAMQHA</local>
+
+            <texto>((Eti&#243;pia))</texto>
+
+            <contextos>
+               <contexto lugar="TAMQHA"/>
+               <d>doc.</d>
+               <numAlinea>34</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>35</numAlinea>
+               <numAlinea>42</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>TANGAROA</local>
+
+            <texto/>
+
+            <contextos>
+               <contexto lugar="TANGAROA"/>
+               <d>doc.</d>
+               <numAlinea>33</numAlinea>
+            </contextos>
+
+         </sitio>
+
+         <sitio>
+
+            <local>TIGR&#201;</local>
+
+            <texto>((Prov. Eti&#243;pia ou Abissinea. Constitui em diversas &#233;pocas um reino distinto tendo por capital Axum e depois
+               Adu&#225;))</texto>
+
+            <contextos>
+               <contexto lugar="TIGRÉ"/>
+               <d>doc.</d>
+               <numAlinea>15</numAlinea>
+               <numAlinea>17</numAlinea>
+               <numAlinea>25</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>34</numAlinea>
+               <numAlinea>35</numAlinea>
+               <numAlinea>40</numAlinea>
+               <numAlinea>41</numAlinea>
+               <numAlinea>42</numAlinea>
+               <numAlinea>44</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="TIGRÉ">Inst&#226;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>16</numAlinea>
+               <numAlinea>17</numAlinea>
+               <numAlinea>18</numAlinea>
+               <numAlinea>23</numAlinea>
+            </contextos>
+            <contextos>
+               <contexto lugar="TIGRÉ">Resid&#234;ncia</contexto>
+               <d>doc.</d>
+               <numAlinea>32</numAlinea>
+
+            </contextos>
+         </sitio>
+
+         <sitio>
+
+            <local>VERMELHO</local>
+
+            <texto>(Mar) ou Golfo Ar&#225;bico ou Mar da Erit&#233;a ((Mar secund&#225;rio que depende do oceano &#205;ndico))</texto>
+
+            <contextos>
+               <contexto lugar="VERMELHO"/>
+               <d>doc.</d>
+               <numAlinea>43</numAlinea>
+            </contextos>
+
+         </sitio>
+
+      </indiceLocais>
+   </indices>
+
+</documento>
