@@ -162,9 +162,8 @@ Note: This resource was automaticly generated`;
         form.append('title',`XML Documents: ${filename.slice(0, -4)}`);
         form.append('description',description);
         form.append('visibility','0');
-        
 
-        axios.post('http://localhost:7700/api/resources',form,{
+        await axios.post('http://localhost:7700/api/resources',form,{
             headers: { 
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': `multipart/form-data; boundary=${form._boundary}`
@@ -199,6 +198,9 @@ async function populate()
 
     await populate_resources();
     console.log('Resources finished');
+
+    //await populate_posts();
+    //console.log('Posts finished');
 
     print_values();
 }
