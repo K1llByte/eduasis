@@ -280,7 +280,8 @@ router.get('/users/:username', check_auth, async (req, res) => {
         let posts = (await posts_p).data;
 
         res.render('profile',{
-            "user": user,
+            "user_profile": user,
+            "user": req.user,
             'resources': resources,
             'posts': posts,
             'view_type': view_type,
@@ -425,7 +426,7 @@ router.get('/resources/:resource_id', check_auth, (req, res) => {
         .then(posts => {
             axios.get(`${API_URL}/resources/${req.params.resource_id}/rate`,auth_header(req.user.token))
             .then(rate => {
-                console.log('RATE:',rate.data)
+                // console.log('RATE:',rate.data)
                 res.render('resource', {
                 'resource':resource.data, 
                 'user':req.user,

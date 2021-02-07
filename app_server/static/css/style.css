@@ -596,6 +596,22 @@ display: none;
   padding: 10px;
 }
 
+.profile-image-navbar {
+  /* Deixar a imagem redonda */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  /* margin: 0px; */
+  /* padding: 10px; */
+  /* display: flex; */
+  /* flex-direction: row; */
+
+  /* Estes dois fazem com que utilizando flex as cenas fiquem centradas horizontal e verticalmente */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* padding: 10px; */
+}
+
 .profile-picture-comments {
   /* Deixar a imagem redonda */
   border-radius: 50%;

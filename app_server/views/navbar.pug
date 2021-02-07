@@ -43,4 +43,12 @@ html
                     a.active(href='/users/@me') #{user.username}
                 else
                     a.links(href='/users/@me') #{user.username}
+                    
+                //- a(href='/users/@me')
+
+                //- img.profile-image-navbar(src=`http://localhost:7700/api/users/${user.username}/avatar`)
+                    //- if user.avatar_url == ""
+                        img.profile-image-navbar(src=`http://localhost:7700/storage/avatars/default/default.png`)
+                    //- else
+                        img.profile-image-navbar(src=`http://localhost:7700/api/users/${user.username}/avatar`)
         block content
