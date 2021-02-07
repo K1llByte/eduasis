@@ -61,7 +61,7 @@ block content
                       else 
                         | &starf;
                     span(style='margin-left: 20px; font-size: larger; margin-bottom: 10px;')  rate: #{resource.rate}
-        a.doublebox-page-leftBox-button(href=`http://localhost:7700/storage/resources/${resource.resource_id}.zip`)
+        a.doublebox-page-leftBox-button(href=`http://localhost:7700/storage/resources/${resource.resource_id}/${resource.resource_id}.zip`)
           .doublebox-page-leftBox-button-inner
             | Download
         a.doublebox-page-leftBox-button(href=`/new_post?resource_id=${resource.resource_id}`)
@@ -81,9 +81,8 @@ block content
             h1 Files
             h3
               ul
-                li File 1
-                li File 2
-                li File 3
+                each file in resource.files
+                  li #{file}
         #Posts.tabcontent.doublebox-page-rightBox-innerbox-content(style='display: none;')
           div(style='width: calc(100% - 5rem);height: calc(100% - 5rem); margin: 2.5rem;') 
             each post in posts

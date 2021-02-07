@@ -8,22 +8,22 @@ block content
     .doublebox-page-leftBox
       .doublebox-page-leftBox-outerBox(style='max-height:40rem')
         .doublebox-page-leftBox-innerbox(style='height:23rem')
-          if user.avatar_url == ""
+          if user_profile.avatar_url == ""
             img(src=`http://localhost:7700/storage/avatars/default/default.png` style='width:160px;height:160px;')
           else
-            img(src=`${user.avatar_url}` style='width:160px;height:160px;')
+            img(src=`${user_profile.avatar_url}` style='width:160px;height:160px;')
           div(style='justify-content:center; text-align: center;')
-            if user.nickname == ""
-              h2= `${user.username}`
+            if user_profile.nickname == ""
+              h2= `${user_profile.username}`
             else
-              h2= `${user.nickname}`
-              p= `${user.username}`
-            p= user.email
+              h2= `${user_profile.nickname}`
+              p= `${user_profile.username}`
+            p= user_profile.email
         if view_type == 'me'
           a.doublebox-page-leftBox-button(href='/logout')
             .doublebox-page-leftBox-button-inner
               | Logout
-          a.doublebox-page-leftBox-button(href=`/users/${user.username}/edit`)
+          a.doublebox-page-leftBox-button(href=`/users/${user_profile.username}/edit`)
             .doublebox-page-leftBox-button-inner
               | Edit Profile
     .doublebox-page-rightBox
