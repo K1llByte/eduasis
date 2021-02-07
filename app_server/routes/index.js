@@ -103,7 +103,14 @@ router.get('/', (req, res, next) => {
 
 
 router.get('/login', (req, res, next) => {
-    res.render('login');
+    if(req.user != undefined)
+    {
+        res.redirect('/users/@me');
+    }
+    else
+    {
+        res.render('login');
+    }
 });
 
 
@@ -126,9 +133,15 @@ router.get('/logout', (req, res) => {
 
 
 router.get('/register', (req, res) => {
-  // Data retrieve
-  res.render('register');
-
+  
+    if(req.user != undefined)
+    {
+        res.redirect('/users/@me');
+    }
+    else
+    {
+        res.render('register');
+    }
 });
 
 
