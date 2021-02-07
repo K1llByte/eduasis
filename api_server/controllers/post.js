@@ -56,6 +56,14 @@ module.exports.insert = (post_data) => {
     return new_post.save();
 }
 
+// Deletes post by id
+module.exports.delete = (pid) => {
+    return Post
+        .deleteOne({ "post_id":pid })
+        .exec();
+}
+
+// =========================== //
 
 module.exports.insert_comment = (post_id, comment_data) => {
     return Post.updateOne(
@@ -64,5 +72,3 @@ module.exports.insert_comment = (post_id, comment_data) => {
         )
         .exec()
 }
-
-// =========================== //

@@ -19,7 +19,7 @@ block content
       each p in posts  
         .resource-box
           a.profile-topbar(style='height: 60px;' href=`/users/${p.author}`)
-            img.profile-picture(src='https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
+            img.profile-picture(src=`http://localhost:7700/api/users/${p.author}/avatar` 'https://www.w3schools.com/w3css/img_avatar3.png' style='height: 60px; width: 60px;')
             .profile-name(style='font-size: 20px;')= `${p.author}`
           .resource-post
             .profile-name(style='font-size: 20px; margin-left: 20px;') Post

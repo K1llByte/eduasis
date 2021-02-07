@@ -105,6 +105,14 @@ module.exports.insert = (resource_data) => {
     return new_resource.save()
 }
 
+
+// Deletes resource by id
+module.exports.delete = (rid) => {
+    return Resource
+        .deleteOne({ "resource_id":rid })
+        .exec();
+}
+
 // =========================== //
 
 module.exports.gen_id = () => {

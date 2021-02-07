@@ -115,7 +115,7 @@ const resource_upload = multer({
     fileFilter: file_type_filter
 });
 
-// ========= USER ENDPOINTS ========= //
+// ========= RESOURCES ENDPOINTS ========= //
 
 router.get('/api/resources', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
@@ -296,6 +296,21 @@ router.post('/api/resources', auth.authenticate(User.CPermissions.ap), resource_
 });
 
 
+router.delete('/api/resources/:resource_id', auth.authenticate(User.Permissions.Admin), (req, res) => {
+
+    Resource.delete(req.params.resource_id)
+    .then(data => {
+        if(data.deletedCount != 0)
+            res.json({"success":"Resource deleted successfully"});
+        else 
+            res.status(400).json({"error":"Resource doesn't exist"});
+    })
+    .catch(err => {
+        res.status(400).json({"error":err.message});
+    });
+});
+
+
 router.get('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
     Resource.get_rate(req.params.resource_id, req.user.username)
@@ -328,6 +343,7 @@ router.put('/api/resources/:resource_id/rate', auth.authenticate(User.CPermissio
         });
 });
 
+// ========= RESOURCE TYPES ENDPOINTS ========= //
 
 router.get('/api/resource_types', auth.authenticate(User.CPermissions.apc), (req, res) => {
 
@@ -372,6 +388,21 @@ router.post('/api/resource_types', auth.authenticate(User.Permissions.Admin), as
     })
     .catch(err => {
         res.json({'error': err});
+    });
+});
+
+
+router.delete('/api/resource_types/:type_id', auth.authenticate(User.Permissions.Admin), (req, res) => {
+
+    ResourceType.delete(req.params.type_id)
+    .then(data => {
+        if(data.deletedCount != 0)
+            res.json({"success":"Resource type deleted successfully"});
+        else 
+            res.status(400).json({"error":"Resource type doesn't exist"});
+    })
+    .catch(err => {
+        res.status(400).json({"error":err.message});
     });
 });
 

@@ -22,6 +22,15 @@ module.exports.insert = (rt_data) => {
 }
 
 
+// Deletes resource_type by id
+module.exports.delete = (tid) => {
+    return ResourceType
+        .deleteOne({ "type_id":tid })
+        .exec();
+}
+
+
+
 module.exports.next_id = async () => {
     let v = await ResourceType
         .find({},{_id:0,name:0})
